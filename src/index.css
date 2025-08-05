@@ -2,39 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Villa Olivia Clara Design System - Mediterranean Luxury */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 74 30% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 74 30% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 74 30% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 74 29% 44%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 74 25% 92%;
+    --secondary-foreground: 74 30% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 74 15% 95%;
+    --muted-foreground: 74 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 74 29% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 74 20% 88%;
+    --input: 74 20% 88%;
+    --ring: 74 29% 44%;
+
+    /* Villa specific colors */
+    --villa-olive: 74 29% 44%;
+    --villa-olive-light: 74 25% 92%;
+    --villa-olive-dark: 74 30% 35%;
+    --villa-cream: 45 30% 96%;
+    --villa-stone: 30 10% 85%;
+    --villa-sea: 200 50% 70%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(74 29% 44% / 0.9), hsl(74 30% 35% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(74 15% 98%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(74 29% 44% / 0.2);
+    --shadow-soft: 0 4px 20px -5px hsl(74 29% 44% / 0.1);
 
     --radius: 0.5rem;
 

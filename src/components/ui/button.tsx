@@ -18,6 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        villa: "bg-villa-olive text-white hover:bg-villa-olive-dark shadow-soft",
+        "villa-outline": "border-2 border-villa-olive text-villa-olive bg-transparent hover:bg-villa-olive hover:text-white",
+        "villa-ghost": "text-villa-olive hover:bg-villa-olive-light/50",
       },
       size: {
         default: "h-10 px-4 py-2",

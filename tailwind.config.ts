@@ -69,14 +69,20 @@ export default {
 					olive: 'hsl(var(--villa-olive))',
 					'olive-light': 'hsl(var(--villa-olive-light))',
 					'olive-dark': 'hsl(var(--villa-olive-dark))',
+					white: 'hsl(var(--villa-white))',
 					cream: 'hsl(var(--villa-cream))',
 					stone: 'hsl(var(--villa-stone))',
-					sea: 'hsl(var(--villa-sea))',
+					'stone-light': 'hsl(var(--villa-stone-light))',
+					aegean: 'hsl(var(--villa-aegean))',
+					'aegean-light': 'hsl(var(--villa-aegean-light))',
+					'aegean-dark': 'hsl(var(--villa-aegean-dark))',
 				}
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-aegean': 'var(--gradient-aegean)',
+				'gradient-stone': 'var(--gradient-stone)',
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',

@@ -18,13 +18,13 @@
     --primary: 74 29% 44%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 74 25% 92%;
+    --secondary: 35 8% 88%;
     --secondary-foreground: 74 30% 20%;
 
-    --muted: 74 15% 95%;
-    --muted-foreground: 74 15% 45%;
+    --muted: 40 12% 94%;
+    --muted-foreground: 74 20% 40%;
 
-    --accent: 74 29% 44%;
+    --accent: 205 85% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,17 +34,23 @@
     --input: 74 20% 88%;
     --ring: 74 29% 44%;
 
-    /* Villa specific colors */
+    /* Cycladic Villa Colors */
     --villa-olive: 74 29% 44%;
     --villa-olive-light: 74 25% 92%;
     --villa-olive-dark: 74 30% 35%;
-    --villa-cream: 45 30% 96%;
-    --villa-stone: 30 10% 85%;
-    --villa-sea: 200 50% 70%;
+    --villa-white: 0 0% 100%;
+    --villa-cream: 45 15% 96%;
+    --villa-stone: 35 8% 88%;
+    --villa-stone-light: 40 12% 94%;
+    --villa-aegean: 205 85% 45%;
+    --villa-aegean-light: 205 65% 85%;
+    --villa-aegean-dark: 205 95% 35%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(74 29% 44% / 0.9), hsl(74 30% 35% / 0.9));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(74 15% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(205 85% 45% / 0.8), hsl(74 29% 44% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 12% 97%));
+    --gradient-aegean: linear-gradient(135deg, hsl(205 85% 45%), hsl(205 95% 35%));
+    --gradient-stone: linear-gradient(180deg, hsl(35 8% 88%), hsl(40 12% 94%));
 
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(74 29% 44% / 0.2);

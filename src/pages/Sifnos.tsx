@@ -4,6 +4,25 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+// Import village photos
+import apollonia from '@/assets/Sifnos/villages/apollonia.webp';
+import kastro from '@/assets/Sifnos/villages/kastro.webp';
+import artemonas from '@/assets/Sifnos/villages/artemonas.webp';
+import exampela from '@/assets/Sifnos/villages/exampela.webp';
+import katavati from '@/assets/Sifnos/villages/katavati.webp';
+import katoPetali from '@/assets/Sifnos/villages/kato-petali.webp';
+import panoPetali from '@/assets/Sifnos/villages/panopetali.webp';
+import troullaki from '@/assets/Sifnos/villages/troullaki.webp';
+import agiosLoukas from '@/assets/Sifnos/villages/agios-loukaswebp.webp';
+
+// Import beach photos for coastal villages
+import kamaresBeach from '@/assets/Sifnos/Beaches/kamares.webp';
+import platsGialosBeach from '@/assets/Sifnos/Beaches/plats-gialos.webp';
+import vathiBeach from '@/assets/Sifnos/Beaches/vathi.webp';
+import farosBeach from '@/assets/Sifnos/Beaches/faros.webp';
+import heronissosBeach from '@/assets/Sifnos/Beaches/heronissos.webp';
+import chrysopigiBeach from '@/assets/Sifnos/Beaches/chrysopigi.webp';
+
 const Sifnos = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -16,99 +35,418 @@ const Sifnos = () => {
             Sifnos Island Travel Guide
           </h1>
           <p className="text-xl text-muted-foreground">
-            Welcome to Sifnos! Nestled in the heart of the Cyclades, Sifnos is a treasure trove 
-            of authentic Greek experiences waiting to be discovered.
+            Your comprehensive guide to exploring the authentic beauty, rich traditions, and hidden gems of Sifnos Island
           </p>
         </div>
       </section>
 
-      {/* Essential Information */}
+      {/* Welcome Section */}
       <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-8 text-villa-olive">
+            Welcome to Sifnos
+          </h2>
+          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <p>
+              Nestled in the heart of the Cyclades, Sifnos is a treasure trove of authentic Greek experiences waiting to be discovered. With its whitewashed villages, golden beaches, vibrant culinary scene, and rich pottery tradition, this island offers a perfect blend of relaxation, culture, and adventure.
+            </p>
+            <p>
+              Unlike its more famous neighbors Mykonos and Santorini, Sifnos has maintained its traditional charm and provides visitors with a more authentic Greek island experience. The island's landscape is a captivating mix of terraced hills, olive groves, and dramatic coastlines dotted with enchanting villages that seem to tumble down to the sea.
+            </p>
+            <p>
+              This travel guide aims to help you navigate the island's many delights, from its pristine beaches and hiking trails to its celebrated restaurants and cultural landmarks. Whether you're planning a family vacation, a romantic getaway, or a solo adventure, Sifnos offers something special for every type of traveler.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Essential Information */}
+      <section className="py-20 bg-villa-olive-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
             Essential Sifnos Travel Information
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div>
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Getting to Sifnos</h3>
               <p className="text-muted-foreground">
-                Sifnos is accessible by ferry from Piraeus port in Athens, with daily connections 
-                in summer. The journey takes 2.5 to 5 hours. There is no airport on the island.
-              </p>
-            </div>
-            <div>
+                  Sifnos is accessible by ferry from Piraeus port in Athens. During the summer months, there are frequent ferry connections to Sifnos from Athens and other Cycladic islands. The journey from Piraeus takes approximately 2.5 to 5 hours depending on the type of ferry (high-speed or conventional). There is no airport on Sifnos, so sea travel is the only option to reach the island.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Best Time to Visit</h3>
               <p className="text-muted-foreground">
-                Visit from May to October. For a more peaceful experience with pleasant weather 
-                and warm seas, consider June or September. July and August are the busiest months.
-              </p>
-            </div>
-            <div>
+                  The best time to visit Sifnos is from May to October when the weather is warm and ideal for swimming and outdoor activities. July and August are the peak tourist months with higher temperatures and more crowds. For a more peaceful experience with pleasant weather, consider visiting in June or September when the sea is still warm but the crowds have thinned out.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Getting Around</h3>
               <p className="text-muted-foreground">
-                The local bus network connects all major villages and beaches. We recommend renting 
-                a car, scooter, or ATV to explore the island at your own pace.
-              </p>
-            </div>
-            <div>
+                  The local bus network connects all major villages and beaches on Sifnos. Taxis are available but limited in number. Renting a car, scooter, or ATV is recommended for exploring the island at your own pace. The island also has well-marked hiking trails that connect many of its charming villages and offer spectacular views.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Beaches</h3>
-              <p className="text-muted-foreground">
-                Sifnos boasts a variety of beautiful beaches, from organized sandy shores like 
-                Platis Gialos to secluded coves. There's a perfect spot for everyone.
-              </p>
-            </div>
-            <div>
+                <p className="text-muted-foreground mb-4">
+                  Sifnos boasts a variety of beautiful beaches catering to different preferences. From organized beaches with facilities like Platis Gialos and Kamares to more secluded coves like Vroulidia and Fassolou. Some beaches offer water sports facilities, while others are ideal for quiet relaxation against stunning backdrops.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/sifnos/beaches">Explore All Beaches →</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Cuisine</h3>
               <p className="text-muted-foreground">
-                Sifnos is the gastronomic capital of the Cyclades. Don't miss local specialties 
-                like revithada (chickpea soup) and mastelo (lamb cooked in red wine).
-              </p>
-            </div>
-            <div>
+                  Sifnos is renowned for its rich culinary tradition and is considered the gastronomic capital of the Cyclades. Don't miss trying local specialties such as chickpea soup (revithada), mastelo (lamb or goat cooked in red wine), and traditional sweets like honey pie (melopita) and almond cookies (amygdalota). The island is also famous for its pottery, used in traditional slow-cooking methods.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-villa-olive mb-4">Cultural Highlights</h3>
               <p className="text-muted-foreground">
-                Discover over 200 blue-domed churches, visit the Archaeological Museum in Kastro, 
-                and experience traditional music and dance at a summer festival.
+                  Sifnos has a rich cultural heritage with numerous blue-domed churches and monasteries scattered across the island. Visit the Archaeological Museum in Kastro to learn about the island's ancient history. Don't miss the annual cultural festivals, particularly during summer months, where you can experience traditional music, dance, and local celebrations.
               </p>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Villages Section */}
-      <section className="py-20 bg-villa-olive-light">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
             Charming Villages of Sifnos
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-villa-stone shadow-soft">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={apollonia} 
+                  alt="Apollonia village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-villa-olive mb-4">Apollonia</h3>
-                <p className="text-muted-foreground">
-                  The capital and main hub of Sifnos, Apollonia is a charming village with narrow alleys, 
-                  white Cycladic houses, and a vibrant nightlife.
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Apollonia</h3>
+                <p className="text-muted-foreground mb-3">
+                  The capital of Sifnos, known for its picturesque streets and vibrant nightlife. This charming village features narrow alleys, white Cycladic houses, and serves as the main hub for shopping, dining, and island administration.
                 </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
               </CardContent>
             </Card>
-            <Card className="border-villa-stone shadow-soft">
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={kastro} 
+                  alt="Kastro village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-villa-olive mb-4">Kastro</h3>
-                <p className="text-muted-foreground">
-                  A medieval settlement built on top of ancient Sifnos, Kastro features well-preserved 
-                  Venetian architecture and breathtaking views of the Aegean Sea.
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Kastro</h3>
+                <p className="text-muted-foreground mb-3">
+                  The medieval capital of Sifnos with impressive architecture and stunning sea views. This historic settlement features well-preserved Venetian architecture, ancient ruins, and the Archaeological Museum.
                 </p>
+                <p className="text-sm text-villa-olive font-medium">Eastern Sifnos</p>
               </CardContent>
             </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={artemonas} 
+                  alt="Artemonas village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Artemonas</h3>
+                <p className="text-muted-foreground mb-3">
+                  An elegant village known for its neoclassical mansions and beautiful architecture. Enjoy walking through its narrow streets and beautiful gardens while experiencing authentic island charm.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Northern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={kamaresBeach} 
+                  alt="Kamares village and beach in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Kamares</h3>
+                <p className="text-muted-foreground mb-3">
+                  The main port of Sifnos with a beautiful sandy beach and waterfront restaurants. This coastal village serves as the main arrival point and offers excellent amenities for visitors.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Western Sifnos (Port)</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={platsGialosBeach} 
+                  alt="Platis Gialos village and beach in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Platis Gialos</h3>
+                <p className="text-muted-foreground mb-3">
+                  One of the most popular beaches with golden sand and shallow waters perfect for families. This coastal area offers excellent swimming conditions and family-friendly amenities.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Southern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={vathiBeach} 
+                  alt="Vathi village and beach in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Vathi</h3>
+                <p className="text-muted-foreground mb-3">
+                  A tranquil fishing village with a sheltered bay, sandy beach, and peaceful atmosphere. This coastal settlement offers visitors a serene escape with authentic island charm.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Western Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={farosBeach} 
+                  alt="Faros village and beach in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Faros</h3>
+                <p className="text-muted-foreground mb-3">
+                  A charming coastal settlement with three beautiful beaches and a relaxed atmosphere. This traditional fishing village offers visitors authentic island experiences and stunning coastal views.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Southeastern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={heronissosBeach} 
+                  alt="Herronisos village and beach in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Herronisos</h3>
+                <p className="text-muted-foreground mb-3">
+                  A remote fishing village on the northern tip of the island with authentic charm. This secluded settlement offers visitors a genuine experience of traditional island life away from tourist areas.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Northern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={chrysopigiBeach} 
+                  alt="Chrysopigi monastery and area in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Chrysopigi</h3>
+                <p className="text-muted-foreground mb-3">
+                  A scenic area famous for its iconic monastery and beautiful beaches. This picturesque location offers visitors stunning natural beauty and spiritual significance with its historic monastery.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Southeastern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={exampela} 
+                  alt="Exambela village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Exambela</h3>
+                <p className="text-muted-foreground mb-3">
+                  A traditional village with panoramic views and authentic Cycladic character. This charming settlement offers visitors a glimpse into traditional island life with its stone houses and winding paths.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={katavati} 
+                  alt="Katavati village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Katavati</h3>
+                <p className="text-muted-foreground mb-3">
+                  A picturesque inland village with traditional character and central location. This charming settlement offers authentic island atmosphere with its traditional architecture and peaceful surroundings.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={katoPetali} 
+                  alt="Kato Petali village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Kato Petali</h3>
+                <p className="text-muted-foreground mb-3">
+                  A quiet village with traditional character near the island's capital. This peaceful settlement offers visitors a serene escape with its authentic atmosphere and close proximity to Apollonia.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={panoPetali} 
+                  alt="Pano Petali village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Pano Petali</h3>
+                <p className="text-muted-foreground mb-3">
+                  An elevated village offering spectacular views and traditional atmosphere. This charming settlement provides breathtaking panoramas of the island and authentic Cycladic architecture.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={troullaki} 
+                  alt="Troullaki village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Troullaki</h3>
+                <p className="text-muted-foreground mb-3">
+                  A small, peaceful settlement with rural charm and natural beauty. This tranquil village offers visitors an authentic experience of traditional island life away from the tourist crowds.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Northern Sifnos</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={agiosLoukas} 
+                  alt="Agios Loukas village in Sifnos" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-villa-olive mb-3">Agios Loukas</h3>
+                <p className="text-muted-foreground mb-3">
+                  A small, quiet settlement offering authentic island living and scenic views. This peaceful village provides visitors with a genuine experience of traditional Cycladic life and stunning landscapes.
+                </p>
+                <p className="text-sm text-villa-olive font-medium">Central Sifnos</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Seasonal Travel Tips */}
+      <section className="py-20 bg-villa-olive-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
+            Seasonal Travel Tips
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="border-villa-stone shadow-soft">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-villa-olive mb-4">Artemonas</h3>
-                <p className="text-muted-foreground">
-                  Known for its neoclassical mansions and traditional architecture, Artemonas is one 
-                  of the most elegant villages on the island.
-                </p>
+                <h3 className="text-2xl font-semibold text-villa-olive mb-6">Summer (June - September)</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Book accommodations well in advance as this is the peak season.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Temperatures range from 25°C to 35°C (77°F to 95°F). Bring lightweight clothing, sun protection, and plenty of swimwear.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Visit popular beaches early in the morning or late afternoon to avoid crowds.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Make restaurant reservations, especially in Apollonia and at popular seaside tavernas.
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-semibold text-villa-olive mb-6">Spring & Autumn (April-May, Oct-Nov)</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Perfect for hiking and exploring the island's nature as temperatures are mild (18°C to 25°C).
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Less crowded, with better rates on accommodations.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Spring offers beautiful wildflowers, while autumn provides warmer sea temperatures.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-villa-olive mr-2">•</span>
+                    Be prepared for reduced ferry schedules and some closed businesses, especially in late autumn.
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>

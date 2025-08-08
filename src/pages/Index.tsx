@@ -14,12 +14,21 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-hero" />
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />
+          {/* Fallback to image if video fails to load */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
+        </video>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Our Elegant Villa in Sifnos, Greece

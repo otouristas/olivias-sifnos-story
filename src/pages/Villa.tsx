@@ -4,35 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Waves, 
-  TreePine, 
-  Bed, 
-  Bath, 
-  Utensils, 
-  Tv, 
-  Wifi, 
-  Car, 
-  Shield, 
-  Shirt, 
-  ChefHat, 
-  Music, 
-  Baby, 
-  Calendar,
-  Coffee,
-  Flame,
-  Refrigerator,
-  Microwave,
-  Dishwasher,
-  Wine,
-  UtensilsCrossed,
-  BookOpen,
-  Gamepad2,
-  Plane,
-  Users,
-  MapPin,
-  Phone
-} from 'lucide-react';
+import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone } from 'lucide-react';
 
 // Mock images (placeholders) — feel free to replace with real villa photos
 import apollonia from '@/assets/Sifnos/villages/apollonia.webp';

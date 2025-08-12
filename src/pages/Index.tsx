@@ -3,10 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import heroImage from '@/assets/villa-hero.jpg';
-import poolView from '@/assets/pool-view.jpg';
-import villaLinens from '@/assets/villa-linens.jpg';
-import elenaHost from '@/assets/elena-host.jpg';
+import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
+import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
+import villaLinens from '@/assets/Sifnos/Beaches/chrysopigi.webp';
+import elenaHost from '@/assets/Sifnos/villages/apollonia.webp';
 
 const Index = () => {
   return (

@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import StickyBookingBar from '@/components/StickyBookingBar';
+import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
 import villaLinens from '@/assets/Sifnos/Beaches/chrysopigi.webp';
@@ -14,12 +16,14 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="main-content" className="relative h-screen flex items-center justify-center overflow-hidden">
         <video 
           autoPlay 
           muted 
           loop 
           playsInline
+          poster={heroImage}
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />
@@ -29,27 +33,39 @@ const Index = () => {
             style={{ backgroundImage: `url(${heroImage})` }}
           />
         </video>
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        
+        {/* Hero Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
+        
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
             Our Elegant Villa in Sifnos, Greece
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90">
+          <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
             Villa Olivia Clara is an elegant, 250m² villa in Platis Gialos, Sifnos, Greece. 
             Perfect for groups or families up to 8 people looking for luxurious accommodations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="villa">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button asChild size="lg" variant="villa" className="animate-scale-in">
               <Link to="/villa">Take the Tour</Link>
             </Button>
-            <Button asChild size="lg" variant="villa-outline">
+            <Button asChild size="lg" variant="villa-outline" className="animate-scale-in">
               <Link to="/contact">Book Now →</Link>
             </Button>
+          </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+            <div className="flex flex-col items-center text-white/70">
+              <span className="text-sm mb-2">Discover More</span>
+              <ChevronDown size={24} />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-sand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
@@ -146,7 +162,7 @@ const Index = () => {
       </section>
 
       {/* Sifnos Section */}
-      <section className="py-20 bg-villa-olive-light">
+      <section className="py-20 bg-sand">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6 text-villa-olive">
             Explore the Beauty of Sifnos with Us
@@ -235,6 +251,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <StickyBookingBar />
     </div>
   );
 };

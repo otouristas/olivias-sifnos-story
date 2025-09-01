@@ -7,71 +7,72 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 74 30% 20%;
+    --foreground: 35 25% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 74 30% 20%;
+    --card-foreground: 35 25% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 74 30% 20%;
+    --popover-foreground: 35 25% 25%;
 
-    --primary: 74 29% 44%;
+    --primary: 66 15% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 8% 88%;
-    --secondary-foreground: 74 30% 20%;
+    --secondary: 35 15% 96%;
+    --secondary-foreground: 35 25% 25%;
 
-    --muted: 40 12% 94%;
-    --muted-foreground: 74 20% 40%;
+    --muted: 35 15% 96%;
+    --muted-foreground: 35 25% 50%;
 
-    --accent: 205 85% 45%;
+    --accent: 200 85% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 74 20% 88%;
-    --input: 74 20% 88%;
-    --ring: 74 29% 44%;
+    --border: 35 15% 90%;
+    --input: 35 15% 90%;
+    --ring: 66 15% 35%;
 
-    /* Cycladic Villa Colors */
-    --villa-olive: 74 29% 44%;
-    --villa-olive-light: 74 25% 92%;
-    --villa-olive-dark: 74 30% 35%;
-    --villa-white: 0 0% 100%;
-    --villa-cream: 45 15% 96%;
-    --villa-stone: 35 8% 88%;
-    --villa-stone-light: 40 12% 94%;
-    --villa-aegean: 205 85% 45%;
-    --villa-aegean-light: 205 65% 85%;
-    --villa-aegean-dark: 205 95% 35%;
+    /* Enhanced Cycladic Sand Palette */
+    --sand: 35 25% 92%;
+    --sand-foreground: 35 25% 25%;
+    --sand-light: 35 15% 96%;
+    --sand-dark: 35 35% 80%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(205 85% 45% / 0.8), hsl(74 29% 44% / 0.9));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 12% 97%));
-    --gradient-aegean: linear-gradient(135deg, hsl(205 85% 45%), hsl(205 95% 35%));
-    --gradient-stone: linear-gradient(180deg, hsl(35 8% 88%), hsl(40 12% 94%));
+    /* Villa Olivia Clara Colors - Enhanced Cycladic Palette */
+    --villa-olive: 66 15% 35%; /* Olive green from Sifnos */
+    --villa-olive-light: 66 15% 85%; /* Light olive background */
+    --villa-stone: 35 10% 85%; /* Natural stone color */
+    --villa-stone-dark: 35 15% 65%; /* Darker stone accent */
+    --villa-gold: 38 50% 75%; /* Warm gold accent */
+    --villa-terracotta: 15 40% 60%; /* Terracotta earth tone */
+    --aegean-blue: 200 85% 65%; /* Deep Aegean Sea blue */
+    --aegean-light: 200 50% 90%; /* Light Aegean blue */
 
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(74 29% 44% / 0.2);
-    --shadow-soft: 0 4px 20px -5px hsl(74 29% 44% / 0.1);
+    /* Enhanced Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--villa-olive)) 0%, hsl(var(--aegean-blue)) 50%, hsl(var(--villa-stone-dark)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--sand-light)) 50%, hsl(var(--villa-olive-light)) 100%);
+    --gradient-villa: linear-gradient(135deg, hsl(var(--villa-gold)) 0%, hsl(var(--villa-terracotta)) 100%);
+    --gradient-pool: linear-gradient(135deg, hsl(var(--aegean-blue)) 0%, hsl(var(--aegean-light)) 100%);
+    --gradient-olive: linear-gradient(135deg, hsl(var(--villa-olive)) 0%, hsl(66 25% 50%) 100%);
+    --gradient-stone: linear-gradient(135deg, hsl(var(--villa-stone)) 0%, hsl(var(--villa-stone-dark)) 100%);
+    --gradient-hero-overlay: linear-gradient(0deg, hsl(0 0% 0% / 0.4) 0%, hsl(0 0% 0% / 0.1) 50%, transparent 100%);
 
-    --radius: 0.5rem;
+    /* Enhanced Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--villa-olive) / 0.2);
+    --shadow-soft: 0 4px 20px -5px hsl(var(--villa-olive) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--aegean-blue) / 0.3);
 
+    --radius: 0.75rem;
+    
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -120,6 +121,68 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans leading-relaxed;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+
+  /* Skip to content link accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus {
+    outline: 2px solid hsl(var(--villa-olive));
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

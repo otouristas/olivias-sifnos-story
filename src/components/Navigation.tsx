@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 // Import logo
@@ -41,52 +42,54 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.link}
                 to={item.link}
-                className={`text-base font-medium transition-colors ${
-                  isActive(item.link)
-                    ? 'text-villa-olive'
-                    : 'text-foreground hover:text-villa-olive'
-                }`}
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors ${
+                    isActive
+                      ? 'text-villa-olive font-semibold'
+                      : 'text-foreground hover:text-villa-olive'
+                  }`
+                }
               >
                 {item.text}
-              </Link>
+              </NavLink>
             ))}
             
             {/* Sifnos Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setIsSifnosOpen(!isSifnosOpen)}
-                onBlur={() => setTimeout(() => setIsSifnosOpen(false), 150)}
-                className={`flex items-center text-base font-medium transition-colors ${
-                  isSifnosActive()
-                    ? 'text-villa-olive'
-                    : 'text-foreground hover:text-villa-olive'
-                }`}
-              >
-                Discover Sifnos
-                <ChevronDown size={16} className={`ml-1 transition-transform ${isSifnosOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isSifnosOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-villa-stone py-2 z-50">
-                  {sifnosSubmenu.map((item) => (
-                    <Link
-                      key={item.link}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`flex items-center text-base font-medium transition-colors ${
+                    isSifnosActive()
+                      ? 'text-villa-olive font-semibold'
+                      : 'text-foreground hover:text-villa-olive'
+                  }`}
+                >
+                  Discover Sifnos
+                  <ChevronDown size={16} className="ml-1 transition-transform" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-background border-villa-stone shadow-elegant z-50">
+                {sifnosSubmenu.map((item) => (
+                  <DropdownMenuItem key={item.link} asChild>
+                    <NavLink
                       to={item.link}
-                      className={`block px-4 py-2 text-sm transition-colors ${
-                        isActive(item.link)
-                          ? 'text-villa-olive bg-villa-olive-light'
-                          : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
-                      }`}
+                      className={({ isActive }) =>
+                        `w-full px-4 py-2 text-sm transition-colors cursor-pointer ${
+                          isActive
+                            ? 'text-villa-olive bg-villa-olive-light font-medium'
+                            : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                        }`
+                      }
                     >
                       {item.text}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                    </NavLink>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
                          <Button asChild variant="villa" size="default">
               <Link to="/contact">Book Now →</Link>

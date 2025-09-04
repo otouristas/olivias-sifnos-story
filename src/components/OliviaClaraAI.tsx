@@ -245,6 +245,13 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                   </button>
                 ))}
               </div>
+              
+              {/* Powered by */}
+              <div className="flex justify-center mt-3 pt-2 border-t border-villa-stone/20">
+                <p className="text-xs text-gray-400">
+                  Powered by <span className="font-medium text-villa-olive">Touristas AI</span>
+                </p>
+              </div>
             </div>
           </CardContent>
         )}

@@ -30,7 +30,7 @@ const Navigation = () => {
   return (
     <nav className="bg-white/95 backdrop-blur-sm shadow-soft sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                 <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
@@ -46,8 +46,8 @@ const Navigation = () => {
             <NavLink
               to="/villa"
               className={({ isActive }) =>
-                `text-base font-medium transition-colors ${
-                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                `text-base font-medium ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground'
                 }`
               }
             >
@@ -55,59 +55,45 @@ const Navigation = () => {
             </NavLink>
 
             {/* Discover Sifnos Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsSifnosOpen(true)}
-              onMouseLeave={() => setIsSifnosOpen(false)}
-            >
-              <DropdownMenu open={isSifnosOpen} onOpenChange={setIsSifnosOpen}>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    aria-haspopup="menu"
-                    aria-expanded={isSifnosOpen}
-                    aria-controls="sifnos-submenu"
-                    className={`flex items-center text-base font-medium transition-colors ${
-                      isSifnosActive()
-                        ? 'text-villa-olive font-semibold'
-                        : 'text-foreground hover:text-villa-olive'
-                    }`}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Escape') setIsSifnosOpen(false);
-                      if (e.key === 'ArrowDown') setIsSifnosOpen(true);
-                    }}
-                  >
-                    Discover Sifnos
-                    <ChevronDown size={16} className={`ml-1 transition-transform ${isSifnosOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent id="sifnos-submenu" className="w-56 bg-background border-villa-stone shadow-elegant z-50">
+            <div className="relative">
+              <button
+                onClick={() => setIsSifnosOpen(!isSifnosOpen)}
+                className={`flex items-center text-base font-medium ${
+                  isSifnosActive()
+                    ? 'text-villa-olive font-semibold'
+                    : 'text-foreground'
+                }`}
+              >
+                Discover Sifnos
+                <ChevronDown size={16} className={`ml-1 ${isSifnosOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isSifnosOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-background border-villa-stone shadow-elegant z-50 rounded-lg">
                   {sifnosSubmenu.map((item) => (
-                    <DropdownMenuItem key={item.link} asChild>
-                      <NavLink
-                        to={item.link}
-                        className={({ isActive }) =>
-                          `w-full px-4 py-2 text-sm transition-colors cursor-pointer ${
-                            isActive
-                              ? 'text-villa-olive bg-villa-olive-light font-medium'
-                              : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
-                          }`
-                        }
-                        onClick={() => setIsSifnosOpen(false)}
-                      >
-                        {item.text}
-                      </NavLink>
-                    </DropdownMenuItem>
+                    <Link
+                      key={item.link}
+                      to={item.link}
+                      className={`block w-full px-4 py-2 text-sm ${
+                        isActive(item.link)
+                          ? 'text-villa-olive bg-villa-olive-light font-medium'
+                          : 'text-foreground'
+                      }`}
+                      onClick={() => setIsSifnosOpen(false)}
+                    >
+                      {item.text}
+                    </Link>
                   ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </div>
+              )}
             </div>
 
             {/* Guest Reviews */}
             <NavLink
               to="/reviews"
               className={({ isActive }) =>
-                `text-base font-medium transition-colors ${
-                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                `text-base font-medium ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground'
                 }`
               }
             >
@@ -118,8 +104,8 @@ const Navigation = () => {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `text-base font-medium transition-colors ${
-                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                `text-base font-medium ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground'
                 }`
               }
             >
@@ -130,8 +116,8 @@ const Navigation = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `text-base font-medium transition-colors ${
-                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                `text-base font-medium ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground'
                 }`
               }
             >
@@ -140,14 +126,14 @@ const Navigation = () => {
 
             {/* Book Now */}
             <Button asChild variant="villa" size="default">
-              <Link to="/contact">Book Now</Link>
+              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Book Now</a>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-foreground hover:text-villa-olive"
+            className="md:hidden p-2 rounded-md text-foreground"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -161,10 +147,10 @@ const Navigation = () => {
               <Link
                 to="/villa"
                 onClick={() => setIsOpen(false)}
-                className={`px-3 py-2 text-base font-medium transition-colors ${
+                className={`px-3 py-2 text-base font-medium ${
                   isActive('/villa')
                     ? 'text-villa-olive bg-villa-olive-light'
-                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                    : 'text-foreground'
                 }`}
               >
                 Our Villa
@@ -179,10 +165,10 @@ const Navigation = () => {
                       key={item.link}
                       to={item.link}
                       onClick={() => setIsOpen(false)}
-                      className={`block px-3 py-2 text-sm transition-colors rounded ${
+                      className={`block px-3 py-2 text-sm rounded ${
                         isActive(item.link)
                           ? 'text-villa-olive bg-villa-olive-light'
-                          : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                          : 'text-foreground'
                       }`}
                     >
                       {item.text}
@@ -195,10 +181,10 @@ const Navigation = () => {
               <Link
                 to="/reviews"
                 onClick={() => setIsOpen(false)}
-                className={`px-3 py-2 text-base font-medium transition-colors ${
+                className={`px-3 py-2 text-base font-medium ${
                   isActive('/reviews')
                     ? 'text-villa-olive bg-villa-olive-light'
-                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                    : 'text-foreground'
                 }`}
               >
                 Guest Reviews
@@ -208,10 +194,10 @@ const Navigation = () => {
               <Link
                 to="/blog"
                 onClick={() => setIsOpen(false)}
-                className={`px-3 py-2 text-base font-medium transition-colors ${
+                className={`px-3 py-2 text-base font-medium ${
                   isActive('/blog')
                     ? 'text-villa-olive bg-villa-olive-light'
-                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                    : 'text-foreground'
                 }`}
               >
                 Blog
@@ -221,10 +207,10 @@ const Navigation = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className={`px-3 py-2 text-base font-medium transition-colors ${
+                className={`px-3 py-2 text-base font-medium ${
                   isActive('/contact')
                     ? 'text-villa-olive bg-villa-olive-light'
-                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                    : 'text-foreground'
                 }`}
               >
                 Contact Us
@@ -232,9 +218,9 @@ const Navigation = () => {
 
               <div className="px-3 py-2">
                 <Button asChild variant="villa" size="sm" className="w-full">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">
                     Book Now
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>

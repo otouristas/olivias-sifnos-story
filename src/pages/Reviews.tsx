@@ -54,7 +54,7 @@ export default function Reviews(): JSX.Element {
       </header>
       <main className="py-20 space-y-20">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {Object.entries(grouped).map(([year, items]) => (
+          {Object.entries(grouped).sort(([a], [b]) => parseInt(b) - parseInt(a)).map(([year, items]) => (
             <div key={year} className="mb-16">
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px flex-1 bg-villa-stone" />

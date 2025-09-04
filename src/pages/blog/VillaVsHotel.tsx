@@ -64,7 +64,7 @@ const VillaVsHotel = () => {
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8">
             <div className="flex items-center gap-2">
               <User size={16} />
-              <span>Elena Papadakis</span>
+              <span>Elena Philippou</span>
             </div>
             <div className="flex items-center gap-2">
               <Calendar size={16} />
@@ -354,7 +354,7 @@ const VillaVsHotel = () => {
               <User size={24} className="text-villa-olive" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-villa-olive mb-2">Elena Papadakis</h3>
+              <h3 className="text-lg font-semibold text-villa-olive mb-2">Elena Philippou</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Elena has been hosting guests at Villa Olivia Clara for over 10 years. Her passion for hospitality and deep love for Sifnos ensures that every guest experiences the authentic charm and beauty of the island through personalized service and local expertise.
               </p>

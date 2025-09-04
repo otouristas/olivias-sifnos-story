@@ -334,7 +334,7 @@ const Index = () => {
             </div>
           </div>
           <Button asChild size="lg" variant="villa-outline">
-            <Link to="/contact">Let's Book Your Stay →</Link>
+            <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Let's Book Your Stay →</a>
           </Button>
         </div>
       </section>

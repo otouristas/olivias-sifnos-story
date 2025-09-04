@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 
@@ -22,9 +21,9 @@ const StickyBookingBar = () => {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-villa-olive/95 backdrop-blur-sm border-t border-villa-stone shadow-elegant animate-slide-in-right">
       <div className="p-4">
         <Button asChild variant="villa-outline" size="lg" className="w-full bg-white text-villa-olive hover:bg-villa-olive hover:text-white border-white">
-          <Link to="/contact">
+          <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">
             Book Your Stay Now →
-          </Link>
+          </a>
         </Button>
       </div>
     </div>

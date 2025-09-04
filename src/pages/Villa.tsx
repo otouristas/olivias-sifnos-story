@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
+import { FeatureList } from '@/components/villa/feature-list';
+import { Gallery } from '@/components/villa/gallery';
 import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone } from 'lucide-react';
 
 // Mock images (placeholders) — feel free to replace with real villa photos
@@ -39,52 +41,7 @@ const SectionNav = () => (
   </nav>
 );
 
-const FeatureList = ({ title, items, icon: Icon }: { title?: string; items: string[]; icon?: any }) => (
-  <div className="bg-white rounded-xl p-6 shadow-soft border border-gray-100">
-    {title && (
-      <div className="flex items-center gap-3 mb-4">
-        {Icon && <Icon className="text-villa-olive" size={24} />}
-        <h4 className="text-xl font-semibold text-villa-olive">{title}</h4>
-      </div>
-    )}
-    <ul className="space-y-3">
-      {items.map((item, i) => (
-        <li key={i} className="flex items-start gap-3">
-          <div className="w-2 h-2 rounded-full bg-villa-olive mt-2 flex-shrink-0"></div>
-          <span className="text-gray-700 leading-relaxed">{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const Gallery = ({
-  items,
-  columns = 'md:grid-cols-3',
-}: {
-  items: { src: string; alt: string; caption?: string }[];
-  columns?: string;
-}) => (
-  <div className={`grid grid-cols-1 ${columns} gap-6`}>
-    {items.map((g, i) => (
-      <figure key={i} className="group overflow-hidden rounded-xl shadow-soft hover:shadow-elegant transition-all duration-300">
-        <div className="overflow-hidden">
-          <img
-            src={g.src}
-            alt={g.alt}
-            loading="lazy"
-            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        {g.caption && (
-          <figcaption className="px-4 py-3 text-sm text-gray-600 bg-white">
-            {g.caption}
-          </figcaption>
-        )}
-      </figure>
-    ))}
-  </div>
-);
+// extracted FeatureList and Gallery
 
 const Villa = () => {
   // SEO
@@ -123,12 +80,12 @@ const Villa = () => {
       <SectionNav />
 
       <main className="py-20 space-y-32">
-        <section id="outdoors" className="scroll-mt-28">
+        <section id="outdoors" aria-labelledby="outdoors-title" className="scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Waves className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Outdoors</h2>
+                <h2 id="outdoors-title" className="text-4xl font-bold text-villa-olive">Outdoors</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Experience the beauty of Sifnos from our stunning outdoor spaces
@@ -148,7 +105,7 @@ const Villa = () => {
                   </div>
                   <FeatureList
                     title="Pool Features"
-                    icon={Waves}
+                    icon={(p) => <Waves {...p} />}
                     items={[
                       '12m x 5m pool (3m depth)',
                       'Shaded pool-side cabana',
@@ -199,7 +156,7 @@ const Villa = () => {
                   </div>
                   <FeatureList
                     title="Garden Features"
-                    icon={TreePine}
+                    icon={(p) => <TreePine {...p} />}
                     items={[
                       'Large stone terrace with panoramic views',
                       'Stone fence garden with native plants',
@@ -256,12 +213,12 @@ const Villa = () => {
         </section>
 
         {/* Bedrooms */}
-        <section id="bedrooms" className="scroll-mt-28">
+        <section id="bedrooms" aria-labelledby="bedrooms-title" className="scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bed className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Bedrooms</h2>
+                <h2 id="bedrooms-title" className="text-4xl font-bold text-villa-olive">Bedrooms</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Wake up to breathtaking views of Platis Gialos, the most popular beach in Sifnos
@@ -271,7 +228,7 @@ const Villa = () => {
             <div className="mb-12">
               <FeatureList
                 title="Bedroom Features"
-                icon={Bed}
+                icon={(p) => <Bed {...p} />}
                 items={[
                   '2 king beds (200 x 200cm) with premium mattresses',
                   '4 single beds (100 x 200cm) perfect for children or adults',
@@ -317,12 +274,12 @@ const Villa = () => {
         </section>
 
         {/* Bathrooms */}
-        <section id="bathrooms" className="scroll-mt-28">
+        <section id="bathrooms" aria-labelledby="bathrooms-title" className="scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bath className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Bathrooms</h2>
+                <h2 id="bathrooms-title" className="text-4xl font-bold text-villa-olive">Bathrooms</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Feel at home in the luxury of our villa's elegant and well-appointed bathrooms
@@ -332,7 +289,7 @@ const Villa = () => {
             <div className="mb-12">
               <FeatureList
                 title="Bathroom Features"
-                icon={Bath}
+                icon={(p) => <Bath {...p} />}
                 items={[
                   '3 full bathrooms with modern fixtures, 1 convenient WC',
                   'Unlimited hot water with efficient heating system',
@@ -380,12 +337,12 @@ const Villa = () => {
         </section>
 
         {/* Living Spaces */}
-        <section id="living" className="scroll-mt-28">
+        <section id="living" aria-labelledby="living-title" className="scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Utensils className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Living Spaces</h2>
+                <h2 id="living-title" className="text-4xl font-bold text-villa-olive">Living Spaces</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Wine and dine like a Greek god in one of our three distinctive dining spaces
@@ -395,7 +352,7 @@ const Villa = () => {
             <div className="mb-12">
               <FeatureList
                 title="Living Space Features"
-                icon={Utensils}
+                icon={(p) => <Utensils {...p} />}
                 items={[
                   'Elegant indoor dining area with sea views',
                   'Large outdoor dining area perfect for al fresco meals',
@@ -442,12 +399,12 @@ const Villa = () => {
         </section>
 
         {/* Amenities */}
-        <section id="amenities" className="scroll-mt-28">
+        <section id="amenities" aria-labelledby="amenities-title" className="scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Wifi className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Villa Amenities</h2>
+                <h2 id="amenities-title" className="text-4xl font-bold text-villa-olive">Villa Amenities</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Experience our five-star service and luxury amenities designed for your ultimate comfort

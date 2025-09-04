@@ -42,23 +42,19 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <NavLink
-                key={item.link}
-                to={item.link}
-                className={({ isActive }) =>
-                  `text-base font-medium transition-colors ${
-                    isActive
-                      ? 'text-villa-olive font-semibold'
-                      : 'text-foreground hover:text-villa-olive'
-                  }`
-                }
-              >
-                {item.text}
-              </NavLink>
-            ))}
-            
-            {/* Sifnos Dropdown */}
+            {/* Our Villa */}
+            <NavLink
+              to="/villa"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                }`
+              }
+            >
+              Our Villa
+            </NavLink>
+
+            {/* Discover Sifnos Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
@@ -91,7 +87,44 @@ const Navigation = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            
+
+            {/* Guest Reviews */}
+            <NavLink
+              to="/reviews"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                }`
+              }
+            >
+              Guest Reviews
+            </NavLink>
+
+            {/* Blog */}
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                }`
+              }
+            >
+              Blog
+            </NavLink>
+
+            {/* Contact Us */}
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors ${
+                  isActive ? 'text-villa-olive font-semibold' : 'text-foreground hover:text-villa-olive'
+                }`
+              }
+            >
+              Contact Us
+            </NavLink>
+
+            {/* Book Now */}
             <Button asChild variant="villa" size="default">
               <Link to="/contact">Book Now</Link>
             </Button>
@@ -110,21 +143,19 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-2">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.link}
-                  to={item.link}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-3 py-2 text-base font-medium transition-colors ${
-                    isActive(item.link)
-                      ? 'text-villa-olive bg-villa-olive-light'
-                      : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
-                  }`}
-                >
-                  {item.text}
-                </Link>
-              ))}
-              
+              {/* Our Villa */}
+              <Link
+                to="/villa"
+                onClick={() => setIsOpen(false)}
+                className={`px-3 py-2 text-base font-medium transition-colors ${
+                  isActive('/villa')
+                    ? 'text-villa-olive bg-villa-olive-light'
+                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                }`}
+              >
+                Our Villa
+              </Link>
+
               {/* Mobile Sifnos Submenu */}
               <div className="px-3 py-2">
                 <div className="text-base font-medium text-foreground mb-2">Discover Sifnos</div>
@@ -145,7 +176,46 @@ const Navigation = () => {
                   ))}
                 </div>
               </div>
-              
+
+              {/* Guest Reviews */}
+              <Link
+                to="/reviews"
+                onClick={() => setIsOpen(false)}
+                className={`px-3 py-2 text-base font-medium transition-colors ${
+                  isActive('/reviews')
+                    ? 'text-villa-olive bg-villa-olive-light'
+                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                }`}
+              >
+                Guest Reviews
+              </Link>
+
+              {/* Blog */}
+              <Link
+                to="/blog"
+                onClick={() => setIsOpen(false)}
+                className={`px-3 py-2 text-base font-medium transition-colors ${
+                  isActive('/blog')
+                    ? 'text-villa-olive bg-villa-olive-light'
+                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                }`}
+              >
+                Blog
+              </Link>
+
+              {/* Contact Us */}
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className={`px-3 py-2 text-base font-medium transition-colors ${
+                  isActive('/contact')
+                    ? 'text-villa-olive bg-villa-olive-light'
+                    : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                }`}
+              >
+                Contact Us
+              </Link>
+
               <div className="px-3 py-2">
                 <Button asChild variant="villa" size="sm" className="w-full">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>

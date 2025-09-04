@@ -1,91 +1,73 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { reviewsData, type GuestReview } from './reviews-data';
 
-const Reviews = () => {
-  const reviews = [
-    {
-      rating: 5,
-      author: "Alexis",
-      text: "Wonderful stay at the Villa Olivia Clara! The house has a perfect location near Platis Gialos, walking distance, and an amazing view on the bay. The house is clean, big and has a lot of accommodation. Elena made our stay just perfect when we asked for baby equipment and got everything ready for us. Elena is such a great host! It is the 2nd time in 3 years the we book the villa and we should do it again soon for sure. No hesitation: the best villa in Sifnos."
-    },
-    {
-      rating: 5,
-      author: "Li-Chuen",
-      text: "We are family of 5, with three young adult/adolescent children. We have literally had the most magical holiday at Elena's villa. The photos just don't do justice to this incredibly stunning home. The view is breath-taking and it's just 5 min walk to downtown Platis Gialos, where you will find a great beach and many restaurants. Elena's villa is a home, with nothing wanting at all. I actually cannot believe we have had the privilege to stay at this exceptional place. Please do not hesitate to book!"
-    },
-    {
-      rating: 5,
-      author: "Savvas",
-      text: "We were over the moon with our experience at Villa Olivia Clara in Sifnos Greece. The photos don't even do it justice. When we arrived, we were so surprised to see that it looked even better than the images. There's a high rate sense of style throughout, beautiful design, every corner is a moment. And on top of it all, an incredible view as well! It truly elevated our Sifnos experience. Highly recommended."
-    }
-  ];
+function formatDate(input: string): string {
+  const d: Date = new Date(input);
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: '2-digit' };
+  return new Intl.DateTimeFormat('en-GB', options).format(d);
+}
+
+function getYear(date: string): number { return new Date(date).getFullYear(); }
+
+export default function Reviews(): JSX.Element {
+  const sorted: ReadonlyArray<GuestReview> = [...reviewsData].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const grouped: Record<number, ReadonlyArray<GuestReview>> = sorted.reduce((acc, r) => {
+    const y: number = getYear(r.date);
+    const arr: ReadonlyArray<GuestReview> = acc[y] ?? [];
+    return { ...acc, [y]: [...arr, r] };
+  }, {} as Record<number, ReadonlyArray<GuestReview>>);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-subtle">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6 text-villa-olive">
-            What Our Guests Are Saying
-          </h1>
-          <p className="text-xl text-muted-foreground mb-4">
-            We are proud to have hosted guests from all over the world for over 10 years. 
-            Their wonderful experiences are the best testament to the magic of Villa Olivia Clara.
-          </p>
-          <p className="text-lg font-semibold text-villa-olive">
-            Average rating of 5 stars from more than 45 reviews.
-          </p>
+      <header className="py-24 bg-gradient-hero text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">Kind Words From Our Guests</h1>
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">Thoughtfully curated impressions from recent stays at Villa Olivia Clara.</p>
         </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {reviews.map((review, index) => (
-              <Card key={index} className="border-villa-stone shadow-soft">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <div className="text-yellow-500 text-xl mr-4">
-                      {"★".repeat(review.rating)}
-                    </div>
-                    <h3 className="text-xl font-semibold text-villa-olive">
-                      {review.author}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    "{review.text}"
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+      </header>
+      <main className="py-20 space-y-20">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {Object.entries(grouped).map(([year, items]) => (
+            <div key={year} className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-villa-stone" />
+                <h2 className="text-2xl font-semibold text-villa-olive">{year}</h2>
+                <div className="h-px flex-1 bg-villa-stone" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {items.map((r, i) => (
+                  <Card key={`${year}-${i}`} className="border-0 shadow-elegant bg-white/80 backdrop-blur">
+                    <CardContent className="p-8">
+                      <div className="flex items-start justify-between mb-6">
+                        <div>
+                          <div className="text-villa-olive text-xl" aria-label={`${r.rating} out of 5`}>{'★'.repeat(r.rating)}</div>
+                          <h3 className="mt-2 text-lg font-semibold text-villa-olive">{r.author}</h3>
+                        </div>
+                        <time className="text-sm text-gray-500" dateTime={r.date}>{formatDate(r.date)}</time>
+                      </div>
+                      <blockquote className="text-gray-700 leading-relaxed">“{r.text}”</blockquote>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+        <section className="bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <h2 className="text-3xl font-semibold text-villa-olive mb-4">Plan Your Stay</h2>
+            <p className="text-lg text-gray-600 mb-8">We would be honored to welcome you to our home in Sifnos.</p>
+            <Button asChild size="lg" variant="villa-outline"><Link to="/contact">Get In Touch →</Link></Button>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Let Us Host Your Unforgettable Vacation
-          </h2>
-          <p className="text-xl mb-8 text-white/90">
-            Join our family of happy guests and create memories that will last a lifetime.
-          </p>
-          <Button asChild size="lg" variant="villa-outline">
-            <Link to="/contact">Book Your Stay →</Link>
-          </Button>
-        </div>
-      </section>
-
+        </section>
+      </main>
       <Footer />
     </div>
   );
-};
-
-export default Reviews;
+}

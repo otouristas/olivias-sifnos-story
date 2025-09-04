@@ -179,21 +179,20 @@
     outline: none;
   }
 
-  /* Improve link accessibility */
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-
+  /* Normalize link styling across states: no underline, no borders, no bg changes */
+  a,
+  a:hover,
+  a:focus,
+  a:active,
   a:focus-visible {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
+    text-decoration: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  /* Ensure anchors do not show focus outline that may look like a border */
+  a:focus,
+  a:focus-visible {
+    outline: none;
   }
 
   /* Button focus improvements */

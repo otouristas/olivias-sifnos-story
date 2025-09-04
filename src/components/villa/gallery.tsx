@@ -7,9 +7,10 @@ export interface GalleryItem {
 export interface GalleryProps {
   readonly items: ReadonlyArray<GalleryItem>;
   readonly columns?: string; // tailwind grid columns e.g. 'md:grid-cols-3'
+  readonly sizes?: string; // responsive sizes attribute
 }
 
-export function Gallery({ items, columns = "md:grid-cols-3" }: GalleryProps): JSX.Element {
+export function Gallery({ items, columns = "md:grid-cols-3", sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" }: GalleryProps): JSX.Element {
   return (
     <div className={`grid grid-cols-1 ${columns} gap-6`}>
       {items.map((g, index) => (
@@ -20,6 +21,7 @@ export function Gallery({ items, columns = "md:grid-cols-3" }: GalleryProps): JS
               alt={g.alt}
               loading="lazy"
               decoding="async"
+              sizes={sizes}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>

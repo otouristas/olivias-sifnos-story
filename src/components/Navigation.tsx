@@ -14,8 +14,8 @@ const Navigation = () => {
 
   const navigationItems = [
     { text: 'Our Villa', link: '/villa' },
-    { text: 'Guest Reviews', link: '/reviews' },
     { text: 'Blog', link: '/blog' },
+    { text: 'Guest Reviews', link: '/reviews' },
     { text: 'Contact Us', link: '/contact' },
   ];
 

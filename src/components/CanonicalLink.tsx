@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const BASE_URL: string = 'https://villaoliviaclara.com';
+const BASE_URL: string = import.meta.env.VITE_SITE_URL ?? 'https://villaoliviaclara.com';
 
 export default function CanonicalLink(): null {
   const { pathname } = useLocation();

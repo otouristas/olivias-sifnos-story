@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { reviewsData, type GuestReview } from './reviews-data';
+import SeoJsonLd from '@/components/SeoJsonLd';
 
 function formatDate(input: string): string {
   const d: Date = new Date(input);
@@ -23,6 +24,25 @@ export default function Reviews(): JSX.Element {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      <SeoJsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Villa Olivia Clara',
+        description: 'Luxury villa in Sifnos with private pool, sea views, and concierge services.',
+        url: (import.meta.env.VITE_SITE_URL ?? 'https://villaoliviaclara.com') + '/reviews',
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: (reviewsData.reduce((s, r) => s + r.rating, 0) / reviewsData.length).toFixed(2),
+          reviewCount: reviewsData.length
+        },
+        review: reviewsData.slice(0, 12).map(r => ({
+          '@type': 'Review',
+          author: { '@type': 'Person', name: r.author },
+          reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+          datePublished: r.date,
+          reviewBody: r.text
+        }))
+      }} />
       <Navigation />
       <header className="py-24 bg-gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />

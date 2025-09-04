@@ -55,38 +55,52 @@ const Navigation = () => {
             </NavLink>
 
             {/* Discover Sifnos Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={`flex items-center text-base font-medium transition-colors ${
-                    isSifnosActive()
-                      ? 'text-villa-olive font-semibold'
-                      : 'text-foreground hover:text-villa-olive'
-                  }`}
-                >
-                  Discover Sifnos
-                  <ChevronDown size={16} className="ml-1 transition-transform" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-background border-villa-stone shadow-elegant z-50">
-                {sifnosSubmenu.map((item) => (
-                  <DropdownMenuItem key={item.link} asChild>
-                    <NavLink
-                      to={item.link}
-                      className={({ isActive }) =>
-                        `w-full px-4 py-2 text-sm transition-colors cursor-pointer ${
-                          isActive
-                            ? 'text-villa-olive bg-villa-olive-light font-medium'
-                            : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
-                        }`
-                      }
-                    >
-                      {item.text}
-                    </NavLink>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div
+              className="relative"
+              onMouseEnter={() => setIsSifnosOpen(true)}
+              onMouseLeave={() => setIsSifnosOpen(false)}
+            >
+              <DropdownMenu open={isSifnosOpen} onOpenChange={setIsSifnosOpen}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    aria-haspopup="menu"
+                    aria-expanded={isSifnosOpen}
+                    aria-controls="sifnos-submenu"
+                    className={`flex items-center text-base font-medium transition-colors ${
+                      isSifnosActive()
+                        ? 'text-villa-olive font-semibold'
+                        : 'text-foreground hover:text-villa-olive'
+                    }`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Escape') setIsSifnosOpen(false);
+                      if (e.key === 'ArrowDown') setIsSifnosOpen(true);
+                    }}
+                  >
+                    Discover Sifnos
+                    <ChevronDown size={16} className={`ml-1 transition-transform ${isSifnosOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent id="sifnos-submenu" className="w-56 bg-background border-villa-stone shadow-elegant z-50">
+                  {sifnosSubmenu.map((item) => (
+                    <DropdownMenuItem key={item.link} asChild>
+                      <NavLink
+                        to={item.link}
+                        className={({ isActive }) =>
+                          `w-full px-4 py-2 text-sm transition-colors cursor-pointer ${
+                            isActive
+                              ? 'text-villa-olive bg-villa-olive-light font-medium'
+                              : 'text-foreground hover:text-villa-olive hover:bg-villa-olive-light/50'
+                          }`
+                        }
+                        onClick={() => setIsSifnosOpen(false)}
+                      >
+                        {item.text}
+                      </NavLink>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
             {/* Guest Reviews */}
             <NavLink

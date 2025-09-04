@@ -1,17 +1,35 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
 import CookieConsent from '@/components/CookieConsent';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Calendar } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
 import villaLinens from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 import elenaHost from '@/assets/Sifnos/villages/apollonia.webp';
 
 const Index = () => {
+  const navigate = useNavigate();
+  const getDateStringPlusDays = (daysToAdd: number): string => {
+    const date: Date = new Date();
+    date.setDate(date.getDate() + daysToAdd);
+    const year: number = date.getFullYear();
+    const month: string = String(date.getMonth() + 1).padStart(2, '0');
+    const day: string = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [checkIn, setCheckIn] = useState<string>(getDateStringPlusDays(0));
+  const [checkOut, setCheckOut] = useState<string>(getDateStringPlusDays(1));
+
+  function handleSearchSubmit(event: React.FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
+    navigate(`/contact?checkIn=${encodeURIComponent(checkIn)}&checkOut=${encodeURIComponent(checkOut)}`);
+  }
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -39,20 +57,42 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-            Our Elegant Villa in Sifnos, Greece
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-            Villa Olivia Clara is an elegant, 250m² villa in Platis Gialos, Sifnos, Greece. 
-            Perfect for groups or families up to 8 people looking for luxurious accommodations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="villa" className="animate-scale-in">
-              <Link to="/villa">Take the Tour</Link>
-            </Button>
-            <Button asChild size="lg" variant="villa-outline" className="animate-scale-in">
-              <Link to="/contact">Book Now</Link>
-            </Button>
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">Villa Olivia Clara</h1>
+          <p className="text-2xl md:text-3xl mb-6 text-white/95">Sifnos, Greece</p>
+          <div className="mt-2 flex justify-center">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="bg-white/85 backdrop-blur-sm rounded-xl shadow-soft border border-white/60 px-4 py-3 md:px-6 md:py-4 flex flex-col sm:flex-row items-stretch sm:items-end gap-3"
+            >
+              <div className="flex-1 min-w-[220px] text-left">
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Check-in</label>
+                <div className="relative">
+                  <input
+                    type="date"
+                    value={checkIn}
+                    onChange={(e) => setCheckIn(e.target.value)}
+                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 pr-9 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
+                  />
+                  <Calendar size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
+                </div>
+              </div>
+              <div className="flex-1 min-w-[220px] text-left">
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Check-out</label>
+                <div className="relative">
+                  <input
+                    type="date"
+                    value={checkOut}
+                    onChange={(e) => setCheckOut(e.target.value)}
+                    min={checkIn}
+                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 pr-9 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
+                  />
+                  <Calendar size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
+                </div>
+              </div>
+              <div className="sm:self-end">
+                <Button type="submit" variant="villa" size="sm" className="px-6">Search</Button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

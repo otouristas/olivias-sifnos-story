@@ -184,14 +184,18 @@ const Contact = () => {
                 </CardContent>
               </Card>
               
-              {/* Map placeholder */}
+              {/* Map */}
               <Card className="border-villa-stone shadow-soft">
-                <CardContent className="p-8">
-                  <div className="bg-villa-olive-light rounded-lg h-64 flex items-center justify-center">
-                    <p className="text-villa-olive text-center">
-                      Map of Platis Gialos in Sifnos, Greece<br />
-                      <span className="text-sm">Villa Olivia Clara location</span>
-                    </p>
+                <CardContent className="p-0">
+                  <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                    <iframe
+                      title="Villa Olivia Clara on Google Maps"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.346087785217!2d24.72047107638427!3d36.929896260376985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1498f3af72130097%3A0x80714f4ef96841f0!2sVilla%20Olivia%20Clara!5e0!3m2!1sen!2sgr!4v1756997977998!5m2!1sen!2sgr"
+                      className="absolute inset-0 w-full h-full border-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                    />
                   </div>
                 </CardContent>
               </Card>

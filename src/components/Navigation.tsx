@@ -15,6 +15,7 @@ const Navigation = () => {
   const navigationItems = [
     { text: 'Our Villa', link: '/villa' },
     { text: 'Guest Reviews', link: '/reviews' },
+    { text: 'Blog', link: '/blog' },
     { text: 'Contact Us', link: '/contact' },
   ];
 
@@ -32,11 +33,11 @@ const Navigation = () => {
                  <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-                         <img 
-               src={logo} 
-               alt="Villa Olivia Clara" 
-               className="h-16 w-auto"
-             />
+            <img 
+              src={logo} 
+              alt="Villa Olivia Clara" 
+              className="h-12 md:h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -91,8 +92,8 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-                         <Button asChild variant="villa" size="default">
-              <Link to="/contact">Book Now →</Link>
+            <Button asChild variant="villa" size="default">
+              <Link to="/contact">Book Now</Link>
             </Button>
           </div>
 
@@ -148,7 +149,7 @@ const Navigation = () => {
               <div className="px-3 py-2">
                 <Button asChild variant="villa" size="sm" className="w-full">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    Book Now →
+                    Book Now
                   </Link>
                 </Button>
               </div>

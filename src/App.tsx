@@ -9,6 +9,12 @@ import Sifnos from "./pages/Sifnos";
 import SifnosBeaches from "./pages/SifnosBeaches";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import SifnosGuide from "./pages/blog/SifnosGuide";
+import VillaVsHotel from "./pages/blog/VillaVsHotel";
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import CookiePolicy from "./pages/legal/CookiePolicy";
+import TermsOfService from "./pages/legal/TermsOfService";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +32,12 @@ const App = () => (
           <Route path="/sifnos/beaches" element={<SifnosBeaches />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<SifnosGuide />} />
+          <Route path="/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<VillaVsHotel />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
+import CookieConsent from '@/components/CookieConsent';
 import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
@@ -45,21 +46,13 @@ const Index = () => {
             Villa Olivia Clara is an elegant, 250m² villa in Platis Gialos, Sifnos, Greece. 
             Perfect for groups or families up to 8 people looking for luxurious accommodations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="villa" className="animate-scale-in">
               <Link to="/villa">Take the Tour</Link>
             </Button>
             <Button asChild size="lg" variant="villa-outline" className="animate-scale-in">
-              <Link to="/contact">Book Now →</Link>
+              <Link to="/contact">Book Now</Link>
             </Button>
-          </div>
-          
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-            <div className="flex flex-col items-center text-white/70">
-              <span className="text-sm mb-2">Discover More</span>
-              <ChevronDown size={24} />
-            </div>
           </div>
         </div>
       </section>
@@ -252,6 +245,7 @@ const Index = () => {
 
       <Footer />
       <StickyBookingBar />
+      <CookieConsent />
     </div>
   );
 };

@@ -6,7 +6,8 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
 import CookieConsent from '@/components/CookieConsent';
-import { ChevronDown, Calendar } from 'lucide-react';
+import { VirtualTour } from '@/components/VirtualTour';
+import { ChevronDown, Calendar, Eye } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
 import villaLinens from '@/assets/Sifnos/Beaches/chrysopigi.webp';
@@ -59,7 +60,11 @@ const Index = () => {
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">Villa Olivia Clara</h1>
           <p className="text-2xl md:text-3xl mb-6 text-white/95">Sifnos, Greece</p>
-          <div className="mt-2 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <VirtualTour showInModal={true} className="order-2 sm:order-1" />
+            <div className="text-white/60 order-1 sm:order-2">or</div>
+          </div>
+          <div className="mt-6 flex justify-center">
             <form
               onSubmit={handleSearchSubmit}
               className="bg-white/85 backdrop-blur-sm rounded-xl shadow-soft border border-white/60 px-4 py-3 md:px-6 md:py-4 flex flex-col sm:flex-row items-stretch sm:items-end gap-3"
@@ -190,6 +195,55 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Virtual Tour Section */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Eye className="text-villa-olive" size={32} />
+              <h2 className="text-4xl font-bold text-villa-olive">Take a Virtual Tour</h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Explore every corner of Villa Olivia Clara with our immersive 360° virtual tour. 
+              Experience the luxury and beauty before you book.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Card className="border-villa-stone shadow-elegant overflow-hidden">
+              <CardContent className="p-0">
+                <VirtualTour />
+              </CardContent>
+            </Card>
+            
+            {/* Tour Features */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
+                  <Eye className="text-villa-olive" size={20} />
+                </div>
+                <h3 className="font-semibold text-villa-olive">360° Experience</h3>
+                <p className="text-sm text-gray-600">Explore every room and outdoor space</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
+                  <Calendar className="text-villa-olive" size={20} />
+                </div>
+                <h3 className="font-semibold text-villa-olive">Book with Confidence</h3>
+                <p className="text-sm text-gray-600">See exactly what you're booking</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
+                  <ChevronDown className="text-villa-olive" size={20} />
+                </div>
+                <h3 className="font-semibold text-villa-olive">Interactive</h3>
+                <p className="text-sm text-gray-600">Click, drag, and zoom to explore</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -6,7 +6,8 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { FeatureList } from '@/components/villa/feature-list';
 import { Gallery } from '@/components/villa/gallery';
-import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone } from 'lucide-react';
+import { VirtualTourSection } from '@/components/VirtualTour';
+import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye } from 'lucide-react';
 
 // Mock images (placeholders) — feel free to replace with real villa photos
 import apollonia from '@/assets/Sifnos/villages/apollonia.webp';
@@ -36,6 +37,7 @@ const SectionNav = () => (
         <li><a href="#bathrooms" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Bath size={16} />Bathrooms</a></li>
         <li><a href="#living" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Utensils size={16} />Living Spaces</a></li>
         <li><a href="#amenities" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Wifi size={16} />Amenities</a></li>
+        <li><a href="#virtual-tour" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Eye size={16} />Virtual Tour</a></li>
       </ul>
     </div>
   </nav>
@@ -548,6 +550,9 @@ const Villa = () => {
           </div>
         </section>
       </main>
+
+      {/* Virtual Tour Section */}
+      <VirtualTourSection />
 
       <Footer />
     </div>

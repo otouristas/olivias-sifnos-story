@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
 import CookieConsent from '@/components/CookieConsent';
 import { VirtualTour } from '@/components/VirtualTour';
+import { OliviaClaraAI } from '@/components/OliviaClaraAI';
+import { BackToTop } from '@/components/BackToTop';
 import { ChevronDown, Calendar, Eye } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
@@ -188,7 +190,7 @@ const Index = () => {
                   alt="Elena, your host" 
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />
-                <h3 className="text-xl font-semibold text-villa-olive mb-2">Hosted by Locals</h3>
+                <h3 className="text-xl font-semibold text-villa-olive mb-2">Hosted by Elena</h3>
                 <p className="text-muted-foreground">
                   Villa Olivia Clara is a family home and a family business. Being a local of the island, 
                   Elena is the perfect host for an authentic experience.
@@ -340,6 +342,8 @@ const Index = () => {
       <Footer />
       <StickyBookingBar />
       <CookieConsent />
+      <BackToTop />
+      <OliviaClaraAI />
     </div>
   );
 };

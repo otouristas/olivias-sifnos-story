@@ -68,10 +68,16 @@ const Footer = () => {
              <p>Platis Gialos, Sifnos</p>
              <p>Cyclades, Greece</p>
              <a 
-               href="mailto:reservations@villaoliviaclara.com" 
+               href="mailto:elena@villaoliviaclara.com" 
                className="text-villa-olive hover:text-villa-olive-dark transition-colors"
              >
-               reservations@villaoliviaclara.com
+               elena@villaoliviaclara.com
+             </a>
+             <a 
+               href="tel:+306971919382" 
+               className="text-villa-olive hover:text-villa-olive-dark transition-colors"
+             >
+               +30 697 191 9382
              </a>
            </div>
           </div>

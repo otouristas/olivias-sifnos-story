@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { FeatureList } from '@/components/villa/feature-list';
 import { Gallery } from '@/components/villa/gallery';
 import { VirtualTourSection } from '@/components/VirtualTour';
+import { OliviaClaraAI } from '@/components/OliviaClaraAI';
+import { BackToTop } from '@/components/BackToTop';
 import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye } from 'lucide-react';
 
 // Mock images (placeholders) — feel free to replace with real villa photos
@@ -555,6 +557,8 @@ const Villa = () => {
       <VirtualTourSection />
 
       <Footer />
+      <BackToTop />
+      <OliviaClaraAI />
     </div>
   );
 };

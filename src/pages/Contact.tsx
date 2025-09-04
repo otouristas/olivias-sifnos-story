@@ -7,6 +7,8 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { OliviaClaraAI } from '@/components/OliviaClaraAI';
+import { BackToTop } from '@/components/BackToTop';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
     
     // Create mailto link
-    const mailtoLink = `mailto:reservations@villaoliviaclara.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:elena@villaoliviaclara.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
       `Preferred Dates: ${formData.preferredDates}\n\n` +
@@ -166,15 +168,25 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-villa-olive">Email:</h3>
                       <a 
-                        href="mailto:reservations@villaoliviaclara.com"
+                        href="mailto:elena@villaoliviaclara.com"
                         className="text-villa-olive hover:text-villa-olive-dark transition-colors"
                       >
-                        reservations@villaoliviaclara.com
+                        elena@villaoliviaclara.com
                       </a>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold text-villa-olive">Hosted by Elena & George</h3>
+                      <h3 className="font-semibold text-villa-olive">Phone:</h3>
+                      <a 
+                        href="tel:+306971919382"
+                        className="text-villa-olive hover:text-villa-olive-dark transition-colors"
+                      >
+                        +30 697 191 9382
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-villa-olive">Hosted by Elena</h3>
                       <p className="text-muted-foreground">
                         As locals of Sifnos, we are here to provide you with an authentic and seamless experience. 
                         We look forward to welcoming you to our home.
@@ -205,6 +217,8 @@ const Contact = () => {
       </section>
 
       <Footer />
+      <BackToTop />
+      <OliviaClaraAI />
     </div>
   );
 };

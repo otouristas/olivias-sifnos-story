@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { reviewsData, type GuestReview } from './reviews-data';
@@ -88,6 +89,7 @@ export default function Reviews(): JSX.Element {
         </section>
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

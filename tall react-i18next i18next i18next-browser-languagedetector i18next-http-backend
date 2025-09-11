@@ -1,0 +1,10 @@
+[33m8fa7f16[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m new final
+[33mde08d02[m new book now
+[33ma60075a[m new chatbot
+[33mbf869bb[m new favicon
+[33m46e3761[m Add 360° virtual tour feature
+[33m240b347[m Update favicon setup and add web app manifest
+[33m65ea780[m Perf: add responsive sizes to Gallery images
+[33me158221[m SEO: env-based canonical, JSON-LD for reviews; normalize links; nav order; sitemap+robots
+[33mf314b0d[m Site updates: a11y cleanup, strict TS, villa component extraction, reviews redesign with data, nav order, scroll-to-top, canonical links (villaoliviaclara.com), sitemap+robots
+[33mbf6a675[m Deleted vite.config.ts.timestamp-1756994223308-b0081f2a0899a.mjs

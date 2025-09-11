@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,6 +15,7 @@ import { Mail, Phone, MapPin, Heart } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
@@ -78,9 +80,9 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-br from-sand-light to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-villa-olive mb-4">Meet Your Host</h2>
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">{t('contact.host')}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get to know Elena Philippou, your host at Villa Olivia Clara
+              {t('contact.hostDescription')}
             </p>
           </div>
 
@@ -107,9 +109,9 @@ const Contact = () => {
                   {/* Elena's Info */}
                   <div className="flex-1 text-center md:text-left">
                     <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-villa-olive mb-2">Elena Philippou</h3>
-                      <p className="text-lg text-muted-foreground mb-2">Your Host at Villa Olivia Clara</p>
-                      <p className="text-villa-olive font-semibold">Sifnos, Greece</p>
+                      <h3 className="text-3xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h3>
+                      <p className="text-lg text-muted-foreground mb-2">{t('contact.hostTitle')}</p>
+                      <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
                     </div>
 
                     {/* Contact Info */}
@@ -144,20 +146,16 @@ const Contact = () => {
                 <div className="mt-8 pt-6 border-t border-villa-stone">
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-villa-olive mb-4 text-center md:text-left">
-                      Welcome to Sifnos!
+                      {t('contact.welcome')}
                     </h4>
                     <p className="text-muted-foreground leading-relaxed text-center md:text-left">
-                      I am delighted to welcome you to the island that has been my family's home for generations- 
-                      since the 1800s! Although I only used to spend my summers here, I have now moved in permanently. 
-                      I originally built Villa Olivia Clara to be my family's summer home, so it brings me immense joy 
-                      to share this special place with you.
+                      {t('contact.welcomeMessage')}
                     </p>
                     <p className="text-muted-foreground leading-relaxed text-center md:text-left">
-                      The Cycladic culture, the picturesque natural beauty and the hospitable people of this island 
-                      are what drew me in. Life flows slowly here on Sifnos- you can take a moment to relax and listen to the waves.
+                      {t('contact.cultureMessage')}
                     </p>
                     <p className="text-villa-olive font-semibold text-center md:text-left">
-                      I can't wait to see you there. - Elena
+                      {t('contact.signature')}
                     </p>
                   </div>
                 </div>

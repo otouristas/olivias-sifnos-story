@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import CookieConsent from '@/components/CookieConsent';
 import { VirtualTour } from '@/components/VirtualTour';
 import { BackToTop } from '@/components/BackToTop';
@@ -25,6 +25,8 @@ import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  
   const getDateStringPlusDays = (daysToAdd: number): string => {
     const date: Date = new Date();
     date.setDate(date.getDate() + daysToAdd);
@@ -76,41 +78,37 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">Villa Olivia Clara</h1>
-          <p className="text-2xl md:text-3xl mb-6 text-white/95">Sifnos, Greece</p>
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">{t('hero.title')}</h1>
+          <p className="text-2xl md:text-3xl mb-6 text-white/95">{t('hero.subtitle')}</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <VirtualTour showInModal={true} className="order-2 sm:order-1" />
           </div>
           <div className="mt-6 flex justify-center">
             <form
               onSubmit={handleSearchSubmit}
-              className="bg-white/85 backdrop-blur-sm rounded-xl shadow-soft border border-white/60 px-4 py-3 md:px-6 md:py-4 flex flex-col sm:flex-row items-stretch sm:items-end gap-3"
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 flex flex-col sm:flex-row items-stretch sm:items-end gap-2 sm:gap-3 w-full max-w-sm sm:max-w-none"
             >
-              <div className="flex-1 min-w-[220px] text-left">
-                <label className="block text-xs font-semibold text-gray-700 mb-1">Check-in</label>
-                <div className="relative">
-                  <input
-                    type="date"
-                    value={checkIn}
-                    onChange={(e) => setCheckIn(e.target.value)}
-                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
-                  />
-                </div>
+              <div className="flex-1 text-left">
+                <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
+                <input
+                  type="date"
+                  value={checkIn}
+                  onChange={(e) => setCheckIn(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                />
               </div>
-              <div className="flex-1 min-w-[220px] text-left">
-                <label className="block text-xs font-semibold text-gray-700 mb-1">Check-out</label>
-                <div className="relative">
-                  <input
-                    type="date"
-                    value={checkOut}
-                    onChange={(e) => setCheckOut(e.target.value)}
-                    min={checkIn}
-                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
-                  />
-                </div>
+              <div className="flex-1 text-left">
+                <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
+                <input
+                  type="date"
+                  value={checkOut}
+                  onChange={(e) => setCheckOut(e.target.value)}
+                  min={checkIn}
+                  className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                />
               </div>
               <div className="sm:self-end">
-                <Button type="submit" variant="villa" size="sm" className="px-6 h-10">Search</Button>
+                <Button type="submit" variant="villa" size="sm" className="px-4 py-1.5 h-8 text-sm w-full sm:w-auto">{t('common.search')}</Button>
               </div>
             </form>
           </div>
@@ -483,7 +481,6 @@ const Index = () => {
       </section>
 
       <Footer />
-      <StickyBookingBar />
       <CookieConsent />
       <BackToTop />
     </div>

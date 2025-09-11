@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import { ArrowLeft, FileText, Shield, AlertTriangle, Phone, Mail, Clock } from 'lucide-react';
 
 const RentalConditions = () => {
@@ -460,7 +459,6 @@ const RentalConditions = () => {
       </div>
 
       <Footer />
-      <StickyBookingBar />
     </div>
   );
 };

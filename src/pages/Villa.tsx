@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -58,6 +59,8 @@ import poolHouse2 from '@/assets/villa-gallery/Villa-Olivia-Clara_039_pool-house
 import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 
 const Villa = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <SEOHead
@@ -83,31 +86,31 @@ const Villa = () => {
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
           <div className="mb-6">
             <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm font-medium mb-4">
-              ✨ Luxury Villa Experience
+              ✨ {t('villa.luxuryExperience')}
             </Badge>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Villa Olivia Clara
+            {t('villa.title')}
           </h1>
           <p className="text-2xl md:text-3xl mb-8 text-white/95 font-light">
-            Your Private Paradise in Sifnos, Greece
+            {t('villa.subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-lg mb-8">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Bed className="w-5 h-5" />
-              <span>4 Bedrooms</span>
+              <span>{t('villa.bedrooms')}</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Bath className="w-5 h-5" />
-              <span>4.5 Bathrooms</span>
+              <span>{t('villa.bathrooms')}</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Users className="w-5 h-5" />
-              <span>Up to 8 Guests</span>
+              <span>{t('villa.guests')}</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Waves className="w-5 h-5" />
-              <span>Private Pool</span>
+              <span>{t('villa.privatePool')}</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -115,7 +118,7 @@ const Villa = () => {
               href="#pool-outdoor"
               className="bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
             >
-              Explore Villa
+              {t('villa.exploreVilla')}
             </a>
             <button
               onClick={() => {
@@ -128,7 +131,7 @@ const Villa = () => {
               className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm flex items-center gap-2"
             >
               <span>🤖</span>
-              Try Olivia Clara AI
+              {t('villa.tryAI')}
             </button>
           </div>
         </div>
@@ -136,7 +139,7 @@ const Villa = () => {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-sm">Scroll to explore</span>
+            <span className="text-sm">{t('villa.scrollToExplore')}</span>
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
             </div>
@@ -152,12 +155,10 @@ const Villa = () => {
           <section className="mb-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-villa-olive mb-6">
-                Your Luxury Greek Island Retreat
+                {t('villa.overviewTitle')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Villa Olivia Clara is a stunning 250m² luxury villa in Platis Gialos, Sifnos. 
-                Experience authentic Greek hospitality with modern amenities, breathtaking sea views, 
-                and the perfect blend of privacy and convenience.
+                {t('villa.overviewDescription')}
               </p>
             </div>
 

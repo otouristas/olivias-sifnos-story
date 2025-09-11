@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -19,15 +20,8 @@ interface ChatbotProps {
   readonly className?: string;
 }
 
-// Enhanced welcome messages with personality
-const WELCOME_MESSAGES = [
-  "Hello! I'm Olivia Clara AI, your personal villa concierge. I know every corner of our villa and every secret of Sifnos. How can I make your Greek island dreams come true? ✨",
-  "Welcome to Villa Olivia Clara! I'm your AI assistant with insider knowledge of our luxury villa and the beautiful island of Sifnos. What would you like to discover? 🏖️",
-  "Hi there! I'm Olivia Clara AI, your virtual concierge. I've helped hundreds of guests plan perfect Sifnos vacations. Let me share our secrets with you! 💫",
-  "Kalimera! I'm Olivia Clara AI, your personal guide to Villa Olivia Clara and Sifnos. I know all the best beaches, restaurants, and hidden gems. What shall we explore? 🌊"
-];
-
 export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [messages, setMessages] = useState<ReadonlyArray<Message>>([]);
@@ -36,6 +30,14 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
   const [showQuickActions, setShowQuickActions] = useState<boolean>(true);
   const [conversationCount, setConversationCount] = useState<number>(0);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  // Enhanced welcome messages with personality
+  const WELCOME_MESSAGES = [
+    t('ai.welcome'),
+    "Welcome to Villa Olivia Clara! I'm your AI assistant with insider knowledge of our luxury villa and the beautiful island of Sifnos. What would you like to discover? 🏖️",
+    "Hi there! I'm Olivia Clara AI, your virtual concierge. I've helped hundreds of guests plan perfect Sifnos vacations. Let me share our secrets with you! 💫",
+    "Kalimera! I'm Olivia Clara AI, your personal guide to Villa Olivia Clara and Sifnos. I know all the best beaches, restaurants, and hidden gems. What shall we explore? 🌊"
+  ];
 
   // Auto-scroll to bottom when new messages are added
   useEffect(() => {
@@ -222,7 +224,7 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                     <div className="bg-gray-100 p-3 rounded-lg rounded-bl-none">
                       <div className="flex items-center gap-2">
                         <Loader2 size={16} className="animate-spin text-villa-olive" />
-                        <span className="text-sm text-gray-600">Olivia Clara AI is thinking...</span>
+                        <span className="text-sm text-gray-600">{t('ai.thinking')}</span>
                         <div className="flex gap-1">
                           <div className="w-1 h-1 bg-villa-olive rounded-full animate-bounce"></div>
                           <div className="w-1 h-1 bg-villa-olive rounded-full animate-bounce delay-100"></div>
@@ -242,7 +244,7 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me about Villa Olivia Clara..."
+                  placeholder={t('ai.placeholder')}
                   className="flex-1 border-villa-stone focus:border-villa-olive"
                   disabled={isTyping}
                 />

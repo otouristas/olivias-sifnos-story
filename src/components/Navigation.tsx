@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 // Import logo
 import logo from '/villa-olivia-clara-logo.webp';
@@ -12,6 +15,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSifnosOpen, setIsSifnosOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   // Keyboard navigation
   useKeyboardNavigation({
@@ -23,15 +27,15 @@ const Navigation = () => {
   });
 
   const navigationItems = [
-    { text: 'Our Villa', link: '/villa' },
-    { text: 'Blog', link: '/blog' },
-    { text: 'Guest Reviews', link: '/reviews' },
-    { text: 'Contact Us', link: '/contact' },
+    { text: t('nav.villa'), link: '/villa' },
+    { text: t('nav.blog'), link: '/blog' },
+    { text: t('nav.reviews'), link: '/reviews' },
+    { text: t('nav.contact'), link: '/contact' },
   ];
 
   const sifnosSubmenu = [
-    { text: 'Sifnos Island Guide', link: '/sifnos' },
-    { text: 'Sifnos Beaches', link: '/sifnos/beaches' },
+    { text: t('nav.sifnosGuide'), link: '/sifnos' },
+    { text: t('nav.sifnosBeaches'), link: '/sifnos/beaches' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -61,7 +65,7 @@ const Navigation = () => {
                 }`
               }
             >
-              Our Villa
+              {t('nav.villa')}
             </NavLink>
 
             {/* Discover Sifnos Dropdown */}
@@ -74,7 +78,7 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                Discover Sifnos
+                {t('nav.discoverSifnos')}
                 <ChevronDown size={16} className={`ml-1 ${isSifnosOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -107,7 +111,7 @@ const Navigation = () => {
                 }`
               }
             >
-              Guest Reviews
+              {t('nav.reviews')}
             </NavLink>
 
             {/* Blog */}
@@ -119,7 +123,7 @@ const Navigation = () => {
                 }`
               }
             >
-              Blog
+              {t('nav.blog')}
             </NavLink>
 
             {/* Contact Us */}
@@ -131,19 +135,23 @@ const Navigation = () => {
                 }`
               }
             >
-              Contact Us
+              {t('nav.contact')}
             </NavLink>
+
+            {/* Language Switcher */}
+            <LanguageSwitcher />
 
             {/* Book Now */}
             <Button asChild variant="villa" size="default">
-              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Book Now</a>
+              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('nav.bookNow')}</a>
             </Button>
           </div>
 
           {/* Mobile menu button and Book Now */}
           <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
             <Button asChild variant="villa" size="sm">
-              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Book Now</a>
+              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('nav.bookNow')}</a>
             </Button>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -168,12 +176,12 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                Our Villa
+                {t('nav.villa')}
               </Link>
 
               {/* Mobile Sifnos Submenu */}
               <div className="px-3 py-2">
-                <div className="text-base font-medium text-foreground mb-2">Discover Sifnos</div>
+                <div className="text-base font-medium text-foreground mb-2">{t('nav.discoverSifnos')}</div>
                 <div className="ml-4 space-y-1">
                   {sifnosSubmenu.map((item) => (
                     <Link
@@ -202,7 +210,7 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                Guest Reviews
+                {t('nav.reviews')}
               </Link>
 
               {/* Blog */}
@@ -215,7 +223,7 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                Blog
+                {t('nav.blog')}
               </Link>
 
               {/* Contact Us */}
@@ -228,8 +236,37 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                Contact Us
+                {t('nav.contact')}
               </Link>
+
+              {/* Language Switcher for Mobile */}
+              <div className="px-3 py-2">
+                <div className="text-base font-medium text-foreground mb-2">{t('nav.language')}</div>
+                <div className="ml-4 space-y-1">
+                  {[
+                    { code: 'en', name: 'English', flag: '🇺🇸' },
+                    { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
+                    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+                    { code: 'fr', name: 'Français', flag: '🇫🇷' }
+                  ].map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => {
+                        i18n.changeLanguage(language.code);
+                        setIsOpen(false);
+                      }}
+                      className={`flex items-center gap-3 w-full px-3 py-2 text-sm rounded text-left ${
+                        i18n.language === language.code
+                          ? 'text-villa-olive bg-villa-olive-light'
+                          : 'text-foreground hover:bg-gray-100'
+                      }`}
+                    >
+                      <span className="text-lg">{language.flag}</span>
+                      <span className="font-medium">{language.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
             </div>
           </div>

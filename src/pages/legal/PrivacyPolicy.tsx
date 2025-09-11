@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import { ArrowLeft, Shield, Mail, Phone } from 'lucide-react';
 
 const PrivacyPolicy = () => {
@@ -616,7 +615,6 @@ const PrivacyPolicy = () => {
       </div>
 
       <Footer />
-      <StickyBookingBar />
     </div>
   );
 };

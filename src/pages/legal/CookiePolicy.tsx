@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import { ArrowLeft, Cookie, Settings, BarChart, Shield, Mail, Phone } from 'lucide-react';
 
 const CookiePolicy = () => {
@@ -313,7 +312,6 @@ const CookiePolicy = () => {
       </div>
 
       <Footer />
-      <StickyBookingBar />
     </div>
   );
 };

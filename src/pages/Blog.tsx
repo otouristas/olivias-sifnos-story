@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import Breadcrumb from '@/components/Breadcrumb';
 import SEOHead from '@/components/SEOHead';
 import { BlogShare } from '@/components/SocialShare';
@@ -207,7 +206,6 @@ const Blog = () => {
       </section>
 
       <Footer />
-      <StickyBookingBar />
     </div>
   );
 };

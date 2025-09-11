@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
@@ -21,6 +22,7 @@ function formatDate(input: string): string {
 function getYear(date: string): number { return new Date(date).getFullYear(); }
 
 export default function Reviews(): JSX.Element {
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const sorted: ReadonlyArray<GuestReview> = [...reviewsData].sort((a, b) => (a.date < b.date ? 1 : -1));
   const grouped: Record<number, ReadonlyArray<GuestReview>> = sorted.reduce((acc, r) => {
@@ -65,8 +67,8 @@ export default function Reviews(): JSX.Element {
       <header className="py-24 bg-gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">Kind Words From Our Guests</h1>
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">Thoughtfully curated impressions from recent stays at Villa Olivia Clara.</p>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">{t('reviews.title')}</h1>
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">{t('reviews.subtitle')}</p>
         </div>
       </header>
       <main className="py-20 space-y-20">
@@ -109,7 +111,7 @@ export default function Reviews(): JSX.Element {
                 size="lg"
                 className="gap-2"
               >
-                {showAll ? 'Show Less' : 'Read More Reviews'}
+                {showAll ? t('reviews.showLess') : t('reviews.showMore')}
                 <ChevronDown 
                   size={16} 
                   className={`transition-transform duration-200 ${showAll ? 'rotate-180' : ''}`} 

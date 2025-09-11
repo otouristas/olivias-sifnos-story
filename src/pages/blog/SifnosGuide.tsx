@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StickyBookingBar from '@/components/StickyBookingBar';
 import { Calendar, User, Clock, ArrowLeft, MapPin, Star, Camera } from 'lucide-react';
 
 // Using existing images
@@ -295,7 +294,6 @@ const SifnosGuide = () => {
       </article>
 
       <Footer />
-      <StickyBookingBar />
     </div>
   );
 };

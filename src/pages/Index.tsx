@@ -47,6 +47,7 @@ const Index = () => {
         title="Villa Olivia Clara | Luxury Villa Rental in Sifnos, Greece | Book Now"
         description="Experience luxury at Villa Olivia Clara in Sifnos, Greece. Private pool, sea views, 4 bedrooms for 8 guests. 7 min walk to Platis Gialos beach. Book your authentic Greek island getaway today!"
         keywords="luxury villa Sifnos, private pool villa Greece, Platis Gialos accommodation, Cyclades villa rental, Greek island luxury, Sifnos beach villa, family villa Greece, private chef Sifnos"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
         canonicalUrl="https://villaoliviaclara.com"
       />
       <LocalBusinessStructuredData />

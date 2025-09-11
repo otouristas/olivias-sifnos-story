@@ -64,6 +64,7 @@ const Villa = () => {
         title="Villa Olivia Clara Details | 4BR Luxury Villa with Pool in Sifnos, Greece"
         description="Discover Villa Olivia Clara: 250m² luxury villa with private pool, 4 bedrooms, 4.5 bathrooms, stunning sea views. Complete amenities, garden, BBQ, WiFi. Perfect for 8 guests in Sifnos, Greece."
         keywords="Villa Olivia Clara details, luxury villa Sifnos amenities, private pool villa Greece, 4 bedroom villa Cyclades, villa with garden Sifnos, luxury accommodation Platis Gialos"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
         canonicalUrl="https://villaoliviaclara.com/villa"
       />
       <VillaStructuredData />

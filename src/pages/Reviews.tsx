@@ -38,6 +38,7 @@ export default function Reviews(): JSX.Element {
         title="Villa Olivia Clara Guest Reviews | 5-Star Sifnos Villa Testimonials"
         description="Read authentic guest reviews for Villa Olivia Clara in Sifnos, Greece. 5-star luxury villa with private pool, sea views, excellent service. See why guests love our villa!"
         keywords="Villa Olivia Clara reviews, Sifnos villa testimonials, luxury villa guest feedback, Greek island accommodation reviews, Platis Gialos villa ratings"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg"
         canonicalUrl="https://villaoliviaclara.com/reviews"
       />
       <ReviewsStructuredData />

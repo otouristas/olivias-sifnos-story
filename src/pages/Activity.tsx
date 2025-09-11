@@ -14,6 +14,7 @@ const Activity = () => {
         title="Sifnos Boat Tours | Private Island Hopping | Poliegos, Kimolos, Milos"
         description="Experience private boat tours from Sifnos to Poliegos, Kimolos, and Milos. Discover hidden coves, crystal waters, and uninhabited islands. Book your Cyclades island hopping adventure today!"
         keywords="Sifnos boat tours, island hopping Cyclades, Poliegos boat tour, Kimolos Milos cruise, private boat Sifnos, Greek island sailing, Cyclades boat trips"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos/boat-tours"
       />
       <Navigation />

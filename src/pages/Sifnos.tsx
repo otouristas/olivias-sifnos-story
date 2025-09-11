@@ -31,6 +31,7 @@ const Sifnos = () => {
         title="Sifnos Island Travel Guide | Discover Authentic Greek Island Beauty"
         description="Complete Sifnos Island travel guide: villages, beaches, culture, dining, activities. Discover authentic Greek island life in the Cyclades. Your ultimate Sifnos travel resource."
         keywords="Sifnos island guide, Greek island travel, Cyclades villages, Sifnos beaches, Greek culture, island activities, authentic Greece, Sifnos tourism"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos"
       />
       <Navigation />

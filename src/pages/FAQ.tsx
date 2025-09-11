@@ -14,6 +14,7 @@ const FAQ = () => {
         title="Villa Olivia Clara FAQ | Frequently Asked Questions | Sifnos Villa"
         description="Find answers to common questions about Villa Olivia Clara in Sifnos, Greece. Booking, amenities, location, check-in/out, services, and more. Get all the information you need!"
         keywords="Villa Olivia Clara FAQ, Sifnos villa questions, luxury villa booking, Greek island accommodation FAQ, villa rental information"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.jpg"
         canonicalUrl="https://villaoliviaclara.com/faq"
       />
       <Navigation />

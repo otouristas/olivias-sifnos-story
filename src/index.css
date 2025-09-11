@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -122,6 +124,8 @@
 
   body {
     @apply bg-background text-foreground font-sans leading-relaxed;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
     font-feature-settings: "liga" 1, "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -130,11 +134,18 @@
 
   /* Typography improvements */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     line-height: 1.2;
   }
 
   p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     line-height: 1.75;
   }
 
@@ -210,6 +221,13 @@
   /* Dark mode improvements */
   .dark .text-muted-foreground {
     color: hsl(215 20.2% 70%) !important;
+  }
+
+  /* Inter font utility class */
+  .inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 
   /* Reduced motion preferences */

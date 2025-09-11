@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 
 // Import village photos
 import apollonia from '@/assets/Sifnos/villages/apollonia.webp';
@@ -26,6 +27,12 @@ import chrysopigiBeach from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 const Sifnos = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Sifnos Island Travel Guide | Discover Authentic Greek Island Beauty"
+        description="Complete Sifnos Island travel guide: villages, beaches, culture, dining, activities. Discover authentic Greek island life in the Cyclades. Your ultimate Sifnos travel resource."
+        keywords="Sifnos island guide, Greek island travel, Cyclades villages, Sifnos beaches, Greek culture, island activities, authentic Greece, Sifnos tourism"
+        canonicalUrl="https://villaoliviaclara.com/sifnos"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -61,67 +68,28 @@ const Sifnos = () => {
       </section>
 
       {/* Essential Information */}
-      <section className="py-20 bg-villa-olive-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-subtle">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
-            Essential Sifnos Travel Information
+            Why Choose Sifnos?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Getting to Sifnos</h3>
-              <p className="text-muted-foreground">
-                  Sifnos is accessible by ferry from Piraeus port in Athens. During the summer months, there are frequent ferry connections to Sifnos from Athens and other Cycladic islands. The journey from Piraeus takes approximately 2.5 to 5 hours depending on the type of ferry (high-speed or conventional). There is no airport on Sifnos, so sea travel is the only option to reach the island.
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-semibold text-villa-olive mb-4">Authentic Greek Experience</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Unlike its famous neighbors Mykonos and Santorini, Sifnos offers an authentic Greek island experience with traditional charm, world-class cuisine, and peaceful atmosphere.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Best Time to Visit</h3>
-              <p className="text-muted-foreground">
-                  The best time to visit Sifnos is from May to October when the weather is warm and ideal for swimming and outdoor activities. July and August are the peak tourist months with higher temperatures and more crowds. For a more peaceful experience with pleasant weather, consider visiting in June or September when the sea is still warm but the crowds have thinned out.
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-semibold text-villa-olive mb-4">Culinary Capital</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Known as the gastronomic capital of the Cyclades, Sifnos offers incredible local cuisine, traditional pottery cooking, and some of Greece's best restaurants.
                 </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Getting Around</h3>
-              <p className="text-muted-foreground">
-                  The local bus network connects all major villages and beaches on Sifnos. Taxis are available but limited in number. Renting a car, scooter, or ATV is recommended for exploring the island at your own pace. The island also has well-marked hiking trails that connect many of its charming villages and offer spectacular views.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Beaches</h3>
-                <p className="text-muted-foreground mb-4">
-                  Sifnos boasts a variety of beautiful beaches catering to different preferences. From organized beaches with facilities like Platis Gialos and Kamares to more secluded coves like Vroulidia and Fassolou. Some beaches offer water sports facilities, while others are ideal for quiet relaxation against stunning backdrops.
-                </p>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/sifnos/beaches">Explore All Beaches →</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Cuisine</h3>
-              <p className="text-muted-foreground">
-                  Sifnos is renowned for its rich culinary tradition and is considered the gastronomic capital of the Cyclades. Don't miss trying local specialties such as chickpea soup (revithada), mastelo (lamb or goat cooked in red wine), and traditional sweets like honey pie (melopita) and almond cookies (amygdalota). The island is also famous for its pottery, used in traditional slow-cooking methods.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-villa-olive mb-4">Cultural Highlights</h3>
-              <p className="text-muted-foreground">
-                  Sifnos has a rich cultural heritage with numerous blue-domed churches and monasteries scattered across the island. Visit the Archaeological Museum in Kastro to learn about the island's ancient history. Don't miss the annual cultural festivals, particularly during summer months, where you can experience traditional music, dance, and local celebrations.
-              </p>
               </CardContent>
             </Card>
           </div>
@@ -447,6 +415,51 @@ const Sifnos = () => {
                     Be prepared for reduced ferry schedules and some closed businesses, especially in late autumn.
                   </li>
                 </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Activities Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
+            Island Activities
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-villa-stone shadow-soft hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
+                    <span className="text-villa-olive text-xl">🏖️</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-villa-olive">Beach Exploration</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Discover Sifnos' stunning beaches from the golden sands of Platis Gialos to the secluded coves of Vathi.
+                </p>
+                <Button asChild variant="villa-outline">
+                  <Link to="/sifnos/beaches">Explore Beaches</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-villa-stone shadow-soft hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
+                    <span className="text-villa-olive text-xl">⛵</span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-villa-olive">Boat Tours</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Experience the magic of island hopping with private boat tours to Poliegos, Kimolos, and Milos.
+                </p>
+                <Button asChild variant="villa-outline">
+                  <Link to="/sifnos/boat-tours">Discover Boat Tours</Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

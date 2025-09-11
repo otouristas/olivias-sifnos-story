@@ -2,563 +2,1149 @@ import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { FeatureList } from '@/components/villa/feature-list';
-import { Gallery } from '@/components/villa/gallery';
-import { VirtualTourSection } from '@/components/VirtualTour';
-import { OliviaClaraAI } from '@/components/OliviaClaraAI';
 import { BackToTop } from '@/components/BackToTop';
-import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
+import { VillaStructuredData } from '@/components/StructuredData';
+import SEOHead from '@/components/SEOHead';
+import ImageZoom from '@/components/ImageZoom';
+import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye, Star, Mail, Flower } from 'lucide-react';
 
-// Mock images (placeholders) — feel free to replace with real villa photos
-import apollonia from '@/assets/Sifnos/villages/apollonia.webp';
-import kastro from '@/assets/Sifnos/villages/kastro.webp';
-import artemonas from '@/assets/Sifnos/villages/artemonas.webp';
-import exampela from '@/assets/Sifnos/villages/exampela.webp';
-import katavati from '@/assets/Sifnos/villages/katavati.webp';
-import katoPetali from '@/assets/Sifnos/villages/kato-petali.webp';
-import panoPetali from '@/assets/Sifnos/villages/panopetali.webp';
-import troullaki from '@/assets/Sifnos/villages/troullaki.webp';
+// Villa Gallery Images
+import aerialViewWide from '@/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg';
+import aerialView from '@/assets/villa-gallery/Villa-Olivia-Clara_042_aerial-view-of-villa.jpg';
+import poolSunbathing from '@/assets/villa-gallery/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg';
+import poolArea from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
+import poolDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_005_pool-detail.jpg';
+import poolCabana from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg';
+import poolBarNight from '@/assets/villa-gallery/Villa-Olivia-Clara_007_the-pool-bar-at-night.jpg';
+import poolDining from '@/assets/villa-gallery/Villa-Olivia-Clara_008_pool-dining-area.jpg';
+import poolDiningNight from '@/assets/villa-gallery/Villa-Olivia-Clara_010_pool-dining-area-at-night.jpg';
+import upperTerraceNight from '@/assets/villa-gallery/Villa-Olivia-Clara_013_upper-terrace-at-night.jpg';
+import backGarden from '@/assets/villa-gallery/Villa-Olivia-Clara_041_back-garden.jpg';
+import masterBedroom from '@/assets/villa-gallery/Villa-Olivia-Clara_014_master-bedroom.jpg';
+import standardBedroom from '@/assets/villa-gallery/Villa-Olivia-Clara_015_standard-bedroom.jpg';
+import guestMasterBedroom from '@/assets/villa-gallery/Villa-Olivia-Clara_022_guest-master-bedroom.jpg';
+import guestStandardBedroom from '@/assets/villa-gallery/Villa-Olivia-Clara_024_guest-standard-bedroom.jpg';
+import masterBathroom from '@/assets/villa-gallery/Villa-Olivia-Clara_018_master-bathroom.jpg';
+import standardBathroom from '@/assets/villa-gallery/Villa-Olivia-Clara_020_standard-bathroom.jpg';
+import guestMasterBathroom from '@/assets/villa-gallery/Villa-Olivia-Clara_025_guest-master-bathroom.jpg';
+import livingRoom from '@/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg';
+import livingRoomView from '@/assets/villa-gallery/Villa-Olivia-Clara_030_living-room-view.jpg';
+import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
+import kitchenDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_035_kitchen-detail.jpg';
+import indoorDining from '@/assets/villa-gallery/Villa-Olivia-Clara_032_indoor-dining-area.jpg';
+import poolHouse from '@/assets/villa-gallery/Villa-Olivia-Clara_038_pool-house.jpg';
 
-import platsGialos from '@/assets/Sifnos/Beaches/plats-gialos.webp';
-import kamares from '@/assets/Sifnos/Beaches/kamares.webp';
-import vathi from '@/assets/Sifnos/Beaches/vathi.webp';
-import faros from '@/assets/Sifnos/Beaches/faros.webp';
-import heronissos from '@/assets/Sifnos/Beaches/heronissos.webp';
-import chrysopigi from '@/assets/Sifnos/Beaches/chrysopigi.webp';
-import vroulidia from '@/assets/Sifnos/Beaches/vroulidia.webp';
-import fykiada from '@/assets/Sifnos/Beaches/fykiada.webp';
-
-const SectionNav = () => (
-  <nav className="sticky top-20 z-40 bg-background/95 backdrop-blur-sm border-b border-villa-stone shadow-sm">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <ul className="flex flex-wrap items-center gap-6 py-4 text-sm font-medium">
-        <li><a href="#outdoors" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Waves size={16} />Outdoors</a></li>
-        <li><a href="#bedrooms" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Bed size={16} />Bedrooms</a></li>
-        <li><a href="#bathrooms" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Bath size={16} />Bathrooms</a></li>
-        <li><a href="#living" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Utensils size={16} />Living Spaces</a></li>
-        <li><a href="#amenities" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Wifi size={16} />Amenities</a></li>
-        <li><a href="#virtual-tour" className="text-foreground hover:text-villa-olive transition-colors flex items-center gap-2"><Eye size={16} />Virtual Tour</a></li>
-      </ul>
-    </div>
-  </nav>
-);
-
-// extracted FeatureList and Gallery
+// Additional Villa Gallery Images
+import viewFromPoolCabana from '@/assets/villa-gallery/Villa-Olivia-Clara_002_view-from-the-pool-cabana.jpg';
+import poolAreaNight from '@/assets/villa-gallery/Villa-Olivia-Clara_004_the-pool-area-at-night.jpg';
+import viewFromPoolBar from '@/assets/villa-gallery/Villa-Olivia-Clara_006_view-from-the-pool-bar.jpg';
+import viewFromPoolDining from '@/assets/villa-gallery/Villa-Olivia-Clara_009_view-from-the-pool-dining-area.jpg';
+import viewFromPoolSunbathing from '@/assets/villa-gallery/Villa-Olivia-Clara_012_view-from-the-pool-sunbathing-area.jpg';
+import viewFromStandardBedroom from '@/assets/villa-gallery/Villa-Olivia-Clara_016_view-from-the-standard-bedroom.jpg';
+import bedroomLinenDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.jpg';
+import bathroomDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_019_bathroom-detail.jpg';
+import standardBathroom2 from '@/assets/villa-gallery/Villa-Olivia-Clara_021_standard-bathroom.jpg';
+import guestMasterBedroomView from '@/assets/villa-gallery/Villa-Olivia-Clara_023_guest-master-bedroom-view.jpg';
+import guestMasterBathroom2 from '@/assets/villa-gallery/Villa-Olivia-Clara_026_guest-master-bathroom.jpg';
+import guestMasterBathroomDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_027_guest-master-bathroom-detail.jpg';
+import guestStandardWC from '@/assets/villa-gallery/Villa-Olivia-Clara_028_guest-standard-WC.jpg';
+import livingRoomBackyardView from '@/assets/villa-gallery/Villa-Olivia-Clara_031_living-room-backyard-view.jpg';
+import indoorDiningDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_033_indoor-dining-detail.jpg';
+import viewFromKitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_036_view-from-the-kitchen.jpg';
+import poolTowelDetail from '@/assets/villa-gallery/Villa-Olivia-Clara_037_pool-towel-detail.jpg';
+import poolHouse2 from '@/assets/villa-gallery/Villa-Olivia-Clara_039_pool-house.jpg';
+import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 
 const Villa = () => {
-  // SEO
-  useEffect(() => {
-    document.title = 'Tour of Our Villa | Villa Olivia Clara, Sifnos';
-    const meta = document.querySelector('meta[name="description"]');
-    const content =
-      'Guided tour of Villa Olivia Clara in Sifnos: pool cabana & bar, garden & terrace, bedrooms, bathrooms, living spaces, and full amenities.';
-    if (meta) meta.setAttribute('content', content);
-    else {
-      const m = document.createElement('meta');
-      m.name = 'description';
-      m.content = content;
-      document.head.appendChild(m);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      <SEOHead
+        title="Villa Olivia Clara Details | 4BR Luxury Villa with Pool in Sifnos, Greece"
+        description="Discover Villa Olivia Clara: 250m² luxury villa with private pool, 4 bedrooms, 4.5 bathrooms, stunning sea views. Complete amenities, garden, BBQ, WiFi. Perfect for 8 guests in Sifnos, Greece."
+        keywords="Villa Olivia Clara details, luxury villa Sifnos amenities, private pool villa Greece, 4 bedroom villa Cyclades, villa with garden Sifnos, luxury accommodation Platis Gialos"
+        canonicalUrl="https://villaoliviaclara.com/villa"
+      />
+      <VillaStructuredData />
       <Navigation />
 
-      {/* Page Header */}
-      <header className="py-20 bg-gradient-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl font-bold mb-6 leading-tight">
-            Tour of Our Villa In Sifnos, Greece
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            We are delighted to give you a guided tour of our villa in Sifnos, Greece. 
-            Discover luxury, comfort, and breathtaking views in every corner.
-          </p>
+      {/* Hero Section */}
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={poolCabana}
+            alt="Pool side cabana at Villa Olivia Clara in Sifnos, Greece"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
         </div>
-      </header>
+        <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
+          <div className="mb-6">
+            <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm font-medium mb-4">
+              ✨ Luxury Villa Experience
+            </Badge>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Villa Olivia Clara
+          </h1>
+          <p className="text-2xl md:text-3xl mb-8 text-white/95 font-light">
+            Your Private Paradise in Sifnos, Greece
+          </p>
+          <div className="flex flex-wrap justify-center gap-6 text-lg mb-8">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <Bed className="w-5 h-5" />
+              <span>4 Bedrooms</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <Bath className="w-5 h-5" />
+              <span>4.5 Bathrooms</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <Users className="w-5 h-5" />
+              <span>Up to 8 Guests</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <Waves className="w-5 h-5" />
+              <span>Private Pool</span>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#pool-outdoor"
+              className="bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Explore Villa
+            </a>
+            <button
+              onClick={() => {
+                // Trigger the Olivia Clara AI agent to open
+                const aiButton = document.querySelector('[data-ai-trigger]') as HTMLButtonElement;
+                if (aiButton) {
+                  aiButton.click();
+                }
+              }}
+              className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm flex items-center gap-2"
+            >
+              <span>🤖</span>
+              Try Olivia Clara AI
+            </button>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-sm">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <SectionNav />
+      <main className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb />
 
-      <main className="py-20 space-y-32">
-        <section id="outdoors" aria-labelledby="outdoors-title" className="scroll-mt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Villa Overview */}
+          <section className="mb-20">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-villa-olive mb-6">
+                Your Luxury Greek Island Retreat
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Villa Olivia Clara is a stunning 250m² luxury villa in Platis Gialos, Sifnos. 
+                Experience authentic Greek hospitality with modern amenities, breathtaking sea views, 
+                and the perfect blend of privacy and convenience.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-semibold text-villa-olive mb-4">
+                  Why Choose Villa Olivia Clara?
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Star className="text-villa-olive mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-lg">Prime Location</h4>
+                      <p className="text-muted-foreground">Just 7 minutes walk to Platis Gialos beach, 15 minutes to Apollonia</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Star className="text-villa-olive mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-lg">Luxury Amenities</h4>
+                      <p className="text-muted-foreground">Private pool, cabana with bar, full kitchen, high-speed WiFi</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Star className="text-villa-olive mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <h4 className="font-semibold text-lg">Personalized Service</h4>
+                      <p className="text-muted-foreground">Concierge support, housekeeping, and local recommendations</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <img
+                  src={aerialView}
+                  alt="Aerial view of Villa Olivia Clara showing the pool and outdoor areas"
+                  className="w-full h-96 object-cover rounded-lg shadow-elegant"
+                />
+              </div>
+        </div>
+          </section>
+
+          {/* Pool & Outdoor Areas */}
+          <section id="pool-outdoor" className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Waves className="text-villa-olive" size={32} />
-                <h2 id="outdoors-title" className="text-4xl font-bold text-villa-olive">Outdoors</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">Pool & Outdoor Areas</h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Experience the beauty of Sifnos from our stunning outdoor spaces
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Enjoy the view of Sifnos from our pool cabana and bar with stunning panoramic sea views
               </p>
+              
+              {/* Pool Features */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Waves className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">12m x 5m Pool</h4>
+                  <p className="text-xs text-muted-foreground">3m depth with dolphin decorations</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Pool Cabana & Bar</h4>
+                  <p className="text-xs text-muted-foreground">Shaded area with dining</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Sunbeds & Loungers</h4>
+                  <p className="text-xs text-muted-foreground">Comfortable seating</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Wine className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Wine Cooler</h4>
+                  <p className="text-xs text-muted-foreground">Mini fridge for drinks</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Bath className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Pool Bathroom</h4>
+                  <p className="text-xs text-muted-foreground">Dedicated pool area</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Eye className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Sea Views</h4>
+                  <p className="text-xs text-muted-foreground">Panoramic Platis Gialos</p>
+                </Card>
+              </div>
             </div>
 
-            {/* Pool Cabana & Bar */}
-            <article className="mb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-3xl font-semibold text-villa-olive mb-4">Pool Cabana & Bar</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Enjoy the panoramic view of Sifnos from our luxurious pool cabana and bar area, 
-                      designed for ultimate relaxation and entertainment.
-                    </p>
-                  </div>
-                  <FeatureList
-                    title="Pool Features"
-                    icon={(p) => <Waves {...p} />}
-                    items={[
-                      '12m x 5m pool (3m depth)',
-                      'Shaded pool-side cabana',
-                      'Sunbeds & sun loungers',
-                      'Bar and dining area',
-                      'Wine cooler & mini fridge',
-                      'Dedicated pool bathroom',
-                    ]}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolArea}
+                    alt="The main pool area at Villa Olivia Clara with sunbeds and sea views"
+                    className="w-full h-80 object-cover cursor-zoom-in"
                   />
-                </div>
-                <Card className="border-0 shadow-elegant overflow-hidden">
-                  <CardContent className="p-0">
-                    <img
-                      src={platsGialos}
-                      alt="The large pool at Villa Olivia Clara is surrounded by the hills of Sifnos, Greece"
-                      loading="lazy"
-                      className="w-full h-96 object-cover"
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Gallery
-                items={[
-                  { src: vathi, alt: 'Pool-side cabana', caption: 'Pool-side cabana with stunning views' },
-                  { src: chrysopigi, alt: 'View from the pool-side cabana', caption: 'Breathtaking view from the pool-side cabana' },
-                  { src: kamares, alt: 'The pool area at night', caption: 'Magical pool area illuminated at night' },
-                  { src: faros, alt: 'Pool dining area at night', caption: 'Elegant pool dining area at night' },
-                  { src: heronissos, alt: 'View from the pool bar', caption: 'Spectacular view from the pool bar' },
-                  { src: fykiada, alt: 'At the pool during the day', caption: 'Perfect pool setting during the day' },
-                  { src: vroulidia, alt: 'View from the pool lounge area', caption: 'Relaxing view from the pool lounge area' },
-                  { src: apollonia, alt: 'Behind the pool bar', caption: 'Well-equipped area behind the pool bar' },
-                  { src: kastro, alt: 'Detail: Our house dolphins', caption: 'Charming detail: Our signature house dolphins' },
-                ]}
-              />
-            </article>
-
-            {/* Garden & Terrace */}
-            <article>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-3xl font-semibold text-villa-olive mb-4">Garden & Terrace</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Immerse yourself in the natural beauty of Sifnos through our rich Mediterranean garden 
-                      and expansive stone terraces.
-                    </p>
-                  </div>
-                  <FeatureList
-                    title="Garden Features"
-                    icon={(p) => <TreePine {...p} />}
-                    items={[
-                      'Large stone terrace with panoramic views',
-                      'Stone fence garden with native plants',
-                      'Multiple outdoor lounge and dining areas',
-                      'Parking space for 5 cars',
-                      'Indigenous Mediterranean plants & herbs',
-                      'Stunning unobstructed views of the sea',
-                    ]}
-                  />
-                </div>
-                <Card className="border-0 shadow-elegant overflow-hidden">
-                  <CardContent className="p-0">
-                    <img
-                      src={apollonia}
-                      alt="The view of Sifnos from our villa's stone terrace is unbeatable."
-                      loading="lazy"
-                      className="w-full h-96 object-cover"
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Gallery
-                items={[
-                  { src: artemonas, alt: 'Upper terrace at night', caption: 'Enchanting upper terrace at night' },
-                  { src: exampela, alt: 'The back garden near the pool', caption: 'Lush back garden near the pool area' },
-                  { src: katavati, alt: 'The villa from the garden', caption: 'Beautiful villa view from the garden' },
-                  { src: panoPetali, alt: 'View from the terrace', caption: 'Spectacular panoramic view from the terrace' },
-                  { src: troullaki, alt: 'Dining at the terrace', caption: 'Al fresco dining at the terrace' },
-                  { src: katoPetali, alt: 'Detail: Small part of our garden', caption: 'Charming detail of our Mediterranean garden' },
-                ]}
-              />
-
-              {/* Brand detail callout */}
-              <Card className="border-0 shadow-elegant mt-16" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <img
-                    src={kamares}
-                    alt="The majestic olive tree adorns our premium towels and linens"
-                    loading="lazy"
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
-                  <div className="text-white">
-                    <h4 className="text-2xl font-semibold mb-4">Our Signature Touch</h4>
-                    <p className="text-white/90 leading-relaxed">
-                      The majestic olive tree, found everywhere in Greece and Sifnos, adorns our premium towels and linens, 
-                      connecting you to the authentic spirit of the island.
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
-            </article>
-          </div>
-        </section>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolCabana}
+                    alt="Pool-side cabana with bar area at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
 
-        {/* Bedrooms */}
-        <section id="bedrooms" aria-labelledby="bedrooms-title" className="scroll-mt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolAreaNight}
+                    alt="Pool area at night with beautiful lighting"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDetail}
+                    alt="Pool detail showing the beautiful design"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolSunbathing}
+                    alt="Pool sunbathing area with comfortable loungers"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDining}
+                    alt="Pool dining area at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDiningNight}
+                    alt="Pool dining area at night"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolBarNight}
+                    alt="Pool bar at night with beautiful lighting"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Garden & Terrace */}
+          <section className="mb-20">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <TreePine className="text-villa-olive" size={32} />
+                <h2 className="text-4xl font-bold text-villa-olive">Garden & Terrace</h2>
+              </div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Enjoy the nature of Sifnos from our rich mediterranean garden with stunning views
+              </p>
+              
+              {/* Garden Features */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <TreePine className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Large Stone Terrace</h4>
+                  <p className="text-xs text-muted-foreground">Outdoor living space</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shield className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Stone Fence Garden</h4>
+                  <p className="text-xs text-muted-foreground">Traditional Greek design</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Outdoor Dining</h4>
+                  <p className="text-xs text-muted-foreground">Lounge and dining areas</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Car className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Parking Space</h4>
+                  <p className="text-xs text-muted-foreground">5 car spaces</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Flower className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Indigenous Plants</h4>
+                  <p className="text-xs text-muted-foreground">Herbs & mediterranean flora</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Eye className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Stunning Views</h4>
+                  <p className="text-xs text-muted-foreground">Platis Gialos bay</p>
+                </Card>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={backGarden}
+                    alt="Back garden with mediterranean plants"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={upperTerraceNight}
+                    alt="Upper terrace at night with lanterns"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={diningAtTerrace}
+                    alt="Dining at the terrace with sea view"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Bedrooms */}
+          <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bed className="text-villa-olive" size={32} />
-                <h2 id="bedrooms-title" className="text-4xl font-bold text-villa-olive">Bedrooms</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">Bedrooms</h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Wake up to breathtaking views of Platis Gialos, the most popular beach in Sifnos
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Wake up to views of Platis Gialos, the most popular beach in Sifnos
               </p>
+              
+              {/* Bedroom Features */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Bed className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">2 King Beds</h4>
+                  <p className="text-xs text-muted-foreground">200 x 200 cm</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Users className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">4 Single Beds</h4>
+                  <p className="text-xs text-muted-foreground">100 x 200 cm</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Baby className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">1 Baby Crib</h4>
+                  <p className="text-xs text-muted-foreground">70 x 130 cm</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Wifi className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Air Conditioning</h4>
+                  <p className="text-xs text-muted-foreground">All living areas</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Extra Pillows</h4>
+                  <p className="text-xs text-muted-foreground">And blankets</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Linen Changes</h4>
+                  <p className="text-xs text-muted-foreground">Weekly</p>
+                </Card>
+              </div>
             </div>
 
-            <div className="mb-12">
-              <FeatureList
-                title="Bedroom Features"
-                icon={(p) => <Bed {...p} />}
-                items={[
-                  '2 king beds (200 x 200cm) with premium mattresses',
-                  '4 single beds (100 x 200cm) perfect for children or adults',
-                  '1 baby crib (70 x 130cm) with safety features',
-                  'Air conditioning in all living areas for comfort',
-                  'Extra pillows and blankets for personalized comfort',
-                  'Weekly linen changes with premium Egyptian cotton¹',
-                ]}
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={masterBedroom}
+                    alt="Master bedroom at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={standardBedroom}
+                    alt="Standard bedroom at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
             </div>
 
-            <Gallery
-              items={[
-                { src: apollonia, alt: 'Master bedroom', caption: 'Luxurious master bedroom with sea views' },
-                { src: platsGialos, alt: 'View from the master bedroom', caption: 'Wake up to this stunning view from the master bedroom' },
-                { src: artemonas, alt: 'Standard bedroom', caption: 'Comfortable standard bedroom with elegant décor' },
-                { src: kastro, alt: 'View from the standard bedroom', caption: 'Beautiful view from the standard bedroom' },
-                { src: exampela, alt: 'Guest master bedroom', caption: 'Spacious guest master bedroom' },
-                { src: vathi, alt: 'View from the guest master bedroom', caption: 'Panoramic view from the guest master bedroom' },
-                { src: panoPetali, alt: 'Terrace access from guest master bedroom', caption: 'Direct terrace access from guest master bedroom' },
-                { src: katavati, alt: 'Guest standard bedroom', caption: 'Cozy guest standard bedroom' },
-              ]}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestMasterBedroom}
+                    alt="Guest master bedroom at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestStandardBedroom}
+                    alt="Guest standard bedroom at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={bedroomLinenDetail}
+                    alt="Bedroom linen detail showing luxury quality"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
 
-            <Card className="border-0 shadow-elegant mt-16" style={{ backgroundColor: '#716a63' }}>
-              <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <img
-                  src={faros}
-                  alt="Experience comfortable and personable service at Villa Olivia Clara in Sifnos, Greece."
-                  loading="lazy"
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-                <div className="text-white">
-                  <h4 className="text-2xl font-semibold mb-4">Personalized Comfort</h4>
-                  <p className="text-white/90 leading-relaxed">
-                    Experience comfortable and personable service at Villa Olivia Clara in Sifnos, Greece. 
-                    Every detail is carefully curated for your perfect stay.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={viewFromStandardBedroom}
+                    alt="View from standard bedroom"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestMasterBedroomView}
+                    alt="View from guest master bedroom"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-        {/* Bathrooms */}
-        <section id="bathrooms" aria-labelledby="bathrooms-title" className="scroll-mt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Bathrooms */}
+          <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bath className="text-villa-olive" size={32} />
-                <h2 id="bathrooms-title" className="text-4xl font-bold text-villa-olive">Bathrooms</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">Bathrooms</h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Feel at home in the luxury of our villa's elegant and well-appointed bathrooms
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Feel at home in the luxury of our villa's elegant bathrooms
               </p>
+              
+              {/* Bathroom Features */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Bath className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">3 Full Bathrooms</h4>
+                  <p className="text-xs text-muted-foreground">1 WC</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Waves className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Hot Water</h4>
+                  <p className="text-xs text-muted-foreground">Always available</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Bathroom Essentials</h4>
+                  <p className="text-xs text-muted-foreground">Hair dryer included</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Waves className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Pool Bathroom</h4>
+                  <p className="text-xs text-muted-foreground">Dedicated pool area</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Towel Changes</h4>
+                  <p className="text-xs text-muted-foreground">Twice a week</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Star className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Luxury Design</h4>
+                  <p className="text-xs text-muted-foreground">Modern fixtures</p>
+                </Card>
+              </div>
             </div>
 
-            <div className="mb-12">
-              <FeatureList
-                title="Bathroom Features"
-                icon={(p) => <Bath {...p} />}
-                items={[
-                  '3 full bathrooms with modern fixtures, 1 convenient WC',
-                  'Unlimited hot water with efficient heating system',
-                  'Premium bathroom essentials and toiletries provided',
-                  'Professional hair dryer in each bathroom',
-                  'Dedicated pool bathroom for convenience',
-                  'Twice-weekly towel changes with luxury linens²',
-                ]}
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={masterBathroom}
+                    alt="Master bathroom at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={standardBathroom}
+                    alt="Standard bathroom at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
             </div>
 
-            <Gallery
-              items={[
-                { src: kastro, alt: 'Master bathroom (en suite)', caption: 'Elegant master bathroom (en suite)' },
-                { src: apollonia, alt: 'Standard bathroom', caption: 'Well-appointed standard bathroom' },
-                { src: artemonas, alt: 'Standard bathroom', caption: 'Modern standard bathroom with quality fixtures' },
-                { src: exampela, alt: 'Guest master bathroom', caption: 'Spacious guest master bathroom' },
-                { src: katavati, alt: 'Guest master bathroom', caption: 'Luxurious guest master bathroom' },
-                { src: troullaki, alt: 'Guest standard WC', caption: 'Convenient guest standard WC' },
-                { src: vathi, alt: 'Dedicated pool bathroom', caption: 'Practical dedicated pool bathroom' },
-                { src: chrysopigi, alt: 'Dedicated pool bathroom', caption: 'Pool bathroom with outdoor access' },
-                { src: kamares, alt: 'Detail: Pool towel', caption: 'Premium pool towels with signature design' },
-              ]}
-              columns="md:grid-cols-3"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestMasterBathroom}
+                    alt="Guest master bathroom at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestMasterBathroom2}
+                    alt="Guest master bathroom detail"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={bathroomDetail}
+                    alt="Bathroom detail showing luxury fixtures"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
 
-            <Card className="border-0 shadow-elegant mt-16" style={{ backgroundColor: '#716a63' }}>
-              <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <img
-                  src={kamares}
-                  alt="Fine dining at Villa Olivia Clara using Sifnos Stoneware"
-                  loading="lazy"
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-                <div className="text-white">
-                  <h4 className="text-2xl font-semibold mb-4">Authentic Greek Dining</h4>
-                  <p className="text-white/90 leading-relaxed">
-                    Fine dining at Villa Olivia Clara using our exquisite dinner set from Sifnos Stoneware, 
-                    handmade in Greece with centuries-old techniques.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={standardBathroom2}
+                    alt="Standard bathroom detail"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={guestStandardWC}
+                    alt="Guest standard WC"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-        {/* Living Spaces */}
-        <section id="living" aria-labelledby="living-title" className="scroll-mt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Living Spaces */}
+          <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Utensils className="text-villa-olive" size={32} />
-                <h2 id="living-title" className="text-4xl font-bold text-villa-olive">Living Spaces</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">Living Spaces</h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Wine and dine like a Greek god in one of our three distinctive dining spaces
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Wine and dine like a Greek god in one of our three dining spaces
               </p>
+              
+              {/* Living Space Features */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Indoor Dining</h4>
+                  <p className="text-xs text-muted-foreground">Round glass table</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <UtensilsCrossed className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Outdoor Dining</h4>
+                  <p className="text-xs text-muted-foreground">Granite table with sea view</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Waves className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Pool Dining</h4>
+                  <p className="text-xs text-muted-foreground">Hexagonal wooden table</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Fully-equipped Kitchen</h4>
+                  <p className="text-xs text-muted-foreground">Green tiles & modern appliances</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Tv className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Smart 65" HDTV</h4>
+                  <p className="text-xs text-muted-foreground">Spacious living room</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <BookOpen className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Working Space</h4>
+                  <p className="text-xs text-muted-foreground">Books & reading material</p>
+                </Card>
+              </div>
             </div>
 
-            <div className="mb-12">
-              <FeatureList
-                title="Living Space Features"
-                icon={(p) => <Utensils {...p} />}
-                items={[
-                  'Elegant indoor dining area with sea views',
-                  'Large outdoor dining area perfect for al fresco meals',
-                  'Pool-side dining area for casual entertaining',
-                  'Fully-equipped gourmet kitchen with premium appliances',
-                  'Dedicated working space with high-speed internet',
-                  'Spacious living room with 65" smart TV and entertainment system',
-                ]}
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={livingRoom}
+                    alt="Living room at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={kitchen}
+                    alt="Kitchen at Villa Olivia Clara"
+                    className="w-full h-80 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
             </div>
 
-            <Gallery
-              items={[
-                { src: apollonia, alt: 'Indoor dining area', caption: 'Elegant indoor dining area with panoramic views' },
-                { src: troullaki, alt: 'Outdoor dining area', caption: 'Spacious outdoor dining area under the stars' },
-                { src: vathi, alt: 'Pool dining area', caption: 'Casual pool dining area for relaxed meals' },
-                { src: artemonas, alt: 'The living room', caption: 'Comfortable living room with modern amenities' },
-                { src: kastro, alt: 'The living room sitting area', caption: 'Cozy living room sitting area' },
-                { src: platsGialos, alt: 'The view from the living room', caption: 'Breathtaking view from the living room' },
-                { src: exampela, alt: 'The kitchen', caption: 'Fully-equipped gourmet kitchen' },
-                { src: faros, alt: 'The kitchen cooking area', caption: 'Professional kitchen cooking area' },
-                { src: heronissos, alt: 'The view from the kitchen', caption: 'Inspiring view from the kitchen' },
-              ]}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={indoorDining}
+                    alt="Indoor dining area at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={livingRoomView}
+                    alt="Living room view at Villa Olivia Clara"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={livingRoomBackyardView}
+                    alt="Living room backyard view"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
 
-            <Card className="border-0 shadow-elegant mt-16" style={{ backgroundColor: '#716a63' }}>
-              <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <img
-                  src={vroulidia}
-                  alt="Villa Olivia Clara provides one of the best views in Sifnos, Greece"
-                  loading="lazy"
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-                <div className="text-white">
-                  <h4 className="text-2xl font-semibold mb-4">Unmatched Views</h4>
-                  <p className="text-white/90 leading-relaxed">
-                    Villa Olivia Clara provides one of the best views in Sifnos, Greece due to its excellent location 
-                    and thoughtful architectural design that maximizes every vista.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={indoorDiningDetail}
+                    alt="Indoor dining detail"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={kitchenDetail}
+                    alt="Kitchen detail showing modern appliances"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-        {/* Amenities */}
-        <section id="amenities" aria-labelledby="amenities-title" className="scroll-mt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Additional Amenities */}
+          <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Wifi className="text-villa-olive" size={32} />
-                <h2 id="amenities-title" className="text-4xl font-bold text-villa-olive">Villa Amenities</h2>
+                <Star className="text-villa-olive" size={32} />
+                <h2 className="text-4xl font-bold text-villa-olive">Additional Amenities</h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Experience our five-star service and luxury amenities designed for your ultimate comfort
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Everything you need for a perfect stay in luxury and comfort
+              </p>
+              
+              {/* Additional Amenities Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Car className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Parking</h4>
+                  <p className="text-xs text-muted-foreground">Free on-site</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shield className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Security</h4>
+                  <p className="text-xs text-muted-foreground">Safe & secure</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Music className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Sound System</h4>
+                  <p className="text-xs text-muted-foreground">Bluetooth speakers</p>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Baby className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Family Friendly</h4>
+                  <p className="text-xs text-muted-foreground">Child-safe</p>
+                </Card>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <img
+                    src={poolHouse}
+                    alt="Pool house at Villa Olivia Clara"
+                    className="w-full h-64 object-cover"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <img
+                    src={poolHouse2}
+                    alt="Pool house interior"
+                    className="w-full h-64 object-cover"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <img
+                    src={diningAtTerrace}
+                    alt="Dining at the terrace"
+                    className="w-full h-64 object-cover"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Villa Amenities */}
+          <section className="mb-20">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Star className="text-villa-olive" size={32} />
+                <h2 className="text-4xl font-bold text-villa-olive">Villa Amenities</h2>
+              </div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Experience our five-star service and luxury amenities
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="border-0 shadow-elegant" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Shirt className="text-white" size={28} />
-                    <h3 className="text-2xl font-semibold">Bedroom & Laundry</h3>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Shirt, text: 'Professional washing machine' },
-                      { icon: Shirt, text: 'Quality hangers provided' },
-                      { icon: Shirt, text: 'Iron and ironing board' },
-                      { icon: Shirt, text: 'Drying rack for clothing' },
-                      { icon: Shirt, text: 'Ample closet space' },
-                      { icon: Baby, text: 'Baby changing table' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <item.icon size={16} className="text-white/80 flex-shrink-0" />
-                        <span className="text-white/90">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-elegant" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Shield className="text-white" size={28} />
-                    <h3 className="text-2xl font-semibold">Safety & Security</h3>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Shield, text: 'Fire extinguisher' },
-                      { icon: Shield, text: 'Fireplace safety guards' },
-                      { icon: Shield, text: 'Complete first aid kit' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <item.icon size={16} className="text-white/80 flex-shrink-0" />
-                        <span className="text-white/90">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-elegant" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <ChefHat className="text-white" size={28} />
-                    <h3 className="text-2xl font-semibold">Gourmet Kitchen</h3>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: UtensilsCrossed, text: 'Complete dishes and silverware' },
-                      { icon: Wine, text: 'Wine glasses, champagne glasses and more' },
-                      { icon: Dishwasher, text: 'Professional dishwasher' },
-                      { icon: Refrigerator, text: 'Large refrigerator & freezer' },
-                      { icon: Microwave, text: 'Microwave, oven, stove' },
-                      { icon: Coffee, text: 'Premium automatic coffee machine (50+ drinks)' },
-                      { icon: Flame, text: 'Outdoor barbecue area' },
-                      { icon: ChefHat, text: '…and much more' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <item.icon size={16} className="text-white/80 flex-shrink-0" />
-                        <span className="text-white/90">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-elegant" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Tv className="text-white" size={28} />
-                    <h3 className="text-2xl font-semibold">Entertainment</h3>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Tv, text: 'Smart 65″ HDTV with streaming' },
-                      { icon: BookOpen, text: 'Books and reading material' },
-                      { icon: Gamepad2, text: 'Board games and toys' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <item.icon size={16} className="text-white/80 flex-shrink-0" />
-                        <span className="text-white/90">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-elegant" style={{ backgroundColor: '#716a63' }}>
-                <CardContent className="p-8 text-white">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Phone className="text-white" size={28} />
-                    <h3 className="text-2xl font-semibold">Concierge Services</h3>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Car, text: 'Transfer to / from port' },
-                      { icon: ChefHat, text: 'Private chef services' },
-                      { icon: MapPin, text: 'Private boat tours' },
-                      { icon: Plane, text: 'Private island transfers' },
-                      { icon: Music, text: 'Local musicians' },
-                      { icon: Baby, text: 'Professional babysitter' },
-                      { icon: Calendar, text: 'Event hosting services' },
-                      { icon: Phone, text: '…and more, just ask us!' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <item.icon size={16} className="text-white/80 flex-shrink-0" />
-                        <span className="text-white/90">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Separator className="my-16" />
-            <div className="bg-white rounded-xl p-8 shadow-soft">
-              <h4 className="text-xl font-semibold text-villa-olive mb-4">Service Notes</h4>
-              <div className="space-y-3 text-sm text-gray-600">
-                <p className="flex items-start gap-2">
-                  <Badge variant="outline" className="text-xs">1</Badge>
-                  Our standard is to change linens every week. We are happy to provide more frequent service at extra charge.
-                </p>
-                <p className="flex items-start gap-2">
-                  <Badge variant="outline" className="text-xs">2</Badge>
-                  Our standard is to change towels twice a week. We are happy to provide more frequent service at extra charge.
-                </p>
+            {/* Bedroom and Laundry */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-villa-olive mb-6 text-center">Bedroom and Laundry</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Refrigerator className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Washing Machine</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Hangers</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Iron</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Drying Rack</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Closet Space</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Baby className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Changing Table</h4>
+                </Card>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
 
-      {/* Virtual Tour Section */}
-      <VirtualTourSection />
+            {/* Safety */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-villa-olive mb-6 text-center">Safety</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Flame className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Fire Extinguisher</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shield className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Fireplace Guards</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Shield className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">First Aid Kit</h4>
+                </Card>
+              </div>
+            </div>
+
+            {/* Kitchen */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-villa-olive mb-6 text-center">Kitchen</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Dishes & Silverware</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Wine className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Wine Glasses</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Dishwasher className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Dishwasher</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Refrigerator className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Refrigerator & Freezer</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Microwave className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Microwave, Oven, Stove</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Coffee className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Premium Coffee Machine</h4>
+                </Card>
+              </div>
+            </div>
+
+            {/* Entertainment */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-villa-olive mb-6 text-center">Entertainment</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Tv className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Smart 65" HDTV</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <BookOpen className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Books & Reading Material</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Gamepad2 className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Board Games & Toys</h4>
+                </Card>
+              </div>
+            </div>
+
+            {/* Upon Request Services */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-villa-olive mb-6 text-center">Upon Request</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Plane className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Transfer to/from Port</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <ChefHat className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Private Chef</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Waves className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Private Boat Tour</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Plane className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Private Island Transfer</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Music className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Local Musicians</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Baby className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Babysitter</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">Event Hosting</h4>
+                </Card>
+                <Card className="border-villa-stone shadow-soft p-4 text-center">
+                  <Star className="text-villa-olive mx-auto mb-2" size={24} />
+                  <h4 className="font-semibold text-sm text-villa-olive">And More...</h4>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Complete Photo Gallery */}
+          <section className="mb-20">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Eye className="text-villa-olive" size={32} />
+                <h2 className="text-4xl font-bold text-villa-olive">Complete Photo Gallery</h2>
+              </div>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Explore every corner of Villa Olivia Clara through our comprehensive photo collection
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* Pool & Outdoor Photos */}
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolCabana}
+                    alt="Pool side cabana"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={viewFromPoolCabana}
+                    alt="View from pool cabana"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolArea}
+                    alt="Pool area"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolAreaNight}
+                    alt="Pool area at night"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDetail}
+                    alt="Pool detail"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={viewFromPoolBar}
+                    alt="View from pool bar"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolBarNight}
+                    alt="Pool bar at night"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDining}
+                    alt="Pool dining area"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={viewFromPoolDining}
+                    alt="View from pool dining"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolDiningNight}
+                    alt="Pool dining at night"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={poolSunbathing}
+                    alt="Pool sunbathing area"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={viewFromPoolSunbathing}
+                    alt="View from pool sunbathing"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={upperTerraceNight}
+                    alt="Upper terrace at night"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={backGarden}
+                    alt="Back garden"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={aerialView}
+                    alt="Aerial view of villa"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-elegant overflow-hidden">
+                <CardContent className="p-0">
+                  <ImageZoom
+                    src={aerialViewWide}
+                    alt="Wide aerial view of villa"
+                    className="w-full h-64 object-cover cursor-zoom-in"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </div>
+      </main>
 
       <Footer />
       <BackToTop />
-      <OliviaClaraAI />
     </div>
   );
 };

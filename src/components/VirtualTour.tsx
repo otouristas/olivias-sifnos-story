@@ -104,30 +104,6 @@ export function VirtualTourSection(): JSX.Element {
             </CardContent>
           </Card>
           
-          {/* Tour Features */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                <Eye className="text-villa-olive" size={20} />
-              </div>
-              <h3 className="font-semibold text-villa-olive">360° Experience</h3>
-              <p className="text-sm text-gray-600">Explore every room and outdoor space</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                <Maximize2 className="text-villa-olive" size={20} />
-              </div>
-              <h3 className="font-semibold text-villa-olive">High Definition</h3>
-              <p className="text-sm text-gray-600">Crystal clear, immersive quality</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                <Play className="text-villa-olive" size={20} />
-              </div>
-              <h3 className="font-semibold text-villa-olive">Interactive</h3>
-              <p className="text-sm text-gray-600">Click, drag, and zoom to explore</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

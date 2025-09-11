@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { MessageCircle, Send, Minimize2, X, Bot, User, Loader2 } from 'lucide-react';
+import { MessageCircle, Send, Minimize2, X, Bot, User, Loader2, Sparkles, Heart, Star, MapPin, Calendar, Phone, Mail } from 'lucide-react';
 import { generateAIResponse, QUICK_ACTIONS } from '@/data/ai-knowledge-base';
 import favicon from '/favicon.webp';
 
@@ -19,11 +19,12 @@ interface ChatbotProps {
   readonly className?: string;
 }
 
-// Welcome messages for first interaction
+// Enhanced welcome messages with personality
 const WELCOME_MESSAGES = [
-  "Hello! I'm Olivia Clara AI, your personal villa assistant. How can I help you plan your perfect stay in Sifnos?",
-  "Welcome to Villa Olivia Clara! I'm here to answer any questions about our luxury villa in Sifnos. What would you like to know?",
-  "Hi there! I'm Olivia Clara AI. I'd be delighted to help you discover everything about our beautiful villa in Sifnos, Greece."
+  "Hello! I'm Olivia Clara AI, your personal villa concierge. I know every corner of our villa and every secret of Sifnos. How can I make your Greek island dreams come true? ✨",
+  "Welcome to Villa Olivia Clara! I'm your AI assistant with insider knowledge of our luxury villa and the beautiful island of Sifnos. What would you like to discover? 🏖️",
+  "Hi there! I'm Olivia Clara AI, your virtual concierge. I've helped hundreds of guests plan perfect Sifnos vacations. Let me share our secrets with you! 💫",
+  "Kalimera! I'm Olivia Clara AI, your personal guide to Villa Olivia Clara and Sifnos. I know all the best beaches, restaurants, and hidden gems. What shall we explore? 🌊"
 ];
 
 export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
@@ -32,6 +33,8 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
   const [messages, setMessages] = useState<ReadonlyArray<Message>>([]);
   const [inputValue, setInputValue] = useState<string>('');
   const [isTyping, setIsTyping] = useState<boolean>(false);
+  const [showQuickActions, setShowQuickActions] = useState<boolean>(true);
+  const [conversationCount, setConversationCount] = useState<number>(0);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom when new messages are added
@@ -44,15 +47,23 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
   // Initialize with greeting when opened for the first time
   useEffect(() => {
     if (isOpen && messages.length === 0) {
+      const randomWelcome = WELCOME_MESSAGES[Math.floor(Math.random() * WELCOME_MESSAGES.length)];
       const welcomeMessage: Message = {
         id: Date.now().toString(),
         type: 'ai',
-        content: WELCOME_MESSAGES[0],
+        content: randomWelcome,
         timestamp: new Date()
       };
       setMessages([welcomeMessage]);
     }
   }, [isOpen, messages.length]);
+
+  // Hide quick actions after first interaction
+  useEffect(() => {
+    if (messages.length > 1) {
+      setShowQuickActions(false);
+    }
+  }, [messages.length]);
 
   const handleSendMessage = async (): Promise<void> => {
     if (!inputValue.trim()) return;
@@ -67,8 +78,11 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
+    setConversationCount(prev => prev + 1);
 
-    // Simulate AI thinking time
+    // Enhanced AI thinking time with personality
+    const thinkingTime = 800 + Math.random() * 1500; // 0.8-2.3 seconds
+    
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
@@ -79,7 +93,7 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
 
       setMessages(prev => [...prev, aiResponse]);
       setIsTyping(false);
-    }, 1000 + Math.random() * 2000); // Random delay between 1-3 seconds
+    }, thinkingTime);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent): void => {
@@ -94,22 +108,32 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
       <div className={`fixed bottom-6 right-6 z-50 ${className}`}>
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full bg-villa-olive hover:bg-villa-olive/90 shadow-lg hover:shadow-xl transition-all duration-300 group p-0 overflow-hidden"
+          data-ai-trigger
+          className="h-16 w-16 rounded-full bg-gradient-to-br from-villa-olive to-villa-olive/80 hover:from-villa-olive/90 hover:to-villa-olive/70 shadow-xl hover:shadow-2xl transition-all duration-300 group p-0 overflow-hidden relative"
           size="icon"
         >
           <div className="relative w-full h-full flex items-center justify-center">
             <img 
               src={favicon} 
               alt="Olivia Clara AI" 
-              className="w-8 h-8 rounded-full bg-white/10 p-1 group-hover:scale-110 transition-transform filter brightness-0 invert"
+              className="w-10 h-10 rounded-full bg-white/10 p-1 group-hover:scale-110 transition-transform filter brightness-0 invert"
             />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-white"></div>
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
           </div>
+          
+          {/* Floating sparkles */}
+          <div className="absolute -top-2 -left-2 w-2 h-2 bg-yellow-400 rounded-full animate-bounce delay-100"></div>
+          <div className="absolute -bottom-2 -right-2 w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce delay-300"></div>
         </Button>
         
-        {/* Tooltip */}
-        <div className="absolute bottom-16 right-0 bg-black/80 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Chat with Olivia Clara AI
+        {/* Enhanced Tooltip */}
+        <div className="absolute bottom-20 right-0 bg-gradient-to-r from-villa-olive to-villa-olive/90 text-white text-sm px-4 py-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-lg">
+          <div className="flex items-center gap-2">
+            <Sparkles size={16} />
+            <span className="font-medium">Chat with Olivia Clara AI</span>
+          </div>
+          <div className="text-xs text-white/80 mt-1">Your personal villa concierge</div>
         </div>
       </div>
     );
@@ -127,11 +151,14 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                   alt="Olivia Clara AI" 
                   className="w-8 h-8 rounded-full bg-white p-1"
                 />
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
               </div>
               <div>
-                <CardTitle className="text-sm font-semibold">Olivia Clara AI</CardTitle>
-                <p className="text-xs text-white/80">Villa Assistant</p>
+                <CardTitle className="text-sm font-semibold flex items-center gap-2">
+                  Olivia Clara AI
+                  <Sparkles size={14} className="text-yellow-300" />
+                </CardTitle>
+                <p className="text-xs text-white/80">Your Personal Villa Concierge</p>
               </div>
             </div>
             <div className="flex items-center gap-1">
@@ -193,9 +220,14 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                       <Bot size={16} className="text-villa-olive" />
                     </div>
                     <div className="bg-gray-100 p-3 rounded-lg rounded-bl-none">
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-2">
                         <Loader2 size={16} className="animate-spin text-villa-olive" />
-                        <span className="text-sm text-gray-600">Olivia Clara AI is typing...</span>
+                        <span className="text-sm text-gray-600">Olivia Clara AI is thinking...</span>
+                        <div className="flex gap-1">
+                          <div className="w-1 h-1 bg-villa-olive rounded-full animate-bounce"></div>
+                          <div className="w-1 h-1 bg-villa-olive rounded-full animate-bounce delay-100"></div>
+                          <div className="w-1 h-1 bg-villa-olive rounded-full animate-bounce delay-200"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -226,31 +258,63 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
               </div>
               
               {/* Quick Actions */}
-              <div className="flex flex-wrap gap-2 mt-3">
-                {QUICK_ACTIONS.slice(0, 3).map((action) => (
-                  <button
-                    key={action.label}
-                    type="button"
-                    className="inline-flex items-center px-3 py-1 text-xs font-medium text-villa-olive bg-villa-olive-light/50 border border-villa-olive/20 rounded-full cursor-pointer hover:bg-villa-olive-light hover:border-villa-olive/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-villa-olive/20"
-                    onClick={() => {
-                      setInputValue(action.query);
-                      // Auto-focus the input after setting the value
-                      setTimeout(() => {
-                        const input = document.querySelector('input[placeholder*="Ask me about"]') as HTMLInputElement;
-                        if (input) input.focus();
-                      }, 50);
-                    }}
-                  >
-                    {action.label}
-                  </button>
-                ))}
-              </div>
+              {showQuickActions && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {QUICK_ACTIONS.slice(0, 4).map((action) => (
+                    <button
+                      key={action.label}
+                      type="button"
+                      className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-villa-olive bg-villa-olive-light/50 border border-villa-olive/20 rounded-full cursor-pointer hover:bg-villa-olive-light hover:border-villa-olive/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-villa-olive/20 hover:scale-105"
+                      onClick={() => {
+                        setInputValue(action.query);
+                        // Auto-focus the input after setting the value
+                        setTimeout(() => {
+                          const input = document.querySelector('input[placeholder*="Ask me about"]') as HTMLInputElement;
+                          if (input) input.focus();
+                        }, 50);
+                      }}
+                    >
+                      {action.label}
+                    </button>
+                  ))}
+                </div>
+              )}
               
-              {/* Powered by */}
-              <div className="flex justify-center mt-3 pt-2 border-t border-villa-stone/20">
-                <p className="text-xs text-gray-400">
-                  Powered by <span className="font-medium text-villa-olive">Touristas AI</span>
-                </p>
+              {/* Contact Quick Actions */}
+              {conversationCount > 2 && (
+                <div className="flex gap-2 mt-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 text-xs"
+                    onClick={() => setInputValue("How do I contact Elena for booking?")}
+                  >
+                    <Phone size={12} className="mr-1" />
+                    Call Elena
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 text-xs"
+                    onClick={() => setInputValue("What's Elena's email for booking?")}
+                  >
+                    <Mail size={12} className="mr-1" />
+                    Email
+                  </Button>
+                </div>
+              )}
+              
+              {/* Enhanced Footer */}
+              <div className="flex justify-center items-center mt-3 pt-2 border-t border-villa-stone/20">
+                <div className="flex items-center gap-2 text-xs text-gray-400">
+                  <span>Powered by</span>
+                  <img 
+                    src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" 
+                    alt="Touristas AI" 
+                    className="h-4 w-auto"
+                  />
+                  <span className="font-medium text-villa-olive">Touristas AI</span>
+                </div>
               </div>
             </div>
           </CardContent>

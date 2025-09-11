@@ -7,13 +7,21 @@ import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
 import CookieConsent from '@/components/CookieConsent';
 import { VirtualTour } from '@/components/VirtualTour';
-import { OliviaClaraAI } from '@/components/OliviaClaraAI';
 import { BackToTop } from '@/components/BackToTop';
-import { ChevronDown, Calendar, Eye } from 'lucide-react';
+import { HeroImage, VillaImage } from '@/components/LazyImage';
+import { LocalBusinessStructuredData } from '@/components/StructuredData';
+import SEOHead from '@/components/SEOHead';
+import { ChevronDown, Calendar, Eye, Users, MapPin, Wifi, Shield, Star, Waves, Home, ChefHat } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
-import poolView from '@/assets/Sifnos/Beaches/vathi.webp';
-import villaLinens from '@/assets/Sifnos/Beaches/chrysopigi.webp';
-import elenaHost from '@/assets/Sifnos/villages/apollonia.webp';
+import ImageZoom from '@/components/ImageZoom';
+
+// Villa Gallery Images
+import poolView from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg';
+import villaLinens from '@/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.jpg';
+import elenaHost from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
+import poolArea from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
+import livingRoom from '@/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg';
+import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -35,6 +43,13 @@ const Index = () => {
   }
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Villa Olivia Clara | Luxury Villa Rental in Sifnos, Greece | Book Now"
+        description="Experience luxury at Villa Olivia Clara in Sifnos, Greece. Private pool, sea views, 4 bedrooms for 8 guests. 7 min walk to Platis Gialos beach. Book your authentic Greek island getaway today!"
+        keywords="luxury villa Sifnos, private pool villa Greece, Platis Gialos accommodation, Cyclades villa rental, Greek island luxury, Sifnos beach villa, family villa Greece, private chef Sifnos"
+        canonicalUrl="https://villaoliviaclara.com"
+      />
+      <LocalBusinessStructuredData />
       <Navigation />
       
       {/* Hero Section */}
@@ -64,7 +79,6 @@ const Index = () => {
           <p className="text-2xl md:text-3xl mb-6 text-white/95">Sifnos, Greece</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <VirtualTour showInModal={true} className="order-2 sm:order-1" />
-            <div className="text-white/60 order-1 sm:order-2">or</div>
           </div>
           <div className="mt-6 flex justify-center">
             <form
@@ -78,9 +92,8 @@ const Index = () => {
                     type="date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 pr-9 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
+                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
                   />
-                  <Calendar size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
               <div className="flex-1 min-w-[220px] text-left">
@@ -91,13 +104,12 @@ const Index = () => {
                     value={checkOut}
                     onChange={(e) => setCheckOut(e.target.value)}
                     min={checkIn}
-                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 pr-9 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
+                    className="w-full rounded-md border border-villa-stone bg-white px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-villa-olive focus:border-villa-olive"
                   />
-                  <Calendar size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
               <div className="sm:self-end">
-                <Button type="submit" variant="villa" size="sm" className="px-6">Search</Button>
+                <Button type="submit" variant="villa" size="sm" className="px-6 h-10">Search</Button>
               </div>
             </form>
           </div>
@@ -105,96 +117,167 @@ const Index = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-sand-light">
+      <section className="py-20 bg-gradient-to-br from-sand-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">Villa Olivia Clara</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Your perfect luxury retreat in Sifnos, Greece
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-villa-olive mb-2">Capacity</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>8 guests</li>
-                <li>4 bedrooms (2 queen, 4 single, 1 baby cot)</li>
-                <li>4.5 bathrooms</li>
-                <li>Parking for 5 cars</li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-villa-olive mb-2">Location</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>Platis Gialos, Sifnos</li>
-                <li>7 mins walk / 2 mins drive to beach</li>
-                <li>15 mins to island center</li>
-                <li>25 mins to port</li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-villa-olive mb-2">Amenities</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>Large pool & lounge area with bar</li>
-                <li>Garden & outdoor dining</li>
-                <li>Full kitchen, BBQ</li>
-                <li>200+ Mbps WiFi</li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-villa-olive mb-2">Services</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>Housekeeping (2x per week)</li>
-                <li>Childcare (on request)</li>
-                <li>Private chef (on request)</li>
-                <li>Available for events</li>
-              </ul>
-            </div>
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="text-villa-olive" size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">Capacity</h3>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li className="flex items-center justify-center gap-2">
+                    <Users className="w-4 h-4" />
+                    8 guests
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <Home className="w-4 h-4" />
+                    4 bedrooms
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <Waves className="w-4 h-4" />
+                    4.5 bathrooms
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    Parking for 5 cars
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="text-villa-olive" size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">Location</h3>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li className="font-semibold text-villa-olive">Platis Gialos, Sifnos</li>
+                  <li>7 mins walk / 2 mins drive to beach</li>
+                  <li>15 mins to island center</li>
+                  <li>25 mins to port</li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Star className="text-villa-olive" size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">Amenities</h3>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>Large pool & lounge area with bar</li>
+                  <li>Garden & outdoor dining</li>
+                  <li>Full kitchen, BBQ</li>
+                  <li className="flex items-center justify-center gap-2">
+                    <Wifi className="w-4 h-4" />
+                    200+ Mbps WiFi
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <ChefHat className="text-villa-olive" size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">Services</h3>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>Housekeeping (2x per week)</li>
+                  <li>Childcare (on request)</li>
+                  <li>Private chef (on request)</li>
+                  <li>Available for events</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Villa Difference Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-white to-sand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12 text-villa-olive">
-            The Villa Olivia Clara Difference
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-                <img 
-                  src={poolView} 
-                  alt="Pool view" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-villa-olive mb-2">Perfect Location</h3>
-                <p className="text-muted-foreground">
-                  Anywhere you stand, Villa Olivia Clara offers you a breathtaking view of Sifnos 
-                  and just a 7 minute walk to the beach!
-                </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">
+              The Villa Olivia Clara Difference
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Here use the photos from our villa-gallery folder
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <ImageZoom
+                    src={poolView} 
+                    alt="Pool view" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Pool View</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Perfect Location</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Anywhere you stand, Villa Olivia Clara offers you a breathtaking view of Sifnos 
+                    and just a 7 minute walk to the beach!
+                  </p>
+                </div>
               </CardContent>
             </Card>
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-                <img 
-                  src={villaLinens} 
-                  alt="Villa linens" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-villa-olive mb-2">Real Home, Luxury Amenities</h3>
-                <p className="text-muted-foreground">
-                  We have carefully picked every part of Villa Olivia Clara to create a luxurious 
-                  experience that will still make you feel like home.
-                </p>
+            
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <ImageZoom
+                    src={villaLinens} 
+                    alt="Villa linens" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Villa Linens</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Real Home, Luxury Amenities</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We have carefully picked every part of Villa Olivia Clara to create a luxurious 
+                    experience that will still make you feel like home.
+                  </p>
+                </div>
               </CardContent>
             </Card>
-            <Card className="border-villa-stone shadow-soft">
-              <CardContent className="p-6">
-                <img 
-                  src={elenaHost} 
-                  alt="Elena, your host" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-villa-olive mb-2">Hosted by Elena</h3>
-                <p className="text-muted-foreground">
-                  Villa Olivia Clara is a family home and a family business. Being a local of the island, 
-                  Elena is the perfect host for an authentic experience.
-                </p>
+            
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <ImageZoom
+                    src={elenaHost} 
+                    alt="Elena, your host" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Elena, Your Host</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Hosted by Elena</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Villa Olivia Clara is a family home and a family business. Being a local of the island, 
+                    Elena is the perfect host for an authentic experience.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -202,68 +285,127 @@ const Index = () => {
       </section>
 
       {/* Virtual Tour Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-gradient-to-br from-sand-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Eye className="text-villa-olive" size={32} />
+              <Eye className="text-villa-olive" size={40} />
               <h2 className="text-4xl font-bold text-villa-olive">Take a Virtual Tour</h2>
             </div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
               Explore every corner of Villa Olivia Clara with our immersive 360° virtual tour. 
               Experience the luxury and beauty before you book.
             </p>
+            <div className="text-sm text-villa-olive font-semibold">
+              360° Tour • Click and drag to explore • Use mouse wheel to zoom
+            </div>
           </div>
 
-          <div className="max-w-5xl mx-auto">
-            <Card className="border-villa-stone shadow-elegant overflow-hidden">
+          <div className="max-w-6xl mx-auto">
+            <Card className="border-villa-stone shadow-elegant overflow-hidden hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-0">
                 <VirtualTour />
               </CardContent>
             </Card>
             
             {/* Tour Features */}
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                  <Eye className="text-villa-olive" size={20} />
-                </div>
-                <h3 className="font-semibold text-villa-olive">360° Experience</h3>
-                <p className="text-sm text-gray-600">Explore every room and outdoor space</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                  <Calendar className="text-villa-olive" size={20} />
-                </div>
-                <h3 className="font-semibold text-villa-olive">Book with Confidence</h3>
-                <p className="text-sm text-gray-600">See exactly what you're booking</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-12 h-12 bg-villa-olive-light rounded-full flex items-center justify-center">
-                  <ChevronDown className="text-villa-olive" size={20} />
-                </div>
-                <h3 className="font-semibold text-villa-olive">Interactive</h3>
-                <p className="text-sm text-gray-600">Click, drag, and zoom to explore</p>
-              </div>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Eye className="text-villa-olive" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-villa-olive mb-3">360° Experience</h3>
+                  <p className="text-muted-foreground">Explore every room and outdoor space</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Calendar className="text-villa-olive" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-villa-olive mb-3">Book with Confidence</h3>
+                  <p className="text-muted-foreground">See exactly what you're booking</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <ChevronDown className="text-villa-olive" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-villa-olive mb-3">Interactive</h3>
+                  <p className="text-muted-foreground">Click, drag, and zoom to explore</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
       {/* Sifnos Section */}
-      <section className="py-20 bg-sand">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-villa-olive">
-            Explore the Beauty of Sifnos with Us
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Our villa is located in Sifnos, Greece—a Greek island that is popular among those who 
-            appreciate good food and great sea views. Sifnos has been our family's home for centuries 
-            and we're excited to show you around.
-          </p>
-          <Button asChild variant="villa">
-            <Link to="/sifnos">Discover Sifnos</Link>
-          </Button>
+      <section className="py-20 bg-gradient-to-br from-sand to-sand-light">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl font-bold mb-6 text-villa-olive">
+                Explore the Beauty of Sifnos with Us
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Our villa is located in Sifnos, Greece—a Greek island that is popular among those who 
+                appreciate good food and great sea views. Sifnos has been our family's home for centuries 
+                and we're excited to show you around.
+              </p>
+              <Button asChild variant="villa" size="lg">
+                <Link to="/sifnos">Discover Sifnos</Link>
+              </Button>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <Card className="border-villa-stone shadow-soft overflow-hidden group">
+                  <CardContent className="p-0">
+                    <ImageZoom
+                      src={poolArea}
+                      alt="Pool area at Villa Olivia Clara"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                    />
+                  </CardContent>
+                </Card>
+                <Card className="border-villa-stone shadow-soft overflow-hidden group">
+                  <CardContent className="p-0">
+                    <ImageZoom
+                      src={livingRoom}
+                      alt="Living room at Villa Olivia Clara"
+                      className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="space-y-4 mt-8">
+                <Card className="border-villa-stone shadow-soft overflow-hidden group">
+                  <CardContent className="p-0">
+                    <ImageZoom
+                      src={kitchen}
+                      alt="Kitchen at Villa Olivia Clara"
+                      className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                    />
+                  </CardContent>
+                </Card>
+                <Card className="border-villa-stone shadow-soft overflow-hidden group">
+                  <CardContent className="p-0">
+                    <ImageZoom
+                      src={villaLinens}
+                      alt="Villa linens detail"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -333,7 +475,7 @@ const Index = () => {
               <div className="text-white/80">Review Average (40+ reviews)</div>
             </div>
           </div>
-          <Button asChild size="lg" variant="villa-outline">
+          <Button asChild size="lg" variant="villa">
             <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Let's Book Your Stay →</a>
           </Button>
         </div>
@@ -343,7 +485,6 @@ const Index = () => {
       <StickyBookingBar />
       <CookieConsent />
       <BackToTop />
-      <OliviaClaraAI />
     </div>
   );
 };

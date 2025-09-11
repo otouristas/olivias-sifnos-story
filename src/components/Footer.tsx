@@ -61,14 +61,20 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold text-villa-olive mb-4">Information</h3>
               <div className="space-y-3">
+                <Link to="/sustainability" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Sustainability
+                </Link>
+                <Link to="/rental-conditions" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Rental Conditions
+                </Link>
+                <Link to="/faq" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  FAQ
+                </Link>
                 <Link to="/privacy-policy" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
                   Privacy Policy
                 </Link>
                 <Link to="/cookie-policy" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
                   Cookie Policy
-                </Link>
-                <Link to="/terms-of-service" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
-                  Terms of Service
                 </Link>
                 <div className="pt-2">
                   <p className="text-xs text-muted-foreground">Licensed Property</p>

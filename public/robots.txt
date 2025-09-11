@@ -14,3 +14,16 @@ User-agent: *
 Allow: /
 
 Sitemap: https://villaoliviaclara.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow all other content
+Allow: /villa
+Allow: /sifnos
+Allow: /reviews
+Allow: /blog
+Allow: /contact

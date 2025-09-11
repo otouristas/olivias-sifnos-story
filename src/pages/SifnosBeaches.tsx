@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 
 // Import beach photos
 import platsGialos from '@/assets/Sifnos/Beaches/plats-gialos.webp';
@@ -217,6 +218,12 @@ const SifnosBeaches = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Sifnos Beaches Guide | Best Beaches in Sifnos, Greece | Blue Flag Beaches"
+        description="Discover the best beaches in Sifnos, Greece. Blue Flag Platis Gialos, Chrysopigi, Vathi, Kamares, Faros, Heronissos. Complete beach guide with photos, amenities, and access info."
+        keywords="Sifnos beaches, Platis Gialos beach, Chrysopigi Sifnos, Vathi beach, Kamares beach, Blue Flag beaches Greece, Cyclades beaches, Greek island beaches"
+        canonicalUrl="https://villaoliviaclara.com/sifnos/beaches"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -410,6 +417,58 @@ const SifnosBeaches = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Boat Tours Section */}
+      <section className="py-20 bg-villa-olive-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">
+              Explore Beyond the Beaches
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Take your Sifnos experience to the next level with private boat tours to neighboring islands and hidden coastal gems.
+            </p>
+          </div>
+          
+          <Card className="border-villa-stone shadow-soft">
+            <CardContent className="p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Private Boat Tours</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Discover the magic of island hopping with private boat tours to Poliegos, Kimolos, and Milos. 
+                    Each island offers unique experiences - from the wild beauty of Poliegos to the charming villages of Kimolos.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3">
+                      <span className="text-villa-olive">⛵</span>
+                      <span className="text-muted-foreground">Visit uninhabited islands and hidden coves</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-villa-olive">🏊</span>
+                      <span className="text-muted-foreground">Snorkel in crystal-clear waters</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-villa-olive">📸</span>
+                      <span className="text-muted-foreground">Capture stunning coastal landscapes</span>
+                    </div>
+                  </div>
+                  <Button asChild variant="villa" size="lg">
+                    <Link to="/sifnos/boat-tours">Discover Boat Tours</Link>
+                  </Button>
+                </div>
+                <div className="bg-gradient-to-br from-villa-olive-light to-sand-light p-6 rounded-lg text-center">
+                  <div className="text-6xl mb-4">🏝️</div>
+                  <h4 className="text-lg font-semibold text-villa-olive mb-2">Island Hopping</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Experience the authentic beauty of the Cyclades with our recommended boat tour partners.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

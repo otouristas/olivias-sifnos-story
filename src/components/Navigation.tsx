@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 
 // Import logo
 import logo from '/villa-olivia-clara-logo.webp';
@@ -11,6 +12,15 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSifnosOpen, setIsSifnosOpen] = useState(false);
   const location = useLocation();
+
+  // Keyboard navigation
+  useKeyboardNavigation({
+    onEscape: () => {
+      setIsOpen(false);
+      setIsSifnosOpen(false);
+    },
+    enabled: true
+  });
 
   const navigationItems = [
     { text: 'Our Villa', link: '/villa' },
@@ -130,13 +140,18 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-foreground"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile menu button and Book Now */}
+          <div className="md:hidden flex items-center gap-2">
+            <Button asChild variant="villa" size="sm">
+              <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Book Now</a>
+            </Button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md text-foreground"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -216,13 +231,6 @@ const Navigation = () => {
                 Contact Us
               </Link>
 
-              <div className="px-3 py-2">
-                <Button asChild variant="villa" size="sm" className="w-full">
-                  <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">
-                    Book Now
-                  </a>
-                </Button>
-              </div>
             </div>
           </div>
         )}

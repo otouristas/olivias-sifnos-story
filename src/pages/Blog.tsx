@@ -4,6 +4,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StickyBookingBar from '@/components/StickyBookingBar';
+import Breadcrumb from '@/components/Breadcrumb';
+import SEOHead from '@/components/SEOHead';
+import { BlogShare } from '@/components/SocialShare';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
 
 // Mock images using existing assets
@@ -40,6 +43,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Sifnos Travel Blog | Greek Island Travel Tips & Villa Stories"
+        description="Read our Sifnos travel blog for insider tips, villa experiences, and Greek island adventures. Discover the best of Sifnos through our travel guides and local insights."
+        keywords="Sifnos travel blog, Greek island travel tips, Sifnos villa stories, Cyclades travel guide, Greek island blog, Sifnos travel experiences"
+        canonicalUrl="https://villaoliviaclara.com/blog"
+      />
       <Navigation />
       
       {/* Skip to content link for accessibility */}
@@ -65,6 +74,7 @@ const Blog = () => {
       {/* Main Content */}
       <main id="main-content" className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb />
           {/* Featured Post */}
           {blogPosts.filter(post => post.featured).map(post => (
             <Card key={post.id} className="mb-12 border-villa-stone shadow-elegant overflow-hidden animate-fade-in">
@@ -117,6 +127,11 @@ const Blog = () => {
                       Read Full Article <ArrowRight size={16} />
                     </Link>
                   </Button>
+                  <BlogShare 
+                    slug={post.slug}
+                    title={post.title}
+                    description={post.excerpt}
+                  />
                 </CardContent>
               </div>
             </Card>

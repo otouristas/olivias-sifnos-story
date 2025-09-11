@@ -5,10 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import CanonicalLink from "@/components/CanonicalLink";
+import { OliviaClaraAI } from "@/components/OliviaClaraAI";
 import Index from "./pages/Index";
 import Villa from "./pages/Villa";
 import Sifnos from "./pages/Sifnos";
 import SifnosBeaches from "./pages/SifnosBeaches";
+import Activity from "./pages/Activity";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
@@ -17,7 +19,11 @@ import VillaVsHotel from "./pages/blog/VillaVsHotel";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import CookiePolicy from "./pages/legal/CookiePolicy";
 import TermsOfService from "./pages/legal/TermsOfService";
+import RentalConditions from "./pages/legal/RentalConditions";
+import FAQ from "./pages/FAQ";
+import Sustainability from "./pages/Sustainability";
 import NotFound from "./pages/NotFound";
+import Sitemap from "./pages/Sitemap";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +40,7 @@ const App = () => (
           <Route path="/villa" element={<Villa />} />
           <Route path="/sifnos" element={<Sifnos />} />
           <Route path="/sifnos/beaches" element={<SifnosBeaches />} />
+          <Route path="/sifnos/boat-tours" element={<Activity />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
@@ -42,9 +49,15 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/rental-conditions" element={<RentalConditions />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/sitemap.xml" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* Olivia Clara AI - Available on every page */}
+        <OliviaClaraAI />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

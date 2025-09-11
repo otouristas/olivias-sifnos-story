@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
@@ -6,6 +7,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { reviewsData, type GuestReview } from './reviews-data';
 import SeoJsonLd from '@/components/SeoJsonLd';
+import { ReviewsStructuredData } from '@/components/StructuredData';
+import Breadcrumb from '@/components/Breadcrumb';
+import SEOHead from '@/components/SEOHead';
+import { ChevronDown } from 'lucide-react';
 
 function formatDate(input: string): string {
   const d: Date = new Date(input);
@@ -16,6 +21,7 @@ function formatDate(input: string): string {
 function getYear(date: string): number { return new Date(date).getFullYear(); }
 
 export default function Reviews(): JSX.Element {
+  const [showAll, setShowAll] = useState(false);
   const sorted: ReadonlyArray<GuestReview> = [...reviewsData].sort((a, b) => (a.date < b.date ? 1 : -1));
   const grouped: Record<number, ReadonlyArray<GuestReview>> = sorted.reduce((acc, r) => {
     const y: number = getYear(r.date);
@@ -23,8 +29,18 @@ export default function Reviews(): JSX.Element {
     return { ...acc, [y]: [...arr, r] };
   }, {} as Record<number, ReadonlyArray<GuestReview>>);
 
+  const years = Object.keys(grouped).sort((a, b) => parseInt(b) - parseInt(a));
+  const visibleYears = showAll ? years : years.slice(0, 2);
+
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      <SEOHead
+        title="Villa Olivia Clara Guest Reviews | 5-Star Sifnos Villa Testimonials"
+        description="Read authentic guest reviews for Villa Olivia Clara in Sifnos, Greece. 5-star luxury villa with private pool, sea views, excellent service. See why guests love our villa!"
+        keywords="Villa Olivia Clara reviews, Sifnos villa testimonials, luxury villa guest feedback, Greek island accommodation reviews, Platis Gialos villa ratings"
+        canonicalUrl="https://villaoliviaclara.com/reviews"
+      />
+      <ReviewsStructuredData />
       <SeoJsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'Product',
@@ -54,7 +70,10 @@ export default function Reviews(): JSX.Element {
       </header>
       <main className="py-20 space-y-20">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {Object.entries(grouped).sort(([a], [b]) => parseInt(b) - parseInt(a)).map(([year, items]) => (
+          <Breadcrumb />
+          {visibleYears.map((year) => {
+            const items = grouped[parseInt(year)];
+            return (
             <div key={year} className="mb-16">
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px flex-1 bg-villa-stone" />
@@ -78,7 +97,25 @@ export default function Reviews(): JSX.Element {
                 ))}
               </div>
             </div>
-          ))}
+            );
+          })}
+          
+          {years.length > 2 && (
+            <div className="text-center mt-12">
+              <Button
+                onClick={() => setShowAll(!showAll)}
+                variant="villa-outline"
+                size="lg"
+                className="gap-2"
+              >
+                {showAll ? 'Show Less' : 'Read More Reviews'}
+                <ChevronDown 
+                  size={16} 
+                  className={`transition-transform duration-200 ${showAll ? 'rotate-180' : ''}`} 
+                />
+              </Button>
+            </div>
+          )}
         </section>
         <section className="bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">

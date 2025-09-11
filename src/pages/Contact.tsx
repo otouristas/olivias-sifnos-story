@@ -7,8 +7,11 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { OliviaClaraAI } from '@/components/OliviaClaraAI';
 import { BackToTop } from '@/components/BackToTop';
+import SEOHead from '@/components/SEOHead';
+import ImageZoom from '@/components/ImageZoom';
+import { Mail, Phone, MapPin, Heart } from 'lucide-react';
+import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -48,6 +51,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Contact Villa Olivia Clara | Book Your Sifnos Villa Stay | Elena Philippou"
+        description="Contact Elena Philippou to book Villa Olivia Clara in Sifnos, Greece. Luxury villa rental with private pool, sea views, 4 bedrooms. Email elena@villaoliviaclara.com or call +30 697 1919 382."
+        keywords="contact Villa Olivia Clara, book Sifnos villa, Elena Philippou host, villa rental Sifnos, luxury accommodation Greece, Platis Gialos booking"
+        canonicalUrl="https://villaoliviaclara.com/contact"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -61,6 +70,99 @@ const Contact = () => {
             about the villa, need help planning your trip to Sifnos, or are ready to book your vacation, 
             please get in touch.
           </p>
+        </div>
+      </section>
+
+      {/* Elena Philippou Host Section */}
+      <section className="py-20 bg-gradient-to-br from-sand-light to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">Meet Your Host</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Get to know Elena Philippou, your host at Villa Olivia Clara
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-villa-stone shadow-elegant overflow-hidden">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  {/* Elena's Photo - Smaller, Minimal */}
+                  <div className="flex-shrink-0">
+                    <div className="relative">
+                      <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft hover:shadow-elegant transition-all duration-300">
+                        <ImageZoom
+                          src={elenaProfile}
+                          alt="Elena Philippou - Your Host at Villa Olivia Clara"
+                          className="w-full h-full object-cover cursor-zoom-in"
+                        />
+                      </div>
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-villa-olive rounded-full flex items-center justify-center shadow-soft">
+                        <Heart className="text-white" size={16} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Elena's Info */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="mb-6">
+                      <h3 className="text-3xl font-bold text-villa-olive mb-2">Elena Philippou</h3>
+                      <p className="text-lg text-muted-foreground mb-2">Your Host at Villa Olivia Clara</p>
+                      <p className="text-villa-olive font-semibold">Sifnos, Greece</p>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className="space-y-2 mb-6">
+                      <div className="flex items-center justify-center md:justify-start gap-2">
+                        <Mail className="text-villa-olive" size={16} />
+                        <a 
+                          href="mailto:elena@villaoliviaclara.com"
+                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm"
+                        >
+                          elena@villaoliviaclara.com
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center md:justify-start gap-2">
+                        <Phone className="text-villa-olive" size={16} />
+                        <a 
+                          href="tel:+306971919382"
+                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm"
+                        >
+                          +30 697 1919 382
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center md:justify-start gap-2">
+                        <MapPin className="text-villa-olive" size={16} />
+                        <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos, Greece</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Welcome Message */}
+                <div className="mt-8 pt-6 border-t border-villa-stone">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-villa-olive mb-4 text-center md:text-left">
+                      Welcome to Sifnos!
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      I am delighted to welcome you to the island that has been my family's home for generations- 
+                      since the 1800s! Although I only used to spend my summers here, I have now moved in permanently. 
+                      I originally built Villa Olivia Clara to be my family's summer home, so it brings me immense joy 
+                      to share this special place with you.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      The Cycladic culture, the picturesque natural beauty and the hospitable people of this island 
+                      are what drew me in. Life flows slowly here on Sifnos- you can take a moment to relax and listen to the waves.
+                    </p>
+                    <p className="text-villa-olive font-semibold text-center md:text-left">
+                      I can't wait to see you there. - Elena
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -218,7 +320,6 @@ const Contact = () => {
 
       <Footer />
       <BackToTop />
-      <OliviaClaraAI />
     </div>
   );
 };

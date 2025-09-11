@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, HelpCircle, MapPin, Car, Wifi, Clock, Phone, Utensils, Waves, Plane, Ship } from 'lucide-react';
 
@@ -324,6 +325,7 @@ const FAQ = () => {
       </div>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import { Calendar, User, Clock, ArrowLeft, MapPin, Star, Camera } from 'lucide-react';
 
 // Using existing images
@@ -294,6 +295,7 @@ const SifnosGuide = () => {
       </article>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

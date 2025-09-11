@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 
 // Import beach photos
@@ -494,6 +495,7 @@ const SifnosBeaches = () => {
       </section>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

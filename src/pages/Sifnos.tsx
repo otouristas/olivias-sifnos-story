@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 
 // Import village photos
@@ -484,6 +485,7 @@ const Sifnos = () => {
       </section>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

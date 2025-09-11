@@ -105,6 +105,43 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
     }
   };
 
+  // Function to render markdown links in AI responses
+  const renderMessageContent = (content: string): JSX.Element => {
+    // Split content by markdown links [text](url)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = content.split(linkRegex);
+    
+    return (
+      <>
+        {parts.map((part, index) => {
+          if (index % 3 === 0) {
+            // Regular text
+            return <span key={index}>{part}</span>;
+          } else if (index % 3 === 1) {
+            // Link text
+            const url = parts[index + 1];
+            return (
+              <a
+                key={index}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-villa-olive hover:text-villa-olive-dark underline font-medium"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(url, '_blank', 'noopener,noreferrer');
+                }}
+              >
+                {part}
+              </a>
+            );
+          }
+          return null;
+        })}
+      </>
+    );
+  };
+
   if (!isOpen) {
     return (
       <div className={`fixed bottom-6 right-6 z-50 ${className}`}>
@@ -206,7 +243,7 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
                           : 'bg-gray-100 text-gray-800 rounded-bl-none'
                       }`}
                     >
-                      {message.content}
+                      {message.type === 'ai' ? renderMessageContent(message.content) : message.content}
                     </div>
                     {message.type === 'user' && (
                       <div className="w-8 h-8 rounded-full bg-villa-olive flex items-center justify-center flex-shrink-0">

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Leaf, Target, Zap, Recycle, Globe, TrendingDown, CheckCircle } from 'lucide-react';
 
@@ -267,6 +268,7 @@ const Sustainability = () => {
       </div>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

@@ -233,6 +233,9 @@
     "no": "No",
     "checkIn": "Check-in",
     "checkOut": "Check-out",
+    "adults": "Adults",
+    "children": "Children",
+    "infants": "Infants",
     "search": "Search"
   }
 }

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { generateBookingUrl, parseDate } from '@/utils/booking';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -38,10 +39,25 @@ const Index = () => {
 
   const [checkIn, setCheckIn] = useState<string>(getDateStringPlusDays(0));
   const [checkOut, setCheckOut] = useState<string>(getDateStringPlusDays(1));
+  const [adults, setAdults] = useState<number>(2);
+  const [children, setChildren] = useState<number>(0);
+  const [infants, setInfants] = useState<number>(0);
 
   function handleSearchSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    navigate(`/contact?checkIn=${encodeURIComponent(checkIn)}&checkOut=${encodeURIComponent(checkOut)}`);
+    
+    // Generate booking URL with parameters
+    const bookingUrl = generateBookingUrl({
+      checkin: checkIn,
+      checkout: checkOut,
+      rooms: 1,
+      adults,
+      children,
+      infants,
+    });
+    
+    // Open booking URL in new tab
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
   }
   return (
     <div className="min-h-screen bg-background">
@@ -86,29 +102,130 @@ const Index = () => {
           <div className="mt-6 flex justify-center">
             <form
               onSubmit={handleSearchSubmit}
-              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 flex flex-col sm:flex-row items-stretch sm:items-end gap-2 sm:gap-3 w-full max-w-sm sm:max-w-none"
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 w-full max-w-sm sm:max-w-none"
             >
-              <div className="flex-1 text-left">
-                <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
-                <input
-                  type="date"
-                  value={checkIn}
-                  onChange={(e) => setCheckIn(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
-                />
+              {/* Mobile Layout - Stacked */}
+              <div className="flex flex-col sm:hidden gap-3">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="text-left">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
+                    <input
+                      type="date"
+                      value={checkIn}
+                      onChange={(e) => setCheckIn(e.target.value)}
+                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                    />
+                  </div>
+                  <div className="text-left">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
+                    <input
+                      type="date"
+                      value={checkOut}
+                      onChange={(e) => setCheckOut(e.target.value)}
+                      min={checkIn}
+                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="text-left">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
+                    <select
+                      value={adults}
+                      onChange={(e) => setAdults(parseInt(e.target.value))}
+                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                    >
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                        <option key={num} value={num}>{num}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="text-left">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
+                    <select
+                      value={children}
+                      onChange={(e) => setChildren(parseInt(e.target.value))}
+                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                    >
+                      {[0, 1, 2, 3, 4, 5, 6].map(num => (
+                        <option key={num} value={num}>{num}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="text-left">
+                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
+                    <select
+                      value={infants}
+                      onChange={(e) => setInfants(parseInt(e.target.value))}
+                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                    >
+                      {[0, 1, 2, 3, 4].map(num => (
+                        <option key={num} value={num}>{num}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <Button type="submit" variant="villa" size="sm" className="w-full py-2 text-sm">{t('common.bookNow')}</Button>
               </div>
-              <div className="flex-1 text-left">
-                <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
-                <input
-                  type="date"
-                  value={checkOut}
-                  onChange={(e) => setCheckOut(e.target.value)}
-                  min={checkIn}
-                  className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
-                />
-              </div>
-              <div className="sm:self-end">
-                <Button type="submit" variant="villa" size="sm" className="px-4 py-1.5 h-8 text-sm w-full sm:w-auto">{t('common.search')}</Button>
+
+              {/* Desktop Layout - Horizontal */}
+              <div className="hidden sm:flex items-end gap-3">
+                <div className="flex-1 text-left">
+                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
+                  <input
+                    type="date"
+                    value={checkIn}
+                    onChange={(e) => setCheckIn(e.target.value)}
+                    className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                  />
+                </div>
+                <div className="flex-1 text-left">
+                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
+                  <input
+                    type="date"
+                    value={checkOut}
+                    onChange={(e) => setCheckOut(e.target.value)}
+                    min={checkIn}
+                    className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                  />
+                </div>
+                <div className="flex-1 text-left">
+                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
+                  <select
+                    value={adults}
+                    onChange={(e) => setAdults(parseInt(e.target.value))}
+                    className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                      <option key={num} value={num}>{num}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="flex-1 text-left">
+                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
+                  <select
+                    value={children}
+                    onChange={(e) => setChildren(parseInt(e.target.value))}
+                    className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                  >
+                    {[0, 1, 2, 3, 4, 5, 6].map(num => (
+                      <option key={num} value={num}>{num}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="flex-1 text-left">
+                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
+                  <select
+                    value={infants}
+                    onChange={(e) => setInfants(parseInt(e.target.value))}
+                    className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                  >
+                    {[0, 1, 2, 3, 4].map(num => (
+                      <option key={num} value={num}>{num}</option>
+                    ))}
+                  </select>
+                </div>
+                <Button type="submit" variant="villa" size="sm" className="px-4 py-1.5 h-8 text-sm">{t('common.bookNow')}</Button>
               </div>
             </form>
           </div>

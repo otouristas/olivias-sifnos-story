@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Ship, MapPin, Clock, Users, Camera, Waves, Anchor, Compass } from 'lucide-react';
 
@@ -357,6 +358,7 @@ const Activity = () => {
       </div>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

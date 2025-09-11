@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import { Calendar, User, Clock, ArrowLeft, Check, X, Home, Users, Utensils, Car } from 'lucide-react';
 
 // Using existing images
@@ -379,6 +380,7 @@ const VillaVsHotel = () => {
       </article>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 };

@@ -558,6 +558,8 @@ export const VILLA_KNOWLEDGE_BASE: ReadonlyArray<KnowledgeEntry> = [
   }
 ];
 
+import { generateBookingUrlFromText } from '@/utils/booking';
+
 // Enhanced AI Response Generator with Advanced Context Awareness
 export function generateAIResponse(userMessage: string): string {
   const message = userMessage.toLowerCase();
@@ -624,6 +626,37 @@ export function generateAIResponse(userMessage: string): string {
     }))
     .filter(match => match.score > 0)
     .sort((a, b) => b.score - a.score);
+
+  // Check for booking/availability requests first
+  const bookingKeywords = ['book', 'reserve', 'booking', 'reservation', 'available', 'availability', 'check', 'dates', 'from', 'to', 'checkin', 'checkout', 'check-in', 'check-out'];
+  const hasBookingIntent = bookingKeywords.some(keyword => 
+    message.includes(keyword) || expandedWords.includes(keyword)
+  );
+  
+  if (hasBookingIntent) {
+    // Try to generate booking URL from the message
+    const bookingUrl = generateBookingUrlFromText(userMessage);
+    
+    if (bookingUrl) {
+      return `I'd be happy to help you check availability! Based on your request, I've prepared a booking link with your selected dates and guest information. 
+
+[Book Now](${bookingUrl})
+
+This will take you directly to our booking system with your preferences pre-filled. If you need to adjust the dates or guest count, you can easily modify them on the booking page.
+
+Is there anything else I can help you with about Villa Olivia Clara or Sifnos?`;
+    } else {
+      return `I'd love to help you check availability! To provide you with the most accurate booking information, could you please specify:
+
+• Your preferred check-in and check-out dates
+• Number of adults, children, and infants
+• Any special requirements
+
+For example: "Do you have availability from September 11-15, 2025 for 2 adults and 1 child?"
+
+Once you provide these details, I can generate a direct booking link for you!`;
+    }
+  }
 
   if (matches.length > 0) {
     const bestMatch = matches[0].entry;

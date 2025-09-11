@@ -233,6 +233,9 @@
     "no": "Non",
     "checkIn": "Arrivée",
     "checkOut": "Départ",
+    "adults": "Adultes",
+    "children": "Enfants",
+    "infants": "Bébés",
     "search": "Rechercher"
   }
 }

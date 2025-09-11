@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import { ArrowLeft, FileText, Shield, AlertTriangle, Phone, Mail, Clock } from 'lucide-react';
 
 const RentalConditions = () => {

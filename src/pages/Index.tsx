@@ -62,9 +62,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Villa Olivia Clara | Luxury Villa Rental in Sifnos, Greece | Book Now"
-        description="Experience luxury at Villa Olivia Clara in Sifnos, Greece. Private pool, sea views, 4 bedrooms for 8 guests. 7 min walk to Platis Gialos beach. Book your authentic Greek island getaway today!"
-        keywords="luxury villa Sifnos, private pool villa Greece, Platis Gialos accommodation, Cyclades villa rental, Greek island luxury, Sifnos beach villa, family villa Greece, private chef Sifnos"
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        keywords={t('seo.home.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
         canonicalUrl="https://villaoliviaclara.com"
       />
@@ -106,14 +106,14 @@ const Index = () => {
             >
               {/* Mobile Layout - Stacked */}
               <div className="flex flex-col sm:hidden gap-3">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="space-y-3">
                   <div className="text-left">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
                     <input
                       type="date"
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
-                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
                     />
                   </div>
                   <div className="text-left">
@@ -123,7 +123,7 @@ const Index = () => {
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
                       min={checkIn}
-                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
                     />
                   </div>
                 </div>
@@ -326,10 +326,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-villa-olive mb-4">
-              The Villa Olivia Clara Difference
+              {t('villaDifference.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Here use the photos from our villa-gallery folder
+              {t('villaDifference.subtitle')}
             </p>
           </div>
           
@@ -338,18 +338,17 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={poolView} 
-                    alt="Pool view" 
+                    src={poolArea} 
+                    alt="Pool area at Villa Olivia Clara" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Pool View</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Perfect Location</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.poolView.title')}</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.poolView.subtitle')}</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Anywhere you stand, Villa Olivia Clara offers you a breathtaking view of Sifnos 
-                    and just a 7 minute walk to the beach!
+                    {t('villaDifference.poolView.description')}
                   </p>
                 </div>
               </CardContent>
@@ -359,18 +358,17 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={villaLinens} 
-                    alt="Villa linens" 
+                    src={livingRoom} 
+                    alt="Living room at Villa Olivia Clara" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Villa Linens</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Real Home, Luxury Amenities</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.villaLinens.title')}</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.villaLinens.subtitle')}</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    We have carefully picked every part of Villa Olivia Clara to create a luxurious 
-                    experience that will still make you feel like home.
+                    {t('villaDifference.villaLinens.description')}
                   </p>
                 </div>
               </CardContent>
@@ -380,18 +378,17 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={elenaHost} 
-                    alt="Elena, your host" 
+                    src={kitchen} 
+                    alt="Kitchen at Villa Olivia Clara" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">Elena, Your Host</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">Hosted by Elena</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.elenaHost.title')}</h3>
+                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.elenaHost.subtitle')}</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Villa Olivia Clara is a family home and a family business. Being a local of the island, 
-                    Elena is the perfect host for an authentic experience.
+                    {t('villaDifference.elenaHost.description')}
                   </p>
                 </div>
               </CardContent>

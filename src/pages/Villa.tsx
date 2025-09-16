@@ -9,7 +9,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { VillaStructuredData } from '@/components/StructuredData';
 import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
-import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye, Star, Mail, Flower } from 'lucide-react';
+import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye, Star, Mail, Flower, ChevronDown } from 'lucide-react';
+import { VirtualTour } from '@/components/VirtualTour';
 
 // Villa Gallery Images
 import aerialViewWide from '@/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg';
@@ -64,9 +65,9 @@ const Villa = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <SEOHead
-        title="Villa Olivia Clara Details | 4BR Luxury Villa with Pool in Sifnos, Greece"
-        description="Discover Villa Olivia Clara: 250m² luxury villa with private pool, 4 bedrooms, 4.5 bathrooms, stunning sea views. Complete amenities, garden, BBQ, WiFi. Perfect for 8 guests in Sifnos, Greece."
-        keywords="Villa Olivia Clara details, luxury villa Sifnos amenities, private pool villa Greece, 4 bedroom villa Cyclades, villa with garden Sifnos, luxury accommodation Platis Gialos"
+        title={t('seo.villa.title')}
+        description={t('seo.villa.description')}
+        keywords={t('seo.villa.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
         canonicalUrl="https://villaoliviaclara.com/villa"
       />
@@ -108,12 +109,19 @@ const Villa = () => {
               <span>{t('villa.privatePool')}</span>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="#pool-outdoor"
               className="bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               {t('villa.exploreVilla')}
+            </a>
+            <a
+              href="#virtual-tour"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-white/30 flex items-center gap-2"
+            >
+              <Eye className="w-5 h-5" />
+              {t('villa.virtualTourButton')}
             </a>
           </div>
         </div>
@@ -1113,6 +1121,63 @@ const Villa = () => {
                   />
                 </CardContent>
               </Card>
+            </div>
+          </section>
+
+          {/* Virtual Tour Section */}
+          <section id="virtual-tour" className="py-20 bg-gradient-to-br from-sand-light to-white">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Eye className="text-villa-olive" size={40} />
+                <h2 className="text-4xl font-bold text-villa-olive">{t('virtualTour.title')}</h2>
+              </div>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+                {t('virtualTour.subtitle')}
+              </p>
+              <div className="text-sm text-villa-olive font-semibold">
+                {t('virtualTour.instructions')}
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto">
+              <Card className="border-villa-stone shadow-elegant overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-0">
+                  <VirtualTour />
+                </CardContent>
+              </Card>
+              
+              {/* Tour Features */}
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Eye className="text-villa-olive" size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.experience')}</h3>
+                    <p className="text-muted-foreground">{t('virtualTour.features.experienceDesc')}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Calendar className="text-villa-olive" size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.confidence')}</h3>
+                    <p className="text-muted-foreground">{t('virtualTour.features.confidenceDesc')}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <ChevronDown className="text-villa-olive" size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.interactive')}</h3>
+                    <p className="text-muted-foreground">{t('virtualTour.features.interactiveDesc')}</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </section>
         </div>

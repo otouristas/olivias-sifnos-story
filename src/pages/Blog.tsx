@@ -46,9 +46,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Sifnos Travel Blog | Greek Island Travel Tips & Villa Stories"
-        description="Read our Sifnos travel blog for insider tips, villa experiences, and Greek island adventures. Discover the best of Sifnos through our travel guides and local insights."
-        keywords="Sifnos travel blog, Greek island travel tips, Sifnos villa stories, Cyclades travel guide, Greek island blog, Sifnos travel experiences"
+        title={t('seo.blog.title')}
+        description={t('seo.blog.description')}
+        keywords={t('seo.blog.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg"
         canonicalUrl="https://villaoliviaclara.com/blog"
       />

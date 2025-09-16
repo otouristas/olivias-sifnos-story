@@ -222,9 +222,9 @@ const SifnosBeaches = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Sifnos Beaches Guide | Best Beaches in Sifnos, Greece | Blue Flag Beaches"
-        description="Discover the best beaches in Sifnos, Greece. Blue Flag Platis Gialos, Chrysopigi, Vathi, Kamares, Faros, Heronissos. Complete beach guide with photos, amenities, and access info."
-        keywords="Sifnos beaches, Platis Gialos beach, Chrysopigi Sifnos, Vathi beach, Kamares beach, Blue Flag beaches Greece, Cyclades beaches, Greek island beaches"
+        title={t('seo.beaches.title')}
+        description={t('seo.beaches.description')}
+        keywords={t('seo.beaches.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos/beaches"
       />

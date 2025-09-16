@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import SEOHead from '@/components/SEOHead';
 import { useTranslation } from 'react-i18next';
 import { 
   Home, 
@@ -56,6 +57,14 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      <SEOHead
+        title={t('seo.notFound.title')}
+        description={t('seo.notFound.description')}
+        keywords={t('seo.notFound.keywords')}
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
+        canonicalUrl="https://villaoliviaclara.com/404"
+        noIndex={true}
+      />
       <Navigation />
       
       {/* Hero Section */}

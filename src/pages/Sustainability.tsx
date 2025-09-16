@@ -13,9 +13,9 @@ const Sustainability = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Sustainability at Villa Olivia Clara | Eco-Friendly Sifnos Villa"
-        description="Learn about Villa Olivia Clara's commitment to sustainable tourism in Sifnos, Greece. Eco-friendly practices, local community support, and environmental conservation efforts."
-        keywords="sustainable villa Sifnos, eco-friendly accommodation Greece, sustainable tourism Cyclades, green villa rental, environmental conservation Sifnos"
+        title={t('seo.sustainability.title')}
+        description={t('seo.sustainability.description')}
+        keywords={t('seo.sustainability.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sustainability"
       />

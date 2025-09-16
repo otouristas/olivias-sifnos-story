@@ -54,9 +54,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Contact Villa Olivia Clara | Book Your Sifnos Villa Stay | Elena Philippou"
-        description="Contact Elena Philippou to book Villa Olivia Clara in Sifnos, Greece. Luxury villa rental with private pool, sea views, 4 bedrooms. Email elena@villaoliviaclara.com or call +30 697 1919 382."
-        keywords="contact Villa Olivia Clara, book Sifnos villa, Elena Philippou host, villa rental Sifnos, luxury accommodation Greece, Platis Gialos booking"
+        title={t('seo.contact.title')}
+        description={t('seo.contact.description')}
+        keywords={t('seo.contact.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg"
         canonicalUrl="https://villaoliviaclara.com/contact"
       />

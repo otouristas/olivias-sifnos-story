@@ -58,6 +58,7 @@
     "personalizedServiceDesc": "Concierge support, housekeeping, and local recommendations",
     "poolOutdoorAreas": "Pool & Outdoor Areas",
     "poolOutdoorDesc": "Enjoy the view of Sifnos from our pool cabana and bar with stunning panoramic sea views",
+    "virtualTourButton": "360° Tour",
     "poolFeatures": {
       "cabana": "Pool Cabana",
       "cabanaDesc": "Shaded area with dining",
@@ -262,6 +263,95 @@
     "savvas": {
       "text": "We were over the moon with our experience at Villa Olivia Clara. The photos don't even do it justice. Highly recommended.",
       "author": "— Savvas"
+    }
+  },
+  "villaDifference": {
+    "title": "The Villa Olivia Clara Difference",
+    "subtitle": "Discover what makes our villa truly special",
+    "poolView": {
+      "title": "Pool View",
+      "subtitle": "Perfect Location",
+      "description": "Anywhere you stand, Villa Olivia Clara offers you a breathtaking view of Sifnos and just a 7 minute walk to the beach!"
+    },
+    "villaLinens": {
+      "title": "Villa Linens",
+      "subtitle": "Real Home, Luxury Amenities",
+      "description": "We have carefully picked every part of Villa Olivia Clara to create a luxurious experience that will still make you feel like home."
+    },
+    "elenaHost": {
+      "title": "Elena, Your Host",
+      "subtitle": "Hosted by Elena",
+      "description": "Villa Olivia Clara is a family home and a family business. Being a local of the island, Elena is the perfect host for an authentic experience."
+    }
+  },
+  "virtualTour": {
+    "title": "Take a Virtual Tour",
+    "subtitle": "Explore every corner of Villa Olivia Clara with our immersive 360° virtual tour. Experience the luxury and beauty before you book.",
+    "instructions": "360° Tour • Click and drag to explore • Use mouse wheel to zoom",
+    "features": {
+      "experience": "360° Experience",
+      "experienceDesc": "Explore every room and outdoor space",
+      "confidence": "Book with Confidence",
+      "confidenceDesc": "See exactly what you're booking",
+      "interactive": "Interactive",
+      "interactiveDesc": "Click, drag, and zoom to explore"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Villa Olivia Clara | Luxury Villa Rental in Sifnos, Greece | Book Now",
+      "description": "Experience luxury at Villa Olivia Clara in Sifnos, Greece. Private pool, sea views, 4 bedrooms for 8 guests. 7 min walk to Platis Gialos beach. Book your authentic Greek island getaway today!",
+      "keywords": "luxury villa Sifnos, private pool villa Greece, Platis Gialos accommodation, Cyclades villa rental, Greek island luxury, Sifnos beach villa, family villa Greece, private chef Sifnos"
+    },
+    "villa": {
+      "title": "Villa Olivia Clara Details | 4BR Luxury Villa with Pool in Sifnos, Greece",
+      "description": "Discover Villa Olivia Clara: 250m² luxury villa with private pool, 4 bedrooms, 4.5 bathrooms, stunning sea views. Complete amenities, garden, BBQ, WiFi. Perfect for 8 guests in Sifnos, Greece.",
+      "keywords": "Villa Olivia Clara details, luxury villa Sifnos amenities, private pool villa Greece, 4 bedroom villa Cyclades, villa with garden Sifnos, luxury accommodation Platis Gialos"
+    },
+    "sifnos": {
+      "title": "Discover Sifnos Island | Authentic Greek Island Experience | Villa Olivia Clara",
+      "description": "Explore the authentic beauty of Sifnos, Greece. Discover traditional villages, pristine beaches, local cuisine, and cultural heritage. Your guide to the perfect Greek island getaway.",
+      "keywords": "Sifnos island guide, Greek islands Cyclades, Sifnos villages, traditional Greek culture, authentic Greek experience, Sifnos tourism"
+    },
+    "beaches": {
+      "title": "Sifnos Beaches Guide | Best Beaches in Sifnos, Greece | Villa Olivia Clara",
+      "description": "Discover the most beautiful beaches in Sifnos, Greece. From Platis Gialos to Vathi, explore pristine sandy beaches, crystal clear waters, and hidden coves perfect for your Greek island vacation.",
+      "keywords": "Sifnos beaches, best beaches Greece, Platis Gialos beach, Vathi beach Sifnos, Greek island beaches, beach guide Sifnos"
+    },
+    "contact": {
+      "title": "Contact Villa Olivia Clara | Book Your Luxury Stay in Sifnos, Greece",
+      "description": "Get in touch with Villa Olivia Clara for bookings and inquiries. Located in Sifnos, Greece. Contact Elena for personalized service and authentic Greek island hospitality.",
+      "keywords": "contact Villa Olivia Clara, book villa Sifnos, villa rental inquiry, Greek villa booking, Sifnos accommodation contact"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions | Villa Olivia Clara Sifnos | Booking Info",
+      "description": "Find answers to common questions about Villa Olivia Clara in Sifnos, Greece. Booking policies, amenities, location, and everything you need to know for your perfect Greek island stay.",
+      "keywords": "Villa Olivia Clara FAQ, Sifnos villa questions, booking policies Greece, villa rental information, Greek island stay questions"
+    },
+    "reviews": {
+      "title": "Guest Reviews | Villa Olivia Clara Sifnos | Real Guest Experiences",
+      "description": "Read authentic guest reviews and testimonials for Villa Olivia Clara in Sifnos, Greece. Discover why guests love our luxury villa and authentic Greek island experience.",
+      "keywords": "Villa Olivia Clara reviews, Sifnos villa testimonials, guest experiences Greece, luxury villa reviews, Greek island accommodation reviews"
+    },
+    "activities": {
+      "title": "Things to Do in Sifnos | Activities & Experiences | Villa Olivia Clara",
+      "description": "Discover the best activities and experiences in Sifnos, Greece. From hiking trails to local cuisine, explore authentic Greek island activities during your stay at Villa Olivia Clara.",
+      "keywords": "things to do Sifnos, Sifnos activities, Greek island experiences, hiking Sifnos, local cuisine Greece, Sifnos attractions"
+    },
+    "blog": {
+      "title": "Villa Olivia Clara Blog | Sifnos Travel Tips & Local Insights",
+      "description": "Read our blog for travel tips, local insights, and stories about Sifnos, Greece. Discover hidden gems, local culture, and make the most of your Greek island vacation.",
+      "keywords": "Sifnos travel blog, Greek island tips, Villa Olivia Clara blog, Sifnos travel guide, Greek culture insights"
+    },
+    "sustainability": {
+      "title": "Sustainable Tourism | Villa Olivia Clara Sifnos | Eco-Friendly Villa",
+      "description": "Learn about Villa Olivia Clara's commitment to sustainable tourism in Sifnos, Greece. Discover our eco-friendly practices and responsible travel initiatives.",
+      "keywords": "sustainable tourism Sifnos, eco-friendly villa Greece, responsible travel Cyclades, green accommodation Sifnos, sustainable Greek island tourism"
+    },
+    "notFound": {
+      "title": "Page Not Found | Villa Olivia Clara Sifnos | 404 Error",
+      "description": "The page you're looking for doesn't exist. Return to Villa Olivia Clara homepage to discover luxury villa rentals in Sifnos, Greece.",
+      "keywords": "page not found, 404 error, Villa Olivia Clara"
     }
   },
   "cta": {

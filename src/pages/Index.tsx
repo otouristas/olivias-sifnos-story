@@ -130,36 +130,39 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
                     <select
                       value={adults}
                       onChange={(e) => setAdults(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      style={{ maxWidth: '100%', width: '100%' }}
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                         <option key={num} value={num}>{num}</option>
                       ))}
                     </select>
                   </div>
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
                     <select
                       value={children}
                       onChange={(e) => setChildren(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      style={{ maxWidth: '100%', width: '100%' }}
                     >
                       {[0, 1, 2, 3, 4, 5, 6].map(num => (
                         <option key={num} value={num}>{num}</option>
                       ))}
                     </select>
                   </div>
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
                     <select
                       value={infants}
                       onChange={(e) => setInfants(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      style={{ maxWidth: '100%', width: '100%' }}
                     >
                       {[0, 1, 2, 3, 4].map(num => (
                         <option key={num} value={num}>{num}</option>

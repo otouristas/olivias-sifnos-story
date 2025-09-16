@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -8,6 +9,7 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Leaf, Target, Zap, Recycle, Globe, TrendingDown, CheckCircle } from 'lucide-react';
 
 const Sustainability = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -50,10 +52,10 @@ const Sustainability = () => {
         <header className="mb-12" id="main-content">
           <div className="flex items-center gap-3 mb-6">
             <Leaf className="text-villa-olive" size={32} />
-            <h1 className="text-4xl font-display font-bold text-villa-olive">Sustainability</h1>
+            <h1 className="text-4xl font-display font-bold text-villa-olive">{t('sustainability.title')}</h1>
           </div>
           <p className="text-lg text-muted-foreground">
-            Our commitment to environmental responsibility and carbon neutrality at Villa Olivia Clara.
+            {t('sustainability.subtitle')}
           </p>
         </header>
 

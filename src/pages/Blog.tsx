@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -14,6 +15,7 @@ import blogImage1 from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import blogImage2 from '@/assets/Sifnos/villages/apollonia.webp';
 
 const Blog = () => {
+  const { t } = useTranslation();
   const blogPosts = [
     {
       id: 1,
@@ -64,10 +66,10 @@ const Blog = () => {
       <section className="relative py-20 bg-gradient-hero text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Villa Olivia Clara Blog
+            {t('blog.title')}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-            Your guide to the perfect Sifnos vacation experience
+            {t('blog.subtitle')}
           </p>
         </div>
       </section>
@@ -123,11 +125,11 @@ const Blog = () => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  <Button asChild variant="villa" size="lg">
-                    <Link to={`/blog/${post.slug}`}>
-                      Read Full Article <ArrowRight size={16} />
-                    </Link>
-                  </Button>
+                    <Button asChild variant="villa" size="lg">
+                      <Link to={`/blog/${post.slug}`}>
+                        {t('blog.readMore')} <ArrowRight size={16} />
+                      </Link>
+                    </Button>
                   <BlogShare 
                     slug={post.slug}
                     title={post.title}

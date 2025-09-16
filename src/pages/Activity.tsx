@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -8,6 +9,7 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Ship, MapPin, Clock, Users, Camera, Waves, Anchor, Compass } from 'lucide-react';
 
 const Activity = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <SEOHead

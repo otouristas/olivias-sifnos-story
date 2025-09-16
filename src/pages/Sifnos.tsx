@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -26,6 +27,7 @@ import heronissosBeach from '@/assets/Sifnos/Beaches/heronissos.webp';
 import chrysopigiBeach from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 
 const Sifnos = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -41,10 +43,10 @@ const Sifnos = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6 text-villa-olive">
-            Sifnos Island Travel Guide
+            {t('sifnos.title')}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Your comprehensive guide to exploring the authentic beauty, rich traditions, and hidden gems of Sifnos Island
+            {t('sifnos.subtitle')}
           </p>
         </div>
       </section>

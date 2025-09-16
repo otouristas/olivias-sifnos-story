@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -19,6 +20,7 @@ import vroulidia from '@/assets/Sifnos/Beaches/vroulidia.webp';
 import fykiada from '@/assets/Sifnos/Beaches/fykiada.webp';
 
 const SifnosBeaches = () => {
+  const { t } = useTranslation();
   const beaches = [
     {
       name: 'Platis Gialos',
@@ -232,10 +234,10 @@ const SifnosBeaches = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6 text-villa-olive">
-            Beaches of Sifnos Island
+            {t('beaches.title')}
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Discover the pristine golden shores, crystal clear waters, and hidden coves of this enchanting Cycladic island
+            {t('beaches.subtitle')}
           </p>
           <div className="text-lg text-muted-foreground space-y-4">
             <p>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -8,6 +9,7 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, HelpCircle, MapPin, Car, Wifi, Clock, Phone, Utensils, Waves, Plane, Ship } from 'lucide-react';
 
 const FAQ = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -50,10 +52,10 @@ const FAQ = () => {
         <header className="mb-12" id="main-content">
           <div className="flex items-center gap-3 mb-6">
             <HelpCircle className="text-villa-olive" size={32} />
-            <h1 className="text-4xl font-display font-bold text-villa-olive">Frequently Asked Questions</h1>
+            <h1 className="text-4xl font-display font-bold text-villa-olive">{t('faq.title')}</h1>
           </div>
           <p className="text-lg text-muted-foreground">
-            Find answers to the most common questions about Villa Olivia Clara and your stay in Sifnos.
+            {t('faq.subtitle')}
           </p>
         </header>
 

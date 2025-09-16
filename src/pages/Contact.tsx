@@ -76,95 +76,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Elena Philippou Host Section */}
-      <section className="py-20 bg-gradient-to-br from-sand-light to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-villa-olive mb-4">{t('contact.host')}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('contact.hostDescription')}
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-villa-stone shadow-elegant overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  {/* Elena's Photo - Smaller, Minimal */}
-                  <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft hover:shadow-elegant transition-all duration-300">
-                        <ImageZoom
-                          src={elenaProfile}
-                          alt="Elena Philippou - Your Host at Villa Olivia Clara"
-                          className="w-full h-full object-cover cursor-zoom-in"
-                        />
-                      </div>
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-villa-olive rounded-full flex items-center justify-center shadow-soft">
-                        <Heart className="text-white" size={16} />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Elena's Info */}
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h3>
-                      <p className="text-lg text-muted-foreground mb-2">{t('contact.hostTitle')}</p>
-                      <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-center justify-center md:justify-start gap-2">
-                        <Mail className="text-villa-olive" size={16} />
-                        <a 
-                          href="mailto:elena@villaoliviaclara.com"
-                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm"
-                        >
-                          elena@villaoliviaclara.com
-                        </a>
-                      </div>
-                      <div className="flex items-center justify-center md:justify-start gap-2">
-                        <Phone className="text-villa-olive" size={16} />
-                        <a 
-                          href="tel:+306971919382"
-                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm"
-                        >
-                          +30 697 1919 382
-                        </a>
-                      </div>
-                      <div className="flex items-center justify-center md:justify-start gap-2">
-                        <MapPin className="text-villa-olive" size={16} />
-                        <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos, Greece</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Welcome Message */}
-                <div className="mt-8 pt-6 border-t border-villa-stone">
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-villa-olive mb-4 text-center md:text-left">
-                      {t('contact.welcome')}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
-                      {t('contact.welcomeMessage')}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
-                      {t('contact.cultureMessage')}
-                    </p>
-                    <p className="text-villa-olive font-semibold text-center md:text-left">
-                      {t('contact.signature')}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -251,46 +162,83 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Contact Details */}
+            {/* Elena & Contact Details Combined */}
             <div>
-              <Card className="border-villa-stone shadow-soft mb-8">
+              <Card className="border-villa-stone shadow-elegant overflow-hidden mb-8">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-villa-olive mb-6">Contact Details</h2>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-semibold text-villa-olive">Villa Olivia Clara</h3>
-                      <p className="text-muted-foreground">
+                  <div className="flex flex-col items-center gap-6 mb-8">
+                    {/* Elena's Photo */}
+                    <div className="relative">
+                      <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft">
+                        <ImageZoom
+                          src={elenaProfile}
+                          alt="Elena Philippou - Your Host at Villa Olivia Clara"
+                          className="w-full h-full object-cover cursor-zoom-in"
+                        />
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-villa-olive rounded-full flex items-center justify-center shadow-soft">
+                        <Heart className="text-white" size={12} />
+                      </div>
+                    </div>
+
+                    {/* Elena's Info */}
+                    <div className="text-center">
+                      <h2 className="text-2xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h2>
+                      <p className="text-lg text-muted-foreground mb-1">{t('contact.hostTitle')}</p>
+                      <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
+                    </div>
+                  </div>
+
+                  {/* Contact Details */}
+                  <div className="space-y-4 mb-6">
+                    <div className="text-center">
+                      <h3 className="font-semibold text-villa-olive mb-3">Villa Olivia Clara</h3>
+                      <p className="text-muted-foreground mb-3">
                         Platis Gialos, Sifnos<br />
                         Cyclades, Greece
                       </p>
                     </div>
                     
-                    <div>
-                      <h3 className="font-semibold text-villa-olive">Email:</h3>
-                      <a 
-                        href="mailto:elena@villaoliviaclara.com"
-                        className="text-villa-olive hover:text-villa-olive-dark transition-colors"
-                      >
-                        elena@villaoliviaclara.com
-                      </a>
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex items-center gap-2">
+                        <Mail className="text-villa-olive" size={16} />
+                        <a 
+                          href="mailto:elena@villaoliviaclara.com"
+                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
+                        >
+                          elena@villaoliviaclara.com
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="text-villa-olive" size={16} />
+                        <a 
+                          href="tel:+306971919382"
+                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
+                        >
+                          +30 697 191 9382
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="text-villa-olive" size={16} />
+                        <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos</span>
+                      </div>
                     </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-villa-olive">Phone:</h3>
-                      <a 
-                        href="tel:+306971919382"
-                        className="text-villa-olive hover:text-villa-olive-dark transition-colors"
-                      >
-                        +30 697 191 9382
-                      </a>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-villa-olive">Hosted by Elena</h3>
-                      <p className="text-muted-foreground">
-                        As locals of Sifnos, we are here to provide you with an authentic and seamless experience. 
-                        We look forward to welcoming you to our home.
+                  </div>
+
+                  {/* Welcome Message */}
+                  <div className="pt-6 border-t border-villa-stone">
+                    <div className="space-y-4 text-center">
+                      <h4 className="text-xl font-bold text-villa-olive mb-4">
+                        {t('contact.welcome')}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {t('contact.welcomeMessage')}
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {t('contact.cultureMessage')}
+                      </p>
+                      <p className="text-villa-olive font-semibold">
+                        {t('contact.signature')}
                       </p>
                     </div>
                   </div>

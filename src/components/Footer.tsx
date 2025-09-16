@@ -33,26 +33,19 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-villa-olive mb-4 flex items-center">
-                <Heart size={18} className="mr-2" />
-                Experience
-              </h3>
+              <h3 className="text-lg font-semibold text-villa-olive mb-4">Experience</h3>
               <div className="space-y-3">
-                <Link to="/villa" className="flex items-center text-sm text-muted-foreground hover:text-villa-olive transition-colors group">
-                  <span>Villa Tour</span>
-                  <ExternalLink size={12} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/villa" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Villa Tour
                 </Link>
-                <Link to="/reviews" className="flex items-center text-sm text-muted-foreground hover:text-villa-olive transition-colors group">
-                  <span>Guest Stories</span>
-                  <ExternalLink size={12} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/reviews" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Guest Stories
                 </Link>
-                <Link to="/sifnos" className="flex items-center text-sm text-muted-foreground hover:text-villa-olive transition-colors group">
-                  <span>Discover Sifnos</span>
-                  <ExternalLink size={12} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/sifnos" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Discover Sifnos
                 </Link>
-                <Link to="/blog" className="flex items-center text-sm text-muted-foreground hover:text-villa-olive transition-colors group">
-                  <span>Travel Blog</span>
-                  <ExternalLink size={12} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Link to="/blog" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
+                  Travel Blog
                 </Link>
               </div>
             </div>
@@ -76,10 +69,6 @@ const Footer = () => {
                 <Link to="/cookie-policy" className="block text-sm text-muted-foreground hover:text-villa-olive transition-colors">
                   Cookie Policy
                 </Link>
-                <div className="pt-2">
-                  <p className="text-xs text-muted-foreground">Licensed Property</p>
-                  <p className="text-xs text-muted-foreground">EOT: 1266595, 1266604</p>
-                </div>
               </div>
             </div>
 
@@ -130,9 +119,6 @@ const Footer = () => {
                   Book Your Stay
                   <ExternalLink size={14} className="ml-2" />
                 </a>
-                <p className="text-xs text-muted-foreground">
-                  Free cancellation • Best rate guarantee
-                </p>
               </div>
             </div>
           </div>

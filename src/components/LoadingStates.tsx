@@ -1,4 +1,4 @@
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
 
 // Loading states for different page sections
 export const PageLoadingSkeleton = () => (

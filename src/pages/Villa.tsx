@@ -84,11 +84,6 @@ const Villa = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
         </div>
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
-          <div className="mb-6">
-            <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm font-medium mb-4">
-              ✨ {t('villa.luxuryExperience')}
-            </Badge>
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             {t('villa.title')}
           </h1>
@@ -113,26 +108,13 @@ const Villa = () => {
               <span>{t('villa.privatePool')}</span>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <a
               href="#pool-outdoor"
               className="bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               {t('villa.exploreVilla')}
             </a>
-            <button
-              onClick={() => {
-                // Trigger the Olivia Clara AI agent to open
-                const aiButton = document.querySelector('[data-ai-trigger]') as HTMLButtonElement;
-                if (aiButton) {
-                  aiButton.click();
-                }
-              }}
-              className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm flex items-center gap-2"
-            >
-              <span>🤖</span>
-              {t('villa.tryAI')}
-            </button>
           </div>
         </div>
         

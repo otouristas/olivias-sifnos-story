@@ -102,28 +102,30 @@ const Index = () => {
           <div className="mt-6 flex justify-center">
             <form
               onSubmit={handleSearchSubmit}
-              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 w-full max-w-sm sm:max-w-none"
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 w-full max-w-sm sm:max-w-none overflow-hidden"
             >
               {/* Mobile Layout - Stacked */}
               <div className="flex flex-col sm:hidden gap-3">
                 <div className="space-y-3">
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
                     <input
                       type="date"
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
-                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      style={{ maxWidth: '100%', width: '100%' }}
                     />
                   </div>
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
                     <input
                       type="date"
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
                       min={checkIn}
-                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      style={{ maxWidth: '100%', width: '100%' }}
                     />
                   </div>
                 </div>

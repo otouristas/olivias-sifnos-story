@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import { useTranslation } from 'react-i18next';
 import { 
   Home, 
   Search, 
@@ -15,40 +16,42 @@ import {
 } from 'lucide-react';
 
 const NotFound = () => {
+  const { t } = useTranslation();
+  
   const helpfulLinks = [
     {
-      title: 'Our Villa',
-      description: 'Explore Villa Olivia Clara',
+      title: t('notFound.ourVilla'),
+      description: t('notFound.exploreVilla'),
       href: '/villa',
       icon: Home
     },
     {
-      title: 'Sifnos Guide',
-      description: 'Discover the island',
+      title: t('notFound.sifnosGuide'),
+      description: t('notFound.discoverIsland'),
       href: '/sifnos',
       icon: MapPin
     },
     {
-      title: 'Guest Reviews',
-      description: 'Read testimonials',
+      title: t('notFound.guestReviews'),
+      description: t('notFound.readTestimonials'),
       href: '/reviews',
       icon: MessageCircle
     },
     {
-      title: 'Book Your Stay',
-      description: 'Plan your vacation',
+      title: t('notFound.bookStay'),
+      description: t('notFound.planVacation'),
       href: '/contact',
       icon: Calendar
     }
   ];
 
   const popularPages = [
-    { name: 'Villa Tour', href: '/villa' },
-    { name: 'Sifnos Island Guide', href: '/sifnos' },
-    { name: 'Sifnos Beaches', href: '/sifnos/beaches' },
-    { name: 'Guest Reviews', href: '/reviews' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact Us', href: '/contact' }
+    { name: t('notFound.villaTour'), href: '/villa' },
+    { name: t('notFound.sifnosIslandGuide'), href: '/sifnos' },
+    { name: t('notFound.sifnosBeaches'), href: '/sifnos/beaches' },
+    { name: t('notFound.guestReviews'), href: '/reviews' },
+    { name: t('notFound.blog'), href: '/blog' },
+    { name: t('notFound.contactUs'), href: '/contact' }
   ];
 
   return (
@@ -61,11 +64,10 @@ const NotFound = () => {
           <div className="mb-8">
             <h1 className="text-8xl md:text-9xl font-bold text-white/20 mb-4">404</h1>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Page Not Found
+              {t('notFound.title')}
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Oops! The page you're looking for seems to have sailed away to the Aegean Sea. 
-              Don't worry, we'll help you find your way back to Villa Olivia Clara.
+              {t('notFound.subtitle')}
             </p>
           </div>
           
@@ -73,13 +75,13 @@ const NotFound = () => {
             <Button asChild size="lg" variant="villa-outline">
               <Link to="/">
                 <Home className="mr-2" size={20} />
-                Back to Home
+                {t('notFound.backToHome')}
               </Link>
             </Button>
             <Button asChild size="lg" variant="villa">
               <Link to="/contact">
                 <MessageCircle className="mr-2" size={20} />
-                Contact Us
+                {t('common.contactUs')}
               </Link>
             </Button>
           </div>

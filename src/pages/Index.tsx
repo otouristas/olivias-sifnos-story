@@ -529,38 +529,35 @@ const Index = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-villa-olive mb-4">What Our Guests Are Saying</h2>
-            <p className="text-lg text-muted-foreground">Average rating of 5 stars from more than 45 reviews in the past 10 years.</p>
+            <h2 className="text-4xl font-bold text-villa-olive mb-4">{t('testimonials.title')}</h2>
+            <p className="text-lg text-muted-foreground">{t('testimonials.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-villa-stone shadow-soft">
               <CardContent className="p-6">
                 <div className="text-yellow-500 mb-2">★★★★★</div>
                 <p className="text-muted-foreground mb-4">
-                  "Wonderful stay at the Villa Olivia Clara! The house has a perfect location near Platis Gialos, 
-                  walking distance, and an amazing view on the bay. No hesitation: the best villa in Sifnos."
+                  "{t('testimonials.alexis.text')}"
                 </p>
-                <p className="font-semibold text-villa-olive">— Alexis</p>
+                <p className="font-semibold text-villa-olive">{t('testimonials.alexis.author')}</p>
               </CardContent>
             </Card>
             <Card className="border-villa-stone shadow-soft">
               <CardContent className="p-6">
                 <div className="text-yellow-500 mb-2">★★★★★</div>
                 <p className="text-muted-foreground mb-4">
-                  "We have literally had the most magical holiday at Elena's villa. The photos just don't do justice 
-                  to this incredibly stunning home. Please do not hesitate to book!"
+                  "{t('testimonials.liChuen.text')}"
                 </p>
-                <p className="font-semibold text-villa-olive">— Li-Chuen</p>
+                <p className="font-semibold text-villa-olive">{t('testimonials.liChuen.author')}</p>
               </CardContent>
             </Card>
             <Card className="border-villa-stone shadow-soft">
               <CardContent className="p-6">
                 <div className="text-yellow-500 mb-2">★★★★★</div>
                 <p className="text-muted-foreground mb-4">
-                  "We were over the moon with our experience at Villa Olivia Clara. The photos don't even do it justice. 
-                  Highly recommended."
+                  "{t('testimonials.savvas.text')}"
                 </p>
-                <p className="font-semibold text-villa-olive">— Savvas</p>
+                <p className="font-semibold text-villa-olive">{t('testimonials.savvas.author')}</p>
               </CardContent>
             </Card>
           </div>
@@ -576,23 +573,23 @@ const Index = () => {
       <section className="py-20 bg-gradient-hero text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            We can make your next vacation unforgettable.
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-white/90">
-            From planning your trip to Sifnos, to leaving with the greatest memories, we'll be with you every step of the way.
+            {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <div className="text-center">
               <div className="text-2xl font-bold">10+</div>
-              <div className="text-white/80">Years of Hosting Excellence</div>
+              <div className="text-white/80">{t('cta.yearsHosting')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">5/5</div>
-              <div className="text-white/80">Review Average (40+ reviews)</div>
+              <div className="text-white/80">{t('cta.reviewAverage')}</div>
             </div>
           </div>
           <Button asChild size="lg" variant="villa">
-            <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">Let's Book Your Stay →</a>
+            <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('cta.bookStay')}</a>
           </Button>
         </div>
       </section>

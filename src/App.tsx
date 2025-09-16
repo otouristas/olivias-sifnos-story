@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import CanonicalLink from "@/components/CanonicalLink";
-import { OliviaClaraAI } from "@/components/OliviaClaraAI";
+// import { OliviaClaraAI } from "@/components/OliviaClaraAI";
 import Index from "./pages/Index";
 import Villa from "./pages/Villa";
 import Sifnos from "./pages/Sifnos";
@@ -57,7 +57,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Olivia Clara AI - Available on every page */}
-        <OliviaClaraAI />
+        {/* <OliviaClaraAI /> */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

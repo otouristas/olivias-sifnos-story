@@ -48,7 +48,38 @@
     "tryAI": "Prova Olivia Clara AI",
     "scrollToExplore": "Scorri per esplorare",
     "overviewTitle": "Il Vostro Rifugio di Lusso nell'Isola Greca",
-    "overviewDescription": "Villa Olivia Clara è una splendida villa di lusso di 250m² a Platis Gialos, Sifnos. Sperimentate l'autentica ospitalità greca con servizi moderni, vista mozzafiato sul mare e il perfetto equilibrio tra privacy e convenienza."
+    "overviewDescription": "Villa Olivia Clara è una splendida villa di lusso di 250m² a Platis Gialos, Sifnos. Sperimentate l'autentica ospitalità greca con servizi moderni, vista mozzafiato sul mare e il perfetto equilibrio tra privacy e convenienza.",
+    "whyChoose": "Perché Scegliere Villa Olivia Clara?",
+    "primeLocation": "Posizione Ideale",
+    "primeLocationDesc": "Solo 7 minuti a piedi dalla spiaggia di Platis Gialos, 15 minuti da Apollonia",
+    "luxuryAmenities": "Servizi di Lusso",
+    "luxuryAmenitiesDesc": "Piscina privata, cabana con bar, cucina completa, WiFi ad alta velocità",
+    "personalizedService": "Servizio Personalizzato",
+    "personalizedServiceDesc": "Supporto concierge, pulizie e raccomandazioni locali",
+    "poolOutdoorAreas": "Piscina e Aree Esterne",
+    "poolOutdoorDesc": "Godetevi la vista di Sifnos dal nostro cabana e bar della piscina con una vista panoramica mozzafiato sul mare",
+    "poolFeatures": {
+      "cabana": "Cabana della Piscina",
+      "cabanaDesc": "Area ombreggiata con pranzo",
+      "sunbeds": "Lettini",
+      "sunbedsDesc": "Sedute confortevoli",
+      "wineCooler": "Frigo Vini",
+      "wineCoolerDesc": "Mini frigo per bevande",
+      "poolBathroom": "Bagno Piscina",
+      "poolBathroomDesc": "Area dedicata alla piscina",
+      "seaViews": "Vista Mare",
+      "seaViewsDesc": "Vista panoramica su Platis Gialos"
+    },
+    "gardenFeatures": {
+      "stoneTerrace": "Grande Terrazza in Pietra",
+      "stoneTerraceDesc": "Spazio living esterno",
+      "stoneFence": "Giardino con Recinzione in Pietra",
+      "stoneFenceDesc": "Design greco tradizionale",
+      "outdoorDining": "Pranzo all'Aperto",
+      "outdoorDiningDesc": "Aree relax e pranzo",
+      "parkingSpace": "Spazio Parcheggio",
+      "parkingSpaceDesc": "Spazio per 5 auto"
+    }
   },
   "pool": {
     "title": "Piscina e Aree Esterne",
@@ -212,6 +243,53 @@
     "quickActions": "Azioni Rapide",
     "poweredBy": "Powered by Touristas AI",
     "thinking": "Olivia Clara AI sta pensando..."
+  },
+  "testimonials": {
+    "title": "Cosa Dicono i Nostri Ospiti",
+    "subtitle": "Valutazione media di 5 stelle da più di 45 recensioni negli ultimi 10 anni.",
+    "alexis": {
+      "text": "Soggiorno meraviglioso al Villa Olivia Clara! La casa ha una posizione perfetta vicino a Platis Gialos, a piedi, e una vista incredibile sulla baia. Senza esitazione: la migliore villa di Sifnos.",
+      "author": "— Alexis"
+    },
+    "liChuen": {
+      "text": "Abbiamo letteralmente trascorso le vacanze più magiche alla villa di Elena. Le foto non rendono giustizia a questa casa incredibilmente stupenda. Non esitate a prenotare!",
+      "author": "— Li-Chuen"
+    },
+    "maria": {
+      "text": "La villa ha superato tutte le nostre aspettative. L'area piscina è fantastica, la posizione è perfetta, e Elena è stata un'ospite incredibile. Non vediamo l'ora di tornare!",
+      "author": "— Maria"
+    },
+    "savvas": {
+      "text": "Eravamo al settimo cielo con la nostra esperienza al Villa Olivia Clara. Le foto non rendono nemmeno giustizia. Altamente raccomandato.",
+      "author": "— Savvas"
+    }
+  },
+  "cta": {
+    "title": "Possiamo rendere le vostre prossime vacanze indimenticabili.",
+    "subtitle": "Dalla pianificazione del vostro viaggio a Sifnos, fino alla partenza con i ricordi più belli, saremo con voi ad ogni passo.",
+    "yearsHosting": "Anni di Eccellenza nell'Ospitalità",
+    "reviewAverage": "Valutazione Media (40+ recensioni)",
+    "bookStay": "Prenotiamo il Vostro Soggiorno →"
+  },
+  "notFound": {
+    "title": "Pagina Non Trovata",
+    "subtitle": "Ops! La pagina che state cercando sembra essere salpata verso il Mar Egeo. Non preoccupatevi, vi aiuteremo a trovare la strada di ritorno a Villa Olivia Clara.",
+    "helpfulLinks": "Link Utili",
+    "popularPages": "Pagine Popolari",
+    "ourVilla": "La Nostra Villa",
+    "exploreVilla": "Esplora Villa Olivia Clara",
+    "sifnosGuide": "Guida Sifnos",
+    "discoverIsland": "Scoprite l'isola",
+    "guestReviews": "Recensioni Ospiti",
+    "readTestimonials": "Leggete le testimonianze",
+    "bookStay": "Prenotate il Vostro Soggiorno",
+    "planVacation": "Pianificate le vostre vacanze",
+    "villaTour": "Tour della Villa",
+    "sifnosIslandGuide": "Guida dell'Isola di Sifnos",
+    "sifnosBeaches": "Spiagge di Sifnos",
+    "blog": "Blog",
+    "contactUs": "Contattaci",
+    "backToHome": "Torna alla Home"
   },
   "common": {
     "learnMore": "Scopri di Più",

@@ -102,7 +102,7 @@ const Index = () => {
           <div className="mt-6 flex justify-center">
             <form
               onSubmit={handleSearchSubmit}
-              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-3 py-2 sm:px-4 sm:py-3 w-full max-w-sm sm:max-w-none overflow-hidden"
+              className="bg-white/90 backdrop-blur-sm rounded-lg shadow-soft border border-white/60 px-4 py-3 sm:px-4 sm:py-3 w-full max-w-sm sm:max-w-none overflow-hidden"
             >
               {/* Mobile Layout - Stacked */}
               <div className="flex flex-col sm:hidden gap-3">
@@ -113,7 +113,7 @@ const Index = () => {
                       type="date"
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
-                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
                       style={{ maxWidth: '100%', width: '100%' }}
                     />
                   </div>
@@ -124,7 +124,7 @@ const Index = () => {
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
                       min={checkIn}
-                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-2 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
+                      className="w-full min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
                       style={{ maxWidth: '100%', width: '100%' }}
                     />
                   </div>
@@ -135,7 +135,7 @@ const Index = () => {
                     <select
                       value={adults}
                       onChange={(e) => setAdults(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                         <option key={num} value={num}>{num}</option>
@@ -147,7 +147,7 @@ const Index = () => {
                     <select
                       value={children}
                       onChange={(e) => setChildren(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
                     >
                       {[0, 1, 2, 3, 4, 5, 6].map(num => (
                         <option key={num} value={num}>{num}</option>
@@ -159,7 +159,7 @@ const Index = () => {
                     <select
                       value={infants}
                       onChange={(e) => setInfants(parseInt(e.target.value))}
-                      className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
+                      className="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive box-border"
                     >
                       {[0, 1, 2, 3, 4].map(num => (
                         <option key={num} value={num}>{num}</option>

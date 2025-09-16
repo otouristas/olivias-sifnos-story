@@ -254,33 +254,10 @@ npm run build
 - Sifnos island content by local experts
 - AI responses powered by Touristas AI
 - SEO strategy by AnotherSEOGuru.com
-
 ---
 
-## 🔮 **Future Roadmap**
-
-### **Q1 2024**
-- [ ] Advanced AI features
-- [ ] Multi-language support
-- [ ] Mobile app development
-- [ ] VR villa tours
-
-### **Q2 2024**
-- [ ] Booking system integration
-- [ ] Payment processing
-- [ ] Guest portal
-- [ ] Review management
-
-### **Q3 2024**
-- [ ] Social media integration
-- [ ] Email marketing
-- [ ] Loyalty program
-- [ ] Referral system
-
----
-
-**Last Updated**: January 2024  
-**Version**: 2.0  
+**Last Updated**: Sept 2025  
+**Version**: 2.4 
 **Status**: Production Ready  
 **Maintenance**: Active Development
 

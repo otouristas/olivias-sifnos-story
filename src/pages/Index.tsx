@@ -129,8 +129,8 @@ const Index = () => {
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="text-left w-full">
+                <div className="flex gap-2">
+                  <div className="flex-1 text-left">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
                     <select
                       value={adults}
@@ -143,7 +143,7 @@ const Index = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="text-left w-full">
+                  <div className="flex-1 text-left">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
                     <select
                       value={children}
@@ -156,7 +156,7 @@ const Index = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="text-left w-full">
+                  <div className="flex-1 text-left">
                     <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
                     <select
                       value={infants}

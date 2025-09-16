@@ -72,6 +72,12 @@ export const generateSitemap = (): string => {
       priority: 0.8
     },
     {
+      loc: `${baseUrl}/faq`,
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: 0.7
+    },
+    {
       loc: `${baseUrl}/sustainability`,
       lastmod: currentDate,
       changefreq: 'monthly',
@@ -82,12 +88,6 @@ export const generateSitemap = (): string => {
       lastmod: currentDate,
       changefreq: 'yearly',
       priority: 0.6
-    },
-    {
-      loc: `${baseUrl}/faq`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
     },
     {
       loc: `${baseUrl}/privacy-policy`,
@@ -126,26 +126,71 @@ ${urls.map(url => `  <url>
 export const generateRobotsTxt = (): string => {
   const baseUrl = import.meta.env.VITE_SITE_URL || 'https://villaoliviaclara.com';
   
-  return `User-agent: *
+  return `User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: *
 Allow: /
 
 Sitemap: ${baseUrl}/sitemap.xml
 
-# Disallow admin areas (if any)
+# Disallow admin areas and system files
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /build/
 
-# Allow all other content
+# Allow all main content pages
+Allow: /
 Allow: /villa
 Allow: /sifnos
 Allow: /sifnos/beaches
 Allow: /sifnos/boat-tours
 Allow: /reviews
 Allow: /blog
+Allow: /blog/ultimate-guide-sifnos-greece-luxury-villa-vacation
+Allow: /blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison
 Allow: /contact
+Allow: /faq
 Allow: /sustainability
+Allow: /privacy-policy
+Allow: /cookie-policy
+Allow: /terms-of-service
 Allow: /rental-conditions
-Allow: /faq`;
+
+# Allow assets
+Allow: /villa-olivia-clara-logo.webp
+Allow: /favicon.ico
+Allow: /favicon.webp
+Allow: /site.webmanifest
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.mp4`;
 };

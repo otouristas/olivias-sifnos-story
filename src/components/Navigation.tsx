@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
-import { LanguageSwitcher } from './LanguageSwitcher';
 
 // Import logo
 import logo from '/villa-olivia-clara-logo.webp';
@@ -14,7 +13,6 @@ import logo from '/villa-olivia-clara-logo.webp';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSifnosOpen, setIsSifnosOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -23,7 +21,6 @@ const Navigation = () => {
     onEscape: () => {
       setIsOpen(false);
       setIsSifnosOpen(false);
-      setIsLanguageOpen(false);
     },
     enabled: true
   });
@@ -140,8 +137,6 @@ const Navigation = () => {
               {t('nav.contact')}
             </NavLink>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher />
 
             {/* Book Now */}
             <Button asChild variant="villa" size="default">
@@ -151,7 +146,6 @@ const Navigation = () => {
 
           {/* Mobile menu button and Book Now */}
           <div className="md:hidden flex items-center gap-2">
-            <LanguageSwitcher />
             <Button asChild variant="villa" size="sm">
               <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('nav.bookNow')}</a>
             </Button>
@@ -241,45 +235,6 @@ const Navigation = () => {
                 {t('nav.contact')}
               </Link>
 
-              {/* Language Switcher for Mobile */}
-              <div className="px-3 py-2">
-                <button
-                  onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                  className="flex items-center justify-between w-full text-base font-medium text-foreground mb-2 hover:text-villa-olive transition-colors"
-                >
-                  <span>{t('nav.language')}</span>
-                  <ChevronDown 
-                    className={`w-4 h-4 transition-transform ${isLanguageOpen ? 'rotate-180' : ''}`} 
-                  />
-                </button>
-                {isLanguageOpen && (
-                  <div className="ml-4 space-y-1">
-                    {[
-                      { code: 'en', name: 'English', flag: '🇺🇸' },
-                      { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
-                      { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-                      { code: 'fr', name: 'Français', flag: '🇫🇷' }
-                    ].map((language) => (
-                      <button
-                        key={language.code}
-                        onClick={() => {
-                          i18n.changeLanguage(language.code);
-                          setIsOpen(false);
-                          setIsLanguageOpen(false);
-                        }}
-                        className={`flex items-center gap-3 w-full px-3 py-2 text-sm rounded text-left ${
-                          i18n.language === language.code
-                            ? 'text-villa-olive bg-villa-olive-light'
-                            : 'text-foreground hover:bg-gray-100'
-                        }`}
-                      >
-                        <span className="text-lg">{language.flag}</span>
-                        <span className="font-medium">{language.name}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
 
             </div>
           </div>

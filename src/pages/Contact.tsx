@@ -13,6 +13,7 @@ import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
+import { sendContactEmail, ContactFormData } from '@/lib/resend';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -20,34 +21,75 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'Villa Olivia Clara Booking Inquiry',
-    preferredDates: '',
+    phone: '',
+    checkIn: '',
+    checkOut: '',
+    adults: 2,
+    children: 0,
+    infants: 0,
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link
-    const mailtoLink = `mailto:elena@villaoliviaclara.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Preferred Dates: ${formData.preferredDates}\n\n` +
-      `Message:\n${formData.message}`
-    )}`;
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Missing required fields",
+        description: "Please fill in all required fields (Name, Email, Message).",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
     
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Opening email client...",
-      description: "We'll get back to you as soon as possible!",
-    });
+    try {
+      const result = await sendContactEmail(formData as ContactFormData);
+      
+      if (result.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your inquiry. Elena will get back to you soon!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          checkIn: '',
+          checkOut: '',
+          adults: 2,
+          children: 0,
+          infants: 0,
+          message: ''
+        });
+      } else {
+        toast({
+          title: "Failed to send message",
+          description: result.error || "Please try again or contact us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: type === 'number' ? parseInt(value) || 0 : value
     });
   };
 
@@ -89,56 +131,115 @@ const Contact = () => {
                 </p>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="name">Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
+                  </div>
+                  
                   <div>
-                    <Label htmlFor="name">Name *</Label>
+                    <Label htmlFor="phone">Phone</Label>
                     <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+30 123 456 7890"
+                      value={formData.phone}
                       onChange={handleChange}
                       className="mt-1"
                     />
                   </div>
                   
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="mt-1"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="checkIn">Check-in Date</Label>
+                      <Input
+                        id="checkIn"
+                        name="checkIn"
+                        type="date"
+                        value={formData.checkIn}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="checkOut">Check-out Date</Label>
+                      <Input
+                        id="checkOut"
+                        name="checkOut"
+                        type="date"
+                        value={formData.checkOut}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
                   </div>
                   
-                  <div>
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="mt-1"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="preferredDates">Preferred Dates</Label>
-                    <Input
-                      id="preferredDates"
-                      name="preferredDates"
-                      type="text"
-                      placeholder="e.g., July 15-22, 2024"
-                      value={formData.preferredDates}
-                      onChange={handleChange}
-                      className="mt-1"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <Label htmlFor="adults">Adults</Label>
+                      <Input
+                        id="adults"
+                        name="adults"
+                        type="number"
+                        min="1"
+                        max="8"
+                        value={formData.adults}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="children">Children</Label>
+                      <Input
+                        id="children"
+                        name="children"
+                        type="number"
+                        min="0"
+                        max="6"
+                        value={formData.children}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="infants">Infants</Label>
+                      <Input
+                        id="infants"
+                        name="infants"
+                        type="number"
+                        min="0"
+                        max="4"
+                        value={formData.infants}
+                        onChange={handleChange}
+                        className="mt-1"
+                      />
+                    </div>
                   </div>
                   
                   <div>
@@ -155,8 +256,14 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" variant="villa" size="lg" className="w-full">
-                    Send Inquiry
+                  <Button 
+                    type="submit" 
+                    variant="villa" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </Button>
                 </form>
               </CardContent>

@@ -14,6 +14,7 @@ import ImageZoom from '@/components/ImageZoom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
 import { sendContactEmail, ContactFormData } from '@/lib/resend';
+import { trackBookingFormSubmission } from '@/utils/analytics';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -50,6 +51,9 @@ const Contact = () => {
       const result = await sendContactEmail(formData as ContactFormData);
       
       if (result.success) {
+        // Track successful form submission
+        trackBookingFormSubmission('contact');
+        
         toast({
           title: "Message sent successfully!",
           description: "Thank you for your inquiry. Elena will get back to you soon!",
@@ -337,7 +341,7 @@ const Contact = () => {
                           Welcome!
                         </h4>
                         <p className="text-muted-foreground leading-relaxed text-sm">
-                          I am delighted to welcome you to Sifnos that has been my family's home for since the 1800s.
+                        I am delighted to welcome you to Sifnos that has been my family's home since the 1800s.
                         </p>
                         <p className="text-muted-foreground leading-relaxed text-sm">
                           I originally built Villa Olivia Clara to be my family's summer home, so it brings me immense joy to share this special place with you.

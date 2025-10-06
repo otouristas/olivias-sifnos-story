@@ -24,6 +24,8 @@ import poolArea from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-are
 import livingRoom from '@/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg';
 import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
 import poolSunbathing from '@/assets/villa-gallery/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg';
+import poolSideCabana from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg';
+import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -358,8 +360,8 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={poolArea} 
-                    alt="Pool area at Villa Olivia Clara" 
+                    src={poolSideCabana} 
+                    alt="Pool side cabana at Villa Olivia Clara" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -377,8 +379,8 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={livingRoom} 
-                    alt="Living room at Villa Olivia Clara" 
+                    src={diningAtTerrace} 
+                    alt="Dining at the terrace at Villa Olivia Clara" 
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

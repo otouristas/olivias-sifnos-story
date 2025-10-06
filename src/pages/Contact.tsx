@@ -334,16 +334,19 @@ const Contact = () => {
                     <div>
                       <div className="space-y-4">
                         <h4 className="text-xl font-bold text-villa-olive mb-4">
-                          {t('contact.welcome')}
+                          Welcome!
                         </h4>
                         <p className="text-muted-foreground leading-relaxed text-sm">
-                          {t('contact.welcomeMessage')}
+                          I am delighted to welcome you to Sifnos that has been my family's home for since the 1800s.
                         </p>
                         <p className="text-muted-foreground leading-relaxed text-sm">
-                          {t('contact.cultureMessage')}
+                          I originally built Villa Olivia Clara to be my family's summer home, so it brings me immense joy to share this special place with you.
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          Feel free to reach out and I will gladly help you plan your ideal summer vacation.
                         </p>
                         <p className="text-villa-olive font-semibold">
-                          {t('contact.signature')}
+                          - Elena
                         </p>
                       </div>
                     </div>

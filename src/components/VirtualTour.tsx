@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Eye, Maximize2, X, VolumeX, Volume2 } from 'lucide-react';
 import { trackVirtualTourConversion } from '@/utils/analytics';
+
+// Lazy load the tour iframe component
+const TourIframe = lazy(() => import('./TourIframe'));
 
 interface VirtualTourProps {
   readonly className?: string;
@@ -18,26 +21,14 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
   
   const tourUrl = `https://my.thevivestia.com/tour/villa-olivia-clara${autoplay ? '?autoplay=1' : ''}`;
 
-  const TourIframe = ({ isModal = false }: { isModal?: boolean }) => (
-    <div className={`relative ${isModal ? 'aspect-video' : 'aspect-video'} w-full overflow-hidden rounded-lg bg-gray-100`}>
-      <iframe
-        src={tourUrl}
-        className="absolute inset-0 w-full h-full border-0"
-        allowFullScreen
-        allow="autoplay; fullscreen; web-share; xr-spatial-tracking; gyroscope; accelerometer"
-        title="Villa Olivia Clara 360° Virtual Tour"
-        loading="lazy"
-      />
-      
-      {/* Tour Controls Overlay */}
-      <div className="absolute top-4 right-4 flex gap-2 z-10">
-        <Badge variant="secondary" className="bg-black/70 text-white border-0">
-          <Eye size={12} className="mr-1" />
-          360° Tour
-        </Badge>
+  const TourIframeComponent = ({ isModal = false }: { isModal?: boolean }) => (
+    <Suspense fallback={
+      <div className={`relative ${isModal ? 'aspect-video' : 'aspect-video'} w-full overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center`}>
+        <div className="text-gray-500">Loading virtual tour...</div>
       </div>
-      
-    </div>
+    }>
+      <TourIframe isModal={isModal} autoplay={autoplay} />
+    </Suspense>
   );
 
   if (showInModal) {
@@ -62,7 +53,7 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
             </DialogTitle>
           </DialogHeader>
           <div className="p-6 pt-2 h-full">
-            <TourIframe isModal={true} />
+            <TourIframeComponent isModal={true} />
           </div>
         </DialogContent>
       </Dialog>
@@ -71,7 +62,7 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
 
   return (
     <div className={`${className}`}>
-      <TourIframe />
+      <TourIframeComponent />
     </div>
   );
 }

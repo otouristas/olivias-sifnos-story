@@ -83,6 +83,7 @@ const Index = () => {
           playsInline
           poster={heroImage}
           preload="metadata"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />
@@ -111,8 +112,9 @@ const Index = () => {
               <div className="flex flex-col sm:hidden gap-3">
                 <div className="space-y-3">
                   <div className="text-left">
-                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
+                    <label htmlFor="checkIn-mobile" className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
                     <input
+                      id="checkIn-mobile"
                       type="date"
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
@@ -120,8 +122,9 @@ const Index = () => {
                     />
                   </div>
                   <div className="text-left">
-                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
+                    <label htmlFor="checkOut-mobile" className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
                     <input
+                      id="checkOut-mobile"
                       type="date"
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
@@ -132,8 +135,9 @@ const Index = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-2">
                   <div className="text-left">
-                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
+                    <label htmlFor="adults-mobile" className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
                     <select
+                      id="adults-mobile"
                       value={adults}
                       onChange={(e) => setAdults(parseInt(e.target.value))}
                       className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
@@ -144,8 +148,9 @@ const Index = () => {
                     </select>
                   </div>
                   <div className="text-left">
-                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
+                    <label htmlFor="children-mobile" className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
                     <select
+                      id="children-mobile"
                       value={children}
                       onChange={(e) => setChildren(parseInt(e.target.value))}
                       className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
@@ -156,8 +161,9 @@ const Index = () => {
                     </select>
                   </div>
                   <div className="text-left">
-                    <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
+                    <label htmlFor="infants-mobile" className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
                     <select
+                      id="infants-mobile"
                       value={infants}
                       onChange={(e) => setInfants(parseInt(e.target.value))}
                       className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
@@ -174,8 +180,9 @@ const Index = () => {
               {/* Desktop Layout - Horizontal */}
               <div className="hidden sm:flex items-end gap-3">
                 <div className="flex-1 text-left">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
+                  <label htmlFor="checkIn-desktop" className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkIn')}</label>
                   <input
+                    id="checkIn-desktop"
                     type="date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
@@ -183,8 +190,9 @@ const Index = () => {
                   />
                 </div>
                 <div className="flex-1 text-left">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
+                  <label htmlFor="checkOut-desktop" className="block text-xs font-medium text-gray-600 mb-1">{t('common.checkOut')}</label>
                   <input
+                    id="checkOut-desktop"
                     type="date"
                     value={checkOut}
                     onChange={(e) => setCheckOut(e.target.value)}
@@ -193,8 +201,9 @@ const Index = () => {
                   />
                 </div>
                 <div className="flex-1 text-left">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
+                  <label htmlFor="adults-desktop" className="block text-xs font-medium text-gray-600 mb-1">{t('common.adults')}</label>
                   <select
+                    id="adults-desktop"
                     value={adults}
                     onChange={(e) => setAdults(parseInt(e.target.value))}
                     className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
@@ -205,8 +214,9 @@ const Index = () => {
                   </select>
                 </div>
                 <div className="flex-1 text-left">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
+                  <label htmlFor="children-desktop" className="block text-xs font-medium text-gray-600 mb-1">{t('common.children')}</label>
                   <select
+                    id="children-desktop"
                     value={children}
                     onChange={(e) => setChildren(parseInt(e.target.value))}
                     className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"
@@ -217,8 +227,9 @@ const Index = () => {
                   </select>
                 </div>
                 <div className="flex-1 text-left">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
+                  <label htmlFor="infants-desktop" className="block text-xs font-medium text-gray-600 mb-1">{t('common.infants')}</label>
                   <select
+                    id="infants-desktop"
                     value={infants}
                     onChange={(e) => setInfants(parseInt(e.target.value))}
                     className="w-full rounded-md border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-villa-olive focus:border-villa-olive"

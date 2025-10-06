@@ -24,6 +24,7 @@ export const ImageZoom = ({ src, alt, className, children }: ImageZoomProps) => 
           <img
             src={src}
             alt={alt}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
           />
         )}

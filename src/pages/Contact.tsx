@@ -14,7 +14,7 @@ import ImageZoom from '@/components/ImageZoom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
 import { sendContactEmail, ContactFormData } from '@/lib/resend';
-import { trackBookingFormSubmission } from '@/utils/analytics';
+import { trackBookingConversion } from '@/utils/analytics';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -51,8 +51,8 @@ const Contact = () => {
       const result = await sendContactEmail(formData as ContactFormData);
       
       if (result.success) {
-        // Track successful form submission
-        trackBookingFormSubmission('contact');
+        // Track successful form submission and conversion
+        trackBookingConversion('contact');
         
         toast({
           title: "Message sent successfully!",

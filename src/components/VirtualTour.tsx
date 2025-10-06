@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Eye, Maximize2, X, VolumeX, Volume2 } from 'lucide-react';
-import { trackVirtualTour } from '@/utils/analytics';
+import { trackVirtualTourConversion } from '@/utils/analytics';
 
 interface VirtualTourProps {
   readonly className?: string;
@@ -48,7 +48,7 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
             variant="villa" 
             size="lg" 
             className={`${className} gap-2`}
-            onClick={() => trackVirtualTour('start')}
+            onClick={() => trackVirtualTourConversion('start')}
           >
             <Eye size={20} />
             Take Virtual Tour

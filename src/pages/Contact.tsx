@@ -361,7 +361,7 @@ const Contact = () => {
                       className="absolute inset-0 w-full h-full border-0"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      allowFullScreen
+                      allow="fullscreen"
                     />
                   </div>
                 </CardContent>

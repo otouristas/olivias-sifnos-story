@@ -61,7 +61,7 @@ import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dinin
 
 const Villa = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className="min-h-screen bg-gradient-subtle">
       <SEOHead
@@ -95,7 +95,7 @@ const Villa = () => {
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Bed className="w-5 h-5" />
               <span>{t('villa.bedrooms')}</span>
-            </div>
+        </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Bath className="w-5 h-5" />
               <span>{t('villa.bathrooms')}</span>
@@ -129,7 +129,7 @@ const Villa = () => {
       </section>
 
       <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb />
 
           {/* Villa Overview */}
@@ -144,14 +144,14 @@ const Villa = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
+                <div className="space-y-6">
                 <h3 className="text-3xl font-semibold text-villa-olive mb-4">
                   {t('villa.whyChoose')}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Star className="text-villa-olive mt-1 flex-shrink-0" size={20} />
-                    <div>
+                  <div>
                       <h4 className="font-semibold text-lg">{t('villa.primeLocation')}</h4>
                       <p className="text-muted-foreground">{t('villa.primeLocationDesc')}</p>
                     </div>
@@ -198,34 +198,28 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">12m x 5m Pool</h4>
-                  <p className="text-xs text-muted-foreground">3m depth with dolphin decorations</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.poolFeatures.cabana')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.poolFeatures.cabanaDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.poolFeatures.sunbeds')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.poolFeatures.sunbedsDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Wine className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.poolFeatures.wineCooler')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.poolFeatures.wineCoolerDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Bath className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.poolFeatures.poolBathroom')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.poolFeatures.poolBathroomDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Eye className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.poolFeatures.seaViews')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.poolFeatures.seaViewsDesc')}</p>
                 </Card>
-              </div>
+                  </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -247,11 +241,11 @@ const Villa = () => {
                   />
                 </CardContent>
               </Card>
-            </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              <Card className="border-0 shadow-elegant overflow-hidden">
-                <CardContent className="p-0">
+                <Card className="border-0 shadow-elegant overflow-hidden">
+                  <CardContent className="p-0">
                   <ImageZoom
                     src={poolAreaNight}
                     alt="Pool area at night with beautiful lighting"
@@ -274,10 +268,10 @@ const Villa = () => {
                     src={poolSunbathing}
                     alt="Pool sunbathing area with comfortable loungers"
                     className="w-full h-64 object-cover cursor-zoom-in"
-                  />
-                </CardContent>
-              </Card>
-            </div>
+                    />
+                  </CardContent>
+                </Card>
+              </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="border-0 shadow-elegant overflow-hidden">
@@ -310,7 +304,7 @@ const Villa = () => {
             </div>
           </section>
 
-          {/* Garden & Terrace */}
+            {/* Garden & Terrace */}
           <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -326,46 +320,40 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <TreePine className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.gardenFeatures.stoneTerrace')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.gardenFeatures.stoneTerraceDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shield className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.gardenFeatures.stoneFence')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.gardenFeatures.stoneFenceDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.gardenFeatures.outdoorDining')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.gardenFeatures.outdoorDiningDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Car className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">{t('villa.gardenFeatures.parkingSpace')}</h4>
-                  <p className="text-xs text-muted-foreground">{t('villa.gardenFeatures.parkingSpaceDesc')}</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Flower className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Indigenous Plants</h4>
-                  <p className="text-xs text-muted-foreground">Herbs & mediterranean flora</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Eye className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Stunning Views</h4>
-                  <p className="text-xs text-muted-foreground">Platis Gialos bay</p>
                 </Card>
-              </div>
-            </div>
+                  </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="border-0 shadow-elegant overflow-hidden">
-                <CardContent className="p-0">
+                <Card className="border-0 shadow-elegant overflow-hidden">
+                  <CardContent className="p-0">
                   <ImageZoom
                     src={backGarden}
                     alt="Back garden with mediterranean plants"
                     className="w-full h-64 object-cover cursor-zoom-in"
-                  />
-                </CardContent>
-              </Card>
+                    />
+                  </CardContent>
+                </Card>
               <Card className="border-0 shadow-elegant overflow-hidden">
                 <CardContent className="p-0">
                   <ImageZoom
@@ -384,10 +372,10 @@ const Villa = () => {
                   />
                 </CardContent>
               </Card>
-            </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Bedrooms */}
+        {/* Bedrooms */}
           <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -403,32 +391,26 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Bed className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">2 King Beds</h4>
-                  <p className="text-xs text-muted-foreground">200 x 200 cm</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Users className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">4 Single Beds</h4>
-                  <p className="text-xs text-muted-foreground">100 x 200 cm</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Baby className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">1 Baby Crib</h4>
-                  <p className="text-xs text-muted-foreground">70 x 130 cm</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Wifi className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Air Conditioning</h4>
-                  <p className="text-xs text-muted-foreground">All living areas</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Extra Pillows</h4>
-                  <p className="text-xs text-muted-foreground">And blankets</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Linen Changes</h4>
-                  <p className="text-xs text-muted-foreground">Weekly</p>
                 </Card>
               </div>
             </div>
@@ -482,7 +464,7 @@ const Villa = () => {
                   />
                 </CardContent>
               </Card>
-            </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="border-0 shadow-elegant overflow-hidden">
@@ -501,12 +483,12 @@ const Villa = () => {
                     alt="View from guest master bedroom"
                     className="w-full h-64 object-cover cursor-zoom-in"
                   />
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
-          {/* Bathrooms */}
+        {/* Bathrooms */}
           <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -522,32 +504,26 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Bath className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">3 Full Bathrooms</h4>
-                  <p className="text-xs text-muted-foreground">1 WC</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Hot Water</h4>
-                  <p className="text-xs text-muted-foreground">Always available</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Bathroom Essentials</h4>
-                  <p className="text-xs text-muted-foreground">Hair dryer included</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Pool Bathroom</h4>
-                  <p className="text-xs text-muted-foreground">Dedicated pool area</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Towel Changes</h4>
-                  <p className="text-xs text-muted-foreground">Twice a week</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Star className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Luxury Design</h4>
-                  <p className="text-xs text-muted-foreground">Modern fixtures</p>
                 </Card>
               </div>
             </div>
@@ -601,7 +577,7 @@ const Villa = () => {
                   />
                 </CardContent>
               </Card>
-            </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="border-0 shadow-elegant overflow-hidden">
@@ -620,12 +596,12 @@ const Villa = () => {
                     alt="Guest standard WC"
                     className="w-full h-64 object-cover cursor-zoom-in"
                   />
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
-          {/* Living Spaces */}
+        {/* Living Spaces */}
           <section className="mb-20">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -641,32 +617,26 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Indoor Dining</h4>
-                  <p className="text-xs text-muted-foreground">Round glass table</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <UtensilsCrossed className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Outdoor Dining</h4>
-                  <p className="text-xs text-muted-foreground">Granite table with sea view</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Pool Dining</h4>
-                  <p className="text-xs text-muted-foreground">Hexagonal wooden table</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Utensils className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Fully-equipped Kitchen</h4>
-                  <p className="text-xs text-muted-foreground">Green tiles & modern appliances</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Tv className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Smart 65" HDTV</h4>
-                  <p className="text-xs text-muted-foreground">Spacious living room</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <BookOpen className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Working Space</h4>
-                  <p className="text-xs text-muted-foreground">Books & reading material</p>
                 </Card>
               </div>
             </div>
@@ -760,24 +730,20 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Car className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Parking</h4>
-                  <p className="text-xs text-muted-foreground">Free on-site</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shield className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Security</h4>
-                  <p className="text-xs text-muted-foreground">Safe & secure</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Music className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Sound System</h4>
-                  <p className="text-xs text-muted-foreground">Bluetooth speakers</p>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Baby className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Family Friendly</h4>
-                  <p className="text-xs text-muted-foreground">Child-safe</p>
                 </Card>
-              </div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -806,10 +772,10 @@ const Villa = () => {
                     alt="Dining at the terrace"
                     className="w-full h-64 object-cover"
                   />
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
           {/* Villa Amenities */}
           <section className="mb-20">
@@ -851,7 +817,7 @@ const Villa = () => {
                   <Baby className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Changing Table</h4>
                 </Card>
-              </div>
+                  </div>
             </div>
 
             {/* Safety */}
@@ -861,7 +827,7 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Flame className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Fire Extinguisher</h4>
-                </Card>
+              </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shield className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Fireplace Guards</h4>
@@ -901,7 +867,7 @@ const Villa = () => {
                   <Coffee className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Premium Coffee Machine</h4>
                 </Card>
-              </div>
+                  </div>
             </div>
 
             {/* Entertainment */}
@@ -911,7 +877,7 @@ const Villa = () => {
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Tv className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Smart 65" HDTV</h4>
-                </Card>
+              </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <BookOpen className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">Books & Reading Material</h4>
@@ -959,7 +925,7 @@ const Villa = () => {
                   <Star className="text-villa-olive mx-auto mb-2" size={24} />
                   <h4 className="font-semibold text-sm text-villa-olive">And More...</h4>
                 </Card>
-              </div>
+                  </div>
             </div>
           </section>
 
@@ -1130,7 +1096,7 @@ const Villa = () => {
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Eye className="text-villa-olive" size={40} />
                 <h2 className="text-4xl font-bold text-villa-olive">{t('virtualTour.title')}</h2>
-              </div>
+                  </div>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
                 {t('virtualTour.subtitle')}
               </p>
@@ -1145,24 +1111,24 @@ const Villa = () => {
                   <VirtualTour />
                 </CardContent>
               </Card>
-              
+
               {/* Tour Features */}
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Eye className="text-villa-olive" size={32} />
-                    </div>
+                  </div>
                     <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.experience')}</h3>
                     <p className="text-muted-foreground">{t('virtualTour.features.experienceDesc')}</p>
-                  </CardContent>
-                </Card>
+                </CardContent>
+              </Card>
                 
                 <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Calendar className="text-villa-olive" size={32} />
-                    </div>
+            </div>
                     <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.confidence')}</h3>
                     <p className="text-muted-foreground">{t('virtualTour.features.confidenceDesc')}</p>
                   </CardContent>
@@ -1172,14 +1138,14 @@ const Villa = () => {
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <ChevronDown className="text-villa-olive" size={32} />
-                    </div>
+              </div>
                     <h3 className="text-xl font-bold text-villa-olive mb-3">{t('virtualTour.features.interactive')}</h3>
                     <p className="text-muted-foreground">{t('virtualTour.features.interactiveDesc')}</p>
                   </CardContent>
                 </Card>
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
         </div>
       </main>
 

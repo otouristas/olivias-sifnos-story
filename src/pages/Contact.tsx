@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
-import { Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
 
 const Contact = () => {
@@ -162,84 +162,83 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Elena & Contact Details Combined */}
+            {/* Elena & Contact Details Combined - Two Columns Inside */}
             <div>
               <Card className="border-villa-stone shadow-elegant overflow-hidden mb-8">
                 <CardContent className="p-8">
-                  <div className="flex flex-col items-center gap-6 mb-8">
-                    {/* Elena's Photo */}
-                    <div className="relative">
-                      <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft">
-                        <ImageZoom
-                          src={elenaProfile}
-                          alt="Elena Philippou - Your Host at Villa Olivia Clara"
-                          className="w-full h-full object-cover cursor-zoom-in"
-                        />
+                  {/* Two Column Layout Inside */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Left Column - Elena's Profile */}
+                    <div>
+                      <div className="flex flex-col items-center gap-6 mb-8">
+                        {/* Elena's Photo */}
+                        <div className="relative">
+                          <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft">
+                            <ImageZoom
+                              src={elenaProfile}
+                              alt="Elena Philippou - Your Host at Villa Olivia Clara"
+                              className="w-full h-full object-cover cursor-zoom-in"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Elena's Info */}
+                        <div className="text-center">
+                          <h2 className="text-2xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h2>
+                          <p className="text-lg text-muted-foreground mb-1">{t('contact.hostTitle')}</p>
+                          <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
+                        </div>
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-villa-olive rounded-full flex items-center justify-center shadow-soft">
-                        <Heart className="text-white" size={12} />
+
+                      {/* Contact Details */}
+                      <div className="space-y-4">
+                        <div className="text-center">
+                          <h3 className="font-semibold text-villa-olive mb-3">Villa Olivia Clara</h3>
+                        </div>
+                        
+                        <div className="flex flex-col items-center gap-2">
+                          <div className="flex items-center gap-2">
+                            <Mail className="text-villa-olive" size={16} />
+                            <a 
+                              href="mailto:elena@villaoliviaclara.com"
+                              className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
+                            >
+                              elena@villaoliviaclara.com
+                            </a>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Phone className="text-villa-olive" size={16} />
+                            <a 
+                              href="tel:+306971919382"
+                              className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
+                            >
+                              +30 697 191 9382
+                            </a>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="text-villa-olive" size={16} />
+                            <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Elena's Info */}
-                    <div className="text-center">
-                      <h2 className="text-2xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h2>
-                      <p className="text-lg text-muted-foreground mb-1">{t('contact.hostTitle')}</p>
-                      <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
-                    </div>
-                  </div>
-
-                  {/* Contact Details */}
-                  <div className="space-y-4 mb-6">
-                    <div className="text-center">
-                      <h3 className="font-semibold text-villa-olive mb-3">Villa Olivia Clara</h3>
-                      <p className="text-muted-foreground mb-3">
-                        Platis Gialos, Sifnos<br />
-                        Cyclades, Greece
-                      </p>
-                    </div>
-                    
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="flex items-center gap-2">
-                        <Mail className="text-villa-olive" size={16} />
-                        <a 
-                          href="mailto:elena@villaoliviaclara.com"
-                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
-                        >
-                          elena@villaoliviaclara.com
-                        </a>
+                    {/* Right Column - Welcome Message */}
+                    <div>
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-bold text-villa-olive mb-4">
+                          {t('contact.welcome')}
+                        </h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {t('contact.welcomeMessage')}
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {t('contact.cultureMessage')}
+                        </p>
+                        <p className="text-villa-olive font-semibold">
+                          {t('contact.signature')}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="text-villa-olive" size={16} />
-                        <a 
-                          href="tel:+306971919382"
-                          className="text-villa-olive hover:text-villa-olive-dark transition-colors text-sm hover:underline"
-                        >
-                          +30 697 191 9382
-                        </a>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="text-villa-olive" size={16} />
-                        <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Welcome Message */}
-                  <div className="pt-6 border-t border-villa-stone">
-                    <div className="space-y-4 text-center">
-                      <h4 className="text-xl font-bold text-villa-olive mb-4">
-                        {t('contact.welcome')}
-                      </h4>
-                      <p className="text-muted-foreground leading-relaxed text-sm">
-                        {t('contact.welcomeMessage')}
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed text-sm">
-                        {t('contact.cultureMessage')}
-                      </p>
-                      <p className="text-villa-olive font-semibold">
-                        {t('contact.signature')}
-                      </p>
                     </div>
                   </div>
                 </CardContent>

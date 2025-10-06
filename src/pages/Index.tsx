@@ -23,6 +23,7 @@ import elenaHost from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-t
 import poolArea from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
 import livingRoom from '@/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg';
 import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
+import poolSunbathing from '@/assets/villa-gallery/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -84,10 +85,10 @@ const Index = () => {
         >
           <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />
           {/* Fallback to image if video fails to load */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${heroImage})` }}
-          />
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
         </video>
         
         {/* Hero Overlay Gradient */}
@@ -266,7 +267,7 @@ const Index = () => {
                     <Shield className="w-4 h-4" />
                     Parking for 5 cars
                   </li>
-                </ul>
+              </ul>
               </CardContent>
             </Card>
             
@@ -274,14 +275,14 @@ const Index = () => {
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="text-villa-olive" size={32} />
-                </div>
+            </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">Location</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li className="font-semibold text-villa-olive">Platis Gialos, Sifnos</li>
-                  <li>7 mins walk / 2 mins drive to beach</li>
-                  <li>15 mins to island center</li>
-                  <li>25 mins to port</li>
-                </ul>
+                <li>7 mins walk / 2 mins drive to beach</li>
+                <li>15 mins to island center</li>
+                <li>25 mins to port</li>
+              </ul>
               </CardContent>
             </Card>
             
@@ -289,17 +290,17 @@ const Index = () => {
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Star className="text-villa-olive" size={32} />
-                </div>
+            </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">Amenities</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>Large pool & lounge area with bar</li>
-                  <li>Garden & outdoor dining</li>
-                  <li>Full kitchen, BBQ</li>
+                <li>Large pool & lounge area with bar</li>
+                <li>Garden & outdoor dining</li>
+                <li>Full kitchen, BBQ</li>
                   <li className="flex items-center justify-center gap-2">
                     <Wifi className="w-4 h-4" />
                     200+ Mbps WiFi
                   </li>
-                </ul>
+              </ul>
               </CardContent>
             </Card>
             
@@ -307,14 +308,14 @@ const Index = () => {
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <ChefHat className="text-villa-olive" size={32} />
-                </div>
+            </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">Services</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>Housekeeping (2x per week)</li>
-                  <li>Childcare (on request)</li>
-                  <li>Private chef (on request)</li>
-                  <li>Available for events</li>
-                </ul>
+                <li>Housekeeping (2x per week)</li>
+                <li>Childcare (on request)</li>
+                <li>Private chef (on request)</li>
+                <li>Available for events</li>
+              </ul>
               </CardContent>
             </Card>
           </div>
@@ -327,13 +328,32 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-villa-olive mb-4">
               {t('villaDifference.title')}
-            </h2>
+          </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('villaDifference.subtitle')}
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <ImageZoom
+                    src={poolSunbathing} 
+                    alt="Pool sunbathing area at Villa Olivia Clara" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.poolView.subtitle')}</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('villaDifference.poolView.description')}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
@@ -345,10 +365,9 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.poolView.title')}</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.poolView.subtitle')}</h4>
+                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.villaLinens.subtitle')}</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    {t('villaDifference.poolView.description')}
+                    {t('villaDifference.villaLinens.description')}
                   </p>
                 </div>
               </CardContent>
@@ -365,28 +384,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.villaLinens.title')}</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.villaLinens.subtitle')}</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('villaDifference.villaLinens.description')}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <ImageZoom
-                    src={kitchen} 
-                    alt="Kitchen at Villa Olivia Clara" 
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.elenaHost.title')}</h3>
-                  <h4 className="text-xl font-semibold text-villa-olive mb-3">{t('villaDifference.elenaHost.subtitle')}</h4>
+                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.elenaHost.subtitle')}</h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('villaDifference.elenaHost.description')}
                   </p>
@@ -421,38 +419,6 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            {/* Tour Features */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Eye className="text-villa-olive" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-villa-olive mb-3">360° Experience</h3>
-                  <p className="text-muted-foreground">Explore every room and outdoor space</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Calendar className="text-villa-olive" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-villa-olive mb-3">Book with Confidence</h3>
-                  <p className="text-muted-foreground">See exactly what you're booking</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <ChevronDown className="text-villa-olive" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-villa-olive mb-3">Interactive</h3>
-                  <p className="text-muted-foreground">Click, drag, and zoom to explore</p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
@@ -462,17 +428,17 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl font-bold mb-6 text-villa-olive">
-                Explore the Beauty of Sifnos with Us
-              </h2>
+          <h2 className="text-4xl font-bold mb-6 text-villa-olive">
+            Explore the Beauty of Sifnos with Us
+          </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our villa is located in Sifnos, Greece—a Greek island that is popular among those who 
-                appreciate good food and great sea views. Sifnos has been our family's home for centuries 
-                and we're excited to show you around.
-              </p>
+            Our villa is located in Sifnos, Greece—a Greek island that is popular among those who 
+            appreciate good food and great sea views. Sifnos has been our family's home for centuries 
+            and we're excited to show you around.
+          </p>
               <Button asChild variant="villa" size="lg">
-                <Link to="/sifnos">Discover Sifnos</Link>
-              </Button>
+            <Link to="/sifnos">Discover Sifnos</Link>
+          </Button>
             </div>
             
             <div className="grid grid-cols-2 gap-4">

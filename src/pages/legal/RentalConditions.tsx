@@ -99,7 +99,7 @@ const RentalConditions = () => {
                     <h4 className="text-lg font-semibold text-villa-olive mb-3">Payment Schedule</h4>
                     <ul className="text-muted-foreground space-y-2 ml-6">
                       <li>• 30% due within 3 business days</li>
-                      <li>• Balance due 30 days prior to check-in</li>
+                      <li>• Balance due 60 days prior to check-in</li>
                       <li>• Late or missed payments will result in cancellation without refund</li>
                     </ul>
                   </div>
@@ -107,7 +107,7 @@ const RentalConditions = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-villa-olive mb-3">Cancellation Policy</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      All payments are non-refundable. A credit voucher (less service fees) valid for 12 months may be issued at Villa Olivia Clara's discretion. Prices for bookings in future dates may vary from the original bookings. Specific amendments to the payment and cancellations can be made, subject to availability and additional fees, where relevant.
+                    Reservations are fully refundable up to 60 days prior to check-in date.
                     </p>
                   </div>
                 </div>
@@ -130,13 +130,6 @@ const RentalConditions = () => {
                 <h3 className="text-2xl font-semibold text-villa-olive mb-4">1.6. Taxes & Compliance</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   All rental prices include VAT (13%) and municipal taxes (0.5%). A Climate Resilience Fee of €15 per night (April–October) is charged in addition to the rental price. Receipts for this fee will be issued separately.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold text-villa-olive mb-4">1.7. Refunds & Credits</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  All payments made to Villa Olivia Clara are non-refundable. However, under exceptional circumstances (e.g., verified medical emergencies, natural disasters), Villa Olivia Clara may offer a non-transferable credit voucher valid for 12 months. This is at the sole discretion of management and requires valid documentation.
                 </p>
               </div>
             </div>

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { Eye, Maximize2, X, Play, VolumeX, Volume2 } from 'lucide-react';
+import { Eye, Maximize2, X, VolumeX, Volume2 } from 'lucide-react';
 
 interface VirtualTourProps {
   readonly className?: string;
@@ -36,17 +36,6 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
         </Badge>
       </div>
       
-      {/* Instructions Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 z-10">
-        <Card className="bg-black/70 border-0 text-white">
-          <CardContent className="p-3 text-sm">
-            <p className="flex items-center gap-2">
-              <Play size={14} />
-              Click and drag to explore • Use mouse wheel to zoom
-            </p>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 

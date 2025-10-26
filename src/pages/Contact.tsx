@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useForm, ValidationError } from '@formspree/react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
@@ -13,89 +12,16 @@ import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.webp';
-import { sendContactEmail, ContactFormData } from '@/lib/resend';
 import { trackBookingConversion } from '@/utils/analytics';
 
 const Contact = () => {
   const { t } = useTranslation();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    adults: 2,
-    children: 0,
-    infants: 0,
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("xqalpgbe");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({
-        title: "Missing required fields",
-        description: "Please fill in all required fields (Name, Email, Message).",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      const result = await sendContactEmail(formData as ContactFormData);
-      
-      if (result.success) {
-        // Track successful form submission and conversion
-        trackBookingConversion('contact');
-        
-        toast({
-          title: "Message sent successfully!",
-          description: "Thank you for your inquiry. Elena will get back to you soon!",
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          checkIn: '',
-          checkOut: '',
-          adults: 2,
-          children: 0,
-          infants: 0,
-          message: ''
-        });
-      } else {
-        toast({
-          title: "Failed to send message",
-          description: result.error || "Please try again or contact us directly.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Error sending message",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'number' ? parseInt(value) || 0 : value
-    });
-  };
+  // Track conversion on successful submission
+  if (state.succeeded) {
+    trackBookingConversion('contact');
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -134,142 +60,144 @@ const Contact = () => {
                   Please fill out the form with your details and preferred dates, and we will get back to you as soon as possible.
                 </p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+{state.succeeded ? (
+                  <div className="text-center py-12">
+                    <div className="mb-4 text-4xl">✓</div>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-2">Message Sent Successfully!</h3>
+                    <p className="text-muted-foreground">Thank you for your inquiry. Elena will get back to you soon!</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name">Name *</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Name" field="name" errors={state.errors} />
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="email">Email *</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Email" field="email" errors={state.errors} />
+                      </div>
+                    </div>
+                    
                     <div>
-                      <Label htmlFor="name">Name *</Label>
+                      <Label htmlFor="phone">Phone</Label>
                       <Input
-                        id="name"
-                        name="name"
-                        type="text"
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+30 123 456 7890"
+                        className="mt-1"
+                      />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="checkIn">Check-in Date</Label>
+                        <Input
+                          id="checkIn"
+                          name="checkIn"
+                          type="date"
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Check-in" field="checkIn" errors={state.errors} />
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="checkOut">Check-out Date</Label>
+                        <Input
+                          id="checkOut"
+                          name="checkOut"
+                          type="date"
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Check-out" field="checkOut" errors={state.errors} />
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <Label htmlFor="adults">Adults</Label>
+                        <Input
+                          id="adults"
+                          name="adults"
+                          type="number"
+                          min="1"
+                          max="8"
+                          defaultValue="2"
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Adults" field="adults" errors={state.errors} />
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="children">Children</Label>
+                        <Input
+                          id="children"
+                          name="children"
+                          type="number"
+                          min="0"
+                          max="6"
+                          defaultValue="0"
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Children" field="children" errors={state.errors} />
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="infants">Infants</Label>
+                        <Input
+                          id="infants"
+                          name="infants"
+                          type="number"
+                          min="0"
+                          max="4"
+                          defaultValue="0"
+                          className="mt-1"
+                        />
+                        <ValidationError prefix="Infants" field="infants" errors={state.errors} />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
                         required
-                        value={formData.name}
-                        onChange={handleChange}
+                        rows={6}
+                        placeholder="Tell us about your group, special requests, or any questions you have..."
                         className="mt-1"
                       />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} />
                     </div>
                     
-                    <div>
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+30 123 456 7890"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="mt-1"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="checkIn">Check-in Date</Label>
-                      <Input
-                        id="checkIn"
-                        name="checkIn"
-                        type="date"
-                        value={formData.checkIn}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="checkOut">Check-out Date</Label>
-                      <Input
-                        id="checkOut"
-                        name="checkOut"
-                        type="date"
-                        value={formData.checkOut}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <Label htmlFor="adults">Adults</Label>
-                      <Input
-                        id="adults"
-                        name="adults"
-                        type="number"
-                        min="1"
-                        max="8"
-                        value={formData.adults}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="children">Children</Label>
-                      <Input
-                        id="children"
-                        name="children"
-                        type="number"
-                        min="0"
-                        max="6"
-                        value={formData.children}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="infants">Infants</Label>
-                      <Input
-                        id="infants"
-                        name="infants"
-                        type="number"
-                        min="0"
-                        max="4"
-                        value={formData.infants}
-                        onChange={handleChange}
-                        className="mt-1"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      placeholder="Tell us about your group, special requests, or any questions you have..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="mt-1"
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    variant="villa" 
-                    size="lg" 
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Inquiry"}
-                  </Button>
-                </form>
+                    <Button 
+                      type="submit" 
+                      variant="villa" 
+                      size="lg" 
+                      className="w-full"
+                      disabled={state.submitting}
+                    >
+                      {state.submitting ? "Sending..." : "Send Inquiry"}
+                    </Button>
+                  </form>
+                )}
               </CardContent>
             </Card>
 

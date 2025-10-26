@@ -83,7 +83,6 @@ const Index = () => {
           playsInline
           poster={heroImage}
           preload="metadata"
-          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />

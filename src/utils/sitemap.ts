@@ -6,191 +6,112 @@ export interface SitemapUrl {
   priority?: number;
 }
 
-export const generateSitemap = (): string => {
+// Generate main sitemap index that references language-specific sitemaps
+export const generateSitemapIndex = (): string => {
+  const baseUrl = import.meta.env.VITE_SITE_URL || 'https://villaoliviaclara.com';
+  const currentDate = new Date().toISOString();
+  
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${baseUrl}/sitemap-en.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-el.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-fr.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-it.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+};
+
+// Generate language-specific sitemap
+export const generateLanguageSitemap = (language: 'en' | 'el' | 'fr' | 'it'): string => {
   const baseUrl = import.meta.env.VITE_SITE_URL || 'https://villaoliviaclara.com';
   const currentDate = new Date().toISOString().split('T')[0];
+  const langPrefix = language === 'en' ? '' : `/${language}`;
   
-  const urls: SitemapUrl[] = [
-    {
-      loc: `${baseUrl}/`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 1.0
-    },
-    {
-      loc: `${baseUrl}/villa`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.9
-    },
-    {
-      loc: `${baseUrl}/sifnos`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.8
-    },
-    {
-      loc: `${baseUrl}/sifnos/beaches`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      loc: `${baseUrl}/sifnos/boat-tours`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      loc: `${baseUrl}/reviews`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.8
-    },
-    {
-      loc: `${baseUrl}/blog`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.7
-    },
-    {
-      loc: `${baseUrl}/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.6
-    },
-    {
-      loc: `${baseUrl}/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.6
-    },
-    {
-      loc: `${baseUrl}/contact`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.8
-    },
-    {
-      loc: `${baseUrl}/faq`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      loc: `${baseUrl}/sustainability`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      loc: `${baseUrl}/rental-conditions`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.6
-    },
-    {
-      loc: `${baseUrl}/privacy-policy`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.3
-    },
-    {
-      loc: `${baseUrl}/cookie-policy`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.3
-    },
-    {
-      loc: `${baseUrl}/terms-of-service`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.3
-    }
+  const pages = [
+    { path: '/', priority: 1.0, changefreq: 'weekly' },
+    { path: '/villa', priority: 0.9, changefreq: 'monthly' },
+    { path: '/sifnos', priority: 0.8, changefreq: 'monthly' },
+    { path: '/sifnos/beaches', priority: 0.7, changefreq: 'monthly' },
+    { path: '/sifnos/boat-tours', priority: 0.7, changefreq: 'monthly' },
+    { path: '/reviews', priority: 0.8, changefreq: 'monthly' },
+    { path: '/blog', priority: 0.7, changefreq: 'weekly' },
+    { path: '/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation', priority: 0.6, changefreq: 'monthly' },
+    { path: '/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison', priority: 0.6, changefreq: 'monthly' },
+    { path: '/contact', priority: 0.8, changefreq: 'yearly' },
+    { path: '/faq', priority: 0.7, changefreq: 'monthly' },
+    { path: '/sustainability', priority: 0.7, changefreq: 'yearly' }
   ];
+  
+  const urls = pages.map(page => {
+    const mainUrl = `${baseUrl}${langPrefix}${page.path}`;
+    
+    return `  <url>
+    <loc>${mainUrl}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}${page.path}"/>
+    <xhtml:link rel="alternate" hreflang="el" href="${baseUrl}/el${page.path}"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${baseUrl}/fr${page.path}"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${baseUrl}/it${page.path}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${page.path}"/>
+  </url>`;
+  }).join('\n');
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `  <url>
-    <loc>${url.loc}</loc>
-    ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ''}
-    ${url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : ''}
-    ${url.priority ? `<priority>${url.priority}</priority>` : ''}
-  </url>`).join('\n')}
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls}
 </urlset>`;
+};
 
-  return sitemap;
+// Main sitemap generation (now calls generateSitemapIndex)
+export const generateSitemap = (): string => {
+  return generateSitemapIndex();
 };
 
 // Generate robots.txt content
 export const generateRobotsTxt = (): string => {
   const baseUrl = import.meta.env.VITE_SITE_URL || 'https://villaoliviaclara.com';
   
-  return `User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
+  return `# Villa Olivia Clara - Robots.txt
+# Last Updated: ${new Date().toISOString().split('T')[0]}
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: ${baseUrl}/sitemap.xml
+# Crawl-delay for well-behaved bots
+Crawl-delay: 1
 
-# Disallow admin areas and system files
+# Disallow admin and system paths
 Disallow: /admin/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-Disallow: /.env
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /dist/
-Disallow: /build/
+Disallow: /_*
 
-# Allow all main content pages
+# Language-specific sitemaps
+Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl}/sitemap-en.xml
+Sitemap: ${baseUrl}/sitemap-el.xml
+Sitemap: ${baseUrl}/sitemap-fr.xml
+Sitemap: ${baseUrl}/sitemap-it.xml
+
+# Specific bot configurations
+User-agent: Googlebot
 Allow: /
-Allow: /villa
-Allow: /sifnos
-Allow: /sifnos/beaches
-Allow: /sifnos/boat-tours
-Allow: /reviews
-Allow: /blog
-Allow: /blog/ultimate-guide-sifnos-greece-luxury-villa-vacation
-Allow: /blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison
-Allow: /contact
-Allow: /faq
-Allow: /sustainability
-Allow: /privacy-policy
-Allow: /cookie-policy
-Allow: /terms-of-service
-Allow: /rental-conditions
+Crawl-delay: 0
 
-# Allow assets
-Allow: /villa-olivia-clara-logo.webp
-Allow: /favicon.ico
-Allow: /favicon.webp
-Allow: /site.webmanifest
-Allow: /*.css
-Allow: /*.js
-Allow: /*.webp
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.png
-Allow: /*.svg
-Allow: /*.mp4`;
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1`;
 };

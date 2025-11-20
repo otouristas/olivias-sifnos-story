@@ -227,6 +227,13 @@ const SifnosBeaches = () => {
         keywords={t('seo.beaches.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos/beaches"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/sifnos/beaches' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/sifnos/beaches' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/sifnos/beaches' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/sifnos/beaches' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/sifnos/beaches' }
+        ]}
       />
       <Navigation />
       

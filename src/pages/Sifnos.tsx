@@ -36,6 +36,13 @@ const Sifnos = () => {
         keywords={t('seo.sifnos.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/sifnos' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/sifnos' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/sifnos' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/sifnos' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/sifnos' }
+        ]}
       />
       <Navigation />
       

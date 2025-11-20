@@ -18,6 +18,13 @@ const FAQ = () => {
         keywords={t('seo.faq.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.jpg"
         canonicalUrl="https://villaoliviaclara.com/faq"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/faq' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/faq' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/faq' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/faq' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/faq' }
+        ]}
       />
       <Navigation />
       
@@ -30,15 +37,6 @@ const FAQ = () => {
       </a>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-villa-olive transition-colors">Home</Link></li>
-            <li>/</li>
-            <li className="text-villa-olive font-medium">FAQ</li>
-          </ol>
-        </nav>
-
         {/* Back Button */}
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">

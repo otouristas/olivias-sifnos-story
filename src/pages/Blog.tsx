@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
-import Breadcrumb from '@/components/Breadcrumb';
 import SEOHead from '@/components/SEOHead';
 import { BlogShare } from '@/components/SocialShare';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
@@ -51,6 +50,13 @@ const Blog = () => {
         keywords={t('seo.blog.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg"
         canonicalUrl="https://villaoliviaclara.com/blog"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/blog' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/blog' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/blog' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/blog' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/blog' }
+        ]}
       />
       <Navigation />
       
@@ -77,7 +83,6 @@ const Blog = () => {
       {/* Main Content */}
       <main id="main-content" className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: t('breadcrumb.blog') }]} />
           {/* Featured Post */}
           {blogPosts.filter(post => post.featured).map(post => (
             <Card key={post.id} className="mb-12 border-villa-stone shadow-elegant overflow-hidden animate-fade-in">

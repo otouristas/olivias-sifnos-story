@@ -7,7 +7,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BackToTop } from '@/components/BackToTop';
-import Breadcrumb from '@/components/Breadcrumb';
 import { VillaStructuredData } from '@/components/StructuredData';
 import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
@@ -72,6 +71,13 @@ const Villa = () => {
         keywords={t('seo.villa.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
         canonicalUrl="https://villaoliviaclara.com/villa"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/villa' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/villa' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/villa' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/villa' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/villa' }
+        ]}
       />
       <VillaStructuredData />
       <Navigation />
@@ -135,8 +141,7 @@ const Villa = () => {
 
       <main className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: t('breadcrumb.villa') }]} />
-
+          
           {/* Villa Overview */}
           <section className="mb-20">
             <div className="text-center mb-16">

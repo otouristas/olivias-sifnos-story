@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 // Import logo
 import logo from '/villa-olivia-clara-logo.webp';
@@ -142,6 +143,9 @@ const Navigation = () => {
             <Button asChild variant="villa" size="default">
               <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('nav.bookNow')}</a>
             </Button>
+
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button and Book Now */}
@@ -232,11 +236,14 @@ const Navigation = () => {
                     : 'text-foreground'
                 }`}
               >
-                {t('nav.contact')}
-              </Link>
+              {t('nav.contact')}
+            </Link>
 
-
+            {/* Language Switcher - Mobile */}
+            <div className="px-3 py-2">
+              <LanguageSwitcher />
             </div>
+          </div>
           </div>
         )}
       </div>

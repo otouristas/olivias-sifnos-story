@@ -18,6 +18,13 @@ const Activity = () => {
         keywords={t('seo.activities.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sifnos/boat-tours"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/sifnos/boat-tours' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/sifnos/boat-tours' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/sifnos/boat-tours' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/sifnos/boat-tours' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/sifnos/boat-tours' }
+        ]}
       />
       <Navigation />
       
@@ -30,17 +37,6 @@ const Activity = () => {
       </a>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-villa-olive transition-colors">Home</Link></li>
-            <li>/</li>
-            <li><Link to="/sifnos" className="hover:text-villa-olive transition-colors">Discover Sifnos</Link></li>
-            <li>/</li>
-            <li className="text-villa-olive font-medium">Boat Tours</li>
-          </ol>
-        </nav>
-
         {/* Back Button */}
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">

@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { reviewsData, type GuestReview } from './reviews-data';
 import SeoJsonLd from '@/components/SeoJsonLd';
 import { ReviewsStructuredData } from '@/components/StructuredData';
-import Breadcrumb from '@/components/Breadcrumb';
 import SEOHead from '@/components/SEOHead';
 import { ChevronDown } from 'lucide-react';
 
@@ -42,6 +41,13 @@ export default function Reviews(): JSX.Element {
         keywords={t('seo.reviews.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg"
         canonicalUrl="https://villaoliviaclara.com/reviews"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/reviews' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/reviews' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/reviews' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/reviews' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/reviews' }
+        ]}
       />
       <ReviewsStructuredData />
       <SeoJsonLd data={{
@@ -67,12 +73,11 @@ export default function Reviews(): JSX.Element {
       <header className="py-24 bg-gradient-subtle relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-villa-olive">{t('reviews.title')}</h1>
-          <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">{t('reviews.subtitle')}</p>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">{t('reviews.subtitle')}</p>
         </div>
       </header>
       <main className="py-20 space-y-20">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: t('breadcrumb.reviews') }]} />
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-villa-olive mb-4">
               {t('reviews.headline')}

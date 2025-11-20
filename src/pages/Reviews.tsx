@@ -99,7 +99,10 @@ export default function Reviews(): JSX.Element {
                         </div>
                         <time className="text-sm text-gray-500" dateTime={r.date}>{formatDate(r.date)}</time>
                       </div>
-                      <blockquote className="text-gray-700 leading-relaxed">“{r.text}”</blockquote>
+                      <blockquote 
+                        className="text-gray-700 leading-relaxed" 
+                        dangerouslySetInnerHTML={{ __html: `"${r.text}"` }}
+                      />
                     </CardContent>
                   </Card>
                 ))}

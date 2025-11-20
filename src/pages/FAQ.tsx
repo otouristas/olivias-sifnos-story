@@ -66,14 +66,14 @@ const FAQ = () => {
                 <div className="flex items-start gap-4">
                   <Ship className="text-villa-olive mt-1" size={24} />
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-villa-olive mb-4">How can I travel to Sifnos?</h2>
+                    <h2 className="text-2xl font-bold text-villa-olive mb-4">{t('faq.travel.title')}</h2>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       The only ways to travel to Sifnos is by ferry, private boat, or private helicopter. Using the ferry, you arrive at the port of Kamares.
                     </p>
                     
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-villa-olive mb-2">Closest Airports</h3>
+                        <h3 className="text-lg font-semibold text-villa-olive mb-2">{t('faq.travel.closestAirports')}</h3>
                         <div className="flex flex-wrap gap-2 mb-3">
                           <span className="px-3 py-1 bg-villa-olive-light text-villa-olive rounded-full text-sm font-medium">Athens (ATH)</span>
                           <span className="px-3 py-1 bg-villa-olive-light text-villa-olive rounded-full text-sm font-medium">Milos (MLO)</span>
@@ -85,7 +85,7 @@ const FAQ = () => {
                       </div>
                       
                       <div className="bg-sand-light p-4 rounded-lg">
-                        <h4 className="font-semibold text-villa-olive mb-2">Private Transfer Service</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('faq.travel.privateTransfer')}</h4>
                         <p className="text-muted-foreground text-sm">
                           We also offer an island transfer service by private speedboat at additional cost.
                         </p>
@@ -104,7 +104,7 @@ const FAQ = () => {
                 <div className="flex items-start gap-4">
                   <Car className="text-villa-olive mt-1" size={24} />
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-villa-olive mb-4">Where can I rent a car in Sifnos?</h2>
+                    <h2 className="text-2xl font-bold text-villa-olive mb-4">{t('faq.carRental.title')}</h2>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       There are a few car rental services in Sifnos, depending on your needs:
                     </p>

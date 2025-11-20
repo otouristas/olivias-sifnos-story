@@ -7,15 +7,17 @@ interface LanguageRouteProps {
 }
 
 export const LanguageRoute = ({ children }: LanguageRouteProps): JSX.Element => {
-  const { lang } = useParams<{ lang?: string }>();
   const { i18n } = useTranslation();
   const location = useLocation();
 
   useEffect(() => {
-    // Set language based on URL
-    if (lang && ['el', 'fr', 'it'].includes(lang)) {
-      if (i18n.language !== lang) {
-        i18n.changeLanguage(lang);
+    // Detect language from URL path
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const langFromPath = pathSegments[0];
+    
+    if (langFromPath && ['el', 'fr', 'it'].includes(langFromPath)) {
+      if (i18n.language !== langFromPath) {
+        i18n.changeLanguage(langFromPath);
       }
     } else {
       // Default to English if no language or invalid language
@@ -23,7 +25,7 @@ export const LanguageRoute = ({ children }: LanguageRouteProps): JSX.Element => 
         i18n.changeLanguage('en');
       }
     }
-  }, [lang, i18n, location.pathname]);
+  }, [location.pathname, i18n]);
 
   return <>{children}</>;
 };

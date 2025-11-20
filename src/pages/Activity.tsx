@@ -50,7 +50,7 @@ const Activity = () => {
         <header className="mb-12" id="main-content">
           <div className="flex items-center gap-3 mb-6">
             <Ship className="text-villa-olive" size={32} />
-            <h1 className="text-4xl font-display font-bold text-villa-olive">Boat Tour From Sifnos</h1>
+            <h1 className="text-4xl font-display font-bold text-villa-olive">{t('activity.boatTour.title')}</h1>
           </div>
           <p className="text-xl text-muted-foreground mb-4">
             Explore the Greek Islands By Boat
@@ -73,7 +73,7 @@ const Activity = () => {
         <div className="prose prose-lg max-w-none">
           {/* Choosing Destination */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-villa-olive mb-6">Choosing Your Boat Tour Destination</h2>
+            <h2 className="text-3xl font-bold text-villa-olive mb-6">{t('activity.boatTour.choosingDestination')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               We'll be honest, choosing the destination is the easiest part. They're all worth seeing and you'll have a good time regardless of what you choose - so don't worry! Most boat tour companies starting from Sifnos have a few different choices depending on how much time (and money) you have at your disposal and how many different destinations you want to see. A few combinations of these islands are possible, with a very popular one being Poliegos and Kimolos together.
             </p>

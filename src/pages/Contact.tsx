@@ -62,7 +62,7 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="border-villa-stone shadow-soft">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-villa-olive mb-6">Send Us an Inquiry</h2>
+                <h2 className="text-2xl font-bold text-villa-olive mb-6">{t('contact.form.title')}</h2>
                 <p className="text-muted-foreground mb-6">
                   Please fill out the form with your details and preferred dates, and we will get back to you as soon as possible.
                 </p>
@@ -70,8 +70,8 @@ const Contact = () => {
 {state.succeeded ? (
                   <div className="text-center py-12">
                     <div className="mb-4 text-4xl">✓</div>
-                    <h3 className="text-2xl font-bold text-villa-olive mb-2">Message Sent Successfully!</h3>
-                    <p className="text-muted-foreground">Thank you for your inquiry. Elena will get back to you soon!</p>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-2">{t('contact.form.successTitle')}</h3>
+                    <p className="text-muted-foreground">{t('contact.form.successMessage')}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">

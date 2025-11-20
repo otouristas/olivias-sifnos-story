@@ -217,6 +217,7 @@
     "host": "Rencontrez Votre Hôtesse",
     "hostDescription": "Découvrez Elena Philippou, votre hôtesse à Villa Olivia Clara",
     "elena": "Elena Philippou",
+    "yourHost": "Votre Hôtesse",
     "hostTitle": "Votre Hôtesse à Villa Olivia Clara",
     "location": "Sifnos, Grèce",
     "email": "elena@villaoliviaclara.com",
@@ -225,7 +226,14 @@
     "welcome": "Bienvenue à Sifnos !",
     "welcomeMessage": "Je suis ravie de vous accueillir sur l'île qui est la maison de ma famille depuis des générations - depuis les années 1800 ! Bien que je ne passais que les étés ici auparavant, j'ai maintenant déménagé de façon permanente. J'ai initialement construit Villa Olivia Clara pour être la maison d'été de ma famille, donc cela me donne une immense joie de partager cet endroit spécial avec vous.",
     "cultureMessage": "La culture cycladique, la beauté naturelle pittoresque et les gens hospitaliers de cette île sont ce qui m'a attirée. La vie coule lentement ici à Sifnos - vous pouvez prendre un moment pour vous détendre et écouter les vagues.",
-    "signature": "J'ai hâte de vous voir là-bas. - Elena"
+    "signature": "J'ai hâte de vous voir là-bas. - Elena",
+    "form": {
+      "title": "Envoyez-nous une Demande",
+      "successTitle": "Message Envoyé avec Succès !",
+      "successMessage": "Merci pour votre demande. Elena vous répondra bientôt !",
+      "villaName": "Villa Olivia Clara",
+      "addressLabel": "Adresse"
+    }
   },
   "reviews": {
     "title": "Avis Clients",
@@ -247,12 +255,80 @@
   },
   "faq": {
     "title": "Questions Fréquentes",
-    "subtitle": "Trouvez des réponses aux questions courantes sur Villa Olivia Clara"
+    "subtitle": "Trouvez des réponses aux questions courantes sur Villa Olivia Clara",
+    "travel": {
+      "title": "Comment puis-je voyager à Sifnos ?",
+      "closestAirports": "Aéroports les Plus Proches",
+      "athens": "Aéroport International d'Athènes (ATH)",
+      "athensDesc": "3 heures en ferry depuis le port du Pirée",
+      "mykonos": "Aéroport de Mykonos (JMK)",
+      "mykonosDesc": "1 heure en ferry depuis Mykonos",
+      "privateTransfer": "Service de Transfert Privé",
+      "transferDesc": "Nous pouvons organiser un transfert privé de l'aéroport d'Athènes au port du Pirée et des billets de ferry pour Sifnos. Contactez-nous pour les détails et les tarifs."
+    },
+    "carRental": {
+      "title": "Où puis-je louer une voiture à Sifnos ?",
+      "automatic": "Transmission Automatique et Manuelle",
+      "rentACar": "Rent A Car Sifnos",
+      "protoMoto": "Proto Moto Car",
+      "manualOnly": "Transmission Manuelle Uniquement",
+      "autoMoto": "Auto Moto Apollo",
+      "sifnosDrive": "Sifnos Drive"
+    },
+    "arrival": {
+      "title": "Comment puis-je arriver à Villa Olivia Clara ?",
+      "portTransfer": "Service de Transfert Portuaire",
+      "transferDesc": "Nous offrons un service de transfert gratuit depuis le port de Kamares jusqu'à Villa Olivia Clara. Veuillez nous informer de votre heure d'arrivée au moins 24 heures à l'avance."
+    },
+    "emergency": {
+      "title": "Quels sont les numéros de téléphone des services publics de Sifnos ?",
+      "medical": "Urgences Médicales",
+      "hospital": "Centre de Santé de Sifnos",
+      "police": "Poste de Police",
+      "policeNumber": "Police de Sifnos",
+      "coastGuard": "Garde Côtière",
+      "coastGuardNumber": "Garde Côtière de Sifnos"
+    },
+    "wifi": {
+      "title": "Y a-t-il du WiFi dans toute la propriété ?",
+      "answer": "Oui ! Villa Olivia Clara dispose d'un WiFi haut débit (200+ Mbps) dans toute la propriété, y compris dans tous les espaces intérieurs et extérieurs. Parfait pour le travail à distance ou pour regarder vos émissions préférées en streaming."
+    },
+    "luggage": {
+      "title": "Puis-je déposer mes bagages avant l'heure d'enregistrement ?",
+      "answer": "Oui, vous pouvez déposer vos bagages avant l'heure d'enregistrement. Nous disposons d'un stockage sécurisé. Veuillez nous contacter à l'avance pour organiser l'horaire."
+    },
+    "pets": {
+      "title": "Les animaux sont-ils autorisés sur la propriété ?",
+      "answer": "Nous aimons les animaux ! Cependant, pour maintenir les normes les plus élevées pour tous nos invités et en raison d'allergies potentielles, nous ne pouvons malheureusement pas accueillir d'animaux à Villa Olivia Clara. Nous apprécions votre compréhension."
+    }
   },
   "sustainability": {
     "title": "Durabilité",
     "subtitle": "Notre engagement envers le tourisme durable et la conservation environnementale",
     "description": "Nous nous engageons dans des pratiques de tourisme durable, soutenant les entreprises locales et minimisant notre impact environnemental tout en fournissant des hébergements de luxe."
+  },
+  "activity": {
+    "boatTour": {
+      "title": "Excursion en Bateau depuis Sifnos",
+      "subtitle": "Découvrez les Joyaux Cachés des Cyclades",
+      "choosingDestination": "Choisir Votre Destination d'Excursion en Bateau",
+      "tripDetails": "Détails de l'Excursion",
+      "whatToSee": "Que Voir",
+      "specialAccess": "Accès Spécial",
+      "perfectFor": "Parfait pour la plongée avec tuba",
+      "timing": "Matin ou après-midi",
+      "familyFriendly": "Parfait pour les familles",
+      "easyWalking": "Distance de marche facile",
+      "photography": "Paradis de la photographie",
+      "islandTour": "Tour complet de l'île",
+      "remoteBeaches": "Plages isolées",
+      "privateAccess": "Accès privé à l'île",
+      "booking": {
+        "title": "Réserver Votre Excursion en Bateau à Sifnos",
+        "partner": "Notre Partenaire Recommandé",
+        "needHelp": "Besoin d'Aide pour Planifier Votre Excursion en Bateau ?"
+      }
+    }
   },
   "ai": {
     "welcome": "Bonjour ! Je suis Olivia Clara AI, votre concierge personnelle de villa. Je connais chaque coin de notre villa et chaque secret de Sifnos. Comment puis-je rendre vos rêves d'île grecque réalité ? ✨",

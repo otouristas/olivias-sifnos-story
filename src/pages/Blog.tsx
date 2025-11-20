@@ -77,7 +77,7 @@ const Blog = () => {
       {/* Main Content */}
       <main id="main-content" className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb />
+          <Breadcrumb items={[{ label: t('breadcrumb.blog') }]} />
           {/* Featured Post */}
           {blogPosts.filter(post => post.featured).map(post => (
             <Card key={post.id} className="mb-12 border-villa-stone shadow-elegant overflow-hidden animate-fade-in">

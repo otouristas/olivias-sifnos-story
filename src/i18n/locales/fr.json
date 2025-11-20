@@ -11,6 +11,22 @@
     "bookNow": "Réserver",
     "language": "Langue"
   },
+  "breadcrumb": {
+    "home": "Accueil",
+    "villa": "La Villa",
+    "reviews": "Avis",
+    "blog": "Blog",
+    "contact": "Contact",
+    "sifnos": "Sifnos",
+    "beaches": "Plages",
+    "activities": "Activités",
+    "faq": "FAQ",
+    "sustainability": "Durabilité",
+    "privacyPolicy": "Politique de Confidentialité",
+    "cookiePolicy": "Politique des Cookies",
+    "termsOfService": "Conditions d'Utilisation",
+    "rentalConditions": "Conditions de Location"
+  },
   "hero": {
     "title": "Villa Olivia Clara",
     "subtitle": "Villa de Luxe à Louer à Sifnos, Grèce",
@@ -214,6 +230,9 @@
   "reviews": {
     "title": "Avis Clients",
     "subtitle": "Ce que disent nos invités de leur séjour à Villa Olivia Clara",
+    "headline": "40+ avis clients 5 étoiles au cours des 10 dernières années",
+    "planYourStay": "Planifiez Votre Séjour",
+    "welcomeMessage": "Nous serions honorés de vous accueillir dans notre maison à Sifnos.",
     "readMore": "Lire Plus",
     "showLess": "Voir Moins",
     "showMore": "Lire Plus d'Avis"

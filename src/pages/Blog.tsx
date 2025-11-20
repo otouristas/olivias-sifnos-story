@@ -20,11 +20,11 @@ const Blog = () => {
     {
       id: 1,
       slug: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
-      title: 'The Ultimate Guide to Sifnos, Greece: Your Perfect Luxury Villa Vacation',
+      title: 'The Ultimate Guide to Sifnos, Greece 2026: Your Perfect Luxury Villa Vacation',
       excerpt: 'Discover why Sifnos is the Greek island paradise you\'ve been searching for. From pristine beaches to authentic cuisine, learn everything you need to know for an unforgettable luxury villa stay.',
       image: blogImage1,
       author: 'Elena Philippou',
-      publishDate: '2024-02-15',
+      publishDate: '2025-11-18',
       readTime: '8 min read',
       category: 'Travel Guide',
       featured: true
@@ -32,11 +32,11 @@ const Blog = () => {
     {
       id: 2,
       slug: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison',
-      title: 'Luxury Villa vs Hotel in Sifnos: Why Villa Olivia Clara Offers the Perfect Greek Island Experience',
+      title: 'Luxury Villa vs Hotel in Sifnos 2026: Why Villa Olivia Clara Offers the Perfect Greek Island Experience',
       excerpt: 'Planning your Sifnos getaway? Discover the advantages of staying in a private luxury villa versus a hotel, and why Villa Olivia Clara provides the authentic Greek island experience you\'re looking for.',
       image: blogImage2,
       author: 'Elena Philippou',
-      publishDate: '2024-02-10',
+      publishDate: '2025-11-10',
       readTime: '6 min read',
       category: 'Villa Experience',
       featured: false
@@ -63,12 +63,12 @@ const Blog = () => {
       </a>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-hero text-white">
+      <section className="relative py-20 bg-gradient-subtle text-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-villa-olive">
             {t('blog.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
             {t('blog.subtitle')}
           </p>
         </div>
@@ -194,7 +194,7 @@ const Blog = () => {
       </main>
 
       {/* CTA Section */}
-      <section className="py-20 bg-sand">
+      <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6 text-villa-olive">
             Ready to Experience Villa Olivia Clara?
@@ -203,7 +203,7 @@ const Blog = () => {
             Book your luxury villa vacation in Sifnos and create memories that will last a lifetime.
           </p>
           <Button asChild variant="villa" size="lg">
-            <Link to="/contact">Book Your Stay</Link>
+            <Link to="/contact">Book Now</Link>
           </Button>
         </div>
       </section>

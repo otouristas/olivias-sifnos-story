@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BackToTop } from '@/components/BackToTop';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -110,15 +112,18 @@ const Villa = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild variant="villa" size="lg">
+              <Link to="#gallery">Gallery</Link>
+            </Button>
             <a
               href="#pool-outdoor"
-              className="bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="inline-flex items-center justify-center bg-villa-olive hover:bg-villa-olive/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors h-11"
             >
               {t('villa.exploreVilla')}
             </a>
             <a
               href="#virtual-tour"
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-white/30 flex items-center gap-2"
+              className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-white/30 h-11"
             >
               <Eye className="w-5 h-5" />
               {t('villa.virtualTourButton')}

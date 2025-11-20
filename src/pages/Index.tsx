@@ -97,9 +97,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-villa-olive/90 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+            <Star className="text-white" size={16} />
+            <span className="text-white text-sm font-medium">{t('hero.reviewBadge')}</span>
+          </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">{t('hero.title')}</h1>
           <p className="text-2xl md:text-3xl mb-6 text-white/95">{t('hero.subtitle')}</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild variant="villa" size="lg">
+              <Link to="/villa#gallery">Gallery</Link>
+            </Button>
             <VirtualTour showInModal={true} className="order-2 sm:order-1" />
           </div>
           <div className="mt-6 flex justify-center">
@@ -248,12 +255,6 @@ const Index = () => {
       {/* Features Grid */}
       <section className="py-20 bg-gradient-to-br from-sand-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-villa-olive mb-4">Villa Olivia Clara</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Your perfect luxury retreat in Sifnos, Greece
-            </p>
-          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
@@ -350,10 +351,10 @@ const Index = () => {
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
-                  <ImageZoom
-                    src={poolSunbathing} 
-                    alt="Pool sunbathing area at Villa Olivia Clara" 
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                  <img
+                    src={heroImage} 
+                    alt="Platis Gialos beach view from Villa Olivia Clara, Sifnos" 
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -413,15 +414,12 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Eye className="text-villa-olive" size={40} />
-              <h2 className="text-4xl font-bold text-villa-olive">Take a Virtual Tour</h2>
+              <h2 className="text-4xl font-bold text-villa-olive">{t('hero.virtualTour')}</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              Explore every corner of Villa Olivia Clara with our immersive 360° virtual tour. 
+              Explore every corner of Villa Olivia Clara with our immersive virtual tour. 
               Experience the luxury and beauty before you book.
             </p>
-            <div className="text-sm text-villa-olive font-semibold">
-              360° Tour • Click and drag to explore • Use mouse wheel to zoom
-            </div>
           </div>
 
           <div className="max-w-6xl mx-auto">
@@ -545,26 +543,26 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
+      <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            {t('cta.title')}
+          <h2 className="text-4xl font-bold mb-6 text-villa-olive">
+            Best Luxury Family Villa with Pool in Sifnos
           </h2>
-          <p className="text-xl mb-8 text-white/90">
-            {t('cta.subtitle')}
+          <p className="text-xl mb-8 text-muted-foreground">
+            Experience an authentic Greek island home with modern luxury and warm hospitality
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <div className="text-center">
-              <div className="text-2xl font-bold">10+</div>
-              <div className="text-white/80">{t('cta.yearsHosting')}</div>
+              <div className="text-2xl font-bold text-villa-olive">10+</div>
+              <div className="text-muted-foreground">{t('cta.yearsHosting')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">5/5</div>
-              <div className="text-white/80">{t('cta.reviewAverage')}</div>
+              <div className="text-2xl font-bold text-villa-olive">5/5</div>
+              <div className="text-muted-foreground">{t('cta.reviewAverage')}</div>
             </div>
           </div>
           <Button asChild size="lg" variant="villa">
-            <a href="https://book.villaoliviaclara.com/" target="_blank" rel="noopener noreferrer">{t('cta.bookStay')}</a>
+            <Link to="/contact">Book Now</Link>
           </Button>
         </div>
       </section>

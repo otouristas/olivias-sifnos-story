@@ -59,7 +59,7 @@ const SifnosGuide = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-display font-bold text-villa-olive mb-6 leading-tight">
-            The Ultimate Guide to Sifnos, Greece: Your Perfect Luxury Villa Vacation
+            The Ultimate Guide to Sifnos, Greece 2026: Your Perfect Luxury Villa Vacation
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -73,7 +73,7 @@ const SifnosGuide = () => {
             </div>
             <div className="flex items-center gap-2">
               <Calendar size={16} />
-              <time dateTime="2024-02-15">February 15, 2024</time>
+              <time dateTime="2025-11-18">November 18, 2025</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} />
@@ -271,23 +271,23 @@ const SifnosGuide = () => {
             <div>
               <h3 className="text-lg font-semibold text-villa-olive mb-2">Elena Philippou</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Born and raised in Sifnos, Elena has been welcoming guests to Villa Olivia Clara for over a decade. Her deep knowledge of the island and passion for hospitality ensure every guest experiences the authentic beauty of Sifnos.
+                Elena has been spending her summers in Sifnos since she was young. She has been welcoming guests to Villa Olivia Clara for over a decade. Her deep knowledge of the island and passion for hospitality ensure every guest experiences the authentic beauty of Sifnos.
               </p>
             </div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-hero text-white p-8 rounded-lg text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Discover Sifnos?</h3>
-          <p className="mb-6 text-white/90">
+        <div className="bg-gradient-subtle p-8 rounded-lg text-center border border-villa-stone">
+          <h3 className="text-2xl font-bold mb-4 text-villa-olive">Ready to Discover Sifnos?</h3>
+          <p className="mb-6 text-muted-foreground">
             Book your stay at Villa Olivia Clara and experience the magic of Sifnos with the comfort of luxury accommodations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="villa-outline">
-              <Link to="/contact">Book Your Stay</Link>
+            <Button asChild size="lg" variant="villa">
+              <Link to="/contact">Book Now</Link>
             </Button>
-            <Button asChild size="lg" variant="villa-ghost">
+            <Button asChild size="lg" variant="villa-outline">
               <Link to="/villa">Tour Our Villa</Link>
             </Button>
           </div>

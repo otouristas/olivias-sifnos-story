@@ -74,6 +74,11 @@ export default function Reviews(): JSX.Element {
       <main className="py-20 space-y-20">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-villa-olive mb-4">
+              40+ 5-star guest reviews over the past 10 years
+            </h2>
+          </div>
           {visibleYears.map((year) => {
             const items = grouped[parseInt(year)];
             return (
@@ -124,7 +129,7 @@ export default function Reviews(): JSX.Element {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
             <h2 className="text-3xl font-semibold text-villa-olive mb-4">Plan Your Stay</h2>
             <p className="text-lg text-gray-600 mb-8">We would be honored to welcome you to our home in Sifnos.</p>
-            <Button asChild size="lg" variant="villa-outline"><Link to="/contact">Get In Touch →</Link></Button>
+            <Button asChild size="lg" variant="villa"><Link to="/contact">Book Now</Link></Button>
           </div>
         </section>
       </main>

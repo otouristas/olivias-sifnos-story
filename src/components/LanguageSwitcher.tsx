@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { 
   DropdownMenu, 
@@ -18,13 +19,23 @@ const languages = [
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const changeLanguage = async (languageCode: string) => {
     console.log('Changing language to:', languageCode);
     try {
       await i18n.changeLanguage(languageCode);
-      // Force page refresh for immediate update
-      window.location.reload();
+      
+      // Get current path without language prefix
+      const currentPath = location.pathname.replace(/^\/(el|fr|it)/, '') || '/';
+      
+      // Navigate to new language URL
+      if (languageCode === 'en') {
+        navigate(currentPath);
+      } else {
+        navigate(`/${languageCode}${currentPath}`);
+      }
     } catch (error) {
       console.error('Failed to change language:', error);
     }

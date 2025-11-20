@@ -11,6 +11,22 @@
     "bookNow": "Κράτηση",
     "language": "Γλώσσα"
   },
+  "breadcrumb": {
+    "home": "Αρχική",
+    "villa": "Η Βίλα",
+    "reviews": "Κριτικές",
+    "blog": "Blog",
+    "contact": "Επικοινωνία",
+    "sifnos": "Σίφνος",
+    "beaches": "Παραλίες",
+    "activities": "Δραστηριότητες",
+    "faq": "Συχνές Ερωτήσεις",
+    "sustainability": "Βιωσιμότητα",
+    "privacyPolicy": "Πολιτική Απορρήτου",
+    "cookiePolicy": "Πολιτική Cookies",
+    "termsOfService": "Όροι Χρήσης",
+    "rentalConditions": "Όροι Ενοικίασης"
+  },
   "hero": {
     "title": "Villa Olivia Clara",
     "subtitle": "Πολυτελής Ενοικίαση Βίλας στη Σίφνο, Ελλάδα",
@@ -214,6 +230,9 @@
   "reviews": {
     "title": "Κριτικές Επισκεπτών",
     "subtitle": "Τι λένε οι επισκέπτες μας για τη διαμονή τους στο Villa Olivia Clara",
+    "headline": "40+ 5-αστέρων κριτικές επισκεπτών τα τελευταία 10 χρόνια",
+    "planYourStay": "Σχεδιάστε τη Διαμονή σας",
+    "welcomeMessage": "Θα ήταν τιμή μας να σας καλωσορίσουμε στο σπίτι μας στη Σίφνο.",
     "readMore": "Διαβάστε Περισσότερα",
     "showLess": "Δείτε Λιγότερα",
     "showMore": "Διαβάστε Περισσότερες Κριτικές"

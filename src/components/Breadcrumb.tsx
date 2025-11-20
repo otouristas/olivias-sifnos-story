@@ -1,100 +1,49 @@
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight, Home } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 interface BreadcrumbItem {
-  label: string;
-  href?: string;
-  current?: boolean;
+  readonly label: string;
+  readonly href?: string;
 }
 
 interface BreadcrumbProps {
-  className?: string;
-  items?: BreadcrumbItem[];
+  readonly items: readonly BreadcrumbItem[];
+  readonly className?: string;
 }
 
-const Breadcrumb = ({ className, items }: BreadcrumbProps) => {
-  const location = useLocation();
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
+  const { t } = useTranslation();
   
-  // Auto-generate breadcrumbs from current path if not provided
-  const generateBreadcrumbs = (): BreadcrumbItem[] => {
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: 'Home', href: '/' }
-    ];
-
-    let currentPath = '';
-    pathSegments.forEach((segment, index) => {
-      currentPath += `/${segment}`;
-      const isLast = index === pathSegments.length - 1;
-      
-      // Convert segment to readable label
-      const label = segment
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-
-      breadcrumbs.push({
-        label,
-        href: isLast ? undefined : currentPath,
-        current: isLast
-      });
-    });
-
-    return breadcrumbs;
-  };
-
-  const breadcrumbItems = items || generateBreadcrumbs();
+  const fullItems: readonly BreadcrumbItem[] = [
+    { label: t('breadcrumb.home'), href: '/' },
+    ...items
+  ];
 
   return (
-    <nav 
-      className={cn(
-        "flex items-center space-x-1 text-sm text-muted-foreground mb-6",
-        className
-      )}
-      aria-label="Breadcrumb"
-    >
-      <ol className="flex items-center space-x-1">
-        {breadcrumbItems.map((item, index) => (
-          <li key={index} className="flex items-center">
-            {index > 0 && (
-              <ChevronRight 
-                size={16} 
-                className="mx-2 text-villa-stone" 
-                aria-hidden="true"
-              />
-            )}
-            {index === 0 && (
-              <Home 
-                size={16} 
-                className="mr-1 text-villa-stone" 
-                aria-hidden="true"
-              />
-            )}
-            {item.href ? (
-              <Link
-                to={item.href}
-                className="text-villa-olive hover:text-villa-olive-dark transition-colors duration-200 hover:underline"
-                aria-current={item.current ? 'page' : undefined}
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <span 
-                className={cn(
-                  "font-medium",
-                  item.current 
-                    ? "text-villa-olive" 
-                    : "text-muted-foreground"
-                )}
-                aria-current={item.current ? 'page' : undefined}
-              >
-                {item.label}
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
+    <nav aria-label="Breadcrumb" className={`flex items-center space-x-1.5 text-xs mb-6 ${className}`}>
+      {fullItems.map((item, index) => (
+        <React.Fragment key={index}>
+          {index > 0 && (
+            <ChevronRight size={14} className="text-gray-300" aria-hidden="true" />
+          )}
+          {item.href ? (
+            <Link
+              to={item.href}
+              className="text-gray-500 hover:text-villa-olive transition-colors flex items-center gap-1 opacity-80 hover:opacity-100"
+            >
+              {index === 0 && <Home size={14} />}
+              <span>{item.label}</span>
+            </Link>
+          ) : (
+            <span className="text-gray-600 flex items-center gap-1 font-medium">
+              {index === 0 && <Home size={14} />}
+              {item.label}
+            </span>
+          )}
+        </React.Fragment>
+      ))}
     </nav>
   );
 };

@@ -64,19 +64,18 @@ export default function Reviews(): JSX.Element {
         }))
       }} />
       <Navigation />
-      <header className="py-24 bg-gradient-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      <header className="py-24 bg-gradient-subtle relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">{t('reviews.title')}</h1>
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">{t('reviews.subtitle')}</p>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-villa-olive">{t('reviews.title')}</h1>
+          <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">{t('reviews.subtitle')}</p>
         </div>
       </header>
       <main className="py-20 space-y-20">
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb />
+          <Breadcrumb items={[{ label: t('breadcrumb.reviews') }]} />
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-villa-olive mb-4">
-              40+ 5-star guest reviews over the past 10 years
+              {t('reviews.headline')}
             </h2>
           </div>
           {visibleYears.map((year) => {
@@ -130,9 +129,9 @@ export default function Reviews(): JSX.Element {
         </section>
         <section className="bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-            <h2 className="text-3xl font-semibold text-villa-olive mb-4">Plan Your Stay</h2>
-            <p className="text-lg text-gray-600 mb-8">We would be honored to welcome you to our home in Sifnos.</p>
-            <Button asChild size="lg" variant="villa"><Link to="/contact">Book Now</Link></Button>
+            <h2 className="text-3xl font-semibold text-villa-olive mb-4">{t('reviews.planYourStay')}</h2>
+            <p className="text-lg text-gray-600 mb-8">{t('reviews.welcomeMessage')}</p>
+            <Button asChild size="lg" variant="villa"><Link to="/contact">{t('common.bookNow')}</Link></Button>
           </div>
         </section>
       </main>

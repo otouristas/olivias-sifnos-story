@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+interface AlternateLanguage {
+  readonly lang: string;
+  readonly url: string;
+}
+
 interface SEOHeadProps {
   title: string;
   description: string;
@@ -7,6 +12,7 @@ interface SEOHeadProps {
   ogImage?: string;
   canonicalUrl?: string;
   noIndex?: boolean;
+  alternateLanguages?: readonly AlternateLanguage[];
 }
 
 export default function SEOHead({
@@ -15,7 +21,8 @@ export default function SEOHead({
   keywords,
   ogImage = '/villa-olivia-clara-logo.webp',
   canonicalUrl,
-  noIndex = false
+  noIndex = false,
+  alternateLanguages = []
 }: SEOHeadProps) {
   useEffect(() => {
     // Update document title
@@ -56,7 +63,22 @@ export default function SEOHead({
     } else {
       updateMetaTag('name', 'robots', 'index, follow');
     }
-  }, [title, description, keywords, ogImage, canonicalUrl, noIndex]);
+
+    // Add hreflang tags for multilingual SEO
+    if (alternateLanguages.length > 0) {
+      // Remove existing hreflang tags
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+      
+      // Add new hreflang tags
+      alternateLanguages.forEach(({ lang, url }) => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = lang;
+        link.href = url;
+        document.head.appendChild(link);
+      });
+    }
+  }, [title, description, keywords, ogImage, canonicalUrl, noIndex, alternateLanguages]);
 
   return null;
 }

@@ -18,6 +18,13 @@ const Sustainability = () => {
         keywords={t('seo.sustainability.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
         canonicalUrl="https://villaoliviaclara.com/sustainability"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/sustainability' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/sustainability' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/sustainability' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/sustainability' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/sustainability' }
+        ]}
       />
       <Navigation />
       
@@ -30,15 +37,6 @@ const Sustainability = () => {
       </a>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-villa-olive transition-colors">Home</Link></li>
-            <li>/</li>
-            <li className="text-villa-olive font-medium">Sustainability</li>
-          </ol>
-        </nav>
-
         {/* Back Button */}
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">

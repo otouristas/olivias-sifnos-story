@@ -31,6 +31,13 @@ const Contact = () => {
         keywords={t('seo.contact.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg"
         canonicalUrl="https://villaoliviaclara.com/contact"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/contact' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/contact' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/contact' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/contact' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/contact' }
+        ]}
       />
       <Navigation />
       

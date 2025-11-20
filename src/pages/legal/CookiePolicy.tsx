@@ -19,15 +19,6 @@ const CookiePolicy = () => {
       </a>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-villa-olive transition-colors">Home</Link></li>
-            <li>/</li>
-            <li className="text-villa-olive font-medium">Cookie Policy</li>
-          </ol>
-        </nav>
-
         {/* Back Button */}
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">

@@ -70,6 +70,13 @@ const Index = () => {
         keywords={t('seo.home.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
         canonicalUrl="https://villaoliviaclara.com"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/' }
+        ]}
       />
       <LocalBusinessStructuredData />
       <Navigation />

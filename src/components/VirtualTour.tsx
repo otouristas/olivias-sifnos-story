@@ -41,8 +41,7 @@ export function VirtualTour({ className = '', showInModal = false, autoplay = fa
             className={`${className} gap-2`}
             onClick={() => trackVirtualTourConversion('start')}
           >
-            <Eye size={20} />
-            Take Virtual Tour
+            Virtual Tour
           </Button>
         </DialogTrigger>
         <DialogContent className="max-w-6xl w-full h-[80vh] p-0">

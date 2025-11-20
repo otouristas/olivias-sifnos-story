@@ -38,7 +38,7 @@ const Contact = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6 text-villa-olive">
-            Book Your Stay
+            Book your Stay
           </h1>
           <p className="text-xl text-muted-foreground">
             We would be delighted to host you at Villa Olivia Clara. Whether you have a question 
@@ -213,10 +213,10 @@ const Contact = () => {
                         {/* Elena's Photo */}
                         <div className="relative">
                           <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-villa-olive-light shadow-soft">
-                            <ImageZoom
+                            <img
                               src={elenaProfile}
                               alt="Elena Philippou - Your Host at Villa Olivia Clara"
-                              className="w-full h-full object-cover cursor-zoom-in"
+                              className="w-full h-full object-cover"
                             />
                           </div>
                         </div>
@@ -224,8 +224,7 @@ const Contact = () => {
                         {/* Elena's Info */}
                         <div className="text-center">
                           <h2 className="text-2xl font-bold text-villa-olive mb-2">{t('contact.elena')}</h2>
-                          <p className="text-lg text-muted-foreground mb-1">{t('contact.hostTitle')}</p>
-                          <p className="text-villa-olive font-semibold">{t('contact.location')}</p>
+                          <p className="text-lg text-muted-foreground mb-1">{t('contact.yourHost')}</p>
                         </div>
                       </div>
 
@@ -256,7 +255,7 @@ const Contact = () => {
                           </div>
                           <div className="flex items-center gap-2">
                             <MapPin className="text-villa-olive" size={16} />
-                            <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos</span>
+                            <span className="text-muted-foreground text-sm">Platis Gialos, Sifnos, Greece</span>
                           </div>
                         </div>
                       </div>

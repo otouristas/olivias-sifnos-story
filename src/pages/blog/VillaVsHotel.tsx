@@ -54,7 +54,7 @@ const VillaVsHotel = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-display font-bold text-villa-olive mb-6 leading-tight">
-            Luxury Villa vs Hotel in Sifnos: Why Villa Olivia Clara Offers the Perfect Greek Island Experience
+            Luxury Villa vs Hotel in Sifnos 2026: Why Villa Olivia Clara Offers the Perfect Greek Island Experience
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -68,7 +68,7 @@ const VillaVsHotel = () => {
             </div>
             <div className="flex items-center gap-2">
               <Calendar size={16} />
-              <time dateTime="2024-02-10">February 10, 2024</time>
+              <time dateTime="2025-11-10">November 10, 2025</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} />

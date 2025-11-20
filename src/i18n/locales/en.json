@@ -7,13 +7,16 @@
     "sifnosBeaches": "Sifnos Beaches",
     "reviews": "Guest Reviews",
     "blog": "Blog",
-    "contact": "Contact Us",
+    "contact": "Contact",
     "bookNow": "Book Now",
     "language": "Language"
   },
   "hero": {
-    "title": "Villa Olivia Clara",
-    "subtitle": "Luxury Villa Rental in Sifnos, Greece",
+    "title": "Best Luxury Family Villa with Pool in Sifnos",
+    "subtitle": "Experience an authentic Greek island home with modern luxury and warm hospitality",
+    "reviewBadge": "40+ 5-star reviews",
+    "virtualTour": "Virtual Tour",
+    "gallery": "Gallery",
     "description": "Experience the ultimate Greek island getaway in our stunning 250m² villa with private pool, sea views, and authentic hospitality.",
     "cta": "Discover Our Villa",
     "learnMore": "Learn More"
@@ -196,11 +199,12 @@
     "fykiada": "Fykiada"
   },
   "contact": {
-    "title": "Contact Us",
+    "title": "Contact",
     "subtitle": "Get in touch with Elena Philippou, your host at Villa Olivia Clara",
     "host": "Meet Your Host",
     "hostDescription": "Get to know Elena Philippou, your host at Villa Olivia Clara",
     "elena": "Elena Philippou",
+    "yourHost": "Your Host",
     "hostTitle": "Your Host at Villa Olivia Clara",
     "location": "Sifnos, Greece",
     "email": "elena@villaoliviaclara.com",
@@ -247,7 +251,7 @@
   },
   "testimonials": {
     "title": "What Our Guests Are Saying",
-    "subtitle": "Average rating of 5 stars from more than 45 reviews in the past 10 years.",
+    "subtitle": "Average rating of 5 stars from more than 40+ reviews in the past 10 years.",
     "alexis": {
       "text": "Wonderful stay at the Villa Olivia Clara! The house has a perfect location near Platis Gialos, walking distance, and an amazing view on the bay. No hesitation: the best villa in Sifnos.",
       "author": "— Alexis"
@@ -275,12 +279,12 @@
     },
     "villaLinens": {
       "title": "Villa Linens",
-      "subtitle": "Real Home, Luxury Amenities",
-      "description": "We have carefully picked every part of Villa Olivia Clara to create a luxurious experience that will still make you feel like home."
+      "subtitle": "Luxury Amenities",
+      "description": "We have carefully picked every part of Villa Olivia Clara to create a luxurious experience that will make you feel like home."
     },
     "elenaHost": {
       "title": "Elena, Your Host",
-      "subtitle": "Hosted by Elena",
+      "subtitle": "Authentic Greek Home",
       "description": "Villa Olivia Clara is a family home and a family business. Being a local of the island, Elena is the perfect host for an authentic experience."
     }
   },

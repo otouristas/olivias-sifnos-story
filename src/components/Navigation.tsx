@@ -125,7 +125,7 @@ const Navigation = () => {
               {t('nav.blog')}
             </NavLink>
 
-            {/* Contact Us */}
+            {/* Contact */}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
@@ -222,7 +222,7 @@ const Navigation = () => {
                 {t('nav.blog')}
               </Link>
 
-              {/* Contact Us */}
+              {/* Contact */}
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}

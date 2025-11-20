@@ -116,7 +116,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-villa-olive text-white text-sm font-medium rounded-lg hover:bg-villa-olive/90 transition-colors"
                 >
-                  Book Your Stay
+                  Book Now
                   <ExternalLink size={14} className="ml-2" />
                 </a>
               </div>
@@ -178,7 +178,7 @@ const Footer = () => {
               </a>
             </p>
             <p className="text-xs text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Villa Olivia Clara is a fully licensed property (EOT: 1266595, 1266604), registered in the Greek national registry of vacation rentals (MHTE: 1172K92001077301CRBAGRAA).
+              Registered in the Greek national registry of vacation rentals (MHTE: 1172K92001077301CRBAGRAA).
             </p>
           </div>
         </div>

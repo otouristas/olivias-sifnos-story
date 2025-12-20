@@ -238,7 +238,22 @@
     "readMore": "Read More",
     "readTime": "min read",
     "author": "Author",
-    "published": "Published"
+    "published": "Published",
+    "featured": "Featured",
+    "ctaTitle": "Ready to Experience Villa Olivia Clara?",
+    "ctaDescription": "Book your luxury villa vacation in Sifnos and create memories that will last a lifetime.",
+    "posts": {
+      "sifnosGuide": {
+        "title": "The Ultimate Guide to Sifnos, Greece 2026: Your Perfect Luxury Villa Vacation",
+        "excerpt": "Discover why Sifnos is the Greek island paradise you've been searching for. From pristine beaches to authentic cuisine, learn everything you need to know for an unforgettable luxury villa stay.",
+        "category": "Travel Guide"
+      },
+      "villaVsHotel": {
+        "title": "Luxury Villa vs Hotel in Sifnos 2026: Why Villa Olivia Clara Offers the Perfect Greek Island Experience",
+        "excerpt": "Planning your Sifnos getaway? Discover the advantages of staying in a private luxury villa versus a hotel, and why Villa Olivia Clara provides the authentic Greek island experience.",
+        "category": "Villa Experience"
+      }
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -499,5 +514,29 @@
     "children": "Children",
     "infants": "Infants",
     "search": "Search"
+  },
+  "footer": {
+    "tagline": "Your Luxury Escape in Sifnos",
+    "description": "Experience authentic Greek island living with modern luxury and warm hospitality",
+    "experience": "Experience",
+    "villaTour": "Villa Tour",
+    "guestStories": "Guest Stories",
+    "discoverSifnos": "Discover Sifnos",
+    "travelBlog": "Travel Blog",
+    "information": "Information",
+    "sustainability": "Sustainability",
+    "rentalConditions": "Rental Conditions",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "contactElena": "Contact Elena",
+    "readyToBook": "Ready to Book?",
+    "planGetaway": "Start planning your perfect Sifnos getaway today",
+    "bookNow": "Book Now",
+    "allRightsReserved": "All rights reserved.",
+    "designedBy": "Designed & Developed by",
+    "poweredBy": "Powered by",
+    "photoCredit": "Sifnos Photo Credit",
+    "registryInfo": "Registered in the Greek national registry of vacation rentals"
   }
 }

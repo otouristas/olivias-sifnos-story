@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import SEOHead from '@/components/SEOHead';
+import { ArticleStructuredData } from '@/components/StructuredDataSchemas';
 import { Calendar, User, Clock, ArrowLeft, Check, X, Home, Users, Utensils, Car } from 'lucide-react';
 
 // Using existing images
@@ -13,6 +15,29 @@ import poolImage from '@/assets/Sifnos/Beaches/vathi.webp';
 const VillaVsHotel = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ArticleStructuredData
+        title="Luxury Villa vs Hotel in Sifnos 2026: Why Villa Olivia Clara Offers the Perfect Greek Island Experience"
+        description="Planning your Sifnos getaway? Discover the advantages of staying in a private luxury villa versus a hotel, and why Villa Olivia Clara provides the authentic Greek island experience."
+        image="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
+        publishDate="2025-11-10"
+        modifiedDate="2025-11-10"
+        author="Elena Philippou"
+        slug="luxury-villa-vs-hotel-sifnos-greece"
+      />
+      <SEOHead
+        title="Luxury Villa vs Hotel in Sifnos 2026 | Villa Olivia Clara"
+        description="Planning your Sifnos getaway? Discover the advantages of staying in a private luxury villa versus a hotel."
+        keywords="villa vs hotel, Sifnos accommodation, luxury villa Greece, private villa rental, Greek island vacation"
+        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
+        canonicalUrl="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece"
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/blog/villa-luxe-vs-hotel-sifnos-grece' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/blog/villa-lusso-vs-hotel-sifnos-grecia' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece' }
+        ]}
+      />
       <Navigation />
       
       {/* Skip to content link */}

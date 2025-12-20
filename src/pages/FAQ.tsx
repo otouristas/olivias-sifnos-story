@@ -6,12 +6,53 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
 import SEOHead from '@/components/SEOHead';
+import { FAQStructuredData } from '@/components/StructuredDataSchemas';
 import { ArrowLeft, HelpCircle, MapPin, Car, Wifi, Clock, Phone, Utensils, Waves, Plane, Ship } from 'lucide-react';
+
+const faqItems = [
+  {
+    question: "How can I travel to Sifnos?",
+    answer: "The only ways to travel to Sifnos is by ferry, private boat, or private helicopter. Using the ferry, you arrive at the port of Kamares. We recommend checking Ferry Hopper to book your ferry tickets."
+  },
+  {
+    question: "What are the closest airports to Sifnos?",
+    answer: "The closest airports are Athens (ATH), Milos (MLO), and Paros (PAS). From there, you can take a ferry to Sifnos."
+  },
+  {
+    question: "Are there car rental services in Sifnos?",
+    answer: "Yes, there are several car rental services including Rent A Car Sifnos, Proto Moto Car, Suntrail, Aperent, Auto Moto Apollo, and Sifnos Drive."
+  },
+  {
+    question: "How can I arrive at Villa Olivia Clara?",
+    answer: "We recommend renting a car. We also offer a port transfer service with a trusted driver at additional cost."
+  },
+  {
+    question: "Is there WiFi at the villa?",
+    answer: "Yes, there is high-speed (>200 Mbps) WiFi throughout the property."
+  },
+  {
+    question: "Can I drop off my luggage before check-in?",
+    answer: "Usually yes, but it depends on timing. Please contact us before arrival and we will accommodate you as best we can."
+  },
+  {
+    question: "Are pets allowed?",
+    answer: "No, pets are not allowed. We cannot make any exceptions at this time."
+  },
+  {
+    question: "How far is Villa Olivia Clara from the beach?",
+    answer: "The closest beach is Platis Gialos, approximately 7 minutes on foot or 2 minutes by car."
+  },
+  {
+    question: "Where is the closest place to eat?",
+    answer: "The closest restaurants are at the beachfront in Platis Gialos (700m) with options including traditional Greek, Italian and fusion cuisines."
+  }
+];
 
 const FAQ = () => {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
+      <FAQStructuredData faqs={faqItems} />
       <SEOHead
         title={t('seo.faq.title')}
         description={t('seo.faq.description')}

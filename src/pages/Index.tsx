@@ -108,11 +108,11 @@ const Index = () => {
             <Star className="text-white" size={16} />
             <span className="text-white text-sm font-medium">{t('hero.reviewBadge')}</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">{t('hero.title')}</h1>
-          <p className="text-2xl md:text-3xl mb-6 text-white/95">{t('hero.subtitle')}</p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold mb-2 leading-tight">{t('hero.title')}</h1>
+          <p className="text-lg sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-white/95">{t('hero.subtitle')}</p>
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Button asChild variant="villa" size="lg">
-              <Link to="/villa#gallery">Gallery</Link>
+              <Link to="/villa#gallery">{t('hero.gallery')}</Link>
             </Button>
             <VirtualTour showInModal={true} className="order-2 sm:order-1" />
           </div>
@@ -269,23 +269,23 @@ const Index = () => {
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Users className="text-villa-olive" size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-villa-olive mb-4">Capacity</h3>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.capacity')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li className="flex items-center justify-center gap-2">
                     <Users className="w-4 h-4" />
-                    8 guests
+                    {t('villa.guests')}
                   </li>
                   <li className="flex items-center justify-center gap-2">
                     <Home className="w-4 h-4" />
-                    4 bedrooms
+                    {t('villa.bedrooms')}
                   </li>
                   <li className="flex items-center justify-center gap-2">
                     <Waves className="w-4 h-4" />
-                    4.5 bathrooms
+                    {t('villa.bathrooms')}
                   </li>
                   <li className="flex items-center justify-center gap-2">
                     <Shield className="w-4 h-4" />
-                    Parking for 5 cars
+                    {t('villa.parking')}
                   </li>
               </ul>
               </CardContent>
@@ -296,12 +296,12 @@ const Index = () => {
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="text-villa-olive" size={32} />
             </div>
-                <h3 className="text-xl font-bold text-villa-olive mb-4">Location</h3>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.location')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li className="font-semibold text-villa-olive">Platis Gialos, Sifnos</li>
-                <li>7 mins walk / 2 mins drive to beach</li>
-                <li>15 mins to island center</li>
-                <li>25 mins to port</li>
+                  <li className="font-semibold text-villa-olive">{t('villa.platisGialos')}</li>
+                <li>{t('villa.walkToBeach')}</li>
+                <li>{t('villa.toCenter')}</li>
+                <li>{t('villa.toPort')}</li>
               </ul>
               </CardContent>
             </Card>
@@ -311,14 +311,14 @@ const Index = () => {
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Star className="text-villa-olive" size={32} />
             </div>
-                <h3 className="text-xl font-bold text-villa-olive mb-4">Amenities</h3>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.amenities')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                <li>Large pool & lounge area with bar</li>
-                <li>Garden & outdoor dining</li>
-                <li>Full kitchen, BBQ</li>
+                <li>{t('villa.poolLounge')}</li>
+                <li>{t('villa.gardenDining')}</li>
+                <li>{t('villa.kitchenBBQ')}</li>
                   <li className="flex items-center justify-center gap-2">
                     <Wifi className="w-4 h-4" />
-                    200+ Mbps WiFi
+                    {t('villa.wifi')}
                   </li>
               </ul>
               </CardContent>
@@ -329,12 +329,12 @@ const Index = () => {
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <ChefHat className="text-villa-olive" size={32} />
             </div>
-                <h3 className="text-xl font-bold text-villa-olive mb-4">Services</h3>
+                <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.services')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                <li>Housekeeping (2x per week)</li>
-                <li>Childcare (on request)</li>
-                <li>Private chef (on request)</li>
-                <li>Available for events</li>
+                <li>{t('villa.housekeeping')}</li>
+                <li>{t('villa.childcare')}</li>
+                <li>{t('villa.privateChef')}</li>
+                <li>{t('villa.events')}</li>
               </ul>
               </CardContent>
             </Card>
@@ -421,11 +421,10 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Eye className="text-villa-olive" size={40} />
-              <h2 className="text-4xl font-bold text-villa-olive">{t('hero.virtualTour')}</h2>
+              <h2 className="text-4xl font-bold text-villa-olive">{t('virtualTour.title')}</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              Explore every corner of Villa Olivia Clara with our immersive virtual tour. 
-              Experience the luxury and beauty before you book.
+              {t('virtualTour.subtitle')}
             </p>
           </div>
 
@@ -446,15 +445,13 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
           <h2 className="text-4xl font-bold mb-6 text-villa-olive">
-            Explore the Beauty of Sifnos with Us
+            {t('sifnosSection.title')}
           </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Our villa is located in Sifnos, Greece—a Greek island that is popular among those who 
-            appreciate good food and great sea views. Sifnos has been our family's home for centuries 
-            and we're excited to show you around.
+            {t('sifnosSection.description')}
           </p>
               <Button asChild variant="villa" size="lg">
-            <Link to="/sifnos">Discover Sifnos</Link>
+            <Link to="/sifnos">{t('sifnosSection.discoverButton')}</Link>
           </Button>
             </div>
             
@@ -543,7 +540,7 @@ const Index = () => {
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="villa-outline">
-              <Link to="/reviews">Read more reviews</Link>
+              <Link to="/reviews">{t('common.readMoreReviews')}</Link>
             </Button>
           </div>
         </div>
@@ -553,10 +550,10 @@ const Index = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6 text-villa-olive">
-            Best Luxury Family Villa with Pool in Sifnos
+            {t('ctaSection.title')}
           </h2>
           <p className="text-xl mb-8 text-muted-foreground">
-            Experience an authentic Greek island home with modern luxury and warm hospitality
+            {t('ctaSection.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <div className="text-center">
@@ -569,7 +566,7 @@ const Index = () => {
             </div>
           </div>
           <Button asChild size="lg" variant="villa">
-            <Link to="/contact">Book Now</Link>
+            <Link to="/contact">{t('common.bookNow')}</Link>
           </Button>
         </div>
       </section>

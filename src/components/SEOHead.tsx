@@ -46,6 +46,22 @@ export default function SEOHead({
       updateMetaTag('property', 'og:url', canonicalUrl);
     }
 
+    // Add og:locale for multilingual SEO
+    const currentLang = document.documentElement.lang || 'en';
+    const localeMap: Record<string, string> = {
+      'en': 'en_US',
+      'el': 'el_GR',
+      'fr': 'fr_FR',
+      'it': 'it_IT'
+    };
+    updateMetaTag('property', 'og:locale', localeMap[currentLang] || 'en_US');
+    
+    // Add og:locale:alternate for other languages
+    const otherLocales = Object.entries(localeMap).filter(([lang]) => lang !== currentLang);
+    otherLocales.forEach(([, locale]) => {
+      updateMetaTag('property', 'og:locale:alternate', locale);
+    });
+
     // Update Twitter Card tags
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
     updateMetaTag('name', 'twitter:title', title);

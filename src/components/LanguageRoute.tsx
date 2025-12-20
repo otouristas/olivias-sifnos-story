@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 interface LanguageRouteProps {
@@ -14,8 +14,9 @@ export const LanguageRoute = ({ children }: LanguageRouteProps): JSX.Element => 
     // Detect language from URL path
     const pathSegments = location.pathname.split('/').filter(Boolean);
     const langFromPath = pathSegments[0];
+    const validLangs = ['el', 'fr', 'it'];
     
-    if (langFromPath && ['el', 'fr', 'it'].includes(langFromPath)) {
+    if (langFromPath && validLangs.includes(langFromPath)) {
       if (i18n.language !== langFromPath) {
         i18n.changeLanguage(langFromPath);
       }
@@ -25,6 +26,9 @@ export const LanguageRoute = ({ children }: LanguageRouteProps): JSX.Element => 
         i18n.changeLanguage('en');
       }
     }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = i18n.language;
   }, [location.pathname, i18n]);
 
   return <>{children}</>;

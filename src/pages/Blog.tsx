@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,30 +14,56 @@ import blogImage1 from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import blogImage2 from '@/assets/Sifnos/villages/apollonia.webp';
 
 const Blog = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
+
+  // Blog post slugs by language
+  const blogSlugs = {
+    en: {
+      sifnosGuide: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
+      villaVsHotel: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison'
+    },
+    el: {
+      sifnosGuide: 'οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα',
+      villaVsHotel: 'πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος'
+    },
+    fr: {
+      sifnosGuide: 'guide-sifnos-grece-villa-luxe',
+      villaVsHotel: 'villa-luxe-vs-hotel-sifnos-grece'
+    },
+    it: {
+      sifnosGuide: 'guida-sifnos-grecia-villa-lusso',
+      villaVsHotel: 'villa-lusso-vs-hotel-sifnos-grecia'
+    }
+  };
+
+  const currentSlugs = blogSlugs[currentLang as keyof typeof blogSlugs] || blogSlugs.en;
+
   const blogPosts = [
     {
       id: 1,
-      slug: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
-      title: 'The Ultimate Guide to Sifnos, Greece 2026: Your Perfect Luxury Villa Vacation',
-      excerpt: 'Discover why Sifnos is the Greek island paradise you\'ve been searching for. From pristine beaches to authentic cuisine, learn everything you need to know for an unforgettable luxury villa stay.',
+      slug: currentSlugs.sifnosGuide,
+      title: t('blog.posts.sifnosGuide.title'),
+      excerpt: t('blog.posts.sifnosGuide.excerpt'),
       image: blogImage1,
       author: 'Elena Philippou',
       publishDate: '2025-11-18',
-      readTime: '8 min read',
-      category: 'Travel Guide',
+      readTime: `8 ${t('blog.readTime')}`,
+      category: t('blog.posts.sifnosGuide.category'),
       featured: true
     },
     {
       id: 2,
-      slug: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison',
-      title: 'Luxury Villa vs Hotel in Sifnos 2026: Why Villa Olivia Clara Offers the Perfect Greek Island Experience',
-      excerpt: 'Planning your Sifnos getaway? Discover the advantages of staying in a private luxury villa versus a hotel, and why Villa Olivia Clara provides the authentic Greek island experience you\'re looking for.',
+      slug: currentSlugs.villaVsHotel,
+      title: t('blog.posts.villaVsHotel.title'),
+      excerpt: t('blog.posts.villaVsHotel.excerpt'),
       image: blogImage2,
       author: 'Elena Philippou',
       publishDate: '2025-11-10',
-      readTime: '6 min read',
-      category: 'Villa Experience',
+      readTime: `6 ${t('blog.readTime')}`,
+      category: t('blog.posts.villaVsHotel.category'),
       featured: false
     }
   ];
@@ -49,7 +75,7 @@ const Blog = () => {
         description={t('seo.blog.description')}
         keywords={t('seo.blog.keywords')}
         ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg"
-        canonicalUrl="https://villaoliviaclara.com/blog"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/blog`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/blog' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/blog' },
@@ -101,7 +127,7 @@ const Blog = () => {
                       {post.category}
                     </span>
                     <span className="bg-villa-olive-light text-villa-olive px-3 py-1 rounded-full text-xs font-medium">
-                      Featured
+                      {t('blog.featured')}
                     </span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-villa-olive mb-4 leading-tight">
@@ -118,7 +144,7 @@ const Blog = () => {
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
                       <time dateTime={post.publishDate}>
-                        {new Date(post.publishDate).toLocaleDateString('en-US', { 
+                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', { 
                           year: 'numeric', 
                           month: 'long', 
                           day: 'numeric' 
@@ -131,7 +157,7 @@ const Blog = () => {
                     </div>
                   </div>
                     <Button asChild variant="villa" size="lg">
-                      <Link to={`/blog/${post.slug}`}>
+                      <Link to={`${langPrefix}/blog/${post.slug}`}>
                         {t('blog.readMore')} <ArrowRight size={16} />
                       </Link>
                     </Button>
@@ -175,7 +201,7 @@ const Blog = () => {
                     <div className="flex items-center gap-1">
                       <Calendar size={12} />
                       <time dateTime={post.publishDate}>
-                        {new Date(post.publishDate).toLocaleDateString('en-US', { 
+                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', { 
                           month: 'short', 
                           day: 'numeric' 
                         })}
@@ -187,8 +213,8 @@ const Blog = () => {
                     </div>
                   </div>
                   <Button asChild variant="villa-outline" size="sm" className="w-full">
-                    <Link to={`/blog/${post.slug}`}>
-                      Read More <ArrowRight size={14} />
+                    <Link to={`${langPrefix}/blog/${post.slug}`}>
+                      {t('blog.readMore')} <ArrowRight size={14} />
                     </Link>
                   </Button>
                 </CardContent>
@@ -202,13 +228,13 @@ const Blog = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6 text-villa-olive">
-            Ready to Experience Villa Olivia Clara?
+            {t('blog.ctaTitle')}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Book your luxury villa vacation in Sifnos and create memories that will last a lifetime.
+            {t('blog.ctaDescription')}
           </p>
           <Button asChild variant="villa" size="lg">
-            <Link to="/contact">Book Now</Link>
+            <Link to={`${langPrefix}/contact`}>{t('nav.bookNow')}</Link>
           </Button>
         </div>
       </section>

@@ -251,7 +251,22 @@
     "readMore": "Lire Plus",
     "readTime": "min de lecture",
     "author": "Auteur",
-    "published": "Publié"
+    "published": "Publié",
+    "featured": "À la Une",
+    "ctaTitle": "Prêt à Découvrir Villa Olivia Clara ?",
+    "ctaDescription": "Réservez vos vacances de luxe à Sifnos et créez des souvenirs inoubliables.",
+    "posts": {
+      "sifnosGuide": {
+        "title": "Le Guide Ultime de Sifnos, Grèce 2026 : Vos Parfaites Vacances en Villa de Luxe",
+        "excerpt": "Découvrez pourquoi Sifnos est le paradis grec que vous recherchez. Des plages préservées à la cuisine authentique, tout ce qu'il faut savoir pour un séjour inoubliable.",
+        "category": "Guide de Voyage"
+      },
+      "villaVsHotel": {
+        "title": "Villa de Luxe vs Hôtel à Sifnos 2026 : Pourquoi Villa Olivia Clara Offre l'Expérience Parfaite",
+        "excerpt": "Vous planifiez votre séjour à Sifnos ? Découvrez les avantages d'une villa privée de luxe par rapport à un hôtel.",
+        "category": "Expérience Villa"
+      }
+    }
   },
   "faq": {
     "title": "Questions Fréquentes",
@@ -512,5 +527,29 @@
     "children": "Enfants",
     "infants": "Bébés",
     "search": "Rechercher"
+  },
+  "footer": {
+    "tagline": "Votre Évasion de Luxe à Sifnos",
+    "description": "Vivez l'authenticité de l'île grecque avec luxe moderne et hospitalité chaleureuse",
+    "experience": "Expérience",
+    "villaTour": "Visite de la Villa",
+    "guestStories": "Témoignages",
+    "discoverSifnos": "Découvrir Sifnos",
+    "travelBlog": "Blog Voyage",
+    "information": "Informations",
+    "sustainability": "Durabilité",
+    "rentalConditions": "Conditions de Location",
+    "faq": "FAQ",
+    "privacyPolicy": "Politique de Confidentialité",
+    "cookiePolicy": "Politique des Cookies",
+    "contactElena": "Contacter Elena",
+    "readyToBook": "Prêt à Réserver ?",
+    "planGetaway": "Commencez à planifier votre escapade parfaite à Sifnos",
+    "bookNow": "Réserver",
+    "allRightsReserved": "Tous droits réservés.",
+    "designedBy": "Conçu & Développé par",
+    "poweredBy": "Propulsé par",
+    "photoCredit": "Crédit Photos Sifnos",
+    "registryInfo": "Inscrit au registre national grec des locations de vacances"
   }
 }

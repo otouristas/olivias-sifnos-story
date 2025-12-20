@@ -11,6 +11,7 @@ import { VirtualTour } from '@/components/VirtualTour';
 import { BackToTop } from '@/components/BackToTop';
 import { HeroImage, VillaImage } from '@/components/LazyImage';
 import { LocalBusinessStructuredData } from '@/components/StructuredData';
+import { OrganizationStructuredData } from '@/components/StructuredDataSchemas';
 import SEOHead from '@/components/SEOHead';
 import { ChevronDown, Calendar, Eye, Users, MapPin, Wifi, Shield, Star, Waves, Home, ChefHat } from 'lucide-react';
 import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
@@ -79,6 +80,7 @@ const Index = () => {
         ]}
       />
       <LocalBusinessStructuredData />
+      <OrganizationStructuredData />
       <Navigation />
       
       {/* Hero Section */}

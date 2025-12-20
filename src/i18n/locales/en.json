@@ -367,8 +367,10 @@
     }
   },
   "virtualTour": {
-    "title": "Take a Virtual Tour",
+    "title": "Virtual Tour",
     "subtitle": "Explore every corner of Villa Olivia Clara with our immersive 360° virtual tour. Experience the luxury and beauty before you book.",
+    "loading": "Loading virtual tour...",
+    "dialogTitle": "Villa Olivia Clara - 360° Virtual Tour",
     "instructions": "360° Tour • Click and drag to explore • Use mouse wheel to zoom",
     "features": {
       "experience": "360° Experience",
@@ -378,6 +380,15 @@
       "interactive": "Interactive",
       "interactiveDesc": "Click, drag, and zoom to explore"
     }
+  },
+  "sifnosSection": {
+    "title": "Explore the Beauty of Sifnos with Us",
+    "description": "Our villa is located in Sifnos, Greece—a Greek island that is popular among those who appreciate good food and great sea views. Sifnos has been our family's home for centuries and we're excited to show you around.",
+    "discoverButton": "Discover Sifnos"
+  },
+  "ctaSection": {
+    "title": "Best Luxury Family Villa with Pool in Sifnos",
+    "subtitle": "Experience an authentic Greek island home with modern luxury and warm hospitality"
   },
   "seo": {
     "home": {
@@ -468,6 +479,7 @@
     "bookNow": "Book Now",
     "contactUs": "Contact Us",
     "readMore": "Read More",
+    "readMoreReviews": "Read more reviews",
     "showLess": "Show Less",
     "backToTop": "Back to Top",
     "loading": "Loading...",

@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { reviewsData, type GuestReview } from './reviews-data';
 import SeoJsonLd from '@/components/SeoJsonLd';
 import { ReviewsStructuredData } from '@/components/StructuredData';
+import { ReviewAggregateStructuredData } from '@/components/StructuredDataSchemas';
 import SEOHead from '@/components/SEOHead';
 import { ChevronDown } from 'lucide-react';
 
@@ -50,6 +51,7 @@ export default function Reviews(): JSX.Element {
         ]}
       />
       <ReviewsStructuredData />
+      <ReviewAggregateStructuredData />
       <SeoJsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'Product',

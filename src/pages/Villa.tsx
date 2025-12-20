@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BackToTop } from '@/components/BackToTop';
 import { VillaStructuredData } from '@/components/StructuredData';
+import { VacationRentalStructuredData } from '@/components/StructuredDataSchemas';
 import SEOHead from '@/components/SEOHead';
 import ImageZoom from '@/components/ImageZoom';
 import { Waves, TreePine, Bed, Bath, Utensils, Tv, Wifi, Car, Shield, Shirt, ChefHat, Music, Baby, Calendar, Coffee, Flame, Refrigerator, Microwave, BookDashed as Dishwasher, Wine, UtensilsCrossed, BookOpen, Gamepad2, Plane, Users, MapPin, Phone, Eye, Star, Mail, Flower, ChevronDown } from 'lucide-react';
@@ -80,6 +81,7 @@ const Villa = () => {
         ]}
       />
       <VillaStructuredData />
+      <VacationRentalStructuredData />
       <Navigation />
 
       {/* Hero Section */}

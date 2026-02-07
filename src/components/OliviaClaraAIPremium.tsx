@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
     MessageCircle, Send, X, Sparkles, User, Loader2,
     MapPin, Calendar, Phone, Mail, Star, Waves,
-    Home, Bed, Sun, Eye, Trash2
+    Home, Bed, Sun, Eye, Trash2, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { generateAIResponse, QUICK_ACTIONS, FOLLOW_UP_ACTIONS } from '@/data/ai-knowledge-base';
 
@@ -14,6 +14,7 @@ interface Message {
     readonly timestamp: Date;
     readonly isTyping?: boolean;
     readonly followUpAction?: 'booking' | 'contact' | 'explore';
+    readonly images?: readonly string[];
 }
 
 interface ChatbotProps {
@@ -26,7 +27,7 @@ const IconMap: Record<string, React.ElementType> = {
 };
 
 // Typing effect hook
-function useTypingEffect(text: string, speed: number = 12, enabled: boolean = true) {
+function useTypingEffect(text: string, speed: number = 8, enabled: boolean = true) {
     const [displayedText, setDisplayedText] = useState('');
     const [isComplete, setIsComplete] = useState(false);
 
@@ -82,6 +83,75 @@ function parseMarkdown(content: string): React.ReactNode[] {
     return elements.length > 0 ? elements : [content];
 }
 
+// Image Carousel Component
+function ImageCarousel({ images }: { images: readonly string[] }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const goNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+    const goPrev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+
+    if (!images || images.length === 0) return null;
+
+    return (
+        <div className="relative w-full rounded-xl overflow-hidden bg-villa-stone/30 mt-2 mb-1">
+            {/* Image container */}
+            <div className="relative aspect-[4/3] w-full">
+                <img
+                    src={images[currentIndex]}
+                    alt={`Villa view ${currentIndex + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setIsLoaded(true)}
+                />
+                {!isLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-villa-stone/20">
+                        <Loader2 className="w-6 h-6 animate-spin text-villa-olive" />
+                    </div>
+                )}
+
+                {/* Navigation arrows */}
+                {images.length > 1 && (
+                    <>
+                        <button
+                            onClick={goPrev}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                        >
+                            <ChevronLeft size={18} className="text-villa-olive" />
+                        </button>
+                        <button
+                            onClick={goNext}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                        >
+                            <ChevronRight size={18} className="text-villa-olive" />
+                        </button>
+                    </>
+                )}
+
+                {/* Dots indicator */}
+                {images.length > 1 && (
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        {images.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => { setIsLoaded(false); setCurrentIndex(idx); }}
+                                className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex
+                                    ? 'bg-white w-4'
+                                    : 'bg-white/60 hover:bg-white/80'
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                )}
+
+                {/* Counter */}
+                <div className="absolute top-2 right-2 px-2 py-1 rounded-full bg-black/40 text-white text-xs">
+                    {currentIndex + 1}/{images.length}
+                </div>
+            </div>
+        </div>
+    );
+}
+
 // Follow-up button
 function FollowUpButton({ action }: { action: 'booking' | 'contact' | 'explore' }) {
     const actionData = FOLLOW_UP_ACTIONS[action];
@@ -107,7 +177,7 @@ function FollowUpButton({ action }: { action: 'booking' | 'contact' | 'explore' 
 function MessageBubble({ message, isLatest }: { message: Message; isLatest: boolean }) {
     const isAI = message.type === 'ai';
     const shouldAnimate = isAI && isLatest && !message.isTyping;
-    const { displayedText, isComplete } = useTypingEffect(message.content, 8, shouldAnimate);
+    const { displayedText, isComplete } = useTypingEffect(message.content, 6, shouldAnimate);
 
     const renderContent = (content: string) => {
         return content.split('\n').map((line, i) => (
@@ -119,17 +189,17 @@ function MessageBubble({ message, isLatest }: { message: Message; isLatest: bool
     };
 
     return (
-        <div className={`flex gap-3 animate-fade-in ${isAI ? 'justify-start' : 'justify-end'}`}>
+        <div className={`flex gap-2 sm:gap-3 animate-fade-in ${isAI ? 'justify-start' : 'justify-end'}`}>
             {isAI && (
-                <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-villa-olive flex items-center justify-center shadow-lg overflow-hidden">
-                    <img src="/favicon.webp" alt="Olivia Clara AI" className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-villa-olive flex items-center justify-center shadow-lg overflow-hidden">
+                    <img src="/favicon.webp" alt="Olivia Clara AI" className="w-4 h-4 sm:w-5 sm:h-5 object-contain brightness-0 invert" />
                 </div>
             )}
 
-            <div className="max-w-[85%] sm:max-w-[80%] space-y-2">
-                <div className={`px-3 py-2.5 sm:px-4 sm:py-3 rounded-2xl text-sm leading-relaxed ${isAI
-                        ? 'bg-villa-olive-light/60 text-foreground rounded-tl-sm border border-villa-stone'
-                        : 'bg-villa-olive text-white rounded-tr-sm shadow-lg'
+            <div className="max-w-[88%] sm:max-w-[85%] space-y-2">
+                <div className={`px-3 py-2.5 rounded-2xl text-[13px] sm:text-sm leading-relaxed ${isAI
+                    ? 'bg-villa-olive-light/60 text-foreground rounded-tl-sm border border-villa-stone'
+                    : 'bg-villa-olive text-white rounded-tr-sm shadow-lg'
                     }`}>
                     {message.isTyping ? (
                         <div className="flex items-center gap-2">
@@ -150,6 +220,14 @@ function MessageBubble({ message, isLatest }: { message: Message; isLatest: bool
                     )}
                 </div>
 
+                {/* Image Carousel - shows after text completes */}
+                {isAI && !message.isTyping && message.images && message.images.length > 0 && isComplete && (
+                    <div className="animate-fade-in">
+                        <ImageCarousel images={message.images} />
+                    </div>
+                )}
+
+                {/* Follow-up button */}
                 {isAI && !message.isTyping && message.followUpAction && isComplete && (
                     <div className="pl-1 animate-fade-in">
                         <FollowUpButton action={message.followUpAction} />
@@ -158,8 +236,8 @@ function MessageBubble({ message, isLatest }: { message: Message; isLatest: bool
             </div>
 
             {!isAI && (
-                <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-aegean flex items-center justify-center shadow-lg">
-                    <User size={16} className="sm:w-[18px] sm:h-[18px] text-white" />
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-aegean flex items-center justify-center shadow-lg">
+                    <User size={14} className="sm:w-4 sm:h-4 text-white" />
                 </div>
             )}
         </div>
@@ -171,8 +249,8 @@ function QuickActionChip({ label, icon, onClick }: { label: string; icon: string
     const Icon = IconMap[icon] || Star;
     return (
         <button onClick={onClick}
-            className="group flex items-center gap-2 px-3 py-2 bg-villa-olive-light/50 hover:bg-villa-olive-light border border-villa-stone hover:border-villa-olive/30 rounded-xl text-xs text-foreground hover:text-villa-olive transition-all">
-            <Icon size={14} className="text-villa-olive" />
+            className="group flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 sm:py-2 bg-villa-olive-light/50 hover:bg-villa-olive-light border border-villa-stone hover:border-villa-olive/30 rounded-xl text-[11px] sm:text-xs text-foreground hover:text-villa-olive transition-all">
+            <Icon size={12} className="sm:w-3.5 sm:h-3.5 text-villa-olive" />
             <span>{label}</span>
         </button>
     );
@@ -190,9 +268,9 @@ export function OliviaClaraAIPremium({ className = '' }: ChatbotProps): React.Re
 
     const WELCOME_MESSAGE = `Kalimera! ☀️ I'm **Olivia Clara AI**, your personal villa concierge.
 
-I can help you with everything about Villa Olivia Clara — from our stunning pool and bedrooms to booking your stay.
+I can show you photos and tell you everything about Villa Olivia Clara — from our stunning pool to the bedrooms.
 
-What would you like to know?`;
+What would you like to see?`;
 
     // Auto-scroll
     useEffect(() => {
@@ -243,16 +321,17 @@ What would you like to know?`;
             id: typingId, type: 'ai', content: '', timestamp: new Date(), isTyping: true,
         }]);
 
-        const thinkingTime = 500 + Math.random() * 700;
+        const thinkingTime = 500 + Math.random() * 600;
 
         setTimeout(() => {
-            const { response, followUpAction } = generateAIResponse(text);
+            const { response, followUpAction, images } = generateAIResponse(text);
             setMessages(prev => prev.filter(m => m.id !== typingId).concat({
                 id: (Date.now() + 2).toString(),
                 type: 'ai',
                 content: response,
                 timestamp: new Date(),
                 followUpAction,
+                images,
             }));
             setIsTyping(false);
         }, thinkingTime);
@@ -291,7 +370,7 @@ What would you like to know?`;
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     <div className="relative flex items-center justify-center">
-                        <img src="/favicon.webp" alt="Olivia Clara AI" className="w-8 h-8 sm:w-9 sm:h-9 object-contain" />
+                        <img src="/favicon.webp" alt="Olivia Clara AI" className="w-8 h-8 sm:w-9 sm:h-9 object-contain brightness-0 invert" />
                         <Sparkles size={10} className="absolute -top-1 -right-1 text-villa-gold animate-pulse" />
                     </div>
                     <div className="absolute top-1 right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-emerald-400 rounded-full border-2 border-white">
@@ -316,7 +395,7 @@ What would you like to know?`;
     // Chat window - MOBILE FULL SCREEN, Desktop floating
     return (
         <div className={`fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-50 ${className}`}>
-            <div className="w-full h-full sm:w-[380px] sm:h-[600px] sm:rounded-3xl overflow-hidden shadow-2xl sm:shadow-villa-olive/20 sm:animate-scale-in">
+            <div className="w-full h-full sm:w-[400px] sm:h-[650px] sm:rounded-3xl overflow-hidden shadow-2xl sm:shadow-villa-olive/20 sm:animate-scale-in">
                 <div className="relative w-full h-full bg-background sm:border sm:border-villa-stone flex flex-col">
 
                     {/* Header */}
@@ -324,8 +403,8 @@ What would you like to know?`;
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <div className="relative">
-                                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-lg overflow-hidden">
-                                        <img src="/favicon.webp" alt="Olivia Clara AI" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/20 flex items-center justify-center shadow-lg overflow-hidden">
+                                        <img src="/favicon.webp" alt="Olivia Clara AI" className="w-6 h-6 sm:w-7 sm:h-7 object-contain brightness-0 invert" />
                                     </div>
                                     <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-villa-olive" />
                                 </div>
@@ -343,19 +422,17 @@ What would you like to know?`;
                             </div>
 
                             <div className="flex items-center gap-2">
-                                {/* Clear conversation */}
                                 <button
                                     onClick={handleClearConversation}
-                                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                                    className="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
                                     title="Clear conversation"
                                 >
                                     <Trash2 size={16} />
                                 </button>
 
-                                {/* Close button */}
                                 <button
                                     onClick={() => setIsOpen(false)}
-                                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                                    className="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
                                 >
                                     <X size={18} />
                                 </button>
@@ -365,18 +442,18 @@ What would you like to know?`;
 
                     {/* Messages */}
                     <div ref={scrollRef}
-                        className="flex-1 overflow-y-auto px-4 py-4 sm:px-5 space-y-4 bg-sand-light">
+                        className="flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4 space-y-3 sm:space-y-4 bg-sand-light">
                         {messages.map((message, index) => (
                             <MessageBubble key={message.id} message={message} isLatest={index === messages.length - 1} />
                         ))}
 
                         {showQuickActions && messages.length === 1 && (
                             <div className="pt-2 animate-fade-in">
-                                <p className="text-xs text-muted-foreground mb-3 flex items-center gap-2">
+                                <p className="text-xs text-muted-foreground mb-2 sm:mb-3 flex items-center gap-2">
                                     <Star size={12} className="text-villa-gold" />
-                                    Quick questions
+                                    Try these
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                     {QUICK_ACTIONS.slice(0, 4).map((action) => (
                                         <QuickActionChip key={action.id} label={action.label} icon={action.icon}
                                             onClick={() => handleSendMessage(action.query)} />
@@ -388,30 +465,38 @@ What would you like to know?`;
 
                     {/* Input */}
                     <div className="flex-shrink-0 p-3 sm:p-4 bg-background border-t border-villa-stone safe-area-bottom">
-                        <div className="flex gap-2 sm:gap-3">
+                        <div className="flex gap-2">
                             <input
                                 ref={inputRef}
                                 type="text"
                                 value={inputValue}
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyPress={handleKeyPress}
-                                placeholder="Ask about Villa Olivia Clara..."
+                                placeholder="Ask about the villa..."
                                 disabled={isTyping}
-                                className="flex-1 px-3 py-2.5 sm:px-4 sm:py-3 bg-sand-light border border-villa-stone rounded-xl text-foreground placeholder-muted-foreground text-sm focus:outline-none focus:border-villa-olive focus:ring-2 focus:ring-villa-olive/20 transition-all disabled:opacity-50"
+                                className="flex-1 px-3 py-2.5 bg-sand-light border border-villa-stone rounded-xl text-foreground placeholder-muted-foreground text-sm focus:outline-none focus:border-villa-olive focus:ring-2 focus:ring-villa-olive/20 transition-all disabled:opacity-50"
                             />
 
                             <button
                                 onClick={() => handleSendMessage()}
                                 disabled={!inputValue.trim() || isTyping}
-                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-villa-olive hover:bg-villa-olive/90 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-white shadow-lg transition-all hover:scale-105 disabled:hover:scale-100"
+                                className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-villa-olive hover:bg-villa-olive/90 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center text-white shadow-lg transition-all hover:scale-105 disabled:hover:scale-100"
                             >
                                 {isTyping ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
                             </button>
                         </div>
 
-                        <div className="flex justify-center items-center mt-2 sm:mt-3">
+                        <div className="flex justify-center items-center mt-2">
                             <span className="text-[10px] text-muted-foreground flex items-center gap-1.5">
-                                Powered by <span className="text-villa-olive font-medium">Olivia Clara AI</span>
+                                Powered by{' '}
+                                <a
+                                    href="https://discovercyclades.gr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-villa-olive font-medium hover:underline"
+                                >
+                                    Touristas AI
+                                </a>
                                 <Sparkles size={10} className="text-villa-olive/60" />
                             </span>
                         </div>

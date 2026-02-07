@@ -453,7 +453,7 @@ All bedrooms have AC, luxury linens, and blackout curtains!`,
   // ---- BEACH DISTANCE ----
   {
     category: 'beach',
-    keywords: ['beach', 'far', 'distance', 'walk', 'close', 'near', 'platis gialos', 'sea', 'sand'],
+    keywords: ['beach', 'far', 'distance', 'walk', 'close', 'near', 'platis gialos', 'sea', 'sand', 'how far', 'from the beach', 'minutes', 'walking'],
     response: `**Just 5 minutes walk to Platis Gialos Beach!** 🏖️
 
 **Platis Gialos Beach:**
@@ -649,22 +649,45 @@ export function generateAIResponse(userMessage: string): {
   images?: readonly string[];
 } {
   const message = userMessage.toLowerCase().trim();
+  const words = message.split(/\s+/);
 
   let bestMatch: KnowledgeEntry | null = null;
   let highestScore = 0;
 
   for (const entry of VILLA_KNOWLEDGE_BASE) {
+    let matchedKeywords = 0;
+    let phraseMatches = 0;
     let score = 0;
+
     for (const keyword of entry.keywords) {
-      if (message.includes(keyword.toLowerCase())) {
-        score += entry.priority;
-        // Bonus for exact word match
-        const words = message.split(/\s+/);
-        if (words.includes(keyword.toLowerCase())) {
-          score += 3;
+      const kw = keyword.toLowerCase();
+      if (message.includes(kw)) {
+        matchedKeywords++;
+
+        // Phrase keywords (with spaces) get HUGE bonus - these are very specific
+        if (kw.includes(' ')) {
+          phraseMatches++;
+          score += 50; // Massive bonus for phrase match
+        } else if (words.includes(kw)) {
+          // Exact single word match
+          score += entry.priority + 5;
+        } else {
+          // Partial match (substring)
+          score += entry.priority;
         }
       }
     }
+
+    // Bonus for multiple keywords matching
+    if (matchedKeywords >= 2) {
+      score += matchedKeywords * 3;
+    }
+
+    // Extra bonus if we matched any phrase keywords
+    if (phraseMatches > 0) {
+      score += phraseMatches * 20;
+    }
+
     if (score > highestScore) {
       highestScore = score;
       bestMatch = entry;

@@ -270,8 +270,6 @@ export function OliviaClaraAIPremium({ className = '' }: ChatbotProps): React.Re
 
 I can show you photos and tell you everything about our villa — from our stunning pool to the bedrooms.
 
-⚠️ *AI responses are for info only. Contact Elena for booking/pricing.*
-
 What would you like to see?`;
 
     // Auto-scroll
@@ -487,6 +485,11 @@ What would you like to see?`;
                                 {isTyping ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
                             </button>
                         </div>
+
+                        {/* AI Disclaimer */}
+                        <p className="text-[10px] text-muted-foreground text-center mt-2">
+                            ⚠️ AI responses are for info only. Contact Elena for booking/pricing.
+                        </p>
 
                         <div className="flex justify-center items-center mt-2">
                             <span className="text-[10px] text-muted-foreground flex items-center gap-1.5">

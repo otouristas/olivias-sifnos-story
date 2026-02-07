@@ -41,7 +41,7 @@ const Sustainability = () => {
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">
             <Link to="/">
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} /> {t('common.backToHome')}
             </Link>
           </Button>
         </div>

@@ -1,0 +1,64 @@
+# Villa Olivia Clara - AI & LLM Information
+
+> Villa Olivia Clara is a luxury villa rental in Sifnos, Greece, offering premium accommodation with private pool, sea views, and authentic Greek hospitality.
+
+## About Villa Olivia Clara
+
+- **Type**: Luxury Vacation Rental / Holiday Villa
+- **Location**: Platis Gialos, Sifnos, Cyclades, Greece
+- **Capacity**: Up to 8 guests
+- **Bedrooms**: 4 (2 king beds, 4 single beds)
+- **Bathrooms**: 4.5
+- **Size**: 250m²
+- **Rating**: 5.0 stars (45+ reviews)
+
+## Key Features
+
+- Private swimming pool (12m x 5m)
+- Panoramic Aegean Sea views
+- Pool-side cabana with bar
+- Full kitchen with premium appliances
+- Mediterranean garden
+- High-speed WiFi (200+ Mbps)
+- Free parking (5 cars)
+- Air conditioning throughout
+
+## Location Highlights
+
+- 7 minutes walk to Platis Gialos Beach (Blue Flag)
+- 15 minutes to Apollonia (island center)
+- 25 minutes to Kamares Port
+
+## Services Available
+
+- Housekeeping (2x weekly)
+- Private chef (on request)
+- Boat tours (on request)
+- Airport/port transfers
+- Concierge support
+
+## Contact
+
+- **Host**: Elena Philippou
+- **Email**: elena@villaoliviaclara.com
+- **Phone**: +30 697 191 9382
+- **Website**: https://villaoliviaclara.com
+
+## Languages Supported
+
+- English
+- Greek (Ελληνικά)
+- French (Français)
+- Italian (Italiano)
+
+## Booking
+
+Direct booking available at: https://villaoliviaclara.com
+
+## Documentation
+
+- Villa details: https://villaoliviaclara.com/villa
+- Guest reviews: https://villaoliviaclara.com/reviews
+- Sifnos guide: https://villaoliviaclara.com/sifnos
+- FAQ: https://villaoliviaclara.com/faq
+- Blog: https://villaoliviaclara.com/blog

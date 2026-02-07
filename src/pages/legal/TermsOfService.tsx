@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { ArrowLeft, FileText, AlertTriangle, Euro, Calendar } from 'lucide-react';
 
 const TermsOfService = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -22,7 +24,7 @@ const TermsOfService = () => {
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">
             <Link to="/">
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} /> {t('common.backToHome')}
             </Link>
           </Button>
         </div>

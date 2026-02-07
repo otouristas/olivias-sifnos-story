@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -6,6 +7,7 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, Cookie, Settings, BarChart, Shield, Mail, Phone } from 'lucide-react';
 
 const CookiePolicy = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -23,7 +25,7 @@ const CookiePolicy = () => {
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">
             <Link to="/">
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} /> {t('common.backToHome')}
             </Link>
           </Button>
         </div>

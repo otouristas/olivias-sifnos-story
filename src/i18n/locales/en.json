@@ -127,7 +127,8 @@
     "essentials": "Bathroom essentials",
     "hairDryer": "Hair dryer",
     "poolBathroom": "Dedicated pool bathroom",
-    "towelChanges": "Towel changes twice a week"
+    "towelChanges": "Towel changes twice a week",
+    "luxuryDesign": "Luxury Design"
   },
   "living": {
     "title": "Living Spaces",
@@ -258,6 +259,8 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about Villa Olivia Clara",
+    "stillHaveQuestions": "Still Have Questions?",
+    "cantFindAnswer": "Can't find the answer you're looking for? We're here to help! Contact us directly and we'll get back to you as soon as possible.",
     "travel": {
       "title": "How can I travel to Sifnos?",
       "closestAirports": "Closest Airports",
@@ -302,18 +305,178 @@
     "pets": {
       "title": "Are pets allowed on the property?",
       "answer": "We love animals! However, to maintain the highest standards for all our guests and due to potential allergies, we unfortunately cannot accommodate pets at Villa Olivia Clara. We appreciate your understanding."
+    },
+    "bestVilla": {
+      "question": "Is Villa Olivia Clara the best luxury villa in Sifnos?",
+      "answer": "Villa Olivia Clara is consistently rated as one of the best luxury villas in Sifnos with 45+ 5-star reviews. Located in Platis Gialos, our 250m² villa offers a private pool, sea views, and authentic Greek hospitality."
+    },
+    "guests": {
+      "question": "How many guests can stay at Villa Olivia Clara?",
+      "answer": "Villa Olivia Clara accommodates up to 8 guests comfortably with 4 bedrooms (2 king beds, 4 single beds), 4.5 bathrooms, and a baby crib available upon request."
+    },
+    "pool": {
+      "question": "Does Villa Olivia Clara have a private pool?",
+      "answer": "Yes! Our villa features a stunning 12m x 5m private pool with poolside cabana, bar, and panoramic sea views of Platis Gialos bay."
+    },
+    "beachDistance": {
+      "question": "How far is Villa Olivia Clara from Platis Gialos beach?",
+      "answer": "The villa is just 7 minutes walk (2 minutes by car) from the famous Platis Gialos beach, one of the most beautiful Blue Flag beaches in the Cyclades."
+    },
+    "vsHotel": {
+      "question": "Is Villa Olivia Clara better than a hotel in Sifnos?",
+      "answer": "Compared to Sifnos hotels, Villa Olivia Clara offers complete privacy, a private pool, full kitchen, and more space at a competitive per-person rate for groups of 4-8."
     }
   },
   "sustainability": {
     "title": "Sustainability",
     "subtitle": "Our commitment to sustainable tourism and environmental conservation",
-    "description": "We're committed to sustainable tourism practices, supporting local businesses, and minimizing our environmental impact while providing luxury accommodations."
+    "description": "We're committed to sustainable tourism practices, supporting local businesses, and minimizing our environmental impact while providing luxury accommodations.",
+    "seo": {
+      "title": "Sustainable Tourism | Villa Olivia Clara Sifnos | Eco-Friendly Villa",
+      "description": "Learn about Villa Olivia Clara's commitment to sustainable tourism in Sifnos, Greece. Discover our eco-friendly practices and responsible travel initiatives.",
+      "keywords": "sustainable tourism Sifnos, eco-friendly villa Greece, responsible travel Cyclades, green accommodation Sifnos, sustainable Greek island tourism"
+    },
+    "carbonFootprint": {
+      "title": "Carbon Footprint Disclosure",
+      "commitment": {
+        "title": "Our Climate Commitment",
+        "text": "Villa Olivia Clara is committed to set science-based emissions reduction targets across all scopes, in line with the 1.5°C emissions scenarios and set a long-term science-based target to reach net-zero scope 1 & 2 greenhouse gas (GHG) emissions by no later than 2030. We will strive to achieve net-zero in scope 3 emissions by no later than 2050, in line with the criteria and recommendations of the Science Based Targets initiative."
+      },
+      "current": {
+        "title": "Villa Olivia Clara's Carbon Footprint Today",
+        "scope": "Scope 1/2 (direct & indirect emissions):",
+        "electricity": {
+          "title": "⚡ Electricity",
+          "text": "We consume electricity from the Sifnos independent power network that has the following energy mix (for the year 2021): ~85% conventional fossil fuel generators and ~15% renewable energy (mostly solar panels). Our main consumption of energy is for cooling, water heating, standard household appliances, and water treatment for the pool."
+        },
+        "heatingOil": {
+          "title": "🔥 Heating Oil",
+          "text": "We consume annually heating oil for heating and water heating purposes during winter."
+        },
+        "gasoline": {
+          "title": "🚗 Gasoline",
+          "text": "We consume diesel gasoline for transportation of goods and provision of services to/from Villa Olivia Clara (e.g., cleaning, check-in/check-out)."
+        },
+        "total": "~8.6 metric tons of CO2 annually",
+        "totalDesc": "We estimate Villa Olivia Clara's carbon footprint"
+      }
+    },
+    "neutral": {
+      "title": "Carbon Neutral Since 2021",
+      "offsetting": {
+        "title": "1. Carbon Offsetting",
+        "text": "We are offsetting all our emissions. Since 2021, we have been investing in offsetting our scope 1 & 2 carbon footprint. All offset projects in our portfolio are verified to the Verified Carbon Standard (VCS). Our projects are selected predominantly within developing countries, where they assist carbon emission reduction as well as bringing local community benefits.",
+        "cert": "Verified Carbon Standard (VCS)"
+      },
+      "renewable": {
+        "title": "2. Renewable Energy",
+        "text": "All electricity consumed is sourced from renewable energy sources. We hold a Guarantee of Origin produced by renewable energy sources for the amount of energy that we consume (certificate #DSX1000008 of PPC at DAPEEP S.A.). This means that the equivalent amount of energy consumed has been generated and preserved from renewable energy sources.",
+        "cert": "GreenPass Certificate"
+      },
+      "removal": {
+        "title": "3. Carbon Removal",
+        "text": "We contribute 0.5% of our revenue to fund carbon removal technologies. Through Stripe, we contribute 0.5% of our revenue to help scale emerging carbon removal technologies.",
+        "cert": "Stripe Climate Program"
+      },
+      "waste": {
+        "title": "4. Waste Management",
+        "text": "We manage waste generation and disposal. In addition, we are reducing the use of single-use plastics, including replacing tiny single-use toiletry bottles of shampoo, conditioner and bath gel in guestroom showers with larger pump-topped bottles."
+      }
+    },
+    "path": {
+      "title": "Our Path to Net Zero Scope 1 & 2 by 2030",
+      "energy": {
+        "title": "1. Reduction in Energy Consumption",
+        "items": [
+          "Replacement of electric water heater with solar-powered",
+          "Replacement of A/C units and standard appliances with energy-efficient units",
+          "Replacement of heating oil unit with heat pump system",
+          "Better insulation of walls, windows, and roof",
+          "Replacement of car with electric vehicle"
+        ]
+      },
+      "generation": {
+        "title": "2. Installation of Renewable Energy Generation",
+        "text": "Installation of self-generating solar unit to cover full energy needs (net metering)"
+      },
+      "projects": {
+        "title": "3. Support for Local Projects Promoting Renewable Energy & Decarbonization",
+        "items": [
+          "We are strong supporters of decarbonization projects, including the installation of renewable energy for the complete Sifnos energy system",
+          "We are also strong supporters of projects at the national, EU, and global level to support net zero"
+        ]
+      },
+      "guests": {
+        "title": "4. Promotion of Sustainable Practices to Villa Olivia Clara Guests",
+        "text": "We are actively encouraging our guests to contribute to our carbon footprint reduction efforts by managing the use of cooling (air conditioning), reusing towels, and closing doors and windows for better insulation of the house."
+      }
+    },
+    "cta": {
+      "title": "Join Us in Our Sustainability Journey",
+      "description": "Experience a truly sustainable vacation at Villa Olivia Clara. Together, we can make a positive impact on our planet while enjoying the beauty of Sifnos."
+    }
   },
   "activity": {
     "boatTour": {
       "title": "Boat Tour From Sifnos",
       "subtitle": "Discover the Hidden Gems of the Cyclades",
+      "hero": {
+        "subtitle": "Explore the Greek Islands By Boat",
+        "question": "Are you ready for the most magical boat tour around Sifnos and the Cyclades?",
+        "text": "One of our favorite - if not our absolute favorite - activities to do when in Sifnos is to take a boat tour around Sifnos and the neighboring islands, Poliegos, Kimolos, and Milos. Each of the islands has its own personality and its own special points of interest. We would describe the experience of taking a private cruise to small Greek islands a \"once-in-a-lifetime\" experience. However, we do also recommend doing it more than once if you can. We have; and here's what it's like."
+      },
       "choosingDestination": "Choosing Your Boat Tour Destination",
+      "choosingDestinationText": "We'll be honest, choosing the destination is the easiest part. They're all worth seeing and you'll have a good time regardless of what you choose - so don't worry! Most boat tour companies starting from Sifnos have a few different choices depending on how much time (and money) you have at your disposal and how many different destinations you want to see. A few combinations of these islands are possible, with a very popular one being Poliegos and Kimolos together.",
+      "destinations": {
+        "poliegos": {
+          "title": "Poliegos",
+          "description": "One of our favorites as taking a boat tour to Poliegos is like discovering a lost civilization. We are not exaggerating! Before being named a Natura 2000 protected area, Poliegos was a mining site. It has some staggeringly beautiful rock formations, hidden caverns and caves, stunning blue waters and goats!",
+          "highlights": [
+            "Natura 2000 protected area",
+            "Stunning rock formations",
+            "Hidden caverns and caves",
+            "Crystal clear blue waters",
+            "Wild goats on beaches"
+          ],
+          "funFact": "Poliegos literally means \"lots of goats\" and you're quite likely to find some goats during your boat tour as they tend to hang out on the beaches. They are the only 'inhabitants' of the island!"
+        },
+        "kimolos": {
+          "title": "Kimolos",
+          "description": "After you've been to Poliegos, it's only reasonable to give Kimolos a visit. You will see it right across the northwestern coast of Poliegos, towards the end of your visit. Kimolos is the perfect place for the end of your boat tour as it features a few wonderful restaurants and fantastic spots. It's the perfect place to relax after a day of swimming around the untamed beauty of Poliegos.",
+          "highlights": [
+            "Psathi (the port)",
+            "Chorio (central village)",
+            "Wonderful restaurants",
+            "Chalk rock formations",
+            "Relaxing spots"
+          ],
+          "funFact": "Kimolos literally means \"The Island of Chalk\", referring to the perlite and chalk rock formations that make up the island."
+        },
+        "milos": {
+          "title": "Milos",
+          "description": "If you're up for a full-day ride, Milos may be the destination to pick. Milos is quite a larger island than Sifnos and features its own airport. The west part of the island was also named a Natura 2000 protected area and it will be a big focus of the trip. If you're taking the 8-hour boat tour from Sifnos to Milos, you should expect to make it the entire way around the island.",
+          "highlights": [
+            "Limestone coves in the west",
+            "Giant sandy slope for sand surfing",
+            "Volcanic rock formations",
+            "Picture-worthy spots",
+            "Secret scenic locations"
+          ],
+          "funFact": "A highlight of this trip are the limestone coves in the west part of the island and a giant sandy slope where you can (at your own risk!) sand surf down to the water."
+        },
+        "sifnos": {
+          "title": "Sifnos",
+          "description": "If you're not looking to go too far from home, Sifnos is always an option for a boat tour. The south of Sifnos features some of its most popular swimming spots. This includes the Chryssopigi Monastery and the beaches around it, Faros and Platis Gialos. Our home, Villa Olivia Clara is just down the road from there.",
+          "highlights": [
+            "Chryssopigi Monastery",
+            "Faros beach",
+            "Platis Gialos beach",
+            "Fykiada beach (boat only)",
+            "Kitriani island"
+          ],
+          "funFact": "The boat tour will take you to spots in Sifnos that you can only reach on foot or by boat, like Fykiada beach - one of the most remote spots on the island. You'll also get to visit the island of Kitriani, the small uninhabited island across from Platis Gialos bay."
+        }
+      },
       "tripDetails": "Trip Details",
       "whatToSee": "What to See",
       "specialAccess": "Special Access",
@@ -325,10 +488,18 @@
       "islandTour": "Complete island tour",
       "remoteBeaches": "Remote beaches",
       "privateAccess": "Private island access",
+      "highlights": "Highlights",
+      "mustSee": "Must-See Spots",
       "booking": {
         "title": "Booking Your Boat Tour on Sifnos",
+        "text": "Once you've decided your boat tour destination, you can start the booking process by contacting the Sifnos boat tour company of your choice.",
         "partner": "Our Recommended Partner",
-        "needHelp": "Need Help Planning Your Boat Tour?"
+        "partnerText": "We highly recommend partnering with A La Mer. Their boats are all new and their service and energy are unbeatable.",
+        "bookButton": "Book with A La Mer",
+        "guidanceButton": "Get More Guidance",
+        "needHelp": "Need Help Planning Your Boat Tour?",
+        "helpText": "If you're staying with us at Villa Olivia Clara, don't hesitate to reach out if you need more guidance on choosing your destination or any advice on what to take on your boat tour from or around Sifnos.",
+        "emailButton": "Email Elena"
       }
     }
   },
@@ -517,89 +688,6 @@
     "infants": "Infants",
     "search": "Search"
   },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common questions about Villa Olivia Clara",
-    "stillHaveQuestions": "Still Have Questions?",
-    "cantFindAnswer": "Can't find the answer you're looking for? We're here to help! Contact us directly and we'll get back to you as soon as possible.",
-    "travel": {
-      "title": "How can I travel to Sifnos?",
-      "closestAirports": "Closest Airports",
-      "athens": "Athens International Airport (ATH)",
-      "athensDesc": "3 hours by ferry from Piraeus Port",
-      "mykonos": "Mykonos Airport (JMK)",
-      "mykonosDesc": "1 hour by ferry from Mykonos",
-      "privateTransfer": "Private Transfer Service",
-      "transferDesc": "We can arrange a private transfer from Athens Airport to Piraeus Port and ferry tickets to Sifnos. Contact us for details and pricing."
-    },
-    "carRental": {
-      "title": "Where can I rent a car in Sifnos?",
-      "automatic": "Automatic and Manual Transmission",
-      "rentACar": "Rent A Car Sifnos",
-      "protoMoto": "Proto Moto Car",
-      "manualOnly": "Manual Transmission Only",
-      "autoMoto": "Auto Moto Apollo",
-      "sifnosDrive": "Sifnos Drive"
-    },
-    "arrival": {
-      "title": "How can I arrive at Villa Olivia Clara?",
-      "portTransfer": "Port Transfer Service",
-      "transferDesc": "We offer complimentary port transfer service from Kamares Port to Villa Olivia Clara. Please inform us of your arrival time at least 24 hours in advance."
-    },
-    "emergency": {
-      "title": "What are the phone numbers of Sifnos public services?",
-      "medical": "Medical Emergencies",
-      "hospital": "Sifnos Health Center",
-      "police": "Police Station",
-      "policeNumber": "Sifnos Police",
-      "coastGuard": "Coast Guard",
-      "coastGuardNumber": "Sifnos Coast Guard"
-    },
-    "wifi": {
-      "title": "Is there WiFi throughout the property?",
-      "answer": "Yes! Villa Olivia Clara features high-speed WiFi (200+ Mbps) throughout the entire property, including all indoor and outdoor areas. Perfect for remote work or streaming your favorite shows."
-    },
-    "luggage": {
-      "title": "Can I drop off my luggage before my check-in time?",
-      "answer": "Yes, you can drop off your luggage before check-in time. We have secure storage available. Please contact us in advance to arrange the timing."
-    },
-    "pets": {
-      "title": "Are pets allowed on the property?",
-      "answer": "We love animals! However, to maintain the highest standards for all our guests and due to potential allergies, we unfortunately cannot accommodate pets at Villa Olivia Clara. We appreciate your understanding."
-    },
-    "bestVilla": {
-      "question": "Is Villa Olivia Clara the best luxury villa in Sifnos?",
-      "answer": "Villa Olivia Clara is consistently rated as one of the best luxury villas in Sifnos with 45+ 5-star reviews. Located in Platis Gialos, our 250m² villa offers a private pool, sea views, and authentic Greek hospitality."
-    },
-    "guests": {
-      "question": "How many guests can stay at Villa Olivia Clara?",
-      "answer": "Villa Olivia Clara accommodates up to 8 guests comfortably with 4 bedrooms (2 king beds, 4 single beds), 4.5 bathrooms, and a baby crib available upon request."
-    },
-    "pool": {
-      "question": "Does Villa Olivia Clara have a private pool?",
-      "answer": "Yes! Our villa features a stunning 12m x 5m private pool with poolside cabana, bar, and panoramic sea views of Platis Gialos bay."
-    },
-    "beachDistance": {
-      "question": "How far is Villa Olivia Clara from Platis Gialos beach?",
-      "answer": "The villa is just 7 minutes walk (2 minutes by car) from the famous Platis Gialos beach, one of the most beautiful Blue Flag beaches in the Cyclades."
-    },
-    "vsHotel": {
-      "question": "Is Villa Olivia Clara better than a hotel in Sifnos?",
-      "answer": "Compared to Sifnos hotels, Villa Olivia Clara offers complete privacy, a private pool, full kitchen, and more space at a competitive per-person rate for groups of 4-8."
-    }
-  },
-  "bathrooms": {
-    "title": "Bathrooms",
-    "subtitle": "Feel at home in the luxury of our villa's elegant bathrooms",
-    "features": "Features",
-    "fullBathrooms": "3 Full Bathrooms",
-    "hotWater": "Hot Water",
-    "essentials": "Bathroom Essentials",
-    "hairDryer": "Hair Dryer",
-    "poolBathroom": "Pool Bathroom",
-    "towelChanges": "Towel Changes",
-    "luxuryDesign": "Luxury Design"
-  },
   "footer": {
     "tagline": "Your Luxury Escape in Sifnos",
     "description": "Experience authentic Greek island living with modern luxury and warm hospitality",
@@ -623,5 +711,876 @@
     "poweredBy": "Powered by",
     "photoCredit": "Sifnos Photo Credit",
     "registryInfo": "Registered in the Greek national registry of vacation rentals"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "This privacy notice for Philippou Eleni & Co L.P. (doing business as Villa Olivia Clara) describes how and why we might collect, store, use, and/or share (\"process\") your information when you use our services.",
+    "lastUpdated": "Last Updated: January 15, 2025",
+    "intro": {
+      "text1": "Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at elena@villaoliviaclara.com.",
+      "text2": "To manage the cookies and similar technologies used (tracking pixels, web beacons, etc.) and related consents, we use the consent tool \"Real Cookie Banner\". Details on how \"Real Cookie Banner\" works can be found at",
+      "text2Link": "https://devowl.io/rcb/data-processing",
+      "text3": "The legal basis for the processing of personal data in this context are Art. 6 (1) (c) GDPR and Art. 6 (1) (f) GDPR. Our legitimate interest is the management of the cookies and similar technologies used and the related consents.",
+      "text4": "The provision of personal data is neither contractually required nor necessary for the conclusion of a contract. You are not obliged to provide the personal data. If you do not provide the personal data, we will not be able to manage your consents."
+    },
+    "summary": {
+      "title": "Summary of Key Points",
+      "description": "This summary provides key points from our privacy notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for. You can also click here to go directly to our table of contents.",
+      "points": [
+        {
+          "title": "What personal information do we process?",
+          "text": "When you visit, use, or navigate our Services, we may process personal information depending on how you interact with Villa Olivia Clara and the Services, the choices you make, and the products and features you use."
+        },
+        {
+          "title": "Do we process any sensitive personal information?",
+          "text": "We do not process sensitive personal information."
+        },
+        {
+          "title": "Do we receive any information from third parties?",
+          "text": "We do not receive any information from third parties."
+        },
+        {
+          "title": "How do we process your information?",
+          "text": "We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent."
+        },
+        {
+          "title": "In what situations and with which parties do we share personal information?",
+          "text": "We may share information in specific situations and with specific third parties."
+        },
+        {
+          "title": "How do we keep your information safe?",
+          "text": "We have organizational and technical processes and procedures in place to protect your personal information."
+        },
+        {
+          "title": "What are your rights?",
+          "text": "Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information."
+        },
+        {
+          "title": "How do I exercise my rights?",
+          "text": "The easiest way to exercise your rights is by filling out our data subject request form available here, or by contacting us."
+        }
+      ],
+      "moreInfo": "Want to learn more about what Villa Olivia Clara does with any information we collect? Click here to review the notice in full."
+    },
+    "toc": {
+      "title": "Table of Contents",
+      "items": [
+        "Summary of Key Points",
+        "What Information Do We Collect?",
+        "How Do We Process Your Information?",
+        "What Legal Bases Do We Rely On To Process Your Information?",
+        "When And With Whom Do We Share Your Personal Information?",
+        "Do We Use Cookies And Other Tracking Technologies?",
+        "How Long Do We Keep Your Information?",
+        "Do We Keep Your Information Safe?",
+        "Do We Collect Information From Minors?",
+        "What Are Your Privacy Rights?",
+        "Controls For Do-Not-Track Features",
+        "Do California Residents Have Specific Privacy Rights?",
+        "CCPA Privacy Notice",
+        "Do We Make Updates To This Notice?",
+        "How Can You Contact Us About This Notice?",
+        "How Can You Review, Update, Or Delete The Data We Collect From You?"
+      ]
+    },
+    "collection": {
+      "title": "What Information Do We Collect?",
+      "personalInfo": {
+        "title": "Personal information you disclose to us",
+        "inShort": "In Short: We collect personal information that you provide to us.",
+        "text1": "We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.",
+        "subtitle": "Personal Information Provided by You",
+        "text2": "The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:",
+        "list": [
+          "names",
+          "phone numbers",
+          "email addresses",
+          "bank account information",
+          "contact preferences",
+          "debit/credit card numbers",
+          "billing addresses"
+        ],
+        "sensitiveInfo": "Sensitive Information. We do not process sensitive information.",
+        "paymentData": "Payment Data. We may collect data necessary to process your payment if you make purchases, such as your payment instrument number (such as a credit card number), and the security code associated with your payment instrument. All payment data is stored by Stripe. You may find their privacy notice link(s) here:",
+        "paymentLink": "https://stripe.com/privacy",
+        "accuracy": "All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information."
+      },
+      "autoInfo": {
+        "title": "Information automatically collected",
+        "inShort": "In Short: Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Services.",
+        "text1": "We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information. This information is primarily needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes.",
+        "text2": "Like many businesses, we also collect information through cookies and similar technologies.",
+        "text3": "The information we collect includes:",
+        "logData": {
+          "title": "Log and Usage Data",
+          "text": "Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the Services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called \"crash dumps\"), and hardware settings)."
+        },
+        "deviceData": {
+          "title": "Device Data",
+          "text": "We collect device data such as information about your computer, phone, tablet, or other device you use to access the Services. Depending on the device used, this device data may include information such as your IP address (or proxy server), device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information."
+        },
+        "locationData": {
+          "title": "Location Data",
+          "text": "We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt out, you may not be able to use certain aspects of the Services."
+        }
+      }
+    },
+    "processing": {
+      "title": "How Do We Process Your Information?",
+      "inShort": "In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.",
+      "text": "We process your personal information for a variety of reasons, depending on how you interact with our Services, including:",
+      "list": [
+        "To deliver and facilitate delivery of services to the user. We may process your information to provide you with the requested service.",
+        "To respond to user inquiries/offer support to users. We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service.",
+        "To fulfill and manage your orders. We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services.",
+        "To save or protect an individual's vital interest. We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm."
+      ]
+    },
+    "legalBases": {
+      "title": "What Legal Bases Do We Rely On To Process Your Information?",
+      "inShort": "In Short: We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.",
+      "euUk": {
+        "title": "If you are located in the EU or UK, this section applies to you.",
+        "text": "The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:",
+        "list": [
+          "Consent. We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time.",
+          "Performance of a Contract. We may process your personal information when we believe it is necessary to fulfill our contractual obligations to you, including providing our Services or at your request prior to entering into a contract with you.",
+          "Legal Obligations. We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.",
+          "Vital Interests. We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person."
+        ]
+      },
+      "canada": {
+        "title": "If you are located in Canada, this section applies to you.",
+        "text1": "We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can withdraw your consent at any time.",
+        "text2": "In some exceptional cases, we may be legally permitted under applicable law to process your information without your consent, including, for example: If collection is clearly in the interests of an individual and consent cannot be obtained in a timely way, For investigations and fraud detection and prevention, For business transactions provided certain conditions are met, If it is contained in a witness statement and the collection is necessary to assess, process, or settle an insurance claim, For identifying injured, ill, or deceased persons and communicating with next of kin, If we have reasonable grounds to believe an individual has been, is, or may be victim of financial abuse, If it is reasonable to expect collection and use with consent would compromise the availability or the accuracy of the information and the collection is reasonable for purposes related to investigating a breach of an agreement or a contravention of the laws of Canada or a province, If disclosure is required to comply with a subpoena, warrant, court order, or rules of the court relating to the production of records, If it was produced by an individual in the course of their employment, business, or profession and the collection is consistent with the purposes for which the information was produced, If the collection is solely for journalistic, artistic, or literary purposes, If the information is publicly available and is specified by the regulations."
+      }
+    },
+    "sharing": {
+      "title": "When And With Whom Do We Share Your Personal Information?",
+      "inShort": "In Short: We may share information in specific situations described in this section and/or with the following third parties.",
+      "text": "We may need to share your personal information in the following situations: Business Transfers. We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company."
+    },
+    "cookies": {
+      "title": "Do We Use Cookies And Other Tracking Technologies?",
+      "inShort": "In Short: We may use cookies and other tracking technologies to collect and store your information.",
+      "text": "We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice."
+    },
+    "retention": {
+      "title": "How Long Do We Keep Your Information?",
+      "inShort": "In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.",
+      "text1": "We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than 2 years.",
+      "text2": "When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible."
+    },
+    "security": {
+      "title": "Do We Keep Your Information Safe?",
+      "inShort": "In Short: We aim to protect your personal information through a system of organizational and technical security measures.",
+      "text": "We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment."
+    },
+    "minors": {
+      "title": "Do We Collect Information From Minors?",
+      "inShort": "In Short: We do not knowingly collect data from or market to children under 18 years of age.",
+      "text": "We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at elena@villaoliviaclara.com."
+    },
+    "rights": {
+      "title": "What Are Your Privacy Rights?",
+      "inShort": "In Short: In some regions, such as the European Economic Area (EEA), United Kingdom (UK), and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.",
+      "text1": "In some regions (like the EEA, UK, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; and (iv) if applicable, to data portability. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section \"HOW CAN YOU CONTACT US ABOUT THIS NOTICE?\" below.",
+      "text2": "We will consider and act upon any request in accordance with applicable data protection laws.",
+      "text3": "If you are located in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here:",
+      "link1": "https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm",
+      "text4": "If you are located in Switzerland, the contact details for the data protection authorities are available here:",
+      "link2": "https://www.edoeb.admin.ch/edoeb/en/home.html",
+      "consent": {
+        "title": "Withdrawing your consent",
+        "text1": "If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section \"HOW CAN YOU CONTACT US ABOUT THIS NOTICE?\" below.",
+        "text2": "However, please note that this will not affect the lawfulness of the processing before its withdrawal, nor when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent."
+      },
+      "marketing": {
+        "title": "Opting out of marketing and promotional communications",
+        "text": "You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, or by contacting us using the details provided in the section \"HOW CAN YOU CONTACT US ABOUT THIS NOTICE?\" below. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration and use of your account, to respond to service requests, or for other non-marketing purposes."
+      },
+      "cookies": {
+        "title": "Cookies and similar technologies",
+        "text": "Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services. To opt out of interest-based advertising by advertisers on our Services visit",
+        "link": "http://www.aboutads.info/choices/"
+      },
+      "questions": "If you have questions or comments about your privacy rights, you may email us at elena@villaoliviaclara.com."
+    },
+    "dnt": {
+      "title": "Controls For Do-Not-Track Features",
+      "text": "Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (\"DNT\") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice."
+    },
+    "california": {
+      "title": "Do California Residents Have Specific Privacy Rights?",
+      "inShort": "In Short: Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.",
+      "ShineTheLight": "California Civil Code Section 1798.83, also known as the \"Shine The Light\" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided below.",
+      "under18": "If you are under 18 years of age, reside in California, and have a registered account with Services, you have the right to request removal of unwanted data that you publicly post on the Services. To request removal of such data, please contact us using the contact information provided below and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the Services, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g., backups, etc.)."
+    },
+    "ccpa": {
+      "title": "CCPA Privacy Notice",
+      "text1": "The California Code of Regulations defines a \"resident\" as:",
+      "list1": [
+        "(1) every individual who is in the State of California for other than a temporary or transitory purpose and",
+        "(2) every individual who is domiciled in the State of California who is outside the State of California for a temporary or transitory purpose"
+      ],
+      "text2": "All other individuals are defined as \"non-residents.\"",
+      "text3": "If this definition of \"resident\" applies to you, we must adhere to certain rights and obligations regarding your personal information.",
+      "collection": {
+        "title": "What categories of personal information do we collect?",
+        "text": "We have collected the following categories of personal information in the past twelve (12) months:",
+        "table": {
+          "headers": [
+            "Category",
+            "Examples",
+            "Collected"
+          ],
+          "rows": [
+            [
+              "A. Identifiers",
+              "Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name",
+              "YES"
+            ],
+            [
+              "B. Personal information categories listed in the California Customer Records statute",
+              "Name, contact information, education, employment, employment history, and financial information",
+              "YES"
+            ],
+            [
+              "C. Protected classification characteristics under California or federal law",
+              "Gender and date of birth",
+              "YES"
+            ],
+            [
+              "D. Commercial information",
+              "Transaction information, purchase history, financial details, and payment information",
+              "YES"
+            ],
+            [
+              "E. Biometric information",
+              "Fingerprints and voiceprints",
+              "NO"
+            ],
+            [
+              "F. Internet or other similar network activity",
+              "Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements",
+              "NO"
+            ],
+            [
+              "G. Geolocation data",
+              "Device location",
+              "YES"
+            ],
+            [
+              "H. Audio, electronic, visual, thermal, olfactory, or similar information",
+              "Images and audio, video or call recordings created in connection with our business activities",
+              "NO"
+            ],
+            [
+              "I. Professional or employment-related information",
+              "Business contact details in order to provide you our services at a business level or job title, work history, and professional qualifications if you apply for a job with us",
+              "NO"
+            ],
+            [
+              "J. Education Information",
+              "Student records and directory information",
+              "NO"
+            ],
+            [
+              "K. Inferences drawn from other personal information",
+              "Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual's preferences and characteristics",
+              "NO"
+            ]
+          ]
+        },
+        "other": "We may also collect other personal information outside of these categories instances where you interact with us in person, online, or by phone or mail in the context of: Receiving help through our customer support channels; Participation in customer surveys or contests; and Facilitation in the delivery of our Services and to respond to your inquiries."
+      },
+      "usage": {
+        "title": "How do we use and share your personal information?",
+        "text1": "More information about our data collection and sharing practices can be found in this privacy notice.",
+        "text2": "You may contact us by email at elena@villaoliviaclara.com, or by referring to the contact details at the bottom of this document.",
+        "text3": "If you are using an authorized agent to exercise your right to opt out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf."
+      },
+      "sharing": {
+        "title": "Will your information be shared with anyone else?",
+        "text1": "We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Each service provider is a for-profit entity that processes the information on our behalf.",
+        "text2": "We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be \"selling\" of your personal information.",
+        "text3": "Villa Olivia Clara has not disclosed or sold any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. Villa Olivia Clara will not sell personal information in the future belonging to website visitors, users, and other consumers."
+      },
+      "rights": {
+        "title": "Your rights with respect to your personal data",
+        "deletion": {
+          "title": "Right to request deletion of the data — Request to delete",
+          "text": "You can ask for the deletion of your personal information. If you ask us to delete your personal information, we will respect your request and delete your personal information, subject to certain exceptions provided by law, such as (but not limited to) the exercise by another consumer of his or her right to free speech, our compliance requirements resulting from a legal obligation, or any processing that may be required to protect against illegal activities."
+        },
+        "informed": {
+          "title": "Right to be informed — Request to know",
+          "text1": "Depending on the circumstances, you have a right to know: whether we collect and use your personal information; the categories of personal information that we collect; the purposes for which the collected personal information is used; whether we sell your personal information to third parties; the categories of personal information that we sold or disclosed for a business purpose; the categories of third parties to whom the personal information was sold or disclosed for a business purpose; and the business or commercial purpose for collecting or selling personal information.",
+          "text2": "In accordance with applicable law, we are not obligated to provide or delete consumer information that is de-identified in response to a consumer request or to re-identify individual data to verify a consumer request."
+        },
+        "nonDiscrimination": {
+          "title": "Right to Non-Discrimination for the Exercise of a Consumer's Privacy Rights",
+          "text": "We will not discriminate against you if you exercise your privacy rights."
+        },
+        "verification": {
+          "title": "Verification process",
+          "text1": "Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system. These verification efforts require us to ask you to provide information so that we can match it with information you have previously provided us. For instance, depending on the type of request you submit, we may ask you to provide certain information so that we can match the information you provide with the information we already have on file, or we may contact you through a communication method (e.g., phone or email) that you have previously provided to us. We may also use other verification methods as the circumstances dictate.",
+          "text2": "We will only use personal information provided in your request to verify your identity or authority to make the request. To the extent possible, we will avoid requesting additional information from you for the purposes of verification. However, if we cannot verify your identity from the information already maintained by us, we may request that you provide additional information for the purposes of verifying your identity and for security or fraud-prevention purposes. We will delete such additionally provided information as soon as we finish verifying you."
+        },
+        "other": {
+          "title": "Other privacy rights",
+          "text1": "You may object to the processing of your personal information. You may request correction of your personal data if it is incorrect or no longer relevant, or ask to restrict the processing of the information. You can designate an authorized agent to make a request under the CCPA on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with the CCPA. You may request to opt out from future selling of your personal information to third parties. Upon receiving an opt-out request, we will act upon the request as soon as feasibly possible, but no later than fifteen (15) days from the date of the request submission.",
+          "text2": "To exercise these rights, you can contact us by email at elena@villaoliviaclara.com, or by referring to the contact details at the bottom of this document. If you have a complaint about how we handle your data, we would like to hear from you."
+        }
+      }
+    },
+    "updates": {
+      "title": "Do We Make Updates To This Notice?",
+      "inShort": "In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.",
+      "text": "We may update this privacy notice from time to time. The updated version will be indicated by an updated \"Revised\" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information."
+    },
+    "contact": {
+      "title": "How Can You Contact Us About This Notice?",
+      "text1": "If you have questions or comments about this notice, you may contact our Data Protection Officer (DPO), Elena Philippou, by email at elena@villaoliviaclara.com, by phone at +306971919382, or by post to:",
+      "address1": "Elena Philippou\nPlatis Gialos\nSifnos, South Aegean 84003\nGreece",
+      "text2": "If you are a resident in the European Economic Area, the \"data controller\" of your personal information is Elena Philippou. You can contact them directly regarding the processing of your information by email at elena@villaoliviaclara.com, by visiting https://www.villaoliviaclara.com, by phone at +306971919382, or by post to:",
+      "address2": "Platis Gialos\nSifnos, South Aegean 84003\nGreece"
+    },
+    "review": {
+      "title": "How Can You Review, Update, Or Delete The Data We Collect From You?",
+      "text": "Please see above for our contact information. We will be happy to assist you."
+    },
+    "footer": {
+      "title": "Contact Information",
+      "text": "For any privacy-related questions or to exercise your rights, please contact us:",
+      "email": "elena@villaoliviaclara.com",
+      "phone": "+30 697 191 9382",
+      "address": "Villa Olivia Clara\nPlatis Gialos, 84003\nSifnos, Cyclades, Greece"
+    }
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "intro": "With this cookie policy, we would like to explain what cookies and cookie-like technologies are, how we and other service provider use them on this website, what information they collect, for how long and for what purposes we use them.",
+    "lastUpdated": "Last Updated: January 15, 2025",
+    "toc": {
+      "title": "Table of Contents",
+      "items": [
+        "Controller of the website",
+        "Addition to the privacy policy",
+        "What are cookies and similar technologies?",
+        "What is the legal basis for setting/reading cookies?",
+        "What rights does the website visitor have?",
+        "How to manage cookies in a browser?",
+        "What types of cookies exist?",
+        "Who can set cookies on this website?",
+        "Which cookies are used on this website?"
+      ]
+    },
+    "controller": {
+      "title": "Controller of the Website",
+      "provider": "Provider:",
+      "providerName": "Philippou Eleni & Co EE, Greece",
+      "email": "Email:",
+      "emailAddress": "elena@villaoliviaclara.com"
+    },
+    "addition": {
+      "title": "Addition to the Privacy Policy",
+      "text": "This cookie policy is a supplement to this website's privacy policy. The cookie policy specifies how a website uses cookies and what data it collects through them, while the privacy policy is a more comprehensive overview of all data processing activities on the website and beyond."
+    },
+    "whatAre": {
+      "title": "What Are Cookies and Similar Technologies?",
+      "text1": "Cookies are small pieces of information similar to text files that can be stored and read on the end device. They serve various purposes, including maintaining basic functionalities of the website, security and privacy, providing optional functions of the website, collecting statistic data on visitor flows and providing marketing systems. Practical examples of what can be stored in cookies are the storage of login status in user accounts, the content of shopping baskets in e-commerce platforms, or a user ID for tracking behavior on the website.",
+      "text2": "The information can technically be stored in various ways. The best-known examples of this are HTTP cookies and cookie-like technologies like local storage, session storage or IndexedDB. Each type of storage has different properties, which determine the technical handling, accessibility and controllers authorized to access the information. All these types of storage are usually summarized under the term \"cookies\" and are therefore called as such in this cookie policy."
+    },
+    "legalBasis": {
+      "title": "What Is the Legal Basis for Setting/Reading Cookies?",
+      "text": "The setting and reading of cookies in the European Union (EU) and the European Economic Area (EEA) is in accordance with Art. 5 (3) ePrivacy Directive and Recital 66 ePrivacy Directive only permitted if a user has given his consent on the basis of comprehensive information about the purposes of the processing. The website operator may also set cookies if they are strictly necessary to provide you as a user with the expressly requested service, e.g. the basic content of this website or other strictly necessary cookies for basic functionality of the website to be displayed to you without your consent."
+    },
+    "rights": {
+      "title": "What Rights Does the Website Visitor Have?",
+      "text1": "Services and their cookies can be set and read on the legal basis of your consent or a legitimate interest. When you first visited this website, you were asked for your consent and you had the opportunity to object to the use of certain services. We explained which legal basis is used for which service in our consent dialog.",
+      "text2": "You have the right to view the history of your decisions, change your privacy settings, object to the use of services and revoke your consent at any time. Below you find possibilities to exercise your rights:",
+      "change": "Change privacy settings",
+      "history": "Privacy settings history",
+      "revoke": "Revoke consents"
+    },
+    "manage": {
+      "title": "How to Manage Cookies in a Browser?",
+      "remove": {
+        "title": "How to remove cookies in a browser:",
+        "text": "To remove cookies from your device, you can clear the browsing data in the settings of your browser. This action will remove all cookies from all websites you've visited, potentially including saved login details and site preferences. In some browsers, you can just delete the cookies and similar data without deleting the whole browsing history."
+      },
+      "control": {
+        "title": "How to control cookies in a browser:",
+        "text": "For more granular control over cookies specific to certain websites, navigate to the privacy and cookie settings within your used browser. Here, you can adjust preferences related to individual sites' cookie usage."
+      },
+      "block": {
+        "title": "How to block cookies in a browser:",
+        "text": "It's possible to configure most modern browsers in their settings to block all cookies from being placed on your device. But blocking cookies could lead to certain services and functionalities not functioning correctly, e.g. logins as a user. You can also use extensions for many browsers which can block the setting of cookies on websites."
+      },
+      "website": {
+        "title": "How to manage cookies on this website:",
+        "text": "To tailor your preferences regarding cookies on this website, you can change your preferences at any time by clicking on the link in the section \"Rights of the website visitor\"."
+      },
+      "moreInfo": "You can find more information on the handling of cookies",
+      "link": "devowl.io/rcb/cookie-handling/"
+    },
+    "types": {
+      "title": "What Types of Cookies Exist?",
+      "essential": {
+        "title": "Essential Cookies",
+        "text": "Essential cookies are indispensable for the basic functionality of a website and enable functions such as saving login information or access to secure areas of the site. These include, for example, security cookies, which can identify a bot that is not wanted on the website by storing an authentication key in a cookie."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "text": "Functional cookies improve the user experience by storing information and preferences such as language settings or appearance settings of the website to provide personalized. This includes, for example, preference cookies that store the user's preferred video quality on a website."
+      },
+      "statistics": {
+        "title": "Statistics Cookies",
+        "text": "Statistics cookies collect data about the use of a website to gain insights into user behavior and optimize the performance of the site. This includes, for example, a randomly assigned user ID that makes it possible to attribute whether you have visited a subpage of the website."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "text": "Marketing cookies are used to track user behavior across different websites and to display personalized advertising based on the interests and surfing behavior of users. This includes, for example, advertising cookies that store an interaction with an advertisement on the website and pass it on to advertisers or a chat system for pre-sale questions and customer support."
+      }
+    },
+    "whoSets": {
+      "title": "Who Can Set Cookies on This Website?",
+      "text": "On this website, both the operator of the website and third-party services which are used on this website may set cookies and access its content. Who can access which cookies and their content differs between first-party and third-party cookies. First-party cookies are created by the visited website and can only be read by the website operator and integrated third-party services on this website. Third-party cookies are set by usually third-party services on other domains, can be read on all websites on which the service that controls the domain is embedded and, for example, used by advertising networks to track user behavior across different websites and offer personalized advertising."
+    },
+    "used": {
+      "title": "Which Cookies Are Used on This Website?",
+      "headers": [
+        "Type",
+        "Name",
+        "Domain",
+        "Provider",
+        "Duration",
+        "Type",
+        "Description"
+      ],
+      "rows": [
+        [
+          "Marketing",
+          "analytics_storage",
+          "villaoliviaclara.com",
+          "Google Analytics",
+          "2 years",
+          "HTTP Cookie",
+          "The analytics_storage parameter indicates if cookie data can be collected for behavioral analytics purposes (other modeling prerequisites apply)."
+        ],
+        [
+          "Marketing",
+          "ad_storage",
+          "villaoliviaclara.com",
+          "Google Analytics",
+          "24 hours",
+          "HTTP Cookie",
+          "The ad_storage parameter indicates if cookie data can be collected for advertising purposes."
+        ],
+        [
+          "Marketing",
+          "ad_user_data",
+          "villaoliviaclara.com",
+          "Google Analytics",
+          "1 minute",
+          "HTTP Cookie",
+          "The ad_user_data parameter indicates if user data can be collected for advertising and ads measurement purposes."
+        ],
+        [
+          "Marketing",
+          "ad_personalization",
+          "villaoliviaclara.com",
+          "Google Analytics",
+          "2 years",
+          "HTTP Cookie",
+          "The ad_personalization parameter indicates if the user can be included in audiences exported to linked ads accounts."
+        ]
+      ]
+    },
+    "contact": {
+      "title": "Contact Information",
+      "text": "For any questions about this cookie policy or our data practices, please contact us:",
+      "email": "elena@villaoliviaclara.com",
+      "phone": "+30 697 191 9382",
+      "address": "Villa Olivia Clara\nPlatis Gialos, 84003\nSifnos, Cyclades, Greece"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "intro": "These terms govern your use of Villa Olivia Clara and our services. Please read them carefully.",
+    "lastUpdated": "Last Updated: February 15, 2024",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "text": "By accessing and using the Villa Olivia Clara website and booking our services, you accept and agree to be bound by these terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+    },
+    "booking": {
+      "title": "Booking and Reservations",
+      "process": {
+        "title": "Reservation Process",
+        "list": [
+          "All reservations must be confirmed in writing by Villa Olivia Clara",
+          "A deposit of 50% is required to secure your booking",
+          "The remaining balance is due 30 days before arrival",
+          "Bookings made within 30 days require full payment at time of booking",
+          "All payments must be made in Euros (EUR)"
+        ]
+      },
+      "minStay": {
+        "title": "Minimum Stay Requirements",
+        "list": [
+          "Minimum stay: 3 nights (low season)",
+          "Minimum stay: 7 nights (high season: July-August)",
+          "Special events and holidays may require extended minimum stays"
+        ]
+      },
+      "checkIn": {
+        "title": "Check-in and Check-out",
+        "list": [
+          "Check-in: 4:00 PM - 8:00 PM",
+          "Check-out: 10:00 AM",
+          "Late check-in or early check-out may be arranged upon request",
+          "Photo identification required at check-in"
+        ]
+      }
+    },
+    "payment": {
+      "title": "Payment Terms",
+      "schedule": {
+        "title": "Payment Schedule",
+        "deposit": {
+          "title": "Deposit (50%)",
+          "text": "Due at time of booking to secure reservation"
+        },
+        "final": {
+          "title": "Final Payment (50%)",
+          "text": "Due 30 days before arrival date"
+        }
+      },
+      "methods": {
+        "title": "Accepted Payment Methods",
+        "list": [
+          "Bank transfer (preferred method)",
+          "Credit card (Visa, MasterCard, American Express)",
+          "PayPal (subject to additional fees)"
+        ]
+      },
+      "fees": {
+        "title": "Additional Fees",
+        "list": [
+          "Tourist tax: €4 per person per night (payable locally)",
+          "Additional cleaning: €50 per service",
+          "Lost key replacement: €50",
+          "Damage deposit: €500 (refundable, held on credit card)"
+        ]
+      }
+    },
+    "cancellation": {
+      "title": "Cancellation Policy",
+      "important": {
+        "title": "Important Cancellation Information",
+        "text": "Cancellation terms vary based on timing and season. Please review carefully before booking."
+      },
+      "schedule": {
+        "title": "Cancellation Schedule",
+        "list": [
+          "More than 60 days before arrival: 10% cancellation fee",
+          "31-60 days before arrival: 50% of total booking value",
+          "15-30 days before arrival: 75% of total booking value",
+          "Less than 15 days before arrival: 100% of total booking value",
+          "No-show: 100% of total booking value"
+        ]
+      },
+      "forceMajeure": {
+        "title": "Force Majeure",
+        "text": "In cases of force majeure (natural disasters, government restrictions, pandemics), we will work with guests to reschedule or provide appropriate refunds on a case-by-case basis."
+      }
+    },
+    "responsibilities": {
+      "title": "Guest Responsibilities",
+      "occupancy": {
+        "title": "Occupancy Limits",
+        "list": [
+          "Maximum occupancy: 8 guests",
+          "All guests must be listed at time of booking",
+          "Day visitors must be approved in advance",
+          "Events and parties are subject to prior approval"
+        ]
+      },
+      "care": {
+        "title": "Property Care",
+        "list": [
+          "Treat the property with respect and care",
+          "Report any damages immediately",
+          "No smoking inside the villa",
+          "Pets require prior approval",
+          "Follow local noise regulations (quiet hours: 2:00 PM - 5:00 PM, 11:00 PM - 8:00 AM)"
+        ]
+      },
+      "safety": {
+        "title": "Safety and Security",
+        "list": [
+          "Keep doors and windows locked when away",
+          "Use pool facilities at your own risk (no lifeguard on duty)",
+          "Children must be supervised at all times",
+          "Emergency contact information will be provided upon arrival"
+        ]
+      }
+    },
+    "liability": {
+      "title": "Liability and Insurance",
+      "text": "Villa Olivia Clara maintains comprehensive property insurance; however, guests are responsible for their personal belongings and any damage caused during their stay. We strongly recommend that guests obtain travel insurance to cover personal items, cancellations, and medical emergencies.",
+      "limitation": {
+        "title": "Limitation of Liability",
+        "text": "Villa Olivia Clara is not liable for any injuries, accidents, or losses that occur on the property. Guests use all facilities at their own risk."
+      }
+    },
+    "privacy": {
+      "title": "Privacy and Data Protection",
+      "text": "Your privacy is important to us. We collect and process personal information in accordance with our Privacy Policy and applicable data protection laws. By using our services, you consent to the collection and use of information as described in our"
+    },
+    "governing": {
+      "title": "Governing Law",
+      "text": "These terms and conditions are governed by and construed in accordance with the laws of Greece. Any disputes arising from these terms will be subject to the exclusive jurisdiction of the Greek courts."
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "text": "We reserve the right to modify these terms at any time. Changes will be posted on our website with an updated \"Last Updated\" date. Continued use of our services after changes are posted constitutes acceptance of the modified terms."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "text": "If you have any questions about these Terms of Service, please contact us:",
+      "name": "Villa Olivia Clara",
+      "address": "Platis Gialos, 84003 Sifnos, Greece",
+      "email": "Email: info@villaoliviaclara.com",
+      "phone": "Phone: +30 22840 71234"
+    },
+    "cta": {
+      "title": "Ready to Book Your Stay?",
+      "text": "By proceeding with your booking, you agree to these terms and conditions.",
+      "book": "Make a Reservation",
+      "tour": "Tour Our Villa"
+    }
+  },
+  "rental": {
+    "title": "Rental Conditions",
+    "intro": "Welcome to Villa Olivia Clara! We've crafted these terms to ensure a safe, comfortable, and enjoyable stay for all our guests while respecting our beautiful island environment. Please read them carefully. By confirming your reservation, you agree to comply with these terms.",
+    "section1": {
+      "title": "Section 1: Agreement & Legal Framework",
+      "parties": {
+        "title": "1.1. Parties Involved",
+        "text": "This Agreement is between the lead guest making the reservation on the Villa Olivia Clara website (\"Tenant\") and Philippou Eleni & Co LP, operating as Villa Olivia Clara (\"Villa Olivia Clara\"). The Tenant is responsible for ensuring all guests comply with this Agreement and is jointly and severally liable for any breaches of these terms by any member of their party or invited third parties."
+      },
+      "property": {
+        "title": "1.2. Property Overview",
+        "text": "The Property is a fully furnished, private villa located in Platis Gialos, Sifnos, Greece, for non-commercial use. It includes a private swimming pool and designated parking. Maximum occupancy: 8 guests. GNTO number: 1172K9220077301. The Property is registered as a non-primary tourist accommodation under Greek hospitality regulations."
+      },
+      "governing": {
+        "title": "1.3. Governing Law & Dispute Resolution",
+        "text": "This Agreement is governed by Greek law. Any disputes shall be resolved by Greek courts. Parties agree to attempt amicable resolution first."
+      },
+      "booking": {
+        "title": "1.4. Booking Details",
+        "minStay": {
+          "title": "Minimum Stay",
+          "text": "3 consecutive nights"
+        },
+        "rent": {
+          "title": "Rent",
+          "text": "Total rent (including taxes and applicable tourism taxes & fees) is confirmed in writing at the time of reservation"
+        },
+        "schedule": {
+          "title": "Payment Schedule",
+          "list": [
+            "30% due within 3 business days",
+            "Balance due 60 days prior to check-in",
+            "Late or missed payments will result in cancellation without refund"
+          ]
+        },
+        "cancellation": {
+          "title": "Cancellation Policy",
+          "text": "Reservations are fully refundable up to 60 days prior to check-in date."
+        }
+      },
+      "payments": {
+        "title": "1.5. Payments & Receipts",
+        "text": "In accordance with Greek tax regulations:",
+        "list": [
+          "Payments over €500 must be made via bank transfer, debit/credit card, or an approved online processor",
+          "Cash payments above this amount are not permitted",
+          "A certified POS system is used to process card payments (Visa, Mastercard)",
+          "All payments will be accompanied by official receipts issued through Villa Olivia Clara's certified invoicing system"
+        ]
+      },
+      "taxes": {
+        "title": "1.6. Taxes & Compliance",
+        "text": "All rental prices include VAT (13%) and municipal taxes (0.5%). A Climate Resilience Fee of €15 per night (April–October) is charged in addition to the rental price. Receipts for this fee will be issued separately."
+      }
+    },
+    "section2": {
+      "title": "Section 2: Operational & Financial Policies",
+      "deposit": {
+        "title": "2.1. Security Deposit",
+        "text": "The Tenant agrees to cover the full cost of repairs or replacements for damages, based on valid third-party quotes or invoices provided by Villa Olivia Clara. Villa Olivia Clara has the right to place a €1,000 credit card pre-authorization prior to check-in. It covers damages, rule violations, or lost items. The hold will be released within 7 days post check-out after inspection."
+      },
+      "services": {
+        "title": "2.2. Services Provided",
+        "included": {
+          "title": "Included Services",
+          "list": [
+            "Cleaning every 3 days",
+            "Towel change every 3 days",
+            "Linen change once a week",
+            "Pool and garden maintenance",
+            "Washing machine use (once every 3.5 days)"
+          ]
+        },
+        "additional": {
+          "title": "Additional Charges",
+          "list": [
+            "Extra washing machine use: €25 per use",
+            "Additional cleaning services",
+            "Third-party services (chefs, excursions)"
+          ]
+        }
+      },
+      "failure": {
+        "title": "2.3. Facility Failure Policy",
+        "text": "If essential amenities such as air conditioning, hot water, electricity, or pool filtration systems fail during your stay, Villa Olivia Clara will make reasonable efforts to resolve the issue within 24 hours. If not resolved within that time, partial refunds may be offered at management's discretion."
+      }
+    },
+    "section3": {
+      "title": "Section 3: Guest Conduct & Use of Property",
+      "rules": {
+        "title": "3.1. House Rules",
+        "items": [
+          "Max occupancy: 8 guests",
+          "No smoking on premises",
+          "No pets allowed",
+          "No parties or events",
+          "No modifications to property",
+          "Up to 5 vehicles in parking",
+          "Respect quiet hours"
+        ]
+      },
+      "checkIn": {
+        "title": "3.2. Check-In & Check-Out",
+        "in": {
+          "title": "Check-In",
+          "list": [
+            "From 4:00 pm (early check-in subject to availability)",
+            "Valid passport or EU national ID required",
+            "Guest data recorded per Greek law"
+          ]
+        },
+        "out": {
+          "title": "Check-Out",
+          "list": [
+            "By 10:00 am",
+            "Property must be returned in original condition",
+            "Lost keys may result in charges"
+          ]
+        }
+      },
+      "quiet": {
+        "title": "3.3. Quiet Hours & Legal Conduct",
+        "text": "Guests must respect Greek quiet hours: April 1 – September 30 (3:30 pm–5:30 pm and 10:00 pm–7:30 am). All guests must comply with Greek law during their stay. Discrimination or illegal behavior will not be tolerated."
+      },
+      "minors": {
+        "title": "3.4. Minors & Supervision",
+        "text": "Villa Olivia Clara does not accept unaccompanied minors under the age of 18. All minors must be accompanied by a responsible adult guest and remain under their supervision throughout the stay. Special attention must be paid near the swimming pool and around elevated outdoor areas."
+      }
+    },
+    "section4": {
+      "title": "Section 4: Health, Safety & Risk",
+      "liability": {
+        "title": "4.1. Liability & Insurance",
+        "list": [
+          "Villa Olivia Clara is not liable for theft, injuries, or damages unless caused by gross negligence",
+          "Guests are encouraged to have personal travel insurance",
+          "The property is insured against fire, natural disasters, and civil liability"
+        ]
+      },
+      "pool": {
+        "title": "4.2. Swimming Pool Policy",
+        "important": "Important Pool Safety Rules",
+        "list": [
+          "No diving or running around the pool area",
+          "Continuously supervise children using the pool",
+          "Follow health and safety signage",
+          "Observe quiet hours (3:30 pm–5:30 pm and 10:00 pm–7:30 am)",
+          "Shower before entering the pool",
+          "No glass containers near the pool",
+          "Avoid using the pool during inclement weather"
+        ]
+      },
+      "environment": {
+        "title": "4.3. Environmental Practices",
+        "text": "In accordance with waste management and environmental protection laws, we kindly request guests to:",
+        "list1": [
+          "Minimize water use and avoid washing vehicles",
+          "Reuse towels to conserve energy",
+          "Turn off air conditioning when rooms are unoccupied",
+          "Keep windows and doors closed during AC use"
+        ],
+        "list2": [
+          "Switch off lights and appliances when not in use",
+          "Follow recycling and waste sorting instructions",
+          "Only flush toilet paper (septic system)",
+          "Dispose of other items in waste bins"
+        ]
+      },
+      "forceMajeure": {
+        "title": "4.4. Force Majeure",
+        "text": "Villa Olivia Clara is not liable for disruptions, cancellations, or early termination caused by external events outside its control, including but not limited to natural disasters, government-imposed restrictions, strikes, or pandemics. No refunds or credits will be issued for force majeure events."
+      }
+    },
+    "section5": {
+      "title": "Section 5: Guest Support & Communication",
+      "info": {
+        "title": "5.1. Guest Information",
+        "privacy": {
+          "title": "Privacy",
+          "text": "Guest data is handled in compliance with GDPR Regulation and Greek Privacy Laws. Data is collected only as required for legal compliance and check-in procedures and is securely stored."
+        },
+        "welcome": {
+          "title": "Welcome Book",
+          "text": "Includes appliance instructions, house rules, emergency contacts, and local tips. A digital copy is available via QR code on site or by request prior to arrival."
+        },
+        "lost": {
+          "title": "Lost & Found",
+          "text": "Items found at the property will be kept for 30 days. Courier returns are offered at the guest's expense; please email elena@villaoliviaclara.com to arrange return."
+        }
+      },
+      "emergency": {
+        "title": "5.2. Emergency Contacts",
+        "services": {
+          "title": "Emergency Services",
+          "fire": "Fire Department:",
+          "medical": "Medical Emergency:",
+          "police": "Police:"
+        },
+        "villa": {
+          "title": "Villa Olivia Clara",
+          "urgent": "Urgent matters:",
+          "nonUrgent": "Non-urgent:",
+          "response": "Response time:",
+          "responseTime": "Within 2 hours (8:00 am – 8:00 pm)"
+        }
+      },
+      "wifi": {
+        "title": "5.3. WiFi & Internet Use",
+        "text": "Guests may access the property's Wi-Fi solely for legal and private use. Accessing or distributing pirated digital content, including IPTV, torrents, or unauthorized streaming services, is prohibited and may result in guest removal and legal reporting to the relevant authorities."
+      },
+      "language": {
+        "title": "5.4. Language of Agreement",
+        "text": "This Agreement is provided in English. In case of discrepancy between translated versions and the original English version, the English version shall prevail."
+      }
+    },
+    "questions": {
+      "title": "Questions About These Terms?",
+      "text": "If you have any questions about these rental conditions or need clarification on any terms, please don't hesitate to contact us. We're here to help ensure your stay is comfortable and enjoyable.",
+      "contact": "Contact Us",
+      "call": "Call Us"
+    }
   }
 }

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import CanonicalLink from "@/components/CanonicalLink";
 import { LanguageRoute } from "@/components/LanguageRoute";
-import { OliviaClaraAIPremium } from "@/components/OliviaClaraAIPremium";
+// import { OliviaClaraAIPremium } from "@/components/OliviaClaraAIPremium";
 import Index from "./pages/Index";
 import Villa from "./pages/Villa";
 import Sifnos from "./pages/Sifnos";
@@ -129,7 +129,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Olivia Clara AI Premium - Available on every page */}
-        <OliviaClaraAIPremium />
+        {/* <OliviaClaraAIPremium /> */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

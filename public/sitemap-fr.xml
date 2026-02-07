@@ -89,4 +89,70 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog"/>
   </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/sifnos/boat-tours</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/sustainability</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sustainability"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sustainability"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sustainability"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sustainability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sustainability"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/privacy-policy</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/cookie-policy</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/cookie-policy"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/terms-of-service</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/fr/rental-conditions</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/rental-conditions"/>
+  </url>
 </urlset>

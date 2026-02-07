@@ -27,10 +27,10 @@ const Activity = () => {
         ]}
       />
       <Navigation />
-      
+
       {/* Skip to content link */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-villa-olive text-white px-4 py-2 rounded z-50"
       >
         Skip to content
@@ -53,10 +53,10 @@ const Activity = () => {
             <h1 className="text-4xl font-display font-bold text-villa-olive">{t('activity.boatTour.title')}</h1>
           </div>
           <p className="text-xl text-muted-foreground mb-4">
-            Explore the Greek Islands By Boat
+            {t('activity.boatTour.hero.subtitle')}
           </p>
           <p className="text-lg text-muted-foreground">
-            Are you ready for the most magical boat tour around Sifnos and the Cyclades?
+            {t('activity.boatTour.hero.question')}
           </p>
         </header>
 
@@ -64,7 +64,7 @@ const Activity = () => {
         <section className="mb-12">
           <div className="bg-gradient-to-r from-villa-olive-light to-sand-light p-8 rounded-lg">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              One of our favorite - if not our absolute favorite - activities to do when in Sifnos is to take a boat tour around Sifnos and the neighboring islands, Poliegos, Kimolos, and Milos. Each of the islands has its own personality and its own special points of interest. We would describe the experience of taking a private cruise to small Greek islands a "once-in-a-lifetime" experience. However, we do also recommend doing it more than once if you can. We have; and here's what it's like.
+              {t('activity.boatTour.hero.text')}
             </p>
           </div>
         </section>
@@ -75,7 +75,7 @@ const Activity = () => {
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-villa-olive mb-6">{t('activity.boatTour.choosingDestination')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We'll be honest, choosing the destination is the easiest part. They're all worth seeing and you'll have a good time regardless of what you choose - so don't worry! Most boat tour companies starting from Sifnos have a few different choices depending on how much time (and money) you have at your disposal and how many different destinations you want to see. A few combinations of these islands are possible, with a very popular one being Poliegos and Kimolos together.
+              {t('activity.boatTour.choosingDestinationText')}
             </p>
           </section>
 
@@ -91,20 +91,18 @@ const Activity = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-villa-olive mb-4">Poliegos</h3>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('activity.boatTour.destinations.poliegos.title')}</h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      One of our favorites as taking a boat tour to Poliegos is like discovering a lost civilization. We are not exaggerating! Before being named a Natura 2000 protected area, Poliegos was a mining site. It has some staggeringly beautiful rock formations, hidden caverns and caves, stunning blue waters and goats!
+                      {t('activity.boatTour.destinations.poliegos.description')}
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div>
-                        <h4 className="font-semibold text-villa-olive mb-2">Highlights</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.destinations.poliegos.highlights.title')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• Natura 2000 protected area</li>
-                          <li>• Stunning rock formations</li>
-                          <li>• Hidden caverns and caves</li>
-                          <li>• Crystal clear blue waters</li>
-                          <li>• Wild goats on beaches</li>
+                          {(t('activity.boatTour.destinations.poliegos.highlights.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))}
                         </ul>
                       </div>
                       <div>
@@ -125,10 +123,10 @@ const Activity = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
                       <p className="text-blue-800 text-sm">
-                        <strong>Fun Fact:</strong> Poliegos literally means "lots of goats" and you're quite likely to find some goats during your boat tour as they tend to hang out on the beaches. They are the only 'inhabitants' of the island!
+                        <strong>{t('activity.boatTour.destinations.poliegos.funFact.title')}</strong> {t('activity.boatTour.destinations.poliegos.funFact.text')}
                       </p>
                     </div>
                   </div>
@@ -146,20 +144,18 @@ const Activity = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-villa-olive mb-4">Kimolos</h3>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('activity.boatTour.destinations.kimolos.title')}</h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      After you've been to Poliegos, it's only reasonable to give Kimolos a visit. You will see it right across the northwestern coast of Poliegos, towards the end of your visit. Kimolos is the perfect place for the end of your boat tour as it features a few wonderful restaurants and fantastic spots. It's the perfect place to relax after a day of swimming around the untamed beauty of Poliegos.
+                      {t('activity.boatTour.destinations.kimolos.description')}
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div>
-                        <h4 className="font-semibold text-villa-olive mb-2">What to See</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.whatToSee')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• Psathi (the port)</li>
-                          <li>• Chorio (central village)</li>
-                          <li>• Wonderful restaurants</li>
-                          <li>• Chalk rock formations</li>
-                          <li>• Relaxing spots</li>
+                          {(t('activity.boatTour.destinations.kimolos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))}
                         </ul>
                       </div>
                       <div>
@@ -180,7 +176,7 @@ const Activity = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
                       <p className="text-green-800 text-sm">
                         <strong>Island Name:</strong> Kimolos literally means "The Island of Chalk", referring to the perlite and chalk rock formations that make up the island.
@@ -201,20 +197,18 @@ const Activity = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-villa-olive mb-4">Milos</h3>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('activity.boatTour.destinations.milos.title')}</h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      If you're up for a full-day ride, Milos may be the destination to pick. Milos is quite a larger island than Sifnos and features its own airport. The west part of the island was also named a Natura 2000 protected area and it will be a big focus of the trip. If you're taking the 8-hour boat tour from Sifnos to Milos, you should expect to make it the entire way around the island.
+                      {t('activity.boatTour.destinations.milos.description')}
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div>
-                        <h4 className="font-semibold text-villa-olive mb-2">Highlights</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.highlights')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• Limestone coves in the west</li>
-                          <li>• Giant sandy slope for sand surfing</li>
-                          <li>• Volcanic rock formations</li>
-                          <li>• Picture-worthy spots</li>
-                          <li>• Secret scenic locations</li>
+                          {(t('activity.boatTour.destinations.milos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))}
                         </ul>
                       </div>
                       <div>
@@ -235,7 +229,7 @@ const Activity = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
                       <p className="text-amber-800 text-sm">
                         <strong>Adventure Alert:</strong> A highlight of this trip are the limestone coves in the west part of the island and a giant sandy slope where you can (at your own risk!) sand surf down to the water.
@@ -256,20 +250,18 @@ const Activity = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-villa-olive mb-4">Sifnos</h3>
+                    <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('activity.boatTour.destinations.sifnos.title')}</h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      If you're not looking to go too far from home, Sifnos is always an option for a boat tour. The south of Sifnos features some of its most popular swimming spots. This includes the Chryssopigi Monastery and the beaches around it, Faros and Platis Gialos. Our home, Villa Olivia Clara is just down the road from there.
+                      {t('activity.boatTour.destinations.sifnos.description')}
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div>
-                        <h4 className="font-semibold text-villa-olive mb-2">Must-See Spots</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.mustSee')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• Chryssopigi Monastery</li>
-                          <li>• Faros beach</li>
-                          <li>• Platis Gialos beach</li>
-                          <li>• Fykiada beach (boat only)</li>
-                          <li>• Kitriani island</li>
+                          {(t('activity.boatTour.destinations.sifnos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))}
                         </ul>
                       </div>
                       <div>
@@ -290,7 +282,7 @@ const Activity = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-villa-olive-light p-4 rounded-lg">
                       <p className="text-villa-olive text-sm">
                         <strong>Exclusive Access:</strong> The boat tour will take you to spots in Sifnos that you can only reach on foot or by boat, like Fykiada beach - one of the most remote spots on the island. You'll also get to visit the island of Kitriani, the small uninhabited island across from Platis Gialos bay.
@@ -304,11 +296,11 @@ const Activity = () => {
 
           {/* Booking Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-villa-olive mb-6">Booking Your Boat Tour on Sifnos</h2>
+            <h2 className="text-3xl font-bold text-villa-olive mb-6">{t('activity.boatTour.booking.title')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Once you've decided your boat tour destination, you can start the booking process by contacting the Sifnos boat tour company of your choice.
+              {t('activity.boatTour.booking.text')}
             </p>
-            
+
             <Card className="border-villa-olive shadow-soft">
               <CardContent className="p-8">
                 <div className="text-center">
@@ -335,9 +327,9 @@ const Activity = () => {
 
           {/* Contact CTA */}
           <section className="mb-8 bg-sand-light p-8 rounded-lg text-center">
-            <h2 className="text-2xl font-bold text-villa-olive mb-4">Need Help Planning Your Boat Tour?</h2>
+            <h2 className="text-2xl font-bold text-villa-olive mb-4">{t('activity.boatTour.booking.needHelp')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
-              If you're staying with us at Villa Olivia Clara, don't hesitate to reach out if you need more guidance on choosing your destination or any advice on what to take on your boat tour from or around Sifnos.
+              {t('activity.boatTour.booking.helpText')}
             </p>
             <div className="flex gap-4 justify-center">
               <Button asChild variant="villa" size="lg">

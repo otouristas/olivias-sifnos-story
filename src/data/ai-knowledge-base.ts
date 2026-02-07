@@ -41,7 +41,7 @@ export const QUICK_ACTIONS = [
   { id: 'guests', label: 'How many guests?', icon: 'Users', query: 'How many guests can the villa fit?' },
   { id: 'beach', label: 'Beach distance?', icon: 'Waves', query: 'How far is the villa from the beach?' },
   { id: 'pool', label: 'Pool & Views', icon: 'Eye', query: 'Show me the pool' },
-  { id: 'bedrooms', label: 'Bedrooms?', icon: 'Bed', query: 'How many bedrooms?' },
+  { id: 'amenities', label: 'Amenities?', icon: 'Star', query: 'What amenities do you have?' },
   { id: 'booking', label: 'How to book?', icon: 'Calendar', query: 'How do I book?' },
   { id: 'contact', label: 'Contact Elena', icon: 'Phone', query: 'Contact Elena' },
 ] as const;
@@ -450,6 +450,38 @@ All bedrooms have AC, luxury linens, and blackout curtains!`,
     images: VILLA_IMAGES.bedrooms,
   },
 
+  // ---- AMENITIES ----
+  {
+    category: 'amenities',
+    keywords: ['amenities', 'wifi', 'internet', 'ac', 'air con', 'kitchen', 'parking', 'laundry', 'features', 'what do you have'],
+    response: `**Villa Olivia Clara Amenities:** ✨
+
+**Comfort & Convenience:**
+• ❄️ Air Conditioning in all rooms
+• 📶 High-speed Starlink WiFi (everywhere!)
+• 🅿️ Private parking on-site
+• 🧼 Washing machine & laundry facilities
+
+**Kitchen & Dining:**
+• 🍳 Fully equipped kitchen
+• ☕ Nespresso machine & kettle
+• 🧊 Dishwasher & large fridge
+• 🍽️ Indoor & outdoor dining areas
+
+**Entertainment:**
+• 📺 Smart TV with Netflix
+• 🎵 Bluetooth sound system
+• 📚 Books & board games
+
+**Outdoor:**
+• 🏊 Private infinity pool
+• 🚿 Outdoor shower
+• 🍖 BBQ grill
+• ☀️ Sunbeds & umbrellas`,
+    priority: 8,
+    followUpAction: 'booking',
+  },
+
   // ---- BEACH DISTANCE ----
   {
     category: 'beach',
@@ -656,7 +688,7 @@ export function generateAIResponse(userMessage: string): {
     'how many guests can the villa fit?': 'guests',
     'how far is the villa from the beach?': 'beach',
     'show me the pool': 'pool',
-    'how many bedrooms?': 'guests', // approximate match to guests/bedrooms
+    'what amenities do you have?': 'amenities',
     'how do i book?': 'booking',
     'contact elena': 'contact',
     'tell me about villa olivia clara': 'villa_overview'

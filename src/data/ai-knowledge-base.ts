@@ -1,6 +1,9 @@
 // Villa Olivia Clara - AI Knowledge Base with Images
 // FOCUSED on Villa Olivia Clara with photo carousels
 
+// Import properly bundled villa images
+import { VILLA_IMAGES } from './villa-images';
+
 export interface KnowledgeEntry {
   readonly category: string;
   readonly keywords: readonly string[];
@@ -9,52 +12,6 @@ export interface KnowledgeEntry {
   readonly followUpAction?: 'booking' | 'contact' | 'explore';
   readonly images?: readonly string[];
 }
-
-// ============================================================================
-// VILLA GALLERY IMAGES (for carousels)
-// ============================================================================
-export const VILLA_IMAGES = {
-  pool: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_004_the-pool-area-at-night.jpg',
-  ],
-  views: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_002_view-from-the-pool-cabana.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_012_view-from-the-pool-sunbathing-area.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_042_aerial-view-of-villa.jpg',
-  ],
-  bedrooms: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_014_master-bedroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_015_standard-bedroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_022_guest-master-bedroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_024_guest-standard-bedroom.jpg',
-  ],
-  bathrooms: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_018_master-bathroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_020_standard-bathroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_025_guest-master-bathroom.jpg',
-  ],
-  living: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_032_indoor-dining-area.jpg',
-  ],
-  terrace: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_013_upper-terrace-at-night.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_008_pool-dining-area.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_041_back-garden.jpg',
-  ],
-  overview: [
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_014_master-bedroom.jpg',
-    '/src/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg',
-  ],
-} as const;
 
 // ============================================================================
 // FOLLOW-UP ACTIONS
@@ -321,8 +278,8 @@ Explore our living spaces!`,
     response: `Ready to book your stay at Villa Olivia Clara? 🌴
 
 **How to Book:**
-1. **book.villaoliviaclara.com** — Instant confirmation
-2. **Contact Elena directly** — Best rates & flexibility
+1. [book.villaoliviaclara.com](https://book.villaoliviaclara.com) — Instant confirmation
+2. [Contact Elena directly](/contact) — Best rates & flexibility
 
 **Season & Rates:**
 • High Season: July-August (book 3-6 months ahead!)
@@ -626,7 +583,7 @@ If you have any more questions about Villa Olivia Clara, just ask!
 **Ready to Book?**
 • 📧 elena@villaoliviaclara.com
 • 📞 +30 697 191 9382
-• 🌐 book.villaoliviaclara.com
+• 🌐 [book.villaoliviaclara.com](https://book.villaoliviaclara.com)
 
 We hope to welcome you to Sifnos soon! 🌴☀️`,
     priority: 5,

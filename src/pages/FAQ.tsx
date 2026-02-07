@@ -82,7 +82,7 @@ const FAQ = () => {
         <div className="mb-8">
           <Button asChild variant="villa-ghost" size="sm">
             <Link to="/">
-              <ArrowLeft size={16} /> Back to Home
+              <ArrowLeft size={16} /> {t('common.backToHome')}
             </Link>
           </Button>
         </div>
@@ -344,9 +344,9 @@ const FAQ = () => {
 
           {/* Contact CTA */}
           <section className="mb-8 bg-villa-olive-light p-8 rounded-lg text-center">
-            <h2 className="text-2xl font-bold text-villa-olive mb-4">Still Have Questions?</h2>
+            <h2 className="text-2xl font-bold text-villa-olive mb-4">{t('faq.stillHaveQuestions')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
-              Can't find the answer you're looking for? We're here to help! Contact us directly and we'll get back to you as soon as possible.
+              {t('faq.cantFindAnswer')}
             </p>
             <div className="flex gap-4 justify-center">
               <Button asChild variant="villa" size="lg">

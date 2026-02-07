@@ -39,18 +39,29 @@ export const generateLanguageSitemap = (language: 'en' | 'el' | 'fr' | 'it'): st
   const langPrefix = language === 'en' ? '' : `/${language}`;
   
   const pages = [
+    // High Priority - Main Pages
     { path: '/', priority: 1.0, changefreq: 'weekly' },
-    { path: '/villa', priority: 0.9, changefreq: 'monthly' },
-    { path: '/sifnos', priority: 0.8, changefreq: 'monthly' },
-    { path: '/sifnos/beaches', priority: 0.7, changefreq: 'monthly' },
-    { path: '/sifnos/boat-tours', priority: 0.7, changefreq: 'monthly' },
-    { path: '/reviews', priority: 0.8, changefreq: 'monthly' },
-    { path: '/blog', priority: 0.7, changefreq: 'weekly' },
-    { path: '/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation', priority: 0.6, changefreq: 'monthly' },
-    { path: '/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison', priority: 0.6, changefreq: 'monthly' },
-    { path: '/contact', priority: 0.8, changefreq: 'yearly' },
-    { path: '/faq', priority: 0.7, changefreq: 'monthly' },
-    { path: '/sustainability', priority: 0.7, changefreq: 'yearly' }
+    { path: '/villa', priority: 0.95, changefreq: 'weekly' },
+    
+    // Medium-High Priority - Content Pages
+    { path: '/reviews', priority: 0.85, changefreq: 'weekly' },
+    { path: '/sifnos', priority: 0.85, changefreq: 'monthly' },
+    { path: '/sifnos/beaches', priority: 0.80, changefreq: 'monthly' },
+    { path: '/sifnos/boat-tours', priority: 0.75, changefreq: 'monthly' },
+    { path: '/contact', priority: 0.80, changefreq: 'yearly' },
+    { path: '/faq', priority: 0.75, changefreq: 'monthly' },
+    
+    // Blog Posts
+    { path: '/blog', priority: 0.75, changefreq: 'weekly' },
+    { path: '/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation', priority: 0.70, changefreq: 'monthly' },
+    { path: '/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison', priority: 0.70, changefreq: 'monthly' },
+    
+    // Lower Priority
+    { path: '/sustainability', priority: 0.60, changefreq: 'yearly' },
+    { path: '/privacy-policy', priority: 0.30, changefreq: 'yearly' },
+    { path: '/cookie-policy', priority: 0.30, changefreq: 'yearly' },
+    { path: '/terms-of-service', priority: 0.30, changefreq: 'yearly' },
+    { path: '/rental-conditions', priority: 0.50, changefreq: 'yearly' }
   ];
   
   const urls = pages.map(page => {

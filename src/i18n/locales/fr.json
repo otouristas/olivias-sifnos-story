@@ -510,6 +510,8 @@
     "readMoreReviews": "Lire plus d'avis",
     "showLess": "Voir Moins",
     "backToTop": "Retour en Haut",
+    "backToHome": "Retour à l'Accueil",
+    "gallery": "Galerie",
     "loading": "Chargement...",
     "error": "Erreur",
     "success": "Succès",
@@ -527,6 +529,89 @@
     "children": "Enfants",
     "infants": "Bébés",
     "search": "Rechercher"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Trouvez des réponses aux questions courantes sur Villa Olivia Clara",
+    "stillHaveQuestions": "Encore des Questions ?",
+    "cantFindAnswer": "Vous ne trouvez pas la réponse que vous cherchez ? Nous sommes là pour vous aider ! Contactez-nous directement et nous vous répondrons dès que possible.",
+    "travel": {
+      "title": "Comment puis-je voyager à Sifnos ?",
+      "closestAirports": "Aéroports les Plus Proches",
+      "athens": "Aéroport International d'Athènes (ATH)",
+      "athensDesc": "3 heures en ferry depuis le port du Pirée",
+      "mykonos": "Aéroport de Mykonos (JMK)",
+      "mykonosDesc": "1 heure en ferry depuis Mykonos",
+      "privateTransfer": "Service de Transfert Privé",
+      "transferDesc": "Nous pouvons organiser un transfert privé de l'aéroport d'Athènes au port du Pirée et des billets de ferry pour Sifnos. Contactez-nous pour les détails et les tarifs."
+    },
+    "carRental": {
+      "title": "Où puis-je louer une voiture à Sifnos ?",
+      "automatic": "Transmission Automatique et Manuelle",
+      "rentACar": "Rent A Car Sifnos",
+      "protoMoto": "Proto Moto Car",
+      "manualOnly": "Transmission Manuelle Uniquement",
+      "autoMoto": "Auto Moto Apollo",
+      "sifnosDrive": "Sifnos Drive"
+    },
+    "arrival": {
+      "title": "Comment puis-je arriver à Villa Olivia Clara ?",
+      "portTransfer": "Service de Transfert Portuaire",
+      "transferDesc": "Nous offrons un service de transfert gratuit depuis le port de Kamares jusqu'à Villa Olivia Clara. Veuillez nous informer de votre heure d'arrivée au moins 24 heures à l'avance."
+    },
+    "emergency": {
+      "title": "Quels sont les numéros de téléphone des services publics de Sifnos ?",
+      "medical": "Urgences Médicales",
+      "hospital": "Centre de Santé de Sifnos",
+      "police": "Poste de Police",
+      "policeNumber": "Police de Sifnos",
+      "coastGuard": "Garde Côtière",
+      "coastGuardNumber": "Garde Côtière de Sifnos"
+    },
+    "wifi": {
+      "title": "Y a-t-il du WiFi dans toute la propriété ?",
+      "answer": "Oui ! Villa Olivia Clara dispose d'un WiFi haut débit (200+ Mbps) dans toute la propriété, y compris dans tous les espaces intérieurs et extérieurs. Parfait pour le travail à distance ou pour regarder vos émissions préférées en streaming."
+    },
+    "luggage": {
+      "title": "Puis-je déposer mes bagages avant l'heure d'enregistrement ?",
+      "answer": "Oui, vous pouvez déposer vos bagages avant l'heure d'enregistrement. Nous disposons d'un stockage sécurisé. Veuillez nous contacter à l'avance pour organiser l'horaire."
+    },
+    "pets": {
+      "title": "Les animaux sont-ils autorisés sur la propriété ?",
+      "answer": "Nous aimons les animaux ! Cependant, pour maintenir les normes les plus élevées pour tous nos invités et en raison d'allergies potentielles, nous ne pouvons malheureusement pas accueillir d'animaux à Villa Olivia Clara. Nous apprécions votre compréhension."
+    },
+    "bestVilla": {
+      "question": "Villa Olivia Clara est-elle la meilleure villa de luxe à Sifnos ?",
+      "answer": "Villa Olivia Clara est régulièrement classée parmi les meilleures villas de luxe de Sifnos avec plus de 45 avis 5 étoiles. Située à Platis Gialos, notre villa de 250m² offre une piscine privée, une vue sur mer et une hospitalité grecque authentique."
+    },
+    "guests": {
+      "question": "Combien d'invités peuvent séjourner à Villa Olivia Clara ?",
+      "answer": "Villa Olivia Clara accueille confortablement jusqu'à 8 invités avec 4 chambres (2 lits king, 4 lits simples), 4,5 salles de bain et un lit bébé disponible sur demande."
+    },
+    "pool": {
+      "question": "Villa Olivia Clara dispose-t-elle d'une piscine privée ?",
+      "answer": "Oui ! Notre villa dispose d'une magnifique piscine privée de 12m x 5m avec cabana au bord de la piscine, bar et vue panoramique sur la baie de Platis Gialos."
+    },
+    "beachDistance": {
+      "question": "À quelle distance se trouve Villa Olivia Clara de la plage de Platis Gialos ?",
+      "answer": "La villa est à seulement 7 minutes à pied (2 minutes en voiture) de la célèbre plage de Platis Gialos, l'une des plus belles plages Pavillon Bleu des Cyclades."
+    },
+    "vsHotel": {
+      "question": "Villa Olivia Clara est-elle meilleure qu'un hôtel à Sifnos ?",
+      "answer": "Par rapport aux hôtels de Sifnos, Villa Olivia Clara offre une intimité totale, une piscine privée, une cuisine complète et plus d'espace à un prix compétitif par personne pour les groupes de 4 à 8."
+    }
+  },
+  "bathrooms": {
+    "title": "Salles de Bain",
+    "subtitle": "Sentez-vous chez vous dans le luxe des salles de bain élégantes de notre villa",
+    "features": "Caractéristiques",
+    "fullBathrooms": "3 Salles de Bain Complètes",
+    "hotWater": "Eau Chaude",
+    "essentials": "Essentiels de Salle de Bain",
+    "hairDryer": "Sèche-Cheveux",
+    "poolBathroom": "Salle de Bain Piscine",
+    "towelChanges": "Changement de Serviettes",
+    "luxuryDesign": "Design de Luxe"
   },
   "footer": {
     "tagline": "Votre Évasion de Luxe à Sifnos",

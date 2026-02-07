@@ -1,11 +1,41 @@
-User-agent: Googlebot
+# Villa Olivia Clara - Robots.txt
+# Luxury Villa Rental in Sifnos, Greece
+# Last Updated: 2026-02-07
+
+# ===========================================
+# GENERAL CRAWLERS
+# ===========================================
+User-agent: *
 Allow: /
 Crawl-delay: 1
+
+# ===========================================
+# SEARCH ENGINE BOTS
+# ===========================================
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
 
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ===========================================
+# SOCIAL MEDIA BOTS
+# ===========================================
 User-agent: Twitterbot
 Allow: /
 
@@ -18,50 +48,60 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-User-agent: *
+User-agent: Pinterest
 Allow: /
 
-Sitemap: https://villaoliviaclara.com/sitemap.xml
+User-agent: Slackbot
+Allow: /
 
-# Disallow admin areas and system files
+# ===========================================
+# AI & LLM CRAWLERS
+# ===========================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+# ===========================================
+# DISALLOW SYSTEM PATHS
+# ===========================================
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
+Disallow: /_*
 Disallow: /.env
 Disallow: /node_modules/
 Disallow: /src/
 Disallow: /dist/
 Disallow: /build/
+Disallow: /*.json$
+Disallow: /*.lock$
 
-# Allow all main content pages
-Allow: /
-Allow: /villa
-Allow: /sifnos
-Allow: /sifnos/beaches
-Allow: /sifnos/boat-tours
-Allow: /reviews
-Allow: /blog
-Allow: /blog/ultimate-guide-sifnos-greece-luxury-villa-vacation
-Allow: /blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison
-Allow: /contact
-Allow: /faq
-Allow: /sustainability
-Allow: /privacy-policy
-Allow: /cookie-policy
-Allow: /terms-of-service
-Allow: /rental-conditions
+# ===========================================
+# SITEMAPS
+# ===========================================
+Sitemap: https://villaoliviaclara.com/sitemap.xml
+Sitemap: https://villaoliviaclara.com/sitemap-en.xml
+Sitemap: https://villaoliviaclara.com/sitemap-el.xml
+Sitemap: https://villaoliviaclara.com/sitemap-fr.xml
+Sitemap: https://villaoliviaclara.com/sitemap-it.xml
 
-# Allow assets
-Allow: /villa-olivia-clara-logo.webp
-Allow: /favicon.ico
-Allow: /favicon.webp
-Allow: /site.webmanifest
-Allow: /*.css
-Allow: /*.js
-Allow: /*.webp
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.png
-Allow: /*.svg
-Allow: /*.mp4
+# ===========================================
+# HOST
+# ===========================================
+Host: https://villaoliviaclara.com

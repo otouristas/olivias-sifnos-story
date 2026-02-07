@@ -121,7 +121,7 @@ const Villa = () => {
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild variant="villa" size="lg">
-              <Link to="#gallery">Gallery</Link>
+              <Link to="#gallery">{t('common.gallery')}</Link>
             </Button>
             <a
               href="#pool-outdoor"
@@ -321,10 +321,10 @@ const Villa = () => {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <TreePine className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Garden & Terrace</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">{t('garden.title')}</h2>
               </div>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Enjoy the nature of Sifnos from our rich mediterranean garden with stunning views
+                {t('garden.description')}
               </p>
               
               {/* Garden Features */}
@@ -347,11 +347,11 @@ const Villa = () => {
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Flower className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Indigenous Plants</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('garden.plants')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Eye className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Stunning Views</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('garden.views')}</h4>
                 </Card>
                   </div>
                 </div>
@@ -392,37 +392,37 @@ const Villa = () => {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bed className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Bedrooms</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">{t('bedrooms.title')}</h2>
               </div>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Wake up to views of Platis Gialos, the most popular beach in Sifnos
+                {t('bedrooms.subtitle')}
               </p>
               
               {/* Bedroom Features */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Bed className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">2 King Beds</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.kingBeds')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Users className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">4 Single Beds</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.singleBeds')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Baby className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">1 Baby Crib</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.babyCrib')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Wifi className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Air Conditioning</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.airConditioning')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Extra Pillows</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.extraPillows')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Linen Changes</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bedrooms.linenChanges')}</h4>
                 </Card>
               </div>
             </div>
@@ -505,37 +505,37 @@ const Villa = () => {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Bath className="text-villa-olive" size={32} />
-                <h2 className="text-4xl font-bold text-villa-olive">Bathrooms</h2>
+                <h2 className="text-4xl font-bold text-villa-olive">{t('bathrooms.title')}</h2>
               </div>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Feel at home in the luxury of our villa's elegant bathrooms
+                {t('bathrooms.subtitle')}
               </p>
               
               {/* Bathroom Features */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Bath className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">3 Full Bathrooms</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.fullBathrooms')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Hot Water</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.hotWater')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Shirt className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Bathroom Essentials</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.essentials')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Waves className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Pool Bathroom</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.poolBathroom')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Calendar className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Towel Changes</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.towelChanges')}</h4>
                 </Card>
                 <Card className="border-villa-stone shadow-soft p-4 text-center">
                   <Star className="text-villa-olive mx-auto mb-2" size={24} />
-                  <h4 className="font-semibold text-sm text-villa-olive">Luxury Design</h4>
+                  <h4 className="font-semibold text-sm text-villa-olive">{t('bathrooms.luxuryDesign')}</h4>
                 </Card>
               </div>
             </div>

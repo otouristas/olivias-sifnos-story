@@ -174,7 +174,7 @@ function FollowUpButton({ action }: { action: 'booking' | 'contact' | 'explore' 
 }
 
 // Message bubble
-function MessageBubble({ message, isLatest }: { message: Message; isLatest: boolean }) {
+function MessageBubble({ message, isLatest }: { message: Message; isLatest: boolean; key?: React.Key }) {
     const isAI = message.type === 'ai';
     const shouldAnimate = isAI && isLatest && !message.isTyping;
     const { displayedText, isComplete } = useTypingEffect(message.content, 6, shouldAnimate);
@@ -245,7 +245,7 @@ function MessageBubble({ message, isLatest }: { message: Message; isLatest: bool
 }
 
 // Quick action chip
-function QuickActionChip({ label, icon, onClick }: { label: string; icon: string; onClick: () => void }) {
+function QuickActionChip({ label, icon, onClick }: { label: string; icon: string; onClick: () => void; key?: React.Key }) {
     const Icon = IconMap[icon] || Star;
     return (
         <button onClick={onClick}
@@ -266,9 +266,11 @@ export function OliviaClaraAIPremium({ className = '' }: ChatbotProps): React.Re
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const WELCOME_MESSAGE = `Kalimera! ☀️ I'm **Olivia Clara AI**, your personal villa concierge.
+    const WELCOME_MESSAGE = `Kalimera! ☀️ Welcome to **Villa Olivia Clara**.
 
-I can show you photos and tell you everything about Villa Olivia Clara — from our stunning pool to the bedrooms.
+I can show you photos and tell you everything about our villa — from our stunning pool to the bedrooms.
+
+⚠️ *AI responses are for info only. Contact Elena for booking/pricing.*
 
 What would you like to see?`;
 
@@ -416,7 +418,7 @@ What would you like to see?`;
                                     </h3>
                                     <p className="text-xs text-white/80 flex items-center gap-1">
                                         <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                                        Villa Concierge
+                                        Villa Olivia Clara
                                     </p>
                                 </div>
                             </div>

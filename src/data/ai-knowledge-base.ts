@@ -38,12 +38,12 @@ export const FOLLOW_UP_ACTIONS = {
 } as const;
 
 export const QUICK_ACTIONS = [
-  { id: 'villa', label: 'About the Villa', icon: 'Home', query: 'Tell me about Villa Olivia Clara' },
-  { id: 'pool', label: 'Pool & Views', icon: 'Waves', query: 'Show me the pool' },
-  { id: 'bedrooms', label: 'Bedrooms', icon: 'Bed', query: 'Show me the bedrooms' },
-  { id: 'booking', label: 'Book Now', icon: 'Calendar', query: 'How do I book?' },
-  { id: 'contact', label: 'Contact Host', icon: 'Phone', query: 'Contact Elena' },
-  { id: 'location', label: 'Location', icon: 'MapPin', query: 'Where is the villa?' },
+  { id: 'guests', label: 'How many guests?', icon: 'Users', query: 'How many guests can the villa fit?' },
+  { id: 'beach', label: 'Beach distance?', icon: 'Waves', query: 'How far is the villa from the beach?' },
+  { id: 'pool', label: 'Pool & Views', icon: 'Eye', query: 'Show me the pool' },
+  { id: 'bedrooms', label: 'Bedrooms?', icon: 'Bed', query: 'How many bedrooms?' },
+  { id: 'booking', label: 'How to book?', icon: 'Calendar', query: 'How do I book?' },
+  { id: 'contact', label: 'Contact Elena', icon: 'Phone', query: 'Contact Elena' },
 ] as const;
 
 // ============================================================================
@@ -407,7 +407,7 @@ The villa includes **free private parking** for 2 cars.`,
     keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'kalimera', 'yia sou', 'start'],
     response: `Kalimera! ☀️ Welcome to Villa Olivia Clara!
 
-I'm your personal AI concierge. I can help you with:
+I can help you with:
 
 🏠 **The Villa** — Pool, bedrooms, amenities, photos
 📅 **Booking** — Availability, rates, how to reserve
@@ -415,13 +415,62 @@ I'm your personal AI concierge. I can help you with:
 📍 **Location** — Where we are & how to get here
 
 **Popular Questions:**
+• "How many guests can you fit?"
+• "How far is the beach?"
 • "Show me the pool"
-• "How many bedrooms?"
 • "How do I book?"
-• "Contact Elena"
 
-What would you like to know about the villa?`,
+What would you like to know?`,
     priority: 6,
+  },
+
+  // ---- GUESTS CAPACITY ----
+  {
+    category: 'guests',
+    keywords: ['guest', 'guests', 'how many', 'people', 'sleeps', 'capacity', 'fit', 'accommodate', 'sleep'],
+    response: `**Villa Olivia Clara sleeps up to 8 guests** 👨‍👩‍👧‍👦
+
+**Bedroom Layout:**
+• 🛗 **Master Suite** — King bed, en-suite bathroom, sea views
+• 🛗 **Second Bedroom** — Queen bed, en-suite bathroom
+• 🛗 **Third Bedroom** — 2 twin beds (can be joined)
+
+**Sleeping Options:**
+• 6 guests in 3 bedrooms
+• +2 guests on sofa bed in living room
+
+**Perfect For:**
+• Families with children
+• Groups of friends
+• Multi-generational trips
+
+All bedrooms have AC, luxury linens, and blackout curtains!`,
+    priority: 10,
+    followUpAction: 'booking',
+    images: VILLA_IMAGES.bedrooms,
+  },
+
+  // ---- BEACH DISTANCE ----
+  {
+    category: 'beach',
+    keywords: ['beach', 'far', 'distance', 'walk', 'close', 'near', 'platis gialos', 'sea', 'sand'],
+    response: `**Just 5 minutes walk to Platis Gialos Beach!** 🏖️
+
+**Platis Gialos Beach:**
+• 🚶 **Distance:** 400m / 5 min walk from villa
+• 🏖️ **Type:** Sandy beach with calm, shallow waters
+• 👶 **Family-Friendly:** Perfect for kids
+• 🍽️ **Facilities:** Sunbeds, tavernas, watersports
+
+**Other Nearby Beaches:**
+• Faros Beach — 10 min drive
+• Vathi Beach — 15 min drive
+• Chrysopigi — 8 min drive
+
+**From the Villa:**
+Enjoy sea views from the pool while being close enough to walk to the beach anytime!`,
+    priority: 10,
+    followUpAction: 'explore',
   },
 
   // ---- FAMILY ----

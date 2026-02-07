@@ -651,6 +651,30 @@ export function generateAIResponse(userMessage: string): {
   const message = userMessage.toLowerCase().trim();
   const words = message.split(/\s+/);
 
+  // 1. EXACT MATCH OVERRIDES for Quick Actions (Guaranteed Correctness)
+  const EXACT_MATCHES: Record<string, string> = {
+    'how many guests can the villa fit?': 'guests',
+    'how far is the villa from the beach?': 'beach',
+    'show me the pool': 'pool',
+    'how many bedrooms?': 'guests', // approximate match to guests/bedrooms
+    'how do i book?': 'booking',
+    'contact elena': 'contact',
+    'tell me about villa olivia clara': 'villa_overview'
+  };
+
+  if (EXACT_MATCHES[message]) {
+    const category = EXACT_MATCHES[message];
+    const entry = VILLA_KNOWLEDGE_BASE.find(e => e.category === category);
+    if (entry) {
+      return {
+        response: entry.response,
+        followUpAction: entry.followUpAction,
+        images: entry.images,
+      };
+    }
+  }
+
+  // 2. FUZZY MATCHING (Improved Algorithm)
   let bestMatch: KnowledgeEntry | null = null;
   let highestScore = 0;
 

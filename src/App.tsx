@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import CanonicalLink from "@/components/CanonicalLink";
 import { LanguageRoute } from "@/components/LanguageRoute";
-// import { OliviaClaraAI } from "@/components/OliviaClaraAI";
+import { OliviaClaraAI } from "@/components/OliviaClaraAI";
 import Index from "./pages/Index";
 import Villa from "./pages/Villa";
 import Sifnos from "./pages/Sifnos";
@@ -63,7 +63,7 @@ const App = () => (
           <Route path="/rental-conditions" element={<RentalConditions />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/sustainability" element={<Sustainability />} />
-          
+
           {/* Greek routes (/el/) */}
           <Route path="/el" element={<LanguageRoute><Index /></LanguageRoute>} />
           <Route path="/el/villa" element={<LanguageRoute><Villa /></LanguageRoute>} />
@@ -81,7 +81,7 @@ const App = () => (
           <Route path="/el/cookie-policy" element={<LanguageRoute><CookiePolicy /></LanguageRoute>} />
           <Route path="/el/terms-of-service" element={<LanguageRoute><TermsOfService /></LanguageRoute>} />
           <Route path="/el/rental-conditions" element={<LanguageRoute><RentalConditions /></LanguageRoute>} />
-          
+
           {/* French routes (/fr/) */}
           <Route path="/fr" element={<LanguageRoute><Index /></LanguageRoute>} />
           <Route path="/fr/villa" element={<LanguageRoute><Villa /></LanguageRoute>} />
@@ -99,7 +99,7 @@ const App = () => (
           <Route path="/fr/cookie-policy" element={<LanguageRoute><CookiePolicy /></LanguageRoute>} />
           <Route path="/fr/terms-of-service" element={<LanguageRoute><TermsOfService /></LanguageRoute>} />
           <Route path="/fr/rental-conditions" element={<LanguageRoute><RentalConditions /></LanguageRoute>} />
-          
+
           {/* Italian routes (/it/) */}
           <Route path="/it" element={<LanguageRoute><Index /></LanguageRoute>} />
           <Route path="/it/villa" element={<LanguageRoute><Villa /></LanguageRoute>} />
@@ -117,19 +117,19 @@ const App = () => (
           <Route path="/it/cookie-policy" element={<LanguageRoute><CookiePolicy /></LanguageRoute>} />
           <Route path="/it/terms-of-service" element={<LanguageRoute><TermsOfService /></LanguageRoute>} />
           <Route path="/it/rental-conditions" element={<LanguageRoute><RentalConditions /></LanguageRoute>} />
-          
+
           {/* Sitemaps */}
           <Route path="/sitemap.xml" element={<Sitemap />} />
           <Route path="/sitemap-en.xml" element={<SitemapEn />} />
           <Route path="/sitemap-el.xml" element={<SitemapEl />} />
           <Route path="/sitemap-fr.xml" element={<SitemapFr />} />
           <Route path="/sitemap-it.xml" element={<SitemapIt />} />
-          
+
           {/* 404 catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Olivia Clara AI - Available on every page */}
-        {/* <OliviaClaraAI /> */}
+        <OliviaClaraAI />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

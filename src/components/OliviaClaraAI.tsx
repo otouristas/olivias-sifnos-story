@@ -89,7 +89,7 @@ export function OliviaClaraAI({ className = '' }: ChatbotProps): JSX.Element {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         type: 'ai',
-        content: generateAIResponse(userMessage.content),
+        content: generateAIResponse(userMessage.content).response,
         timestamp: new Date()
       };
 

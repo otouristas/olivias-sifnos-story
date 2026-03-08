@@ -30,7 +30,9 @@ import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dinin
 
 const Index = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   
   const getDateStringPlusDays = (daysToAdd: number): string => {
     const date: Date = new Date();

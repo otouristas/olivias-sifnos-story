@@ -15,7 +15,9 @@ import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.web
 import { trackBookingConversion } from '@/utils/analytics';
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   const [state, handleSubmit] = useForm("xqalpgbe");
 
   // Track conversion on successful submission

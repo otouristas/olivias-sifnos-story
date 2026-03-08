@@ -22,7 +22,9 @@ function formatDate(input: string): string {
 function getYear(date: string): number { return new Date(date).getFullYear(); }
 
 export default function Reviews(): JSX.Element {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   const [showAll, setShowAll] = useState(false);
   const sorted: ReadonlyArray<GuestReview> = [...reviewsData].sort((a, b) => (a.date < b.date ? 1 : -1));
   const grouped: Record<number, ReadonlyArray<GuestReview>> = sorted.reduce((acc, r) => {

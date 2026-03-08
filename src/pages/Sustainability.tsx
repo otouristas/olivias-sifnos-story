@@ -9,7 +9,9 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Leaf, Target, Zap, Recycle, Globe, TrendingDown, CheckCircle } from 'lucide-react';
 
 const Sustainability = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead

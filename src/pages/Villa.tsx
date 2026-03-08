@@ -62,7 +62,9 @@ import poolHouse2 from '@/assets/villa-gallery/Villa-Olivia-Clara_039_pool-house
 import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 
 const Villa = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
 
   return (
     <div className="min-h-screen bg-gradient-subtle">

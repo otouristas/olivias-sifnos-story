@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import EnUsRedirect from "@/components/EnUsRedirect";
 import { LanguageRoute } from "@/components/LanguageRoute";
 // import { OliviaClaraAIPremium } from "@/components/OliviaClaraAIPremium";
 import Index from "./pages/Index";
@@ -43,6 +44,7 @@ const App = () => (
         }}
       >
         <ScrollToTop />
+        <EnUsRedirect />
         
         <Routes>
           {/* English routes (default - no prefix) */}
@@ -74,6 +76,8 @@ const App = () => (
           <Route path="/el/blog" element={<LanguageRoute><Blog /></LanguageRoute>} />
           <Route path="/el/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/el/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
+          <Route path="/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
+          <Route path="/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/el/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
           <Route path="/el/sustainability" element={<LanguageRoute><Sustainability /></LanguageRoute>} />
           <Route path="/el/privacy-policy" element={<LanguageRoute><PrivacyPolicy /></LanguageRoute>} />
@@ -92,6 +96,8 @@ const App = () => (
           <Route path="/fr/blog" element={<LanguageRoute><Blog /></LanguageRoute>} />
           <Route path="/fr/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/fr/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
+          <Route path="/fr/blog/guide-sifnos-grece-villa-luxe" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
+          <Route path="/fr/blog/villa-luxe-vs-hotel-sifnos-grece" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/fr/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
           <Route path="/fr/sustainability" element={<LanguageRoute><Sustainability /></LanguageRoute>} />
           <Route path="/fr/privacy-policy" element={<LanguageRoute><PrivacyPolicy /></LanguageRoute>} />
@@ -110,6 +116,8 @@ const App = () => (
           <Route path="/it/blog" element={<LanguageRoute><Blog /></LanguageRoute>} />
           <Route path="/it/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/it/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
+          <Route path="/it/blog/guida-sifnos-grecia-villa-lusso" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
+          <Route path="/it/blog/villa-lusso-vs-hotel-sifnos-grecia" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/it/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
           <Route path="/it/sustainability" element={<LanguageRoute><Sustainability /></LanguageRoute>} />
           <Route path="/it/privacy-policy" element={<LanguageRoute><PrivacyPolicy /></LanguageRoute>} />

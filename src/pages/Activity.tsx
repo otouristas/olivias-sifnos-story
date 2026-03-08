@@ -9,7 +9,9 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Ship, MapPin, Clock, Users, Camera, Waves, Anchor, Compass } from 'lucide-react';
 
 const Activity = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead

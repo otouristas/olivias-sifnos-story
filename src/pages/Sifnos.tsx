@@ -27,7 +27,9 @@ import heronissosBeach from '@/assets/Sifnos/Beaches/heronissos.webp';
 import chrysopigiBeach from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 
 const Sifnos = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead

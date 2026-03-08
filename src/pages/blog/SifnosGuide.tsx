@@ -14,13 +14,25 @@ import beachImage1 from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 import beachImage2 from '@/assets/Sifnos/Beaches/vathi.webp';
 import villageImage from '@/assets/Sifnos/villages/apollonia.webp';
 
+const blogSlugs: Record<string, string> = {
+  en: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
+  el: 'οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα',
+  fr: 'guide-sifnos-grece-villa-luxe',
+  it: 'guida-sifnos-grecia-villa-lusso',
+};
+
 const SifnosGuide = () => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
+  const currentSlug = blogSlugs[currentLang] || blogSlugs.en;
+
   return (
     <div className="min-h-screen bg-background">
       <ArticleStructuredData
         title="The Ultimate Guide to Sifnos, Greece 2026: Your Perfect Luxury Villa Vacation"
-        description="Discover why Sifnos is the Greek island paradise you've been searching for. From pristine beaches to authentic cuisine, learn everything you need to know for an unforgettable luxury villa stay."
-        image="https://villaoliviaclara.com/src/assets/Sifnos/Beaches/plats-gialos.webp"
+        description="Discover why Sifnos is the Greek island paradise you've been searching for. Beaches, cuisine, and tips for a luxury villa stay."
+        image="/villa-olivia-clara-logo.webp"
         publishDate="2025-11-18"
         modifiedDate="2025-11-18"
         author="Elena Philippou"
@@ -28,16 +40,16 @@ const SifnosGuide = () => {
       />
       <SEOHead
         title="The Ultimate Guide to Sifnos, Greece 2026 | Villa Olivia Clara"
-        description="Discover why Sifnos is the Greek island paradise you've been searching for. From pristine beaches to authentic cuisine, learn everything you need to know."
+        description="Discover why Sifnos is the Greek island paradise you've been searching for. Beaches, cuisine, and tips for a luxury villa stay."
         keywords="Sifnos guide, Greece travel, Cyclades islands, luxury villa, Greek beaches, Apollonia, Platis Gialos"
-        ogImage="https://villaoliviaclara.com/src/assets/Sifnos/Beaches/plats-gialos.webp"
-        canonicalUrl="https://villaoliviaclara.com/blog/sifnos-guide-greece-luxury-villa"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/blog/${currentSlug}`}
         alternateLanguages={[
-          { lang: 'en', url: 'https://villaoliviaclara.com/blog/sifnos-guide-greece-luxury-villa' },
-          { lang: 'el', url: 'https://villaoliviaclara.com/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα' },
-          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/blog/guide-sifnos-grece-villa-luxe' },
-          { lang: 'it', url: 'https://villaoliviaclara.com/it/blog/guida-sifnos-grecia-villa-lusso' },
-          { lang: 'x-default', url: 'https://villaoliviaclara.com/blog/sifnos-guide-greece-luxury-villa' }
+          { lang: 'en', url: `https://villaoliviaclara.com/blog/${blogSlugs.en}` },
+          { lang: 'el', url: `https://villaoliviaclara.com/el/blog/${blogSlugs.el}` },
+          { lang: 'fr', url: `https://villaoliviaclara.com/fr/blog/${blogSlugs.fr}` },
+          { lang: 'it', url: `https://villaoliviaclara.com/it/blog/${blogSlugs.it}` },
+          { lang: 'x-default', url: `https://villaoliviaclara.com/blog/${blogSlugs.en}` }
         ]}
       />
       <Navigation />

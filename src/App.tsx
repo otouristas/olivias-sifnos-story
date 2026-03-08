@@ -76,6 +76,8 @@ const App = () => (
           <Route path="/el/blog" element={<LanguageRoute><Blog /></LanguageRoute>} />
           <Route path="/el/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/el/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
+          <Route path="/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
+          <Route path="/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/el/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
           <Route path="/el/sustainability" element={<LanguageRoute><Sustainability /></LanguageRoute>} />
           <Route path="/el/privacy-policy" element={<LanguageRoute><PrivacyPolicy /></LanguageRoute>} />

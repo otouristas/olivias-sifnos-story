@@ -20,7 +20,9 @@ import vroulidia from '@/assets/Sifnos/Beaches/vroulidia.webp';
 import fykiada from '@/assets/Sifnos/Beaches/fykiada.webp';
 
 const SifnosBeaches = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   const beaches = [
     {
       name: 'Platis Gialos',

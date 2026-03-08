@@ -21,11 +21,15 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
+    supportedLngs: ['en', 'el', 'fr', 'it'],
+    nonExplicitSupportedLngs: false,
+    load: 'languageOnly',
     debug: false,
     
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage']
+      caches: ['localStorage'],
+      convertDetectedLanguage: (lng: string) => lng.split('-')[0]
     },
 
     interpolation: {

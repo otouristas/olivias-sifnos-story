@@ -36,7 +36,7 @@ const FAQ = () => {
         description={t('seo.faq.description')}
         keywords={t('seo.faq.keywords')}
         ogImage="/villa-olivia-clara-logo.webp"
-        canonicalUrl="https://villaoliviaclara.com/faq"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/faq`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/faq' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/faq' },

@@ -44,7 +44,7 @@ const App = () => (
         }}
       >
         <ScrollToTop />
-        <CanonicalLink />
+        
         <Routes>
           {/* English routes (default - no prefix) */}
           <Route path="/" element={<Index />} />

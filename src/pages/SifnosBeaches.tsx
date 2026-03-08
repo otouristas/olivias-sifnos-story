@@ -227,8 +227,8 @@ const SifnosBeaches = () => {
         title={t('seo.beaches.title')}
         description={t('seo.beaches.description')}
         keywords={t('seo.beaches.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
-        canonicalUrl="https://villaoliviaclara.com/sifnos/beaches"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/sifnos/beaches`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/sifnos/beaches' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/sifnos/beaches' },

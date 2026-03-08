@@ -18,8 +18,8 @@ const Sustainability = () => {
         title={t('seo.sustainability.title')}
         description={t('seo.sustainability.description')}
         keywords={t('seo.sustainability.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
-        canonicalUrl="https://villaoliviaclara.com/sustainability"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/sustainability`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/sustainability' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/sustainability' },

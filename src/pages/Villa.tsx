@@ -72,8 +72,8 @@ const Villa = () => {
         title={t('seo.villa.title')}
         description={t('seo.villa.description')}
         keywords={t('seo.villa.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg"
-        canonicalUrl="https://villaoliviaclara.com/villa"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/villa`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/villa' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/villa' },

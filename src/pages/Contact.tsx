@@ -15,7 +15,9 @@ import elenaProfile from '@/assets/elena-philippou-profile-picture-2048x2048.web
 import { trackBookingConversion } from '@/utils/analytics';
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   const [state, handleSubmit] = useForm("xqalpgbe");
 
   // Track conversion on successful submission
@@ -29,8 +31,8 @@ const Contact = () => {
         title={t('seo.contact.title')}
         description={t('seo.contact.description')}
         keywords={t('seo.contact.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg"
-        canonicalUrl="https://villaoliviaclara.com/contact"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/contact`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/contact' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/contact' },

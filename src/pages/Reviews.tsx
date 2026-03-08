@@ -22,7 +22,9 @@ function formatDate(input: string): string {
 function getYear(date: string): number { return new Date(date).getFullYear(); }
 
 export default function Reviews(): JSX.Element {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   const [showAll, setShowAll] = useState(false);
   const sorted: ReadonlyArray<GuestReview> = [...reviewsData].sort((a, b) => (a.date < b.date ? 1 : -1));
   const grouped: Record<number, ReadonlyArray<GuestReview>> = sorted.reduce((acc, r) => {
@@ -40,8 +42,8 @@ export default function Reviews(): JSX.Element {
         title={t('seo.reviews.title')}
         description={t('seo.reviews.description')}
         keywords={t('seo.reviews.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg"
-        canonicalUrl="https://villaoliviaclara.com/reviews"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/reviews`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/reviews' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/reviews' },

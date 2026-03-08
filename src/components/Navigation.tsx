@@ -30,6 +30,7 @@ const Navigation = () => {
     { text: t('nav.villa'), link: '/villa' },
     { text: t('nav.blog'), link: '/blog' },
     { text: t('nav.reviews'), link: '/reviews' },
+    { text: t('footer.faq', 'FAQ'), link: '/faq' },
     { text: t('nav.contact'), link: '/contact' },
   ];
 

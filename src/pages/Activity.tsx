@@ -9,15 +9,17 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Ship, MapPin, Clock, Users, Camera, Waves, Anchor, Compass } from 'lucide-react';
 
 const Activity = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={t('seo.activities.title')}
         description={t('seo.activities.description')}
         keywords={t('seo.activities.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
-        canonicalUrl="https://villaoliviaclara.com/sifnos/boat-tours"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/sifnos/boat-tours`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/sifnos/boat-tours' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/sifnos/boat-tours' },

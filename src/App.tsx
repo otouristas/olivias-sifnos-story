@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
-import CanonicalLink from "@/components/CanonicalLink";
 import { LanguageRoute } from "@/components/LanguageRoute";
 // import { OliviaClaraAIPremium } from "@/components/OliviaClaraAIPremium";
 import Index from "./pages/Index";
@@ -44,7 +43,7 @@ const App = () => (
         }}
       >
         <ScrollToTop />
-        <CanonicalLink />
+        
         <Routes>
           {/* English routes (default - no prefix) */}
           <Route path="/" element={<Index />} />

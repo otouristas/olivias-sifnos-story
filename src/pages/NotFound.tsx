@@ -61,7 +61,7 @@ const NotFound = () => {
         title={t('seo.notFound.title')}
         description={t('seo.notFound.description')}
         keywords={t('seo.notFound.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg"
+        ogImage="/villa-olivia-clara-logo.webp"
         canonicalUrl="https://villaoliviaclara.com/404"
         noIndex={true}
       />

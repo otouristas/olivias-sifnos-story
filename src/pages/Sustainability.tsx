@@ -9,15 +9,17 @@ import SEOHead from '@/components/SEOHead';
 import { ArrowLeft, Leaf, Target, Zap, Recycle, Globe, TrendingDown, CheckCircle } from 'lucide-react';
 
 const Sustainability = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={t('seo.sustainability.title')}
         description={t('seo.sustainability.description')}
         keywords={t('seo.sustainability.keywords')}
-        ogImage="https://villaoliviaclara.com/src/assets/villa-gallery/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg"
-        canonicalUrl="https://villaoliviaclara.com/sustainability"
+        ogImage="/villa-olivia-clara-logo.webp"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/sustainability`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/sustainability' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/sustainability' },

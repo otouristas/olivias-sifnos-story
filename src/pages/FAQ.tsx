@@ -10,7 +10,9 @@ import { FAQStructuredData } from '@/components/StructuredDataSchemas';
 import { ArrowLeft, HelpCircle, MapPin, Car, Wifi, Clock, Phone, Utensils, Waves, Plane, Ship, Home, Users, Droplets, Hotel, Star } from 'lucide-react';
 
 const FAQ = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
 
   const faqItems = [
     { question: t('faq.travel.title'), answer: t('faq.travel.closestAirports') },
@@ -34,7 +36,7 @@ const FAQ = () => {
         description={t('seo.faq.description')}
         keywords={t('seo.faq.keywords')}
         ogImage="/villa-olivia-clara-logo.webp"
-        canonicalUrl="https://villaoliviaclara.com/faq"
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/faq`}
         alternateLanguages={[
           { lang: 'en', url: 'https://villaoliviaclara.com/faq' },
           { lang: 'el', url: 'https://villaoliviaclara.com/el/faq' },

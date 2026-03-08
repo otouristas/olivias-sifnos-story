@@ -44,6 +44,7 @@ const App = () => (
         }}
       >
         <ScrollToTop />
+        <EnUsRedirect />
         
         <Routes>
           {/* English routes (default - no prefix) */}

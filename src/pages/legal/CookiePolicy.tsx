@@ -9,7 +9,9 @@ import { ArrowLeft, Cookie, Settings, BarChart, Shield, Mail, Phone } from 'luci
 import SEOHead from '@/components/SEOHead';
 
 const CookiePolicy = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,6 +22,14 @@ const CookiePolicy = () => {
       <SEOHead
         title={t('cookies.title')}
         description={t('cookies.intro')}
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/cookie-policy`}
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/cookie-policy' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/cookie-policy' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/cookie-policy' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/cookie-policy' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/cookie-policy' }
+        ]}
       />
       <Navigation />
 

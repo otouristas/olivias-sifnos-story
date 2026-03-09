@@ -52,6 +52,8 @@ const Navigation = () => {
               src={logo} 
               alt="Villa Olivia Clara" 
               className="h-12 md:h-16 w-auto"
+              width="620"
+              height="165"
             />
           </Link>
 
@@ -157,6 +159,7 @@ const Navigation = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-foreground"
+              aria-label={isOpen ? t('common.close', 'Close') : t('common.open', 'Open')}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

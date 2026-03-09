@@ -100,9 +100,9 @@ const Activity = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div>
-                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.destinations.poliegos.highlights.title')}</h4>
+                        <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.highlights')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          {(t('activity.boatTour.destinations.poliegos.highlights.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                          {((t('activity.boatTour.destinations.poliegos.highlights', { returnObjects: true }) as string[]) || []).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))}
                         </ul>
@@ -155,7 +155,7 @@ const Activity = () => {
                       <div>
                         <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.whatToSee')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          {(t('activity.boatTour.destinations.kimolos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                          {((t('activity.boatTour.destinations.kimolos.highlights', { returnObjects: true }) as string[]) || []).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))}
                         </ul>
@@ -208,7 +208,7 @@ const Activity = () => {
                       <div>
                         <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.highlights')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          {(t('activity.boatTour.destinations.milos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                          {((t('activity.boatTour.destinations.milos.highlights', { returnObjects: true }) as string[]) || []).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))}
                         </ul>
@@ -261,7 +261,7 @@ const Activity = () => {
                       <div>
                         <h4 className="font-semibold text-villa-olive mb-2">{t('activity.boatTour.mustSee')}</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          {(t('activity.boatTour.destinations.sifnos.highlights', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                          {((t('activity.boatTour.destinations.sifnos.highlights', { returnObjects: true }) as string[]) || []).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))}
                         </ul>

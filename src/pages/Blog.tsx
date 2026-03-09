@@ -12,6 +12,7 @@ import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
 // Mock images using existing assets
 import blogImage1 from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import blogImage2 from '@/assets/Sifnos/villages/apollonia.webp';
+import blogImage3 from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
 
 const Blog = () => {
   const { t, i18n } = useTranslation();
@@ -23,19 +24,23 @@ const Blog = () => {
   const blogSlugs = {
     en: {
       sifnosGuide: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
-      villaVsHotel: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison'
+      villaVsHotel: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison',
+      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
     },
     el: {
       sifnosGuide: 'οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα',
-      villaVsHotel: 'πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος'
+      villaVsHotel: 'πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος',
+      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
     },
     fr: {
       sifnosGuide: 'guide-sifnos-grece-villa-luxe',
-      villaVsHotel: 'villa-luxe-vs-hotel-sifnos-grece'
+      villaVsHotel: 'villa-luxe-vs-hotel-sifnos-grece',
+      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
     },
     it: {
       sifnosGuide: 'guida-sifnos-grecia-villa-lusso',
-      villaVsHotel: 'villa-lusso-vs-hotel-sifnos-grecia'
+      villaVsHotel: 'villa-lusso-vs-hotel-sifnos-grecia',
+      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
     }
   };
 
@@ -52,7 +57,7 @@ const Blog = () => {
       publishDate: '2025-11-18',
       readTime: `8 ${t('blog.readTime')}`,
       category: t('blog.posts.sifnosGuide.category'),
-      featured: true
+      featured: false
     },
     {
       id: 2,
@@ -65,6 +70,18 @@ const Blog = () => {
       readTime: `6 ${t('blog.readTime')}`,
       category: t('blog.posts.villaVsHotel.category'),
       featured: false
+    },
+    {
+      id: 3,
+      slug: currentSlugs.sifnosVillas,
+      title: t('blog.posts.sifnosVillas.title'),
+      excerpt: t('blog.posts.sifnosVillas.excerpt'),
+      image: blogImage3,
+      author: 'Elena Philippou',
+      publishDate: '2026-03-09',
+      readTime: `5 ${t('blog.readTime')}`,
+      category: t('blog.posts.sifnosVillas.category'),
+      featured: true
     }
   ];
 
@@ -85,10 +102,10 @@ const Blog = () => {
         ]}
       />
       <Navigation />
-      
+
       {/* Skip to content link for accessibility */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-villa-olive text-white px-4 py-2 rounded z-50"
       >
         Skip to content
@@ -114,8 +131,8 @@ const Blog = () => {
             <Card key={post.id} className="mb-12 border-villa-stone shadow-elegant overflow-hidden animate-fade-in">
               <div className="md:flex">
                 <div className="md:w-1/2">
-                  <img 
-                    src={post.image} 
+                  <img
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-64 md:h-full object-cover"
                     loading="lazy"
@@ -144,10 +161,10 @@ const Blog = () => {
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
                       <time dateTime={post.publishDate}>
-                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
+                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
                         })}
                       </time>
                     </div>
@@ -156,12 +173,12 @@ const Blog = () => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                    <Button asChild variant="villa" size="lg">
-                      <Link to={`${langPrefix}/blog/${post.slug}`}>
-                        {t('blog.readMore')} <ArrowRight size={16} />
-                      </Link>
-                    </Button>
-                  <BlogShare 
+                  <Button asChild variant="villa" size="lg">
+                    <Link to={`${langPrefix}/blog/${post.slug}`}>
+                      {t('blog.readMore')} <ArrowRight size={16} />
+                    </Link>
+                  </Button>
+                  <BlogShare
                     slug={post.slug}
                     title={post.title}
                     description={post.excerpt}
@@ -175,8 +192,8 @@ const Blog = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.filter(post => !post.featured).map(post => (
               <Card key={post.id} className="border-villa-stone shadow-soft overflow-hidden hover:shadow-elegant transition-shadow duration-200 animate-fade-in">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                   loading="lazy"
@@ -201,9 +218,9 @@ const Blog = () => {
                     <div className="flex items-center gap-1">
                       <Calendar size={12} />
                       <time dateTime={post.publishDate}>
-                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', { 
-                          month: 'short', 
-                          day: 'numeric' 
+                        {new Date(post.publishDate).toLocaleDateString(currentLang === 'el' ? 'el-GR' : currentLang === 'fr' ? 'fr-FR' : currentLang === 'it' ? 'it-IT' : 'en-US', {
+                          month: 'short',
+                          day: 'numeric'
                         })}
                       </time>
                     </div>

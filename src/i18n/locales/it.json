@@ -135,12 +135,13 @@
     "title": "Bagni",
     "subtitle": "Sentitevi a casa nel lusso degli eleganti bagni della nostra villa",
     "features": "Caratteristiche",
-    "fullBathrooms": "3 bagni completi, 1 WC",
-    "hotWater": "Acqua calda",
-    "essentials": "Essenziali per il bagno",
+    "fullBathrooms": "3 Bagni Completi",
+    "hotWater": "Acqua Calda",
+    "essentials": "Essenziali per il Bagno",
     "hairDryer": "Asciugacapelli",
-    "poolBathroom": "Bagno dedicato alla piscina",
-    "towelChanges": "Cambio asciugamani due volte a settimana"
+    "poolBathroom": "Bagno Piscina",
+    "towelChanges": "Cambio Asciugamani",
+    "luxuryDesign": "Design di Lusso"
   },
   "living": {
     "title": "Spazi Living",
@@ -265,12 +266,25 @@
         "title": "Villa di Lusso vs Hotel a Sifnos 2026: Perché Villa Olivia Clara Offre l'Esperienza Perfetta",
         "excerpt": "State pianificando il vostro soggiorno a Sifnos? Scoprite i vantaggi di una villa privata di lusso rispetto a un hotel.",
         "category": "Esperienza Villa"
+      },
+      "sifnosVillas": {
+        "title": "Ultimate Guide to Sifnos Villas: Discover Luxury at Villa Olivia Clara",
+        "excerpt": "Find your perfect Sifnos luxury villa. Our complete guide covers private pools, family-friendly options, and why Villa Olivia Clara is the top choice.",
+        "category": "Villas Guide"
       }
     }
   },
   "faq": {
     "title": "Domande Frequenti",
     "subtitle": "Trova risposte alle domande comuni su Villa Olivia Clara",
+    "stillHaveQuestions": "Hai Ancora Domande?",
+    "cantFindAnswer": "Non trovi la risposta che cerchi? Siamo qui per aiutarti! Contattaci direttamente e ti risponderemo il prima possibile.",
+    "contactUs": "Contattaci",
+    "emailUs": "Invia Email",
+    "restaurants": {
+      "title": "Dov'è il ristorante più vicino?",
+      "answer": "I ristoranti più vicini si trovano sul lungomare di Platis Gialos (700m). Ci sono molte opzioni tra cui scegliere, inclusa cucina greca tradizionale, italiana e fusion."
+    },
     "travel": {
       "title": "Come posso viaggiare a Sifnos?",
       "closestAirports": "Aeroporti Più Vicini",
@@ -315,6 +329,26 @@
     "pets": {
       "title": "Gli animali domestici sono ammessi nella proprietà?",
       "answer": "Amiamo gli animali! Tuttavia, per mantenere gli standard più elevati per tutti i nostri ospiti e a causa di potenziali allergie, purtroppo non possiamo accogliere animali domestici a Villa Olivia Clara. Apprezziamo la vostra comprensione."
+    },
+    "bestVilla": {
+      "question": "Villa Olivia Clara è la migliore villa di lusso a Sifnos?",
+      "answer": "Villa Olivia Clara è costantemente valutata come una delle migliori ville di lusso a Sifnos con oltre 45 recensioni a 5 stelle. Situata a Platis Gialos, la nostra villa di 250m² offre piscina privata, vista mare e autentica ospitalità greca."
+    },
+    "guests": {
+      "question": "Quanti ospiti possono soggiornare a Villa Olivia Clara?",
+      "answer": "Villa Olivia Clara ospita comodamente fino a 8 ospiti con 4 camere da letto (2 letti matrimoniali, 4 letti singoli), 4,5 bagni e una culla disponibile su richiesta."
+    },
+    "pool": {
+      "question": "Villa Olivia Clara ha una piscina privata?",
+      "answer": "Sì! La nostra villa dispone di una splendida piscina privata di 12m x 5m con cabana a bordo piscina, bar e vista panoramica sulla baia di Platis Gialos."
+    },
+    "beachDistance": {
+      "question": "Quanto dista Villa Olivia Clara dalla spiaggia di Platis Gialos?",
+      "answer": "La villa dista solo 7 minuti a piedi (2 minuti in auto) dalla famosa spiaggia di Platis Gialos, una delle più belle spiagge Bandiera Blu delle Cicladi."
+    },
+    "vsHotel": {
+      "question": "Villa Olivia Clara è meglio di un hotel a Sifnos?",
+      "answer": "Rispetto agli hotel di Sifnos, Villa Olivia Clara offre privacy completa, piscina privata, cucina completa e più spazio a un prezzo competitivo per persona per gruppi di 4-8."
     }
   },
   "sustainability": {
@@ -506,95 +540,6 @@
     "children": "Bambini",
     "infants": "Neonati",
     "search": "Cerca"
-  },
-  "faq": {
-    "title": "Domande Frequenti",
-    "subtitle": "Trova risposte alle domande comuni su Villa Olivia Clara",
-    "stillHaveQuestions": "Hai Ancora Domande?",
-    "cantFindAnswer": "Non trovi la risposta che cerchi? Siamo qui per aiutarti! Contattaci direttamente e ti risponderemo il prima possibile.",
-    "contactUs": "Contattaci",
-    "emailUs": "Invia Email",
-    "restaurants": {
-      "title": "Dov'è il ristorante più vicino?",
-      "answer": "I ristoranti più vicini si trovano sul lungomare di Platis Gialos (700m). Ci sono molte opzioni tra cui scegliere, inclusa cucina greca tradizionale, italiana e fusion."
-    },
-    "travel": {
-      "title": "Come posso viaggiare a Sifnos?",
-      "closestAirports": "Aeroporti Più Vicini",
-      "athens": "Aeroporto Internazionale di Atene (ATH)",
-      "athensDesc": "3 ore di traghetto dal Porto del Pireo",
-      "mykonos": "Aeroporto di Mykonos (JMK)",
-      "mykonosDesc": "1 ora di traghetto da Mykonos",
-      "privateTransfer": "Servizio di Trasferimento Privato",
-      "transferDesc": "Possiamo organizzare un trasferimento privato dall'Aeroporto di Atene al Porto del Pireo e biglietti del traghetto per Sifnos. Contattaci per dettagli e prezzi."
-    },
-    "carRental": {
-      "title": "Dove posso noleggiare un'auto a Sifnos?",
-      "automatic": "Cambio Automatico e Manuale",
-      "rentACar": "Rent A Car Sifnos",
-      "protoMoto": "Proto Moto Car",
-      "manualOnly": "Solo Cambio Manuale",
-      "autoMoto": "Auto Moto Apollo",
-      "sifnosDrive": "Sifnos Drive"
-    },
-    "arrival": {
-      "title": "Come posso arrivare a Villa Olivia Clara?",
-      "portTransfer": "Servizio Trasferimento dal Porto",
-      "transferDesc": "Offriamo un servizio di trasferimento gratuito dal Porto di Kamares a Villa Olivia Clara. Vi preghiamo di informarci del vostro orario di arrivo almeno 24 ore prima."
-    },
-    "emergency": {
-      "title": "Quali sono i numeri di telefono dei servizi pubblici di Sifnos?",
-      "medical": "Emergenze Mediche",
-      "hospital": "Centro Sanitario di Sifnos",
-      "police": "Stazione di Polizia",
-      "policeNumber": "Polizia di Sifnos",
-      "coastGuard": "Guardia Costiera",
-      "coastGuardNumber": "Guardia Costiera di Sifnos"
-    },
-    "wifi": {
-      "title": "C'è WiFi in tutta la proprietà?",
-      "answer": "Sì! Villa Olivia Clara dispone di WiFi ad alta velocità (200+ Mbps) in tutta la proprietà, incluse tutte le aree interne ed esterne. Perfetto per il lavoro da remoto o per guardare i vostri programmi preferiti in streaming."
-    },
-    "luggage": {
-      "title": "Posso lasciare i miei bagagli prima dell'orario di check-in?",
-      "answer": "Sì, potete lasciare i vostri bagagli prima dell'orario di check-in. Abbiamo un deposito sicuro disponibile. Vi preghiamo di contattarci in anticipo per organizzare l'orario."
-    },
-    "pets": {
-      "title": "Gli animali domestici sono ammessi nella proprietà?",
-      "answer": "Amiamo gli animali! Tuttavia, per mantenere gli standard più elevati per tutti i nostri ospiti e a causa di potenziali allergie, purtroppo non possiamo accogliere animali domestici a Villa Olivia Clara. Apprezziamo la vostra comprensione."
-    },
-    "bestVilla": {
-      "question": "Villa Olivia Clara è la migliore villa di lusso a Sifnos?",
-      "answer": "Villa Olivia Clara è costantemente valutata come una delle migliori ville di lusso a Sifnos con oltre 45 recensioni a 5 stelle. Situata a Platis Gialos, la nostra villa di 250m² offre piscina privata, vista mare e autentica ospitalità greca."
-    },
-    "guests": {
-      "question": "Quanti ospiti possono soggiornare a Villa Olivia Clara?",
-      "answer": "Villa Olivia Clara ospita comodamente fino a 8 ospiti con 4 camere da letto (2 letti matrimoniali, 4 letti singoli), 4,5 bagni e una culla disponibile su richiesta."
-    },
-    "pool": {
-      "question": "Villa Olivia Clara ha una piscina privata?",
-      "answer": "Sì! La nostra villa dispone di una splendida piscina privata di 12m x 5m con cabana a bordo piscina, bar e vista panoramica sulla baia di Platis Gialos."
-    },
-    "beachDistance": {
-      "question": "Quanto dista Villa Olivia Clara dalla spiaggia di Platis Gialos?",
-      "answer": "La villa dista solo 7 minuti a piedi (2 minuti in auto) dalla famosa spiaggia di Platis Gialos, una delle più belle spiagge Bandiera Blu delle Cicladi."
-    },
-    "vsHotel": {
-      "question": "Villa Olivia Clara è meglio di un hotel a Sifnos?",
-      "answer": "Rispetto agli hotel di Sifnos, Villa Olivia Clara offre privacy completa, piscina privata, cucina completa e più spazio a un prezzo competitivo per persona per gruppi di 4-8."
-    }
-  },
-  "bathrooms": {
-    "title": "Bagni",
-    "subtitle": "Sentitevi a casa nel lusso degli eleganti bagni della nostra villa",
-    "features": "Caratteristiche",
-    "fullBathrooms": "3 Bagni Completi",
-    "hotWater": "Acqua Calda",
-    "essentials": "Essenziali per il Bagno",
-    "hairDryer": "Asciugacapelli",
-    "poolBathroom": "Bagno Piscina",
-    "towelChanges": "Cambio Asciugamani",
-    "luxuryDesign": "Design di Lusso"
   },
   "footer": {
     "tagline": "La Vostra Fuga di Lusso a Sifnos",

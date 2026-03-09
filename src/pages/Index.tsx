@@ -18,14 +18,14 @@ import heroImage from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import ImageZoom from '@/components/ImageZoom';
 
 // Villa Gallery Images
-import poolView from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg';
-import villaLinens from '@/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.jpg';
+import poolView from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.webp';
+import villaLinens from '@/assets/villa-gallery/Villa-Olivia-Clara_017_bedroom-linen-detail.webp';
 import elenaHost from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 import poolArea from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
 import livingRoom from '@/assets/villa-gallery/Villa-Olivia-Clara_029_living-room.jpg';
-import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.jpg';
+import kitchen from '@/assets/villa-gallery/Villa-Olivia-Clara_034_kitchen.webp';
 import poolSunbathing from '@/assets/villa-gallery/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg';
-import poolSideCabana from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.jpg';
+import poolSideCabana from '@/assets/villa-gallery/Villa-Olivia-Clara_001_pool-side-cabana.webp';
 import diningAtTerrace from '@/assets/villa-gallery/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg';
 
 const Index = () => {
@@ -33,7 +33,7 @@ const Index = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
-  
+
   const getDateStringPlusDays = (daysToAdd: number): string => {
     const date: Date = new Date();
     date.setDate(date.getDate() + daysToAdd);
@@ -51,7 +51,7 @@ const Index = () => {
 
   function handleSearchSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    
+
     // Generate booking URL with parameters
     const bookingUrl = generateBookingUrl({
       checkin: checkIn,
@@ -61,7 +61,7 @@ const Index = () => {
       children,
       infants,
     });
-    
+
     // Open booking URL in new tab
     window.open(bookingUrl, '_blank', 'noopener,noreferrer');
   }
@@ -84,29 +84,31 @@ const Index = () => {
       <LocalBusinessStructuredData />
       <OrganizationStructuredData />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section id="main-content" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          autoPlay
+          muted
+          loop
           playsInline
           poster={heroImage}
           preload="metadata"
+          // @ts-ignore - React types might be outdated
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/villa-olivia-clara-intro-video.mp4" type="video/mp4" />
           {/* Fallback to image if video fails to load */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
         </video>
-        
+
         {/* Hero Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
-        
+
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-villa-olive/90 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
             <Star className="text-white" size={16} />
@@ -266,7 +268,7 @@ const Index = () => {
       {/* Features Grid */}
       <section className="py-20 bg-gradient-to-br from-sand-light to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 text-center">
@@ -291,55 +293,55 @@ const Index = () => {
                     <Shield className="w-4 h-4" />
                     {t('villa.parking')}
                   </li>
-              </ul>
+                </ul>
               </CardContent>
             </Card>
-            
+
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="text-villa-olive" size={32} />
-            </div>
+                </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.location')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
                   <li className="font-semibold text-villa-olive">{t('villa.platisGialos')}</li>
-                <li>{t('villa.walkToBeach')}</li>
-                <li>{t('villa.toCenter')}</li>
-                <li>{t('villa.toPort')}</li>
-              </ul>
+                  <li>{t('villa.walkToBeach')}</li>
+                  <li>{t('villa.toCenter')}</li>
+                  <li>{t('villa.toPort')}</li>
+                </ul>
               </CardContent>
             </Card>
-            
+
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Star className="text-villa-olive" size={32} />
-            </div>
+                </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.amenities')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                <li>{t('villa.poolLounge')}</li>
-                <li>{t('villa.gardenDining')}</li>
-                <li>{t('villa.kitchenBBQ')}</li>
+                  <li>{t('villa.poolLounge')}</li>
+                  <li>{t('villa.gardenDining')}</li>
+                  <li>{t('villa.kitchenBBQ')}</li>
                   <li className="flex items-center justify-center gap-2">
                     <Wifi className="w-4 h-4" />
                     {t('villa.wifi')}
                   </li>
-              </ul>
+                </ul>
               </CardContent>
             </Card>
-            
+
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-villa-olive-light rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <ChefHat className="text-villa-olive" size={32} />
-            </div>
+                </div>
                 <h3 className="text-xl font-bold text-villa-olive mb-4">{t('villa.services')}</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                <li>{t('villa.housekeeping')}</li>
-                <li>{t('villa.childcare')}</li>
-                <li>{t('villa.privateChef')}</li>
-                <li>{t('villa.events')}</li>
-              </ul>
+                  <li>{t('villa.housekeeping')}</li>
+                  <li>{t('villa.childcare')}</li>
+                  <li>{t('villa.privateChef')}</li>
+                  <li>{t('villa.events')}</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -352,63 +354,63 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-villa-olive mb-4">
               {t('villaDifference.title')}
-          </h2>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('villaDifference.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <img
-                    src={heroImage} 
-                    alt="Platis Gialos beach view from Villa Olivia Clara, Sifnos" 
+                    src={heroImage}
+                    alt="Platis Gialos beach view from Villa Olivia Clara, Sifnos"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.poolView.subtitle')}</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.poolView.subtitle')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('villaDifference.poolView.description')}
                   </p>
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={poolSideCabana} 
-                    alt="Pool side cabana at Villa Olivia Clara" 
+                    src={poolSideCabana}
+                    alt="Pool side cabana at Villa Olivia Clara"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.villaLinens.subtitle')}</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.villaLinens.subtitle')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('villaDifference.villaLinens.description')}
                   </p>
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="border-villa-stone shadow-soft hover:shadow-elegant transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <ImageZoom
-                    src={diningAtTerrace} 
-                    alt="Dining at the terrace at Villa Olivia Clara" 
+                    src={diningAtTerrace}
+                    alt="Dining at the terrace at Villa Olivia Clara"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-8">
-                  <h4 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.elenaHost.subtitle')}</h4>
+                  <h3 className="text-2xl font-bold text-villa-olive mb-4">{t('villaDifference.elenaHost.subtitle')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('villaDifference.elenaHost.description')}
                   </p>
@@ -438,7 +440,7 @@ const Index = () => {
                 <VirtualTour />
               </CardContent>
             </Card>
-            
+
           </div>
         </div>
       </section>
@@ -448,17 +450,17 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-          <h2 className="text-4xl font-bold mb-6 text-villa-olive">
-            {t('sifnosSection.title')}
-          </h2>
+              <h2 className="text-4xl font-bold mb-6 text-villa-olive">
+                {t('sifnosSection.title')}
+              </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            {t('sifnosSection.description')}
-          </p>
+                {t('sifnosSection.description')}
+              </p>
               <Button asChild variant="villa" size="lg">
-            <Link to="/sifnos">{t('sifnosSection.discoverButton')}</Link>
-          </Button>
+                <Link to="/sifnos">{t('sifnosSection.discoverButton')}</Link>
+              </Button>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <Card className="border-villa-stone shadow-soft overflow-hidden group">
@@ -480,7 +482,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </div>
-              
+
               <div className="space-y-4 mt-8">
                 <Card className="border-villa-stone shadow-soft overflow-hidden group">
                   <CardContent className="p-0">

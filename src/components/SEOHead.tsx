@@ -30,7 +30,7 @@ export default function SEOHead({
 
     // Update or create meta description
     updateMetaTag('name', 'description', description);
-    
+
     // Update or create meta keywords
     if (keywords) {
       updateMetaTag('name', 'keywords', keywords);
@@ -41,7 +41,7 @@ export default function SEOHead({
     updateMetaTag('property', 'og:description', description);
     updateMetaTag('property', 'og:image', ogImage);
     updateMetaTag('property', 'og:type', 'website');
-    
+
     if (canonicalUrl) {
       updateMetaTag('property', 'og:url', canonicalUrl);
     }
@@ -55,11 +55,17 @@ export default function SEOHead({
       'it': 'it_IT'
     };
     updateMetaTag('property', 'og:locale', localeMap[currentLang] || 'en_US');
-    
+
+    // Remove existing og:locale:alternate tags
+    document.querySelectorAll('meta[property="og:locale:alternate"]').forEach(el => el.remove());
+
     // Add og:locale:alternate for other languages
     const otherLocales = Object.entries(localeMap).filter(([lang]) => lang !== currentLang);
     otherLocales.forEach(([, locale]) => {
-      updateMetaTag('property', 'og:locale:alternate', locale);
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:locale:alternate');
+      meta.content = locale;
+      document.head.appendChild(meta);
     });
 
     // Update Twitter Card tags
@@ -84,7 +90,7 @@ export default function SEOHead({
     if (alternateLanguages.length > 0) {
       // Remove existing hreflang tags
       document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-      
+
       // Add new hreflang tags
       alternateLanguages.forEach(({ lang, url }) => {
         const link = document.createElement('link');
@@ -102,7 +108,7 @@ export default function SEOHead({
 function updateMetaTag(attribute: string, value: string, content: string) {
   const selector = `meta[${attribute}="${value}"]`;
   let meta = document.querySelector(selector) as HTMLMetaElement;
-  
+
   if (meta) {
     meta.content = content;
   } else {
@@ -115,7 +121,7 @@ function updateMetaTag(attribute: string, value: string, content: string) {
 
 function updateCanonicalUrl(url: string) {
   let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-  
+
   if (canonical) {
     canonical.href = url;
   } else {

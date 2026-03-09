@@ -10,7 +10,9 @@ import { ArrowLeft, FileText, Shield, AlertTriangle, Phone, Mail, Clock } from '
 import SEOHead from '@/components/SEOHead';
 
 const RentalConditions = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,6 +23,14 @@ const RentalConditions = () => {
       <SEOHead
         title={t('rental.title')}
         description={t('rental.intro')}
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/rental-conditions`}
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/rental-conditions' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/rental-conditions' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/rental-conditions' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/rental-conditions' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/rental-conditions' }
+        ]}
       />
       <Navigation />
 

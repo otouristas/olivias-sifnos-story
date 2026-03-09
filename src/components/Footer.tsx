@@ -16,16 +16,18 @@ const Footer = () => {
       {/* Background with subtle pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-villa-olive-light via-villa-olive-light to-sand opacity-50"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:20px_20px]"></div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
           {/* Logo and Tagline */}
           <div className="text-center mb-12">
-            <img 
-              src={logo} 
-              alt="Villa Olivia Clara" 
+            <img
+              src={logo}
+              alt="Villa Olivia Clara"
               className="h-20 w-auto mx-auto mb-6"
+              width="620"
+              height="165"
             />
             <p className="text-villa-olive text-lg font-medium mb-2">{t('footer.tagline')}</p>
             <p className="text-muted-foreground max-w-md mx-auto">
@@ -88,17 +90,17 @@ const Footer = () => {
                     <p>Cyclades, Greece</p>
                   </div>
                 </div>
-                
-                <a 
-                  href="mailto:elena@villaoliviaclara.com" 
+
+                <a
+                  href="mailto:elena@villaoliviaclara.com"
                   className="flex items-center gap-3 text-sm text-villa-olive hover:text-villa-olive-dark transition-colors group"
                 >
                   <Mail size={16} className="flex-shrink-0" />
                   <span className="group-hover:underline">elena@villaoliviaclara.com</span>
                 </a>
-                
-                <a 
-                  href="tel:+306971919382" 
+
+                <a
+                  href="tel:+306971919382"
                   className="flex items-center gap-3 text-sm text-villa-olive hover:text-villa-olive-dark transition-colors group"
                 >
                   <Phone size={16} className="flex-shrink-0" />
@@ -114,9 +116,9 @@ const Footer = () => {
                 <p className="text-sm text-muted-foreground">
                   {t('footer.planGetaway')}
                 </p>
-                <a 
-                  href="https://book.villaoliviaclara.com/" 
-                  target="_blank" 
+                <a
+                  href="https://book.villaoliviaclara.com/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-villa-olive text-white text-sm font-medium rounded-lg hover:bg-villa-olive/90 transition-colors"
                 >
@@ -141,9 +143,9 @@ const Footer = () => {
             {/* Branding */}
             <div className="text-center lg:text-right">
               <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-muted-foreground">
-                <a 
-                  href="https://anotherseoGuru.com" 
-                  target="_blank" 
+                <a
+                  href="https://anotherseoGuru.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 hover:text-villa-olive transition-colors group"
                 >
@@ -151,18 +153,43 @@ const Footer = () => {
                   <span className="font-semibold group-hover:underline">AnotherSEOGuru</span>
                   <ExternalLink size={10} />
                 </a>
-                
+
                 <span className="hidden sm:inline text-villa-olive/40">•</span>
-                
-                <a 
-                  href="https://touristas.ai" 
-                  target="_blank" 
+
+                <a
+                  href="https://touristas.ai"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 hover:text-villa-olive transition-colors group"
                 >
                   <span>{t('footer.poweredBy')}</span>
                   <span className="font-semibold group-hover:underline">Touristas AI</span>
                   <ExternalLink size={10} />
+                </a>
+
+                <span className="hidden sm:inline text-villa-olive/40">•</span>
+
+                <a className="flex-shrink-0 group relative z-[101]" href="https://discovercyclades.gr/en" target="_blank" rel="noopener noreferrer">
+                  <div className="relative">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 rounded-xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500"></div>
+                    <div className="relative transition-transform duration-500 group-hover:-translate-y-1">
+                      <div className="flex items-center gap-1.5">
+                        <img alt="Discover Cyclades" loading="lazy" width="24" height="24" decoding="async" className="text-blue-600" src="https://discovercyclades.gr/favicon.svg" />
+                        <div className="flex flex-col text-left">
+                          <span className="text-sm font-bold leading-tight bg-gradient-to-r from-[#1E2E48] to-[#E3D7C3] bg-clip-text text-transparent">Discover Cyclades</span>
+                          <div className="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sparkles text-cyan-600" aria-hidden="true">
+                              <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                              <path d="M20 2v4"></path>
+                              <path d="M22 4h-4"></path>
+                              <circle cx="4" cy="20" r="2"></circle>
+                            </svg>
+                            <span className="text-[9px] tracking-wider uppercase font-medium text-gray-500 block">PARTNER</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
@@ -171,10 +198,10 @@ const Footer = () => {
           {/* Centered Credits and Legal Info */}
           <div className="text-center space-y-3 pt-6 border-t border-villa-olive/10">
             <p className="text-xs text-muted-foreground">
-              {t('footer.photoCredit')}: 
-              <a 
-                href="https://www.instagram.com/vivikofinaki/" 
-                target="_blank" 
+              {t('footer.photoCredit')}:
+              <a
+                href="https://www.instagram.com/vivikofinaki/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="ml-1 font-medium text-villa-olive hover:text-villa-olive-dark transition-colors hover:underline"
               >

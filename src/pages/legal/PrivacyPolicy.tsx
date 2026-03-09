@@ -6,7 +6,9 @@ import Footer from '../../components/Footer';
 import SEOHead from '../../components/SEOHead';
 
 const PrivacyPolicy = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,6 +19,14 @@ const PrivacyPolicy = () => {
       <SEOHead
         title={t('privacy.title')}
         description={t('privacy.subtitle')}
+        canonicalUrl={`https://villaoliviaclara.com${langPrefix}/privacy-policy`}
+        alternateLanguages={[
+          { lang: 'en', url: 'https://villaoliviaclara.com/privacy-policy' },
+          { lang: 'el', url: 'https://villaoliviaclara.com/el/privacy-policy' },
+          { lang: 'fr', url: 'https://villaoliviaclara.com/fr/privacy-policy' },
+          { lang: 'it', url: 'https://villaoliviaclara.com/it/privacy-policy' },
+          { lang: 'x-default', url: 'https://villaoliviaclara.com/privacy-policy' }
+        ]}
       />
 
       <div className="container mx-auto px-4 py-8 md:py-12 max-w-4xl">

@@ -130,6 +130,8 @@ const SifnosVillas = () => {
                         alt="View of Apollonia village representing the authentic beauty surrounding Sifnos luxury villas"
                         className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-elegant"
                         loading="eager"
+                        width="1200"
+                        height="800"
                     />
                 </header>
 
@@ -144,6 +146,8 @@ const SifnosVillas = () => {
                         alt="The stunning private heated pool at Villa Olivia Clara in Sifnos"
                         className="w-full h-auto rounded-xl my-8 shadow-soft"
                         loading="lazy"
+                        width="1200"
+                        height="800"
                     />
 
                     <p>
@@ -208,6 +212,8 @@ const SifnosVillas = () => {
                         alt="The spacious and luxurious living room inside a top Sifnos villa"
                         className="w-full h-auto rounded-xl my-8 shadow-soft"
                         loading="lazy"
+                        width="1200"
+                        height="800"
                     />
 
                     <h2 className="text-2xl font-bold text-villa-olive mt-12 mb-6">What Sets Sifnos Luxury Villas Apart</h2>
@@ -236,6 +242,8 @@ const SifnosVillas = () => {
                         alt="Platis Gialos beach, a short walk from the best Sifnos luxury villas"
                         className="w-full h-auto rounded-xl my-8 shadow-soft"
                         loading="lazy"
+                        width="1200"
+                        height="800"
                     />
 
                     <h2 className="text-2xl font-bold text-villa-olive mt-12 mb-6">Essential Sifnos Trip Planning</h2>
@@ -260,6 +268,8 @@ const SifnosVillas = () => {
                         alt="Aerial view of Villa Olivia Clara showcasing its unbeatable location"
                         className="w-full h-auto rounded-xl my-8 shadow-soft"
                         loading="lazy"
+                        width="1200"
+                        height="800"
                     />
 
                     <h2 className="text-2xl font-bold text-villa-olive mt-12 mb-6">Book Villa Olivia Clara Today</h2>

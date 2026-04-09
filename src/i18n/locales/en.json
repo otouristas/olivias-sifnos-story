@@ -258,6 +258,11 @@
         "title": "Ultimate Guide to Sifnos Villas: Discover Luxury at Villa Olivia Clara",
         "excerpt": "Find your perfect Sifnos luxury villa. Our complete guide covers private pools, family-friendly options, and why Villa Olivia Clara is the top choice.",
         "category": "Villas Guide"
+      },
+      "thingsToDo": {
+        "title": "Things to Do in Sifnos 2026: Complete Guide to Beaches, Hiking, Food & Culture",
+        "excerpt": "Discover the best things to do in Sifnos — from stunning beaches and ancient hiking trails to world-class food, pottery workshops, and boat tours. Your complete island guide.",
+        "category": "Activities Guide"
       }
     }
   },
@@ -1592,6 +1597,184 @@
       "text": "If you have any questions about these rental conditions or need clarification on any terms, please don't hesitate to contact us. We're here to help ensure your stay is comfortable and enjoyable.",
       "contact": "Contact Us",
       "call": "Call Us"
+    }
+  },
+  "blogThingsToDo": {
+    "seo": {
+      "title": "Things to Do in Sifnos 2026 | Beaches, Hiking, Food & Culture",
+      "description": "Complete guide to things to do in Sifnos, Greece. Best beaches, hiking trails, local food, pottery workshops, monasteries, and boat tours.",
+      "keywords": "things to do in sifnos, sifnos activities, sifnos beaches, sifnos hiking, sifnos food, sifnos pottery, sifnos monasteries, sifnos boat tours"
+    },
+    "h1": "Things to Do in Sifnos: The Complete 2026 Guide to Beaches, Hiking, Food & Culture",
+    "intro": {
+      "p1": "Sifnos is one of the Cyclades' best-kept secrets — an island where whitewashed villages cascade down hillsides, ancient hiking trails connect monasteries to secluded beaches, and the food is among the finest in Greece. Unlike its more touristic neighbours Mykonos and Santorini, Sifnos rewards travellers who seek authenticity over spectacle.",
+      "p2": "Whether you're planning a week-long family holiday or a romantic escape, this guide covers every worthwhile experience on the island — from the golden sands of Platis Gialos to the hilltop pottery workshops that have been operating for centuries. We've lived on Sifnos for over a decade, and these are our honest recommendations."
+    },
+    "beaches": {
+      "title": "Best Beaches in Sifnos",
+      "intro": "Sifnos has over 70 beaches, ranging from organised sandy shores with sunbeds and tavernas to wild, rock-fringed coves accessible only on foot. The island's coastline faces multiple directions, so there's almost always a sheltered beach regardless of wind conditions.",
+      "platis": {
+        "title": "Platis Gialos — Best Family Beach",
+        "desc": "The longest sandy beach on Sifnos stretches for nearly a kilometre along the southern coast. Shallow, warm waters make it ideal for families with children. A row of excellent tavernas line the beachfront, and the bus stops directly at the sand. Villa Olivia Clara is just 700 metres from this beach — a 10-minute walk through an olive grove."
+      },
+      "chrysopigi": {
+        "title": "Chrysopigi — Most Photogenic",
+        "desc": "Home to the iconic Chrysopigi Monastery perched on a rocky promontory, this beach is split into two small coves of crystal-clear turquoise water. It's the most photographed spot on Sifnos and deservedly so. Visit early morning or late afternoon to avoid crowds in peak season."
+      },
+      "vathi": {
+        "title": "Vathi — Best for Seclusion",
+        "desc": "Tucked into a sheltered bay on the western coast, Vathi feels like stepping back in time. The small settlement has a handful of excellent tavernas serving fresh fish and the beach is never crowded, even in August. Accessible by car, bus, or a scenic 45-minute hike from Platis Gialos."
+      },
+      "faros": {
+        "title": "Faros — Best for Snorkelling",
+        "desc": "A charming fishing village with three adjacent beaches. The rocky seabed and exceptionally clear waters make Faros the best snorkelling spot on the island. Walk the coastal path to the adjacent Glypho and Fassolou beaches for even more privacy."
+      },
+      "villaLink": "Explore all the beaches of Sifnos in our dedicated guide.",
+      "villaLinkText": "See all Sifnos beaches →"
+    },
+    "villages": {
+      "title": "Traditional Villages & Culture in Sifnos",
+      "intro": "The villages of Sifnos are connected by a network of cobblestone paths that have been used for centuries. Each has its own character, from the bustling capital to medieval hilltop settlements.",
+      "apollonia": {
+        "title": "Apollonia — The Capital",
+        "desc": "Spread across three hills, Apollonia is the island's vibrant hub. The main pedestrian street (Steno) comes alive after sunset with boutiques, galleries, bars and restaurants. Don't miss the Folk Art Museum and the Church of Panagia Ouranophora. Apollonia connects seamlessly to neighbouring Artemonas — you'll barely notice where one village ends and the other begins."
+      },
+      "kastro": {
+        "title": "Kastro — The Medieval Heart",
+        "desc": "The ancient capital of Sifnos sits on a dramatic clifftop overlooking the Aegean Sea. Built in the 14th century, its concentric layout of narrow alleys and arched passages is a living museum. Visit the Archaeological Museum, walk the old walls, and stay for the legendary sunset. One of the most atmospheric villages in all of the Cyclades."
+      },
+      "artemonas": {
+        "title": "Artemonas — The Elegant Quarter",
+        "desc": "Known for its neoclassical mansions and exceptional pastry shops, Artemonas is the quieter, more refined counterpart to Apollonia. Try the famous amygdalota (almond sweets) at Theodorou bakery, and visit the impressive churches of Agios Georgios and Panagia ta Kochi."
+      },
+      "sifnosLink": "Learn more about the island in our comprehensive Sifnos guide.",
+      "sifnosLinkText": "Read the full Sifnos guide →"
+    },
+    "hiking": {
+      "title": "Hiking Trails in Sifnos",
+      "intro": "Sifnos has one of the best-preserved trail networks in the Cyclades, with over 100 km of signed paths connecting villages, monasteries, and beaches. The trails are well-maintained and suitable for all fitness levels, with stone walls and wildflowers lining most routes. The best hiking months are April–June and September–October, when temperatures are comfortable and the landscape is lush.",
+      "trails": {
+        "title": "Top 4 Hiking Routes",
+        "t1": {
+          "name": "Apollonia to Kastro",
+          "desc": "3 km, 45 minutes. A gentle walk through olive groves with panoramic views. Ends at the medieval village — time it for sunset."
+        },
+        "t2": {
+          "name": "Vathi to Platis Gialos",
+          "desc": "5 km, 1.5 hours. The most scenic coastal trail on Sifnos, passing the Monastery of Fyrrogia and several hidden coves."
+        },
+        "t3": {
+          "name": "Artemonas to Chrysopigi",
+          "desc": "6 km, 2 hours. A varied trail descending from the village through agricultural terraces to the famous monastery beach."
+        },
+        "t4": {
+          "name": "Profitis Ilias Summit",
+          "desc": "4 km round trip, 1.5 hours. The highest point on Sifnos (682m) with 360° views of the Cyclades. Start from Artemonas."
+        }
+      },
+      "tips": "Tip: Download the Sifnos Trails app for offline GPS maps. Bring water, sun protection, and sturdy shoes — the terrain is rocky in places. Our hosts at Villa Olivia Clara can recommend the best routes based on your fitness level and interests."
+    },
+    "food": {
+      "title": "Sifnos Food & Gastronomy",
+      "intro": "Sifnos is widely regarded as the culinary capital of the Cyclades. The island's food tradition is rooted in slow-cooked dishes prepared in clay pots (the famous 'tsikali'), local herbs, capers, and exceptional olive oil. Nikolaos Tselementes, the father of modern Greek cooking, was born here — and the island takes its culinary heritage seriously.",
+      "dishes": {
+        "title": "Must-Try Sifnos Dishes",
+        "d1": {
+          "name": "Revithada",
+          "desc": "Slow-baked chickpea stew cooked overnight in a wood-fired oven. The island's signature dish, traditionally prepared on Sundays."
+        },
+        "d2": {
+          "name": "Mastelo",
+          "desc": "Lamb or kid goat slow-roasted with dill and wine in a sealed clay pot. Tender, aromatic, unforgettable."
+        },
+        "d3": {
+          "name": "Kaparosalata",
+          "desc": "A refreshing salad of locally foraged capers, tomatoes, and onions dressed with Sifnos olive oil."
+        },
+        "d4": {
+          "name": "Amygdalota",
+          "desc": "Delicate almond cookies dusted with powdered sugar — the island's most famous sweet, found in every bakery."
+        }
+      },
+      "cooking": {
+        "title": "Cooking Classes in Sifnos",
+        "desc": "Several local chefs offer hands-on cooking classes where you learn to prepare traditional Sifniot dishes using seasonal ingredients from the island. Classes typically include a market visit, 3–4 hours of cooking, and a shared meal with local wine. We can arrange cooking class bookings directly from Villa Olivia Clara — just ask your hosts."
+      }
+    },
+    "pottery": {
+      "title": "Pottery Workshops in Sifnos",
+      "intro": "Sifnos has been a centre of pottery-making since antiquity, thanks to its abundant deposits of high-quality clay. The island's potters have supplied the Cyclades with cooking vessels, storage jars, and decorative pieces for over 3,000 years. Today, several traditional workshops continue this craft.",
+      "workshops": "Visit workshops in Vathi and Kamares where master potters demonstrate traditional wheel-throwing techniques and allow visitors to try their hand at the craft. Many studios sell beautifully crafted pieces — from functional cookware to decorative art — at very reasonable prices. A hand-thrown Sifnos pot makes the perfect souvenir.",
+      "tradition": "The island celebrates its pottery tradition each September during the annual Pottery Festival, where artisans display their work and offer live demonstrations. The Archaeological Museum in Kastro also has an impressive collection of ancient Sifniot ceramics."
+    },
+    "monasteries": {
+      "title": "Monasteries & Churches of Sifnos",
+      "intro": "Sifnos has over 360 churches and monasteries — more per square kilometre than almost any other Greek island. These range from grand hilltop monasteries to tiny whitewashed chapels tucked into cliffsides. Visiting them is one of the most rewarding activities on the island.",
+      "chrysopigi": {
+        "title": "Panagia Chrysopigi",
+        "desc": "The island's patron monastery, spectacularly positioned on a rocky cape connected to the mainland by a stone bridge. Built in 1650, it houses a revered icon of the Virgin Mary. The feast day celebration on Ascension Thursday is one of the biggest events on Sifnos."
+      },
+      "vryssi": {
+        "title": "Monastery of Vryssi (Panagia tou Vounou)",
+        "desc": "Perched on a hilltop near Exampela, this 17th-century monastery offers commanding views of the entire island. The small church museum houses ecclesiastical art and manuscripts. A beautiful 30-minute walk from Apollonia."
+      },
+      "prophet": {
+        "title": "Profitis Ilias Monastery",
+        "desc": "Located at the island's highest point (682m), this monastery rewards hikers with panoramic views stretching to Paros, Naxos, and Serifos. The climb from Artemonas takes about 45 minutes and is one of the most popular hikes on Sifnos."
+      }
+    },
+    "boatTours": {
+      "title": "Boat Tours from Sifnos",
+      "intro": "A boat tour is the best way to discover the uninhabited islands and hidden coastline around Sifnos. Full-day and half-day excursions depart from Kamares and Platis Gialos throughout the summer season.",
+      "destinations": "The most popular route visits Polyegos — one of the largest uninhabited islands in the Mediterranean — with its dramatic sea caves and pristine swimming spots. Other tours head to Kimolos, the nearby island known for its hot springs and volcanic landscape, or circle Sifnos itself to access remote beaches impossible to reach by land.",
+      "linkText": "We organise private and group boat tours for our villa guests.",
+      "linkLabel": "See our boat tour options →"
+    },
+    "whereToStay": {
+      "title": "Where to Stay in Sifnos",
+      "intro": "The best base for exploring Sifnos is the southern coast near Platis Gialos. You're within walking distance of the best beach, a short drive from Apollonia and Kastro, and perfectly positioned for hiking trails heading in every direction.",
+      "villaHighlight": "Villa Olivia Clara sits in an elevated position above Platis Gialos, offering panoramic Aegean views, a private heated pool, and four bedrooms for up to 8 guests. Our hosts Elena and family have lived on Sifnos for over a decade and provide personalised recommendations, restaurant bookings, boat tour arrangements, and complimentary port transfers. It's not just a place to stay — it's your gateway to experiencing Sifnos like a local.",
+      "ctaVilla": "Explore Villa Olivia Clara",
+      "ctaVillas": "See Best Sifnos Villas"
+    },
+    "faqTitle": "Frequently Asked Questions About Things to Do in Sifnos",
+    "faq": {
+      "q1": "What are the best things to do in Sifnos with kids?",
+      "a1": "Sifnos is exceptionally family-friendly. The best activities include swimming at Platis Gialos beach (shallow, calm waters), pottery workshops in Vathi, easy hiking trails like Apollonia to Kastro, and boat tours to Polyegos. Most tavernas welcome children warmly.",
+      "q2": "How many days do you need in Sifnos?",
+      "a2": "We recommend 5–7 days to fully experience Sifnos without rushing. This gives you time for 2–3 beach days, a couple of hikes, village exploration, a boat tour, and plenty of leisurely meals. Even a long weekend (3–4 days) is enough to see the highlights.",
+      "q3": "Is Sifnos good for hiking?",
+      "a3": "Sifnos is one of the best hiking islands in the Cyclades, with over 100 km of signed trails. Routes range from easy 30-minute village walks to challenging 3-hour coastal treks. Spring (April–June) and autumn (September–October) offer the best conditions.",
+      "q4": "What is Sifnos famous for?",
+      "a4": "Sifnos is famous for its exceptional food (especially revithada and mastelo), traditional pottery, over 360 churches and monasteries, beautiful hiking trails, and some of the best beaches in the Cyclades. It's also the birthplace of Nikolaos Tselementes, the father of modern Greek cuisine.",
+      "q5": "Can you do a day trip to Sifnos?",
+      "a5": "While possible by fast ferry from Milos (30 min) or Serifos (30 min), a day trip doesn't do Sifnos justice. The island's charm unfolds slowly — through evening village walks, sunset at Kastro, and long lunches at beachside tavernas. We recommend staying at least 3 nights.",
+      "q6": "What water activities are available in Sifnos?",
+      "a6": "Sifnos offers excellent swimming at dozens of beaches, snorkelling at Faros and Chrysopigi, kayaking, paddleboarding, and boat tours to Polyegos and Kimolos. Some beaches also offer windsurfing when the meltemi wind blows.",
+      "q7": "Where is the best sunset in Sifnos?",
+      "a7": "The best sunset spot is Kastro, where you can watch the sun sink into the Aegean from the medieval walls. The Sunset Bar in Kastro is legendary. Alternative sunset spots include Profitis Ilias summit and the terrace at Villa Olivia Clara.",
+      "q8": "Is Sifnos expensive compared to other Greek islands?",
+      "a8": "Sifnos is mid-range compared to luxury-priced Mykonos and Santorini, but slightly pricier than lesser-known islands like Serifos or Kimolos. Expect to pay €15–25 per person for a taverna meal and €150–500/night for accommodation depending on the season and property type.",
+      "q9": "When is the best time to visit Sifnos?",
+      "a9": "June and September are the sweet spot — warm enough to swim, fewer crowds than July–August, and lower prices. May and October are perfect for hiking but the sea may be cool. July–August are busy and hot, but the island handles it well.",
+      "q10": "How do I get to Sifnos?",
+      "a10": "Sifnos is reached by ferry from Athens' Piraeus port (2.5–5 hours depending on the ferry type). There's no airport on Sifnos. You can also ferry from Milos (30 min), Serifos (30 min), or Mykonos (2.5 hours). We arrange complimentary port transfers for Villa Olivia Clara guests."
+    },
+    "cta": {
+      "title": "Plan Your Sifnos Adventure",
+      "desc": "Stay at Villa Olivia Clara and experience everything Sifnos has to offer. Our local hosts will help you plan the perfect itinerary — from hidden beaches to the best tavernas."
+    },
+    "images": {
+      "hero": "Platis Gialos beach in Sifnos Greece with turquoise waters and golden sand",
+      "platisGialos": "Platis Gialos beach Sifnos — best family beach with shallow waters",
+      "chrysopigi": "Chrysopigi Monastery and beach in Sifnos with crystal-clear water",
+      "vathi": "Vathi bay Sifnos — secluded beach with traditional tavernas",
+      "faros": "Faros fishing village Sifnos — best snorkelling spot on the island",
+      "apollonia": "Apollonia village Sifnos — the island capital with whitewashed buildings",
+      "kastro": "Kastro medieval village Sifnos — clifftop settlement with Aegean views",
+      "artemonas": "Artemonas village Sifnos — elegant quarter with neoclassical mansions",
+      "dining": "Outdoor dining terrace at a Sifnos villa overlooking the Aegean Sea",
+      "villa": "Villa Olivia Clara private pool with panoramic sea views in Sifnos"
     }
   }
 }

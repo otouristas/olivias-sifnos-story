@@ -271,6 +271,11 @@
         "title": "Ultimate Guide to Sifnos Villas: Discover Luxury at Villa Olivia Clara",
         "excerpt": "Find your perfect Sifnos luxury villa. Our complete guide covers private pools, family-friendly options, and why Villa Olivia Clara is the top choice.",
         "category": "Villas Guide"
+      },
+      "thingsToDo": {
+        "title": "Que Faire à Sifnos 2026 : Guide Complet des Plages, Randonnées, Gastronomie & Culture",
+        "excerpt": "Découvrez les meilleures activités à Sifnos — des plages magnifiques aux sentiers de randonnée, cuisine locale, ateliers de poterie et excursions en bateau.",
+        "category": "Guide d'Activités"
       }
     }
   },
@@ -587,5 +592,183 @@
     "poweredBy": "Propulsé par",
     "photoCredit": "Crédit Photos Sifnos",
     "registryInfo": "Inscrit au registre national grec des locations de vacances"
+  },
+  "blogThingsToDo": {
+    "seo": {
+      "title": "Que Faire à Sifnos 2026 | Plages, Randonnées, Gastronomie & Culture",
+      "description": "Guide complet des activités à Sifnos, Grèce. Plages, sentiers de randonnée, cuisine locale, ateliers de poterie et excursions en bateau.",
+      "keywords": "que faire à sifnos, activités sifnos, plages sifnos, randonnée sifnos, gastronomie sifnos, poterie sifnos"
+    },
+    "h1": "Que Faire à Sifnos : Le Guide Complet 2026 des Plages, Randonnées, Gastronomie & Culture",
+    "intro": {
+      "p1": "Sifnos est l'un des secrets les mieux gardés des Cyclades — une île où les villages blanchis à la chaux cascadent sur les collines, d'anciens sentiers relient les monastères aux plages secrètes, et la cuisine est parmi les meilleures de Grèce.",
+      "p2": "Que vous planifiez des vacances en famille ou une escapade romantique, ce guide couvre chaque expérience qui vaut le détour sur l'île. Nous vivons à Sifnos depuis plus d'une décennie et voici nos recommandations sincères."
+    },
+    "beaches": {
+      "title": "Les Plus Belles Plages de Sifnos",
+      "intro": "Sifnos compte plus de 70 plages, des rivages de sable organisés avec transats et tavernes aux criques sauvages accessibles uniquement à pied.",
+      "platis": {
+        "title": "Platis Gialos — Meilleure Plage Familiale",
+        "desc": "La plus longue plage de sable de Sifnos s'étend sur près d'un kilomètre. Les eaux peu profondes et chaudes sont idéales pour les familles. Villa Olivia Clara n'est qu'à 700 mètres — 10 minutes à pied à travers une oliveraie."
+      },
+      "chrysopigi": {
+        "title": "Chrysopigi — La Plus Photogénique",
+        "desc": "Dominée par l'emblématique monastère de Chrysopigi, cette plage se divise en deux petites criques aux eaux turquoise cristallines. L'endroit le plus photographié de Sifnos."
+      },
+      "vathi": {
+        "title": "Vathi — Meilleure pour l'Isolement",
+        "desc": "Nichée dans une baie abritée sur la côte ouest, Vathi semble figée dans le temps. Le petit village possède d'excellentes tavernes de poisson frais."
+      },
+      "faros": {
+        "title": "Faros — Meilleure pour la Plongée avec Tuba",
+        "desc": "Un charmant village de pêcheurs avec trois plages adjacentes. Le fond rocheux et les eaux exceptionnellement claires font de Faros le meilleur spot de snorkelling de l'île."
+      },
+      "villaLink": "Explorez toutes les plages de Sifnos dans notre guide dédié.",
+      "villaLinkText": "Voir toutes les plages →"
+    },
+    "villages": {
+      "title": "Villages Traditionnels & Culture à Sifnos",
+      "intro": "Les villages de Sifnos sont reliés par un réseau de chemins pavés utilisés depuis des siècles.",
+      "apollonia": {
+        "title": "Apollonia — La Capitale",
+        "desc": "Étendue sur trois collines, Apollonia est le cœur vibrant de l'île. La rue piétonne principale (Steno) s'anime après le coucher du soleil avec boutiques, galeries, bars et restaurants."
+      },
+      "kastro": {
+        "title": "Kastro — Le Cœur Médiéval",
+        "desc": "L'ancienne capitale de Sifnos domine une falaise spectaculaire surplombant la mer Égée. Construit au 14e siècle, c'est un musée vivant. L'un des villages les plus atmosphériques des Cyclades."
+      },
+      "artemonas": {
+        "title": "Artemonas — Le Quartier Élégant",
+        "desc": "Connu pour ses demeures néoclassiques et ses excellentes pâtisseries. Goûtez les fameux amygdalota (douceurs aux amandes) chez Theodorou."
+      },
+      "sifnosLink": "En savoir plus sur l'île dans notre guide complet de Sifnos.",
+      "sifnosLinkText": "Lire le guide complet →"
+    },
+    "hiking": {
+      "title": "Sentiers de Randonnée à Sifnos",
+      "intro": "Sifnos possède l'un des meilleurs réseaux de sentiers des Cyclades, avec plus de 100 km de chemins balisés. Les meilleurs mois sont avril–juin et septembre–octobre.",
+      "trails": {
+        "title": "Top 4 des Itinéraires de Randonnée",
+        "t1": {
+          "name": "Apollonia vers Kastro",
+          "desc": "3 km, 45 minutes. Promenade douce à travers les oliveraies avec vue panoramique. Idéal pour le coucher de soleil."
+        },
+        "t2": {
+          "name": "Vathi vers Platis Gialos",
+          "desc": "5 km, 1h30. Le plus beau sentier côtier de Sifnos, passant par des criques secrètes."
+        },
+        "t3": {
+          "name": "Artemonas vers Chrysopigi",
+          "desc": "6 km, 2 heures. Sentier varié descendant à travers des terrasses agricoles jusqu'à la célèbre plage du monastère."
+        },
+        "t4": {
+          "name": "Sommet du Profitis Ilias",
+          "desc": "4 km aller-retour, 1h30. Point culminant de Sifnos (682m) avec vue à 360° sur les Cyclades."
+        }
+      },
+      "tips": "Conseil : Téléchargez l'application Sifnos Trails pour les cartes GPS hors ligne. Apportez de l'eau, une protection solaire et des chaussures robustes."
+    },
+    "food": {
+      "title": "Gastronomie à Sifnos",
+      "intro": "Sifnos est considérée comme la capitale culinaire des Cyclades. La tradition culinaire repose sur des plats mijotés dans des pots en terre cuite, herbes locales, câpres et huile d'olive exceptionnelle. Nikolaos Tselementes, le père de la cuisine grecque moderne, est né ici.",
+      "dishes": {
+        "title": "Plats Incontournables de Sifnos",
+        "d1": {
+          "name": "Revithada",
+          "desc": "Ragoût de pois chiches cuit lentement toute la nuit au four à bois. Le plat emblématique de l'île, traditionnellement préparé le dimanche."
+        },
+        "d2": {
+          "name": "Mastelo",
+          "desc": "Agneau ou chevreau mijoté avec de l'aneth et du vin dans un pot en terre scellé. Tendre et inoubliable."
+        },
+        "d3": {
+          "name": "Kaparosalata",
+          "desc": "Salade rafraîchissante de câpres locales, tomates et oignons à l'huile d'olive de Sifnos."
+        },
+        "d4": {
+          "name": "Amygdalota",
+          "desc": "Délicats biscuits aux amandes saupoudrés de sucre glace — la douceur la plus célèbre de l'île."
+        }
+      },
+      "cooking": {
+        "title": "Cours de Cuisine à Sifnos",
+        "desc": "Plusieurs chefs locaux proposent des cours pratiques de cuisine. Nous pouvons organiser les réservations directement depuis Villa Olivia Clara."
+      }
+    },
+    "pottery": {
+      "title": "Ateliers de Poterie à Sifnos",
+      "intro": "Sifnos est un centre de poterie depuis l'Antiquité, grâce à ses abondants gisements d'argile de haute qualité. Les potiers de l'île fournissent les Cyclades depuis plus de 3 000 ans.",
+      "workshops": "Visitez les ateliers de Vathi et Kamares. De nombreux studios vendent de magnifiques pièces artisanales à des prix très raisonnables.",
+      "tradition": "L'île célèbre sa tradition potière chaque septembre lors du Festival annuel de la Poterie."
+    },
+    "monasteries": {
+      "title": "Monastères & Églises de Sifnos",
+      "intro": "Sifnos compte plus de 360 églises et monastères — plus par kilomètre carré que presque toute autre île grecque.",
+      "chrysopigi": {
+        "title": "Panagia Chrysopigi",
+        "desc": "Le monastère patron de l'île, spectaculairement positionné sur un cap rocheux. Construit en 1650, il abrite une icône vénérée de la Vierge Marie."
+      },
+      "vryssi": {
+        "title": "Monastère de Vryssi",
+        "desc": "Perché sur une colline près d'Exampela, ce monastère du 17e siècle offre une vue imprenable sur toute l'île."
+      },
+      "prophet": {
+        "title": "Monastère du Profitis Ilias",
+        "desc": "Au point culminant de l'île (682m) avec vue panoramique sur les Cyclades. La montée depuis Artemonas prend 45 minutes."
+      }
+    },
+    "boatTours": {
+      "title": "Excursions en Bateau depuis Sifnos",
+      "intro": "Une excursion en bateau est le meilleur moyen de découvrir les îles inhabitées autour de Sifnos.",
+      "destinations": "La route la plus populaire visite Polyegos — l'une des plus grandes îles inhabitées de Méditerranée. D'autres tours vont vers Kimolos.",
+      "linkText": "Nous organisons des excursions privées et en groupe pour nos hôtes.",
+      "linkLabel": "Voir nos excursions →"
+    },
+    "whereToStay": {
+      "title": "Où Séjourner à Sifnos",
+      "intro": "La meilleure base pour explorer Sifnos est la côte sud près de Platis Gialos.",
+      "villaHighlight": "Villa Olivia Clara est située en hauteur au-dessus de Platis Gialos, offrant une vue panoramique sur l'Égée, une piscine privée chauffée et quatre chambres pour 8 personnes.",
+      "ctaVilla": "Découvrir Villa Olivia Clara",
+      "ctaVillas": "Voir les Meilleures Villas Sifnos"
+    },
+    "faqTitle": "Questions Fréquentes sur les Activités à Sifnos",
+    "faq": {
+      "q1": "Quelles sont les meilleures activités à Sifnos avec des enfants ?",
+      "a1": "Sifnos est exceptionnellement familiale. Baignade à Platis Gialos, ateliers de poterie, sentiers faciles et excursions en bateau.",
+      "q2": "Combien de jours faut-il à Sifnos ?",
+      "a2": "Nous recommandons 5 à 7 jours. Un long week-end (3–4 jours) suffit pour les points forts.",
+      "q3": "Sifnos est-elle bonne pour la randonnée ?",
+      "a3": "Sifnos est l'une des meilleures îles de randonnée des Cyclades, avec plus de 100 km de sentiers balisés.",
+      "q4": "Pour quoi Sifnos est-elle célèbre ?",
+      "a4": "Sifnos est célèbre pour sa cuisine exceptionnelle, sa poterie, ses 360+ églises, ses sentiers de randonnée et ses plages.",
+      "q5": "Peut-on faire une excursion d'un jour à Sifnos ?",
+      "a5": "Possible en ferry rapide, mais Sifnos mérite au moins 3 nuits pour apprécier tout son charme.",
+      "q6": "Quelles activités nautiques sont disponibles ?",
+      "a6": "Baignade, snorkelling à Faros et Chrysopigi, kayak, paddle et excursions en bateau vers Polyegos.",
+      "q7": "Où est le plus beau coucher de soleil à Sifnos ?",
+      "a7": "Kastro est le meilleur spot. Alternatives : le sommet du Profitis Ilias ou la terrasse de Villa Olivia Clara.",
+      "q8": "Sifnos est-elle chère ?",
+      "a8": "Sifnos est à prix moyen comparée à Mykonos et Santorin. Comptez €15–25 par personne en taverne.",
+      "q9": "Quelle est la meilleure période pour visiter Sifnos ?",
+      "a9": "Juin et septembre — chaud, moins de monde, prix plus bas. Mai et octobre parfaits pour la randonnée.",
+      "q10": "Comment se rendre à Sifnos ?",
+      "a10": "Sifnos est accessible en ferry depuis le Pirée (2,5–5 heures). Pas d'aéroport. Nous offrons un transfert gratuit du port."
+    },
+    "cta": {
+      "title": "Planifiez Votre Aventure à Sifnos",
+      "desc": "Séjournez à Villa Olivia Clara et vivez tout ce que Sifnos a à offrir."
+    },
+    "images": {
+      "hero": "Plage de Platis Gialos à Sifnos Grèce avec eaux turquoise et sable doré",
+      "platisGialos": "Plage Platis Gialos Sifnos — meilleure plage familiale",
+      "chrysopigi": "Monastère et plage de Chrysopigi à Sifnos",
+      "vathi": "Baie de Vathi Sifnos — plage isolée avec tavernes traditionnelles",
+      "faros": "Village de pêcheurs Faros Sifnos — meilleur spot de snorkelling",
+      "apollonia": "Village d'Apollonia Sifnos — la capitale de l'île",
+      "kastro": "Village médiéval de Kastro Sifnos — vue sur la mer Égée",
+      "artemonas": "Village d'Artemonas Sifnos — quartier élégant",
+      "dining": "Terrasse de restaurant dans une villa à Sifnos avec vue sur l'Égée",
+      "villa": "Piscine privée Villa Olivia Clara avec vue panoramique à Sifnos"
+    }
   }
 }

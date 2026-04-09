@@ -13,6 +13,7 @@ import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
 import blogImage1 from '@/assets/Sifnos/Beaches/plats-gialos.webp';
 import blogImage2 from '@/assets/Sifnos/villages/apollonia.webp';
 import blogImage3 from '@/assets/villa-gallery/Villa-Olivia-Clara_003_the-pool-area.jpg';
+import blogImage4 from '@/assets/Sifnos/Beaches/chrysopigi.webp';
 
 const Blog = () => {
   const { t, i18n } = useTranslation();
@@ -25,22 +26,26 @@ const Blog = () => {
     en: {
       sifnosGuide: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
       villaVsHotel: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison',
-      sifnosVillas: 'best-sifnos-villas-with-pool-guide'
+      sifnosVillas: 'best-sifnos-villas-with-pool-guide',
+      thingsToDo: 'things-to-do-in-sifnos-greece-guide'
     },
     el: {
       sifnosGuide: 'οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα',
       villaVsHotel: 'πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος',
-      sifnosVillas: 'καλυτερες-βιλες-σιφνος-με-πισινα'
+      sifnosVillas: 'καλυτερες-βιλες-σιφνος-με-πισινα',
+      thingsToDo: 'τι-να-κανετε-στη-σιφνο-οδηγος'
     },
     fr: {
       sifnosGuide: 'guide-sifnos-grece-villa-luxe',
       villaVsHotel: 'villa-luxe-vs-hotel-sifnos-grece',
-      sifnosVillas: 'meilleures-villas-sifnos-piscine-guide'
+      sifnosVillas: 'meilleures-villas-sifnos-piscine-guide',
+      thingsToDo: 'activites-sifnos-grece-guide'
     },
     it: {
       sifnosGuide: 'guida-sifnos-grecia-villa-lusso',
       villaVsHotel: 'villa-lusso-vs-hotel-sifnos-grecia',
-      sifnosVillas: 'migliori-ville-sifnos-piscina-guida'
+      sifnosVillas: 'migliori-ville-sifnos-piscina-guida',
+      thingsToDo: 'cosa-fare-a-sifnos-grecia-guida'
     }
   };
 
@@ -79,8 +84,20 @@ const Blog = () => {
       image: blogImage3,
       author: 'Elena Philippou',
       publishDate: '2026-03-09',
-      readTime: `5 ${t('blog.readTime')}`,
+      readTime: `12 ${t('blog.readTime')}`,
       category: t('blog.posts.sifnosVillas.category'),
+      featured: false
+    },
+    {
+      id: 4,
+      slug: currentSlugs.thingsToDo,
+      title: t('blog.posts.thingsToDo.title'),
+      excerpt: t('blog.posts.thingsToDo.excerpt'),
+      image: blogImage4,
+      author: 'Elena Philippou',
+      publishDate: '2026-04-09',
+      readTime: `12 ${t('blog.readTime')}`,
+      category: t('blog.posts.thingsToDo.category'),
       featured: true
     }
   ];

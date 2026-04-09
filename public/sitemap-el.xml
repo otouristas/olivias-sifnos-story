@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://villaoliviaclara.com/el/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/villa</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/villa"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/reviews</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/reviews"/>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/sifnos</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/sifnos/beaches</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/beaches"/>
@@ -57,8 +57,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/beaches"/>
   </url>
   <url>
+    <loc>https://villaoliviaclara.com/el/sifnos/boat-tours</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+  </url>
+  <url>
     <loc>https://villaoliviaclara.com/el/contact</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/contact"/>
@@ -69,7 +80,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/faq</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/faq"/>
@@ -80,7 +91,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/blog</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog"/>
@@ -90,19 +101,41 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog"/>
   </url>
   <url>
-    <loc>https://villaoliviaclara.com/el/sifnos/boat-tours</loc>
-    <lastmod>2026-02-07</lastmod>
+    <loc>https://villaoliviaclara.com/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα</loc>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/guide-sifnos-grece-villa-luxe"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/guida-sifnos-grecia-villa-lusso"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/villa-luxe-vs-hotel-sifnos-grece"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/villa-lusso-vs-hotel-sifnos-grecia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/el/blog/καλυτερες-βιλες-σιφνος-με-πισινα</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/καλυτερες-βιλες-σιφνος-με-πισινα"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/meilleures-villas-sifnos-piscine-guide"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/migliori-ville-sifnos-piscina-guida"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/sustainability</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sustainability"/>
@@ -113,7 +146,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/privacy-policy</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/privacy-policy"/>
@@ -124,7 +157,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/cookie-policy</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/cookie-policy"/>
@@ -135,7 +168,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/terms-of-service</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/terms-of-service"/>
@@ -146,7 +179,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/el/rental-conditions</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/rental-conditions"/>

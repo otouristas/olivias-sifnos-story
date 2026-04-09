@@ -25,22 +25,22 @@ const Blog = () => {
     en: {
       sifnosGuide: 'ultimate-guide-sifnos-greece-luxury-villa-vacation',
       villaVsHotel: 'luxury-villa-vs-hotel-sifnos-greece-complete-comparison',
-      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
+      sifnosVillas: 'best-sifnos-villas-with-pool-guide'
     },
     el: {
       sifnosGuide: 'οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα',
       villaVsHotel: 'πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος',
-      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
+      sifnosVillas: 'καλυτερες-βιλες-σιφνος-με-πισινα'
     },
     fr: {
       sifnosGuide: 'guide-sifnos-grece-villa-luxe',
       villaVsHotel: 'villa-luxe-vs-hotel-sifnos-grece',
-      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
+      sifnosVillas: 'meilleures-villas-sifnos-piscine-guide'
     },
     it: {
       sifnosGuide: 'guida-sifnos-grecia-villa-lusso',
       villaVsHotel: 'villa-lusso-vs-hotel-sifnos-grecia',
-      sifnosVillas: 'sifnos-luxury-villas-ultimate-guide'
+      sifnosVillas: 'migliori-ville-sifnos-piscina-guida'
     }
   };
 

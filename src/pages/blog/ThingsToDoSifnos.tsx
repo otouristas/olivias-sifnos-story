@@ -67,11 +67,11 @@ const ThingsToDoSifnos = () => {
         title={t('blogThingsToDo.seo.title')}
         description={t('blogThingsToDo.seo.description')}
         image={`https://villaoliviaclara.com${poolArea}`}
-        datePublished="2026-04-09"
-        dateModified="2026-04-09"
-        authorName="Elena Philippou"
-        url={`https://villaoliviaclara.com${langPrefix}/blog/${currentSlug}`}
-        language={currentLang}
+        publishDate="2026-04-09"
+        modifiedDate="2026-04-09"
+        author="Elena Philippou"
+        slug={currentSlug}
+        lang={currentLang}
       />
       <FAQStructuredData faqs={faqs} />
       <Navigation />

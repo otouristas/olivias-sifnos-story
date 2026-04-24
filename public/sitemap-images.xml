@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://villaoliviaclara.com/villa</loc>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_001_pool-side-cabana.webp</image:loc>
+      <image:title>Heated pool and cabana at Villa Olivia Clara, Platis Gialos, Sifnos</image:title>
+      <image:caption>The Platis Gialos villa with a heated private pool, 7 minutes walk from the beach.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_003_the-pool-area.jpg</image:loc>
+      <image:title>Pool area with sea view at Villa Olivia Clara, Sifnos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_005_pool-detail.jpg</image:loc>
+      <image:title>Heated private pool detail at Villa Olivia Clara, Sifnos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_011_pool-sunbathing-area.jpg</image:loc>
+      <image:title>Pool sunbathing area, Villa Olivia Clara, Platis Gialos Sifnos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_014_master-bedroom.jpg</image:loc>
+      <image:title>Master bedroom with sea view, Villa Olivia Clara</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_034_kitchen.webp</image:loc>
+      <image:title>Full luxury kitchen at Villa Olivia Clara, Sifnos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_040_dining-at-the-terrace.jpg</image:loc>
+      <image:title>Outdoor terrace dining at Villa Olivia Clara, Sifnos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://villaoliviaclara.com/assets/Villa-Olivia-Clara_043_aerial-view-of-the-villa-wide.jpg</image:loc>
+      <image:title>Aerial view of Villa Olivia Clara, Platis Gialos, Sifnos</image:title>
+    </image:image>
+  </url>
+</urlset>

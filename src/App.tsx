@@ -60,7 +60,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation" element={<SifnosGuide />} />
           <Route path="/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<VillaVsHotel />} />
-          <Route path="/blog/sifnos-luxury-villas-ultimate-guide" element={<SifnosVillas />} />
+          
           <Route path="/blog/best-sifnos-villas-with-pool-guide" element={<SifnosVillas />} />
           <Route path="/blog/things-to-do-in-sifnos-greece-guide" element={<ThingsToDoSifnos />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -83,7 +83,7 @@ const App = () => (
           <Route path="/el/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
-          <Route path="/el/blog/sifnos-luxury-villas-ultimate-guide" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
+          
           <Route path="/el/blog/καλυτερες-βιλες-σιφνος-με-πισινα" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
           <Route path="/el/blog/τι-να-κανετε-στη-σιφνο-οδηγος" element={<LanguageRoute><ThingsToDoSifnos /></LanguageRoute>} />
           <Route path="/el/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
@@ -106,7 +106,7 @@ const App = () => (
           <Route path="/fr/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/fr/blog/guide-sifnos-grece-villa-luxe" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/fr/blog/villa-luxe-vs-hotel-sifnos-grece" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
-          <Route path="/fr/blog/sifnos-luxury-villas-ultimate-guide" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
+          
           <Route path="/fr/blog/meilleures-villas-sifnos-piscine-guide" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
           <Route path="/fr/blog/activites-sifnos-grece-guide" element={<LanguageRoute><ThingsToDoSifnos /></LanguageRoute>} />
           <Route path="/fr/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />
@@ -129,7 +129,7 @@ const App = () => (
           <Route path="/it/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
           <Route path="/it/blog/guida-sifnos-grecia-villa-lusso" element={<LanguageRoute><SifnosGuide /></LanguageRoute>} />
           <Route path="/it/blog/villa-lusso-vs-hotel-sifnos-grecia" element={<LanguageRoute><VillaVsHotel /></LanguageRoute>} />
-          <Route path="/it/blog/sifnos-luxury-villas-ultimate-guide" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
+          
           <Route path="/it/blog/migliori-ville-sifnos-piscina-guida" element={<LanguageRoute><SifnosVillas /></LanguageRoute>} />
           <Route path="/it/blog/cosa-fare-a-sifnos-grecia-guida" element={<LanguageRoute><ThingsToDoSifnos /></LanguageRoute>} />
           <Route path="/it/faq" element={<LanguageRoute><FAQ /></LanguageRoute>} />

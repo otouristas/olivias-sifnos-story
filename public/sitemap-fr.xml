@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
   <url>
     <loc>https://villaoliviaclara.com/fr/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/"/>
     <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/"/>
@@ -14,7 +15,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/villa</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/villa"/>
@@ -25,7 +26,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/reviews</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/reviews"/>
@@ -36,7 +37,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/sifnos</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos"/>
@@ -47,7 +48,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/sifnos/beaches</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/beaches"/>
@@ -57,8 +58,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/beaches"/>
   </url>
   <url>
+    <loc>https://villaoliviaclara.com/fr/sifnos/boat-tours</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+  </url>
+  <url>
     <loc>https://villaoliviaclara.com/fr/contact</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/contact"/>
@@ -69,9 +81,9 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/faq</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/faq"/>
     <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/faq"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/faq"/>
@@ -80,7 +92,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/blog</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog"/>
@@ -90,19 +102,52 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog"/>
   </url>
   <url>
-    <loc>https://villaoliviaclara.com/fr/sifnos/boat-tours</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://villaoliviaclara.com/blog/meilleures-villas-sifnos-piscine-guide</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/blog/καλυτερες-βιλες-σιφνος-με-πισινα"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/blog/meilleures-villas-sifnos-piscine-guide"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/blog/migliori-ville-sifnos-piscina-guida"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/blog/activites-sifnos-grece-guide</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/things-to-do-in-sifnos-greece-guide"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/blog/τι-να-κανετε-στη-σιφνο-οδηγος"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/blog/activites-sifnos-grece-guide"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/blog/cosa-fare-a-sifnos-grecia-guida"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/things-to-do-in-sifnos-greece-guide"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/blog/villa-luxe-vs-hotel-sifnos-grece</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/sifnos/boat-tours"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sifnos/boat-tours"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/blog/villa-luxe-vs-hotel-sifnos-grece"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/blog/villa-lusso-vs-hotel-sifnos-grecia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
+  </url>
+  <url>
+    <loc>https://villaoliviaclara.com/blog/guide-sifnos-grece-villa-luxe</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/blog/guide-sifnos-grece-villa-luxe"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/blog/guida-sifnos-grecia-villa-lusso"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/sustainability</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/sustainability"/>
@@ -112,8 +157,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/sustainability"/>
   </url>
   <url>
+    <loc>https://villaoliviaclara.com/fr/rental-conditions</loc>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/rental-conditions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/rental-conditions"/>
+  </url>
+  <url>
     <loc>https://villaoliviaclara.com/fr/privacy-policy</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/privacy-policy"/>
@@ -124,7 +180,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/cookie-policy</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/cookie-policy"/>
@@ -135,7 +191,7 @@
   </url>
   <url>
     <loc>https://villaoliviaclara.com/fr/terms-of-service</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-24T12:09:28.064Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/terms-of-service"/>
@@ -143,60 +199,5 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/terms-of-service"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/terms-of-service"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/terms-of-service"/>
-  </url>
-  <url>
-    <loc>https://villaoliviaclara.com/fr/rental-conditions</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.50</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/rental-conditions"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/rental-conditions"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/rental-conditions"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/rental-conditions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/rental-conditions"/>
-  </url>
-  <url>
-    <loc>https://villaoliviaclara.com/fr/blog/guide-sifnos-grece-villa-luxe</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/οδηγος-σιφνου-ελλαδα-πολυτελης-βιλα"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/guide-sifnos-grece-villa-luxe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/guida-sifnos-grecia-villa-lusso"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/ultimate-guide-sifnos-greece-luxury-villa-vacation"/>
-  </url>
-  <url>
-    <loc>https://villaoliviaclara.com/fr/blog/villa-luxe-vs-hotel-sifnos-grece</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/πολυτελης-βιλα-vs-ξενοδοχειο-σιφνος"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/villa-luxe-vs-hotel-sifnos-grece"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/villa-lusso-vs-hotel-sifnos-grecia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/luxury-villa-vs-hotel-sifnos-greece-complete-comparison"/>
-  </url>
-  <url>
-    <loc>https://villaoliviaclara.com/fr/blog/meilleures-villas-sifnos-piscine-guide</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/καλυτερες-βιλες-σιφνος-με-πισινα"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/meilleures-villas-sifnos-piscine-guide"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/migliori-ville-sifnos-piscina-guida"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/best-sifnos-villas-with-pool-guide"/>
-  </url>
-  <url>
-    <loc>https://villaoliviaclara.com/fr/blog/activites-sifnos-grece-guide</loc>
-    <lastmod>2026-04-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://villaoliviaclara.com/blog/things-to-do-in-sifnos-greece-guide"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://villaoliviaclara.com/el/blog/τι-να-κανετε-στη-σιφνο-οδηγος"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://villaoliviaclara.com/fr/blog/activites-sifnos-grece-guide"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://villaoliviaclara.com/it/blog/cosa-fare-a-sifnos-grecia-guida"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://villaoliviaclara.com/blog/things-to-do-in-sifnos-greece-guide"/>
   </url>
 </urlset>

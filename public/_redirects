@@ -1,2 +1,1 @@
-# Redirect all requests to index.html for SPA routing
-/*    /index.html   200
+# SPA fallback is configured in wrangler.jsonc.

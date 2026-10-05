@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "olivias-sifnos-story",
+  "account_id": "3ae246eded35e99220b461c2ca5ff158",
+  "compatibility_date": "2026-10-05",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
